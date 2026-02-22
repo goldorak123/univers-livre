@@ -1,4 +1,3 @@
-﻿User-agent: *
+User-agent: *
 Disallow:
-Sitemap: https://www.mon-univers.ca/sitemap-mon-univers.xml
-Sitemap: https://www.mon-univers.ca/sitemap-simonlero.xml
+Sitemap: https://www.simonlero.com/sitemap.xml

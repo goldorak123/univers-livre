@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Perdu dans l'espace ?</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --gold: #d8b25a;
+            --text: #f0f0f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            min-height: 100dvh;
+            background:
+                radial-gradient(1200px 600px at 50% 18%, rgba(255, 255, 255, 0.06), transparent 60%),
+                radial-gradient(900px 500px at 50% 85%, rgba(255, 255, 255, 0.04), transparent 65%),
+                linear-gradient(#060606, #040404);
+            color: var(--text);
+            font-family: 'Montserrat', Arial, sans-serif;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* STARS EFFECT */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+            background-size: 4px 4px;
+            opacity: 0.3;
+            pointer-events: none;
+            animation: twinkle 5s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        h1 {
+            font-size: clamp(60px, 15vw, 150px);
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 20px;
+            line-height: 1;
+            text-shadow: 0 0 20px rgba(216, 178, 90, 0.4);
+        }
+
+        p {
+            font-size: clamp(18px, 4vw, 24px);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.5;
+            opacity: 0.9;
+            padding: 0 20px;
+        }
+
+        .btn-return {
+            display: inline-block;
+            padding: 15px 30px;
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-return:hover {
+            background: var(--gold);
+            color: #000;
+            box-shadow: 0 0 20px rgba(216, 178, 90, 0.6);
+            transform: scale(1.05);
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>404</h1>
+
+    <div class="message-container">
+        <p class="fr">Oups ! Cette page semble avoir disparu dans un trou noir...</p>
+        <p class="en">Oops! This page seems to have disappeared into a black hole...</p>
+        <p class="es">¡Vaya! Esta página parece haber desaparecido en un agujero negro...</p>
+    </div>
+
+    <div class="btn-container">
+        <a href="https://www.mon-univers.ca/index.html" class="btn-return">
+            Retour vers la Terre
+        </a>
+        <div class="btn-subtext">
+            <span>Return to Earth</span> &nbsp;•&nbsp; <span>Volver a la Tierra</span>
+        </div>
+    </div>
+
+    <style>
+        .message-container {
+            margin-bottom: 20px;
+        }
+
+        .message-container p {
+            margin-bottom: 6px;
+        }
+
+        .message-container .en,
+        .message-container .es {
+            font-size: 0.75em;
+            opacity: 0.6;
+        }
+
+        .btn-container {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-return {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 0 20px;
+            background: transparent;
+            border: 1px solid transparent;
+            /* No more sandwich lines */
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            backdrop-filter: none;
+            box-shadow: none;
+            position: relative;
+        }
+
+        .btn-return:hover {
+            color: #fff;
+            transform: translateY(-5px);
+            text-shadow: 0 0 15px rgba(216, 178, 90, 0.4);
+        }
+
+        .btn-return::after {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: all 0.5s ease;
+            transform: translateX(-50%);
+        }
+
+        .btn-return:hover::after {
+            width: 60%;
+            background: #fff;
+        }
+
+        .btn-subtext {
+            color: var(--text);
+            opacity: 0.4;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            pointer-events: none;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 80px;
+            }
+
+            .btn-return {
+                padding: 10px 0;
+                margin: 0 10px;
+                font-size: 14px;
+                letter-spacing: 2px;
+                width: auto;
+                min-width: 200px;
+                text-align: center;
+            }
+
+            .btn-subtext {
+                font-size: 10px;
+            }
+        }
+    </style>
+
+    <footer style="margin-top: 40px; font-size: 14px; opacity: 0.6;">
+        <p>© <span id="current-year"></span> mon-univers.ca — Tous droits réservés</p>
+    </footer>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

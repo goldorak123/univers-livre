@@ -1,233 +1,233 @@
 ﻿<!DOCTYPE html>
-<html lang="fr">
+<htmllang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Perdu dans l'espace ?</title>
-    <style>
-        :root {
-            --bg: #050505;
-            --gold: #d8b25a;
-            --text: #f0f0f0;
-        }
+ à à à <meta charset="UTF-8">
+ à à à <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ à à à <title>404 - Perdu dans l'espace ?</title>
+ à à à <style>
+ à à à à à à à :root {
+ à à à à à à à à à à à --bg: #050505;
+ à à à à à à à à à à à --gold: #d8b25a;
+ à à à à à à à à à à à --text: #f0f0f0;
+ à à à à à à à }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+ à à à à à à à * {
+ à à à à à à à à à à à margin: 0;
+ à à à à à à à à à à à padding: 0;
+ à à à à à à à à à à à box-sizing: border-box;
+ à à à à à à à }
 
-        html,
-        body {
-            width: 100%;
-            overflow: hidden;
-        }
+ à à à à à à à html,
+ à à à à à à à body {
+ à à à à à à à à à à à width: 100%;
+ à à à à à à à à à à à overflow: hidden;
+ à à à à à à à }
 
-        body {
-            min-height: 100dvh;
-            background:
-                radial-gradient(1200px 600px at 50% 18%, rgba(255, 255, 255, 0.06), transparent 60%),
-                radial-gradient(900px 500px at 50% 85%, rgba(255, 255, 255, 0.04), transparent 65%),
-                linear-gradient(#060606, #040404);
-            color: var(--text);
-            font-family: 'Montserrat', Arial, sans-serif;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+ à à à à à à à body {
+ à à à à à à à à à à à min-height: 100dvh;
+ à à à à à à à à à à à background:
+ à à à à à à à à à à à à à à à radial-gradient(1200px 600px at 50% 18%, rgba(255, 255, 255, 0.06), transparent 60%),
+ à à à à à à à à à à à à à à à radial-gradient(900px 500px at 50% 85%, rgba(255, 255, 255, 0.04), transparent 65%),
+ à à à à à à à à à à à à à à à linear-gradient(#060606, #040404);
+ à à à à à à à à à à à color: var(--text);
+ à à à à à à à à à à à font-family: 'Montserrat', Arial, sans-serif;
+ à à à à à à à à à à à overflow: hidden;
+ à à à à à à à à à à à display: flex;
+ à à à à à à à à à à à flex-direction: column;
+ à à à à à à à à à à à justify-content: center;
+ à à à à à à à à à à à align-items: center;
+ à à à à à à à à à à à text-align: center;
+ à à à à à à à }
 
-        /* STARS EFFECT */
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-            background-size: 4px 4px;
-            opacity: 0.3;
-            pointer-events: none;
-            animation: twinkle 5s infinite ease-in-out;
-        }
+ à à à à à à à /* STARS EFFECT */
+ à à à à à à à body::before {
+ à à à à à à à à à à à content: "";
+ à à à à à à à à à à à position: fixed;
+ à à à à à à à à à à à inset: 0;
+ à à à à à à à à à à à background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+ à à à à à à à à à à à background-size: 4px 4px;
+ à à à à à à à à à à à opacity: 0.3;
+ à à à à à à à à à à à pointer-events: none;
+ à à à à à à à à à à à animation: twinkle 5s infinite ease-in-out;
+ à à à à à à à }
 
-        @keyframes twinkle {
+ à à à à à à à @keyframes twinkle {
 
-            0%,
-            100% {
-                opacity: 0.3;
-            }
+ à à à à à à à à à à à 0%,
+ à à à à à à à à à à à 100% {
+ à à à à à à à à à à à à à à à opacity: 0.3;
+ à à à à à à à à à à à }
 
-            50% {
-                opacity: 0.5;
-            }
-        }
+ à à à à à à à à à à à 50% {
+ à à à à à à à à à à à à à à à opacity: 0.5;
+ à à à à à à à à à à à }
+ à à à à à à à }
 
-        h1 {
-            font-size: clamp(60px, 15vw, 150px);
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 20px;
-            line-height: 1;
-            text-shadow: 0 0 20px rgba(216, 178, 90, 0.4);
-        }
+ à à à à à à à h1 {
+ à à à à à à à à à à à font-size: clamp(60px, 15vw, 150px);
+ à à à à à à à à à à à font-weight: 700;
+ à à à à à à à à à à à color: var(--gold);
+ à à à à à à à à à à à margin-bottom: 20px;
+ à à à à à à à à à à à line-height: 1;
+ à à à à à à à à à à à text-shadow: 0 0 20px rgba(216, 178, 90, 0.4);
+ à à à à à à à }
 
-        p {
-            font-size: clamp(18px, 4vw, 24px);
-            max-width: 600px;
-            margin: 0 auto 40px;
-            line-height: 1.5;
-            opacity: 0.9;
-            padding: 0 20px;
-        }
+ à à à à à à à p {
+ à à à à à à à à à à à font-size: clamp(18px, 4vw, 24px);
+ à à à à à à à à à à à max-width: 600px;
+ à à à à à à à à à à à margin: 0 auto 40px;
+ à à à à à à à à à à à line-height: 1.5;
+ à à à à à à à à à à à opacity: 0.9;
+ à à à à à à à à à à à padding: 0 20px;
+ à à à à à à à }
 
-        .btn-return {
-            display: inline-block;
-            padding: 15px 30px;
-            background: transparent;
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+ à à à à à à à .btn-return {
+ à à à à à à à à à à à display: inline-block;
+ à à à à à à à à à à à padding: 15px 30px;
+ à à à à à à à à à à à background: transparent;
+ à à à à à à à à à à à border: 2px solidvar(--gold);
+ à à à à à à à à à à à color: var(--gold);
+ à à à à à à à à à à à text-decoration: none;
+ à à à à à à à à à à à font-size: 18px;
+ à à à à à à à à à à à font-weight: bold;
+ à à à à à à à à à à à border-radius: 50px;
+ à à à à à à à à à à à transition: all0.3s ease;
+ à à à à à à à à à à à text-transform: uppercase;
+ à à à à à à à à à à à letter-spacing: 1px;
+ à à à à à à à }
 
-        .btn-return:hover {
-            background: var(--gold);
-            color: #000;
-            box-shadow: 0 0 20px rgba(216, 178, 90, 0.6);
-            transform: scale(1.05);
-        }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+ à à à à à à à .btn-return:hover {
+ à à à à à à à à à à à background: var(--gold);
+ à à à à à à à à à à à color: #000;
+ à à à à à à à à à à à box-shadow: 0 0 20px rgba(216, 178, 90, 0.6);
+ à à à à à à à à à à à transform: scale(1.05);
+ à à à à à à à }
+ à à à </style>
+ à à à <link rel="preconnect" href="https://fonts.googleapis.com">
+ à à à <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ à à à <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <h1>404</h1>
+ à à à <h1>404</h1>
 
-    <div class="message-container">
-        <p class="fr">Oups ! Cette page semble avoir disparu dans un trou noir...</p>
-        <p class="en">Oops! This page seems to have disappeared into a black hole...</p>
-        <p class="es">Â¡Vaya! Esta pÃ¡gina parece haber desaparecido en un agujero negro...</p>
-    </div>
+ à à à <div class="message-container">
+ à à à à à à à <p class="fr">Oups ! Cette page semble avoir disparu dans un trou noir...</p>
+ à à à à à à à <p class="en">Oops! This page seems to have disappearedinto a black hole...</p>
+ à à à à à à à <p class="es">Â¡Vaya! Esta pù¡gina parece haber desaparecido en un agujero negro...</p>
+ à à à </div>
 
-    <div class="btn-container">
-        <a href="https://www.simonlero.com/index.html" class="btn-return">
-            Retour vers la Terre
-        </a>
-        <div class="btn-subtext">
-            <span>Return to Earth</span> &nbsp;â€¢&nbsp; <span>Volver a la Tierra</span>
-        </div>
-    </div>
+ à à à <div class="btn-container">
+ à à à à à à à <a href="https://www.simonlero.com/index.html" class="btn-return">
+ à à à à à à à à à à à Retour vers la Terre
+ à à à à à à à </a>
+ à à à à à à à <div class="btn-subtext">
+ à à à à à à à à à à à <span>Return to Earth</span> &nbsp;â€¢&nbsp; <span>Volver a la Tierra</span>
+ à à à à à à à </div>
+ à à à </div>
 
-    <style>
-        .message-container {
-            margin-bottom: 20px;
-        }
+ à à à <style>
+ à à à à à à à .message-container {
+ à à à à à à à à à à à margin-bottom: 20px;
+ à à à à à à à }
 
-        .message-container p {
-            margin-bottom: 6px;
-        }
+ à à à à à à à .message-container p {
+ à à à à à à à à à à à margin-bottom: 6px;
+ à à à à à à à }
 
-        .message-container .en,
-        .message-container .es {
-            font-size: 0.75em;
-            opacity: 0.6;
-        }
+ à à à à à à à .message-container .en,
+ à à à à à à à .message-container .es {
+ à à à à à à à à à à à font-size: 0.75em;
+ à à à à à à à à à à à opacity: 0.6;
+ à à à à à à à }
 
-        .btn-container {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-        }
+ à à à à à à à .btn-container {
+ à à à à à à à à à à à margin-top: 30px;
+ à à à à à à à à à à à display: flex;
+ à à à à à à à à à à à flex-direction: column;
+ à à à à à à à à à à à align-items: center;
+ à à à à à à à à à à à gap: 16px;
+ à à à à à à à }
 
-        .btn-return {
-            display: inline-block;
-            padding: 12px 30px;
-            margin: 0 20px;
-            background: transparent;
-            border: 1px solid transparent;
-            /* No more sandwich lines */
-            color: var(--gold);
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 0;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            backdrop-filter: none;
-            box-shadow: none;
-            position: relative;
-        }
+ à à à à à à à .btn-return {
+ à à à à à à à à à à à display: inline-block;
+ à à à à à à à à à à à padding: 12px 30px;
+ à à à à à à à à à à à margin: 0 20px;
+ à à à à à à à à à à à background: transparent;
+ à à à à à à à à à à à border: 1px solidtransparent;
+ à à à à à à à à à à à /* No more sandwich lines */
+ à à à à à à à à à à à color: var(--gold);
+ à à à à à à à à à à à text-decoration: none;
+ à à à à à à à à à à à font-size: 16px;
+ à à à à à à à à à à à font-weight: 700;
+ à à à à à à à à à à à border-radius: 0;
+ à à à à à à à à à à à transition: all0.5s cubic-bezier(0.4, 0, 0.2, 1);
+ à à à à à à à à à à à text-transform: uppercase;
+ à à à à à à à à à à à letter-spacing: 4px;
+ à à à à à à à à à à à backdrop-filter: none;
+ à à à à à à à à à à à box-shadow: none;
+ à à à à à à à à à à à position: relative;
+ à à à à à à à }
 
-        .btn-return:hover {
-            color: #fff;
-            transform: translateY(-5px);
-            text-shadow: 0 0 15px rgba(216, 178, 90, 0.4);
-        }
+ à à à à à à à .btn-return:hover {
+ à à à à à à à à à à à color: #fff;
+ à à à à à à à à à à à transform: translateY(-5px);
+ à à à à à à à à à à à text-shadow: 0 0 15px rgba(216, 178, 90, 0.4);
+ à à à à à à à }
 
-        .btn-return::after {
-            content: '';
-            position: absolute;
-            bottom: 0px;
-            left: 50%;
-            width: 0;
-            height: 1px;
-            background: var(--gold);
-            transition: all 0.5s ease;
-            transform: translateX(-50%);
-        }
+ à à à à à à à .btn-return::after {
+ à à à à à à à à à à à content: '';
+ à à à à à à à à à à à position: absolute;
+ à à à à à à à à à à à bottom: 0px;
+ à à à à à à à à à à à left: 50%;
+ à à à à à à à à à à à width: 0;
+ à à à à à à à à à à à height: 1px;
+ à à à à à à à à à à à background: var(--gold);
+ à à à à à à à à à à à transition: all0.5s ease;
+ à à à à à à à à à à à transform: translateX(-50%);
+ à à à à à à à }
 
-        .btn-return:hover::after {
-            width: 60%;
-            background: #fff;
-        }
+ à à à à à à à .btn-return:hover::after {
+ à à à à à à à à à à à width: 60%;
+ à à à à à à à à à à à background: #fff;
+ à à à à à à à }
 
-        .btn-subtext {
-            color: var(--text);
-            opacity: 0.4;
-            font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            pointer-events: none;
-        }
+ à à à à à à à .btn-subtext {
+ à à à à à à à à à à à color: var(--text);
+ à à à à à à à à à à à opacity: 0.4;
+ à à à à à à à à à à à font-size: 11px;
+ à à à à à à à à à à à letter-spacing: 1px;
+ à à à à à à à à à à à text-transform: uppercase;
+ à à à à à à à à à à à pointer-events: none;
+ à à à à à à à }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 80px;
-            }
+ à à à à à à à @media (max-width: 480px) {
+ à à à à à à à à à à à h1 {
+ à à à à à à à à à à à à à à à font-size: 80px;
+ à à à à à à à à à à à }
 
-            .btn-return {
-                padding: 10px 0;
-                margin: 0 10px;
-                font-size: 14px;
-                letter-spacing: 2px;
-                width: auto;
-                min-width: 200px;
-                text-align: center;
-            }
+ à à à à à à à à à à à .btn-return {
+ à à à à à à à à à à à à à à à padding: 10px 0;
+ à à à à à à à à à à à à à à à margin: 0 10px;
+ à à à à à à à à à à à à à à à font-size: 14px;
+ à à à à à à à à à à à à à à à letter-spacing: 2px;
+ à à à à à à à à à à à à à à à width: auto;
+ à à à à à à à à à à à à à à à min-width: 200px;
+ à à à à à à à à à à à à à à à text-align: center;
+ à à à à à à à à à à à }
 
-            .btn-subtext {
-                font-size: 10px;
-            }
-        }
-    </style>
+ à à à à à à à à à à à .btn-subtext {
+ à à à à à à à à à à à à à à à font-size: 10px;
+ à à à à à à à à à à à }
+ à à à à à à à }
+ à à à </style>
 
-    <footer style="margin-top: 40px; font-size: 14px; opacity: 0.6;">
-        <p>Â© <span id="current-year"></span> mon-univers.ca â€” Tous droits rservs</p>
-    </footer>
-    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+ à à à <footer style="margin-top: 40px; font-size: 14px; opacity: 0.6;">
+ à à à à à à à <p>Â© <span id="current-year"></span> mon-univers.ca â€” Tous droits rservs</p>
+ à à à </footer>
+ à à à <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 </body>
 
 </html>

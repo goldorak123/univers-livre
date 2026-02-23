@@ -52,6 +52,11 @@
 
     // Ne pas rediriger si l'application est en mode "autonome" (PWA installée)
     const isPWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+
+    if (!isPWA && window.location.hostname.includes('simonlero.com') &&
+      new URLSearchParams(window.location.search).get('redirection') !== 'false') {
+      window.location.replace('https://www.simonlero.com/livre-accueil.html');
+    }
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="msvalidate.01" content="35E5408E2A8BCF95460F1FAFFAB8BED6790A" />

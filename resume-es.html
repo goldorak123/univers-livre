@@ -2,12 +2,6 @@
 <html lang="es" class="notranslate" translate="no">
 
 <head>
-    <link rel="canonical" href="https://www.simonlero.com/resume-es.html">
-    <link rel="alternate" hreflang="fr" href="https://www.simonlero.com/resume.html" />
-    <link rel="alternate" hreflang="en" href="https://www.simonlero.com/resume-en.html" />
-    <link rel="alternate" hreflang="es" href="https://www.simonlero.com/resume-es.html" />
-    <link rel="alternate" hreflang="x-default" href="https://www.simonlero.com/resume.html" />
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
@@ -17,208 +11,296 @@
     <meta name="description"
         content="Resumen completo de 'Encuentros a la luz de la luna' de Simon Lero. Sumérgete en las profundidades del alma de Alfred Sisley.">
 
-    <title>Resumen Completo — Encuentros a la luz de la luna</title>
+    <title>Resumen Completo - Encuentros a la Luz de la Luna</title>
 
     <!-- Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600;800&display=swap"
         rel="stylesheet">
+</head>
 
-    <style>
-        :root {
-            --gold: #d4a23a;
-            --gold-bright: #eec165;
-            --bg: #050505;
-            --text: #f0f0f0;
-            --text-dim: #888;
-            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+<style>
+    :root {
+        --gold: #d4a23a;
+        --gold-bright: #eec165;
+        --bg: #050505;
+        --text: #f0f0f0;
+        --text-dim: #888;
+        --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        background-color: var(--bg);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+        min-height: 100vh;
+        background:
+            radial-gradient(circle at 50% 20%, rgba(216, 178, 90, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 40%),
+            #050505;
+        background-attachment: fixed;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.06;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .hero {
+        position: relative;
+        padding: 180px 40px 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 1200px;
+        margin: 0 auto;
+        z-index: 10;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    .hero-background-title {
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(8rem, 20vw, 18rem);
+        font-weight: 900;
+        color: rgba(216, 178, 90, 0.05);
+        -webkit-text-stroke: 1px rgba(216, 178, 90, 0.08);
+        position: absolute;
+        top: -40px;
+        left: -40px;
+        line-height: 0.7;
+        text-transform: uppercase;
+        z-index: -1;
+        pointer-events: none;
+        letter-spacing: -0.05em;
+        animation: slideInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        white-space: nowrap;
+    }
+
+    .title-line {
+        display: block;
+        line-height: 0.9;
+        text-transform: uppercase;
+    }
+
+    .title-line-1 {
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(3.2rem, 12vw, 8rem);
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: -0.05em;
+        animation: slideInLeft 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .title-line-2 {
+        font-family: 'Cinzel', serif;
+        font-size: clamp(3.2rem, 12vw, 8rem);
+        font-weight: 800;
+        color: #d8b25a;
+        margin-left: clamp(2rem, 10vw, 150px);
+        animation: slideInLeft 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+        opacity: 0;
+    }
+
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-150px);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(150px);
         }
 
-        html,
-        body {
-            max-width: 100%;
-            overflow-x: hidden;
+        to {
+            opacity: 1;
+            transform: translateX(0);
         }
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            background-color: var(--bg);
-            color: var(--text);
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-            min-height: 100vh;
-            background:
-                radial-gradient(circle at 50% 20%, rgba(216, 178, 90, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 40%),
-                #050505;
-            background-attachment: fixed;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.06;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .hero {
-            position: relative;
-            padding: 180px 40px 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: 0 auto;
-            z-index: 10;
-            text-align: left;
-            overflow: hidden;
-        }
-
-        .hero-background-title {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(8rem, 20vw, 18rem);
-            font-weight: 950;
-            color: rgba(216, 178, 90, 0.05);
-            -webkit-text-stroke: 1px rgba(216, 178, 90, 0.08);
-            position: absolute;
-            top: -40px;
-            left: -40px;
-            line-height: 0.7;
-            text-transform: uppercase;
-            z-index: -1;
-            pointer-events: none;
-            letter-spacing: -0.05em;
-            animation: slideInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-            white-space: nowrap;
-        }
-
-        .title-line {
-            display: block;
-            line-height: 0.9;
-            text-transform: uppercase;
-        }
-
-        .title-line-1 {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(3.2rem, 12vw, 8rem);
-            font-weight: 900;
-            color: #fff;
-            letter-spacing: -0.05em;
-            animation: slideInLeft 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-
-        .title-line-2 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(3.2rem, 12vw, 8rem);
-            font-weight: 800;
-            color: var(--gold);
-            margin-left: clamp(2rem, 10vw, 150px);
-            animation: slideInLeft 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+    @keyframes fadeIn {
+        from {
             opacity: 0;
         }
 
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-150px);
-            }
+        to {
+            opacity: 1;
+        }
+    }
 
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 40px 100px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .content-card {
+        background: rgba(15, 15, 15, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 60px;
+        backdrop-filter: blur(10px);
+        line-height: 1.8;
+        font-size: 1.15rem;
+        color: #ddd;
+        text-align: justify;
+    }
+
+    .content-card p {
+        margin-bottom: 25px;
+    }
+
+    .cta-row {
+        margin-top: 60px;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: transparent;
+        border: none;
+        border-top: 0.7px solid var(--gold);
+        border-bottom: 0.7px solid var(--gold);
+        color: var(--gold);
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 0;
+        transition: all 0.4s ease;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        position: relative;
+    }
+
+    .btn:hover {
+        background: transparent;
+        color: #fff;
+        border-color: #fff;
+        transform: translateY(-3px);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 15px rgba(216, 178, 90, 0.2);
+    }
+
+    footer {
+        padding: 60px 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        color: #444;
+        font-size: 0.8rem;
+        letter-spacing: 0.2em;
+    }
+
+
+
+    .corner-glow {
+        position: fixed;
+        width: 40vw;
+        height: 40vw;
+        background: radial-gradient(circle, rgba(216, 178, 90, 0.03) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .glow-tl {
+        top: -10vw;
+        left: -10vw;
+    }
+
+    .glow-br {
+        bottom: -10vw;
+        right: -10vw;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 40px 100px;
-            position: relative;
-            z-index: 10;
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+
+    @media (max-width: 768px) {
+        .hero {
+            padding: 120px 20px 60px;
+        }
+
+        .hero-background-title {
+            font-size: 8rem;
+            top: 20px;
+            left: -20px;
+            color: rgba(216, 178, 90, 0.08);
+            /* MÉ¡s visible en mÉ³vil */
+            -webkit-text-stroke: 1px rgba(216, 178, 90, 0.15);
         }
 
         .content-card {
-            background: rgba(15, 15, 15, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 60px;
-            backdrop-filter: blur(10px);
-            line-height: 1.8;
-            font-size: 1.15rem;
-            color: #ddd;
-            text-align: justify;
+            padding: 30px 15px;
+            font-size: 1rem;
         }
 
-        .content-card p {
-            margin-bottom: 25px;
+        .cta-row {
+            margin-top: 30px;
         }
 
-        .language-switcher {
-            position: absolute;
-            top: 40px;
-            right: 40px;
-            display: flex;
-            gap: 20px;
-            z-index: 100;
+        .container {
+            padding-bottom: 40px;
         }
 
-        .language-switcher a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.7rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            transition: var(--transition);
+        .btn {
+            width: 100%;
+            justify-content: center;
         }
-
-        .language-switcher a:hover {
-            color: var(--gold);
-        }
-
-        footer {
-            padding: 60px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: #444;
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 120px 20px 60px;
-            }
-
-            .content-card {
-                padding: 30px 15px;
-            }
-
-            .language-switcher {
-                top: 20px;
-                right: 20px;
-            }
-        }
-    </style>
-</head>
+    }
+</style>
 
 <body>
-    <div class="language-switcher">
-        <a href="resume.html">FRANÇAIS</a>
-        <a href="resume-en.html">ENGLISH</a>
-        <a href="resume-es.html">ESPAÑOL</a>
-    </div>
+
+
+    <div class="corner-glow glow-tl"></div>
+    <div class="corner-glow glow-br"></div>
 
     <header class="hero">
         <div class="hero-background-title">RESUMEN</div>
@@ -230,23 +312,34 @@
 
     <div class="container">
         <div class="content-card">
-            <p>Entre silencios compartidos y confidencias susurradas, su relación se convierte en un espacio suspendido
-                donde el pasado y el presente se confunden. A través de los ojos de Sisley, la narrativa explora la
-                búsqueda de una verdad interior, marcada tanto por la pasión como por la melancolía.</p>
-            <p>Cada encuentro nocturno aporta una nueva pieza al rompecabezas de sus existencias, revelando secretos
-                profundamente arraigados y deseos inconfesables. Una obra que cuestiona nuestra relación con los demás y
-                con nosotros mismos.</p>
+            <p>
+                Alfred Sisley, un anciano curtido y habitado por la melancolÉ­a, vive solo rodeado de sus recuerdos.
+                Retirado del mundo, espera en silencio una seÉ±al: la de su Éºnico y verdadero amor.
+                Impotente ante el tiempo que se desmorona, intenta superar sus penas, contener sus sueÉ±os recurrentes
+                y calmar sus escritos desgarradores, vestigios de una vida interior siempre vigilante.
+            </p>
+            <p>
+                El encuentro con Joey rompe este frÉ¡gil equilibrio. En él, Sisley reconoce el reflejo de sus propios
+                treinta aÉ±os:
+                una resonancia É­ntima, una unidad profunda, una sinergia inesperada. A través de la mÉºsica ”que actÉºa
+                como un
+                eco vibrante de su pasado”, Sisley vuelve a abrir las puertas de su memoria.
+                ConfÉ­a entonces a Joey su historia, fragmento tras fragmento, con la esperanza de encontrar lo que le
+                falta hace tanto tiempo.
+            </p>
+            <p>
+                Entre silencios compartidos y confidencias susurradas, su relaciÉ³n se convierte en un espacio suspendido
+                donde el pasado y el presente se encuentran.
+                Cada nota, cada mirada, cada palabra revive una presencia enterrada.
+                Sisley comprende poco a poco que ciertos encuentros no vienen a llenar una ausencia, sino a darle
+                finalmente un sentido.
+            </p>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="index-es.html"
-                style="color: var(--gold); text-decoration: none; font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase;">←
-                Volver al inicio</a>
-        </div>
     </div>
 
     <footer>
-        <p>© <span id="current-year"></span> simonlero.com — Todos los derechos reservados</p>
+        <p>© <span id="current-year"></span> simonlero.com ” Todos los derechos reservados</p>
     </footer>
 
     <script>

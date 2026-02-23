@@ -52,11 +52,6 @@
 
     // Ne pas rediriger si l'application est en mode "autonome" (PWA installée)
     const isPWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-
-    if (!isPWA && (window.location.hostname.includes('simonlero.com')) &&
-      new URLSearchParams(window.location.search).get('redirection') !== 'false') {
-      window.location.replace('https://www.simonlero.com/livre-accueil.html');
-    }
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="msvalidate.01" content="35E5408E2A8BCF95460F1FAFFAB8BED6790A" />
@@ -580,9 +575,9 @@
       </div>
 
       <div class="header">
-        <div class="title"><span class="gold">MON</span> UNIVERS.ca</div>
+        <div class="title"><span class="gold">SIMON</span> LERO.com</div>
         <a href="https://www.mon-univers.ca/index.html"
-          style="font-size: 11px; color: #fff; opacity: 0.8; margin-top: -4px; letter-spacing: 0.1em; font-weight: 300; text-decoration: none; display: block;">
+          style="font-size: 11px; color: var(--gold); opacity: 0.9; margin-top: -4px; letter-spacing: 0.15em; font-weight: 700; text-decoration: underline; display: block; text-transform: uppercase;">
           VISITER MA VITRINE PERSONNELLE
         </a>
         <div class="top-links">

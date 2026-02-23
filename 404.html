@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Perdu dans l'espace ?</title>
+    <title>404 — Perdu dans l'espace ?</title>
     <style>
         :root {
             --bg: #050505;
@@ -38,30 +38,17 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 20px;
         }
 
-        /* STARS EFFECT */
         body::before {
             content: "";
             position: fixed;
             inset: 0;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-            background-size: 4px 4px;
-            opacity: 0.3;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.06;
             pointer-events: none;
-            animation: twinkle 5s infinite ease-in-out;
-        }
-
-        @keyframes twinkle {
-
-            0%,
-            100% {
-                opacity: 0.3;
-            }
-
-            50% {
-                opacity: 0.5;
-            }
+            z-index: 1000;
         }
 
         h1 {
@@ -69,7 +56,6 @@
             font-weight: 700;
             color: var(--gold);
             margin-bottom: 20px;
-            line-height: 1;
             text-shadow: 0 0 20px rgba(216, 178, 90, 0.4);
         }
 
@@ -79,45 +65,59 @@
             margin: 0 auto 40px;
             line-height: 1.5;
             opacity: 0.9;
-            padding: 0 20px;
         }
 
         .btn-return {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 15px 40px;
             background: transparent;
-            border: 2px solid var(--gold);
+            border: 1px solid var(--gold);
             color: var(--gold);
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
-            border-radius: 50px;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .btn-return:hover {
             background: var(--gold);
             color: #000;
-            box-shadow: 0 0 20px rgba(216, 178, 90, 0.6);
-            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(216, 178, 90, 0.4);
+            transform: translateY(-5px);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: #444;
+            margin: 0;
+            text-transform: uppercase;
         }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
     <h1>404</h1>
+    <p>Cette page semble avoir disparu dans les méandres de l'univers.</p>
+    <a href="index.html" class="btn-return">Retour à l'accueil</a>
 
-    <div class="message-container">
-        <p> <span id="current-year"></span> simonlero.com  Tous droits ráservás</p>
+    <footer>
+        <p>© <span id="current-year"></span> simonlero.com — Tous droits réservés</p>
     </footer>
-    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
-

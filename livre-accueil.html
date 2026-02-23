@@ -151,7 +151,8 @@
       left: 80px;
       right: 80px;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
+      /* Force selector to stay right */
       align-items: center;
       z-index: 200;
     }
@@ -179,7 +180,8 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       transition: var(--transition);
-      opacity: 0.7;
+      opacity: 0.85;
+      /* Increased opacity */
     }
 
     .lang-selector a:hover {
@@ -454,6 +456,8 @@
         top: 55px;
         left: 30px;
         right: 30px;
+        justify-content: flex-end;
+        /* Keep selector right on tablets */
       }
 
       .brand-logo {
@@ -519,7 +523,7 @@
 
       <div class="poetic-box">
         <p>Quand tout se tait, quelque chose commence...</p>
-        <p><em>Une symphonie de silences partagés entre l™ombre et la lumià¨re.</em></p>
+        <p><em>Une symphonie de silences partagés entre l'ombre et la lumière.</em></p>
         <p
           style="margin-top: 15px; font-size: 0.8rem; letter-spacing: 0.1em; opacity: 0.6; font-family: 'Cinzel', serif;">
           Bienvenue dans l'univers de Simon Lero.</p>
@@ -528,7 +532,7 @@
       <div class="cta-container">
         <a href="livre.html" class="cta-btn">
           <span class="main-txt">Entrer dans l'Oeuvre</span>
-          <span class="sub-txt">Collection Exclusive & à‰ditions</span>
+          <span class="sub-txt">Collection Exclusive & Éditions</span>
           <div class="arrow"></div>
         </a>
       </div>

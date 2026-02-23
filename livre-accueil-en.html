@@ -153,7 +153,8 @@
       left: 80px;
       right: 80px;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
+      /* Force selector to stay right */
       align-items: center;
       z-index: 200;
     }
@@ -181,7 +182,8 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       transition: var(--transition);
-      opacity: 0.7;
+      opacity: 0.85;
+      /* Increased opacity */
     }
 
     .lang-selector a:hover {
@@ -455,6 +457,8 @@
         top: 55px;
         left: 30px;
         right: 30px;
+        justify-content: flex-end;
+        /* Keep selector right on tablets */
       }
 
       .brand-logo {
@@ -504,8 +508,8 @@
   <header class="top-nav">
     <div class="brand-logo">Mon Univers</div>
     <div class="lang-selector">
-      <a href="livre-accueil.html">Franà§ais</a>
-      <a href="livre-accueil-es.html">Espaà±ol</a>
+      <a href="livre-accueil.html">Français</a>
+      <a href="livre-accueil-es.html">Español</a>
     </div>
   </header>
 

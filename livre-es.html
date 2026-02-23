@@ -1,899 +1,899 @@
 ﻿<!DOCTYPE html>
-<htmllang="es" class="notranslate" translate="no">
+<html lang="es" class="notranslate" translate="no">
 
 <head>
- à <meta charset="UTF-8">
- à <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
- à <link rel="manifest" href="manifest.json?v=11">
- à <link rel="apple-touch-icon" href="apple-touch-icon.png">
- à <meta name="theme-color" content="#000000">
- à <meta name="mobile-web-app-capable" content="yes">
- à <meta name="apple-mobile-web-app-capable" content="yes">
- à <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
- à <meta name="google" content="notranslate">
- à <meta name="robots" content="index, follow">
- à <meta name="msvalidate.01" content="35E5408E2A8BCF95460F1FAFFAB8BED6790A" />
- à <meta name="description"
- à à à content="Descubre 'Encuentros a la luz de la luna' de Simon Lero, una novela psicológica que explora elamor y la búsqueda de uno mismo.">
- à <meta name="keywords"
- à à à content="Encuentros a la luz de la luna, Simon Lero, novela psicológica, amor, literatura, introspección, LGBT, libro">
-
- à <title>Simon Lero — Encuentros a la luz de la luna</title>
- à <link rel="canonical" href="https://www.simonlero.com/livre-es.html">
- à <link rel="alternate" hreflang="fr" href="https://www.simonlero.com/livre.html" />
- à <link rel="alternate" hreflang="en" href="https://www.simonlero.com/livre-en.html" />
- à <link rel="alternate" hreflang="es" href="https://www.simonlero.com/livre-es.html" />
- à <link rel="alternate" hreflang="x-default" href="https://www.simonlero.com/livre.html" />
-
- à <!-- Open Graph -->
- à <meta property="og:type" content="book">
- à <meta property="og:title" content="Encuentros a la Luz de la Luna - Simon Lero">
- à <meta property="og:description"
- à à à content="Descubre 'Encuentros a la Luz de la Luna' de Simon Lero, una novela psicológica sobre elamor y la búsqueda de uno mismo.">
- à <meta property="og:image" content="https://www.simonlero.com/couverture-livre-es.png">
- à <meta property="og:locale" content="es_ES">
-
- à <link rel="alternate" hreflang="fr" href="https://www.simonlero.com/livre.html" />
- à <link rel="alternate" hreflang="en" href="https://www.simonlero.com/livre-en.html" />
- à <link rel="alternate" hreflang="es" href="https://www.simonlero.com/livre-es.html" />
- à <link rel="canonical" href="https://www.simonlero.com/livre-es.html">
-
- à <!-- Fonts -->
- à <link
- à à à href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600;800&display=swap"
- à à à rel="stylesheet">
-
- à <style>
- à à à :root {
- à à à à à --gold: #d8b25a;
- à à à à à --gold-bright: #f1d592;
- à à à à à --gold-bright: #eec165;
- à à à à à --bg: #050505;
- à à à à à --bg-card: #0c0c0c;
- à à à à à --text: #B0B0B0;
- à à à à à --text-dim: #888;
- à à à à à --border: rgba(201, 162, 77, 0.12);
- à à à à à --transition: all0.6s cubic-bezier(0.16, 1, 0.3, 1);
- à à à }
-
- à à à * {
- à à à à à box-sizing: border-box;
- à à à à à margin: 0;
- à à à à à padding: 0;
- à à à }
-
- à à à body {
- à à à à à font-family: 'Inter', sans-serif;
- à à à à à line-height: 1.5;
- à à à à à background-color: var(--bg);
- à à à à à color: var(--text);
- à à à à à -webkit-font-smoothing: antialiased;
- à à à à à overflow-x: hidden;
- à à à à à hyphens: auto;
- à à à à à -webkit-hyphens: auto;
- à à à }
-
- à à à /* Grain/Noise Overlay */
- à à à body::before {
- à à à à à content: "";
- à à à à à position: fixed;
- à à à à à top: 0;
- à à à à à left: 0;
- à à à à à width: 100%;
- à à à à à height: 100%;
- à à à à à background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
- à à à à à opacity: 0.04;
- à à à à à pointer-events: none;
- à à à à à z-index: 1000;
- à à à }
-
- à à à /* SCREEN EDGES DECORATIONS */
- à à à .edge-branding {
- à à à à à position: fixed;
- à à à à à top: 0;
- à à à à à bottom: 0;
- à à à à à width: 60px;
- à à à à à display: flex;
- à à à à à flex-direction: column;
- à à à à à justify-content: center;
- à à à à à align-items: center;
- à à à à à z-index: 100;
- à à à à à pointer-events: none;
- à à à }
-
- à à à @media (max-width: 900px) {
- à à à à à .edge-branding {
- à à à à à à à display: none;
- à à à à à }
- à à à }
-
- à à à .hero {
- à à à à à position: relative;
- à à à à à padding: 320px 40px 100px;
- à à à à à display: flex;
- à à à à à flex-direction: column;
- à à à à à align-items: flex-start;
- à à à à à max-width: 1400px;
- à à à à à margin: 0 auto;
- à à à à à z-index: 10;
- à à à à à text-align: left;
- à à à à à overflow: visible;
- à à à }
-
- à à à .hero-background-title {
- à à à à à font-family: 'Inter', sans-serif;
- à à à à à font-size: clamp(8rem, 25vw, 24rem);
- à à à à à font-weight: 900;
- à à à à à color: rgba(216, 178, 90, 0.15);
- à à à à à -webkit-text-stroke: 1px rgba(216, 178, 90, 0.20);
- à à à à à position: absolute;
- à à à à à top: -40px;
- à à à à à left: 80px;
- à à à à à line-height: 0.7;
- à à à à à text-transform: uppercase;
- à à à à à z-index: -1;
- à à à à à pointer-events: none;
- à à à à à letter-spacing: -0.05em;
- à à à à à animation: slideInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1);
- à à à }
-
- à à à .title-line {
- à à à à à display: block;
- à à à à à line-height: 0.9;
- à à à à à text-transform: uppercase;
- à à à }
-
- à à à .title-line-1 {
- à à à à à font-family: 'Inter', sans-serif;
- à à à à à font-size: clamp(3rem, 10vw, 8rem);
- à à à à à font-weight: 900;
- à à à à à color: #fff;
- à à à à à letter-spacing: -0.05em;
- à à à à à animation: slideInLeft 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
- à à à }
-
- à à à .title-line-2 {
- à à à à à font-family: 'Cinzel', serif;
- à à à à à font-size: clamp(3rem, 10vw, 8rem);
- à à à à à font-weight: 800;
- à à à à à color: var(--gold);
- à à à à à margin-left: clamp(1rem, 5vw, 100px);
- à à à à à animation: slideInLeft 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
- à à à à à opacity: 0;
- à à à }
-
- à à à @keyframes slideInLeft {
- à à à à à from {
- à à à à à à à opacity: 0;
- à à à à à à à transform: translateX(-150px);
- à à à à à }
-
- à à à à à to {
- à à à à à à à opacity: 1;
- à à à à à à à transform: translateX(0);
- à à à à à }
- à à à }
-
- à à à .edge-left {
- à à à à à left: 0;
- à à à à à border-right: 1px solidrgba(201, 162, 77, 0.1);
- à à à }
-
- à à à .edge-right {
- à à à à à right: 0;
- à à à à à border-left: 1px solidrgba(201, 162, 77, 0.1);
- à à à }
-
- à à à .edge-text {
- à à à à à font-family: 'Cinzel', serif;
- à à à à à font-size: 0.65rem;
- à à à à à letter-spacing: 0.5em;
- à à à à à color: var(--gold);
- à à à à à text-transform: uppercase;
- à à à à à white-space: nowrap;
- à à à à à transform: rotate(-90deg);
- à à à à à opacity: 0.4;
- à à à }
-
- à à à .corner-glow {
- à à à à à position: fixed;
- à à à à à width: 40vw;
- à à à à à height: 40vw;
- à à à à à background: radial-gradient(circle, rgba(201, 162, 77, 0.03) 0%, transparent 70%);
- à à à à à pointer-events: none;
- à à à à à z-index: 1;
- à à à }
-
- à à à .glow-tl{
- à à à à à top: -10vw;
- à à à à à left: -10vw;
- à à à }
-
- à à à .glow-br {
- à à à à à bottom: -10vw;
- à à à à à right: -10vw;
- à à à }
-
- à à à .container {
- à à à à à max-width: 1200px;
- à à à à à margin: 0 auto;
- à à à à à padding: 0 40px;
- à à à à à position: relative;
- à à à à à z-index: 10;
- à à à }
-
- à à à h1,
- à à à h2,
- à à à h3,
- à à à .label{
- à à à à à font-family: 'Cinzel', serif;
- à à à à à text-transform: uppercase;
- à à à à à letter-spacing: 0.2em;
- à à à }
-
- à à à .label{
- à à à à à font-size: 0.7rem;
- à à à à à color: #A0A0A0;
- à à à à à margin-bottom: 20px;
- à à à à à display: block;
- à à à à à opacity: 0.9;
- à à à }
-
- à à à /* Revealanimations */
- à à à .reveal{
- à à à à à opacity: 0;
- à à à à à transform: translateY(30px);
- à à à à à transition: var(--transition);
- à à à }
-
- à à à .reveal.active {
- à à à à à opacity: 1;
- à à à à à transform: translateY(0);
- à à à }
-
- à à à /* Hero Section */
- à à à .hero-stage {
- à à à à à min-height: 95vh;
- à à à à à display: flex;
- à à à à à align-items: flex-start;
- à à à à à padding: 300px 0 40px;
- à à à à à position: relative;
- à à à à à overflow: hidden;
- à à à }
-
- à à à .grid-stage {
- à à à à à display: flex;
- à à à à à flex-direction: column;
- à à à à à align-items: flex-start;
- à à à à à gap: 60px;
- à à à }
-
- à à à .hero-presentation-grid{
- à à à à à display: grid;
- à à à à à grid-template-columns: 1fr;
- à à à à à gap: 60px;
- à à à à à width: 100%;
- à à à à à align-items: center;
- à à à }
-
- à à à @media (min-width: 1001px) {
- à à à à à .hero-presentation-grid{
- à à à à à à à grid-template-columns: 1.1fr 1fr;
- à à à à à à à gap: 80px;
- à à à à à }
-
- à à à à à .hero-summary {
- à à à à à à à margin-top: 0 !important;
- à à à à à à à text-align: left;
- à à à à à }
-
- à à à à à .hero-summary p {
- à à à à à à à text-align: left;
- à à à à à }
-
- à à à à à .book-frame {
- à à à à à à à justify-self: center;
- à à à à à }
- à à à }
-
- à à à .book-frame {
- à à à à à position: relative;
- à à à à à padding: 15px;
- à à à à à background: rgba(255, 255, 255, 0.02);
- à à à à à border: 1px solidvar(--border);
- à à à à à box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
- à à à à à width: 100%;
- à à à à à max-width: 400px;
- à à à }
-
- à à à .book-frame img {
- à à à à à width: 100%;
- à à à à à display: block;
- à à à à à box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
- à à à à à transition: var(--transition);
- à à à }
-
- à à à .hero-summary {
- à à à à à font-size: 1.15rem;
- à à à à à font-weight: 300;
- à à à à à color: #A0A0A0;
- à à à à à margin-top: 50px;
- à à à à à margin-bottom: 40px;
- à à à à à line-height: 1.7;
- à à à }
-
- à à à .hero-summary p {
- à à à à à text-align: justify;
- à à à à à hyphens: auto;
- à à à à à -webkit-hyphens: auto;
- à à à à à margin-bottom: 15px;
- à à à }
-
- à à à .cta-main {
- à à à à à display: inline-flex;
- à à à à à align-items: center;
- à à à à à gap: 12px;
- à à à à à margin-top: 25px;
- à à à à à padding: 18px 40px;
- à à à à à background: transparent;
- à à à à à border: 1px solidtransparent;
- à à à à à /* No more sandwich lines */
- à à à à à color: var(--gold);
- à à à à à text-decoration: none;
- à à à à à font-family: 'Cinzel', serif;
- à à à à à font-weight: 700;
- à à à à à text-transform: uppercase;
- à à à à à letter-spacing: 4px;
- à à à à à transition: all0.5s cubic-bezier(0.4, 0, 0.2, 1);
- à à à à à position: relative;
- à à à }
-
- à à à .cta-main:hover {
- à à à à à color: #fff;
- à à à à à transform: translateY(-5px);
- à à à à à text-shadow: 0 0 15px rgba(216, 178, 90, 0.4);
- à à à }
-
- à à à .cta-main::after {
- à à à à à content: '';
- à à à à à position: absolute;
- à à à à à bottom: 10px;
- à à à à à left: 50%;
- à à à à à width: 0;
- à à à à à height: 1px;
- à à à à à background: var(--gold);
- à à à à à transition: all0.5s ease;
- à à à à à transform: translateX(-50%);
- à à à }
-
- à à à .cta-main:hover::after {
- à à à à à width: 60%;
- à à à à à background: #fff;
- à à à }
-
- à à à .btn-author {
- à à à à à display: inline-block;
- à à à à à color: var(--gold);
- à à à à à font-family: 'Cinzel', serif;
- à à à à à text-decoration: none;
- à à à à à position: relative;
- à à à à à padding-bottom: 5px;
- à à à à à transition: all0.4s ease;
- à à à à à margin-top: 10px;
- à à à }
-
- à à à .btn-author::after {
- à à à à à content: '';
- à à à à à position: absolute;
- à à à à à bottom: 0px;
- à à à à à left: 50%;
- à à à à à width: 0;
- à à à à à height: 1px;
- à à à à à background: var(--gold);
- à à à à à transition: all0.4s ease;
- à à à à à transform: translateX(-50%);
- à à à }
-
- à à à .btn-author:hover {
- à à à à à color: #fff;
- à à à à à transform: translateY(-3px);
- à à à à à text-shadow: 0 0 10px rgba(216, 178, 90, 0.4);
- à à à }
-
- à à à .btn-author:hover::after {
- à à à à à width: 100%;
- à à à à à background: #fff;
- à à à }
-
- à à à /* REFINEdAUTHOR SECTION - Large Portrait */
- à à à .author-section {
- à à à à à padding: 80px 0;
- à à à à à border-top: 1px solidvar(--border);
- à à à }
-
- à à à .author-portrait-grid{
- à à à à à display: grid;
- à à à à à grid-template-columns: 1.2fr 1fr;
- à à à à à gap: 80px;
- à à à à à align-items: center;
- à à à }
-
- à à à .author-info-large h2 {
- à à à à à font-size: 2.2rem;
- à à à à à color: var(--gold);
- à à à à à margin-bottom: 25px;
- à à à }
-
- à à à .author-info-large p {
- à à à à à color: #888;
- à à à à à font-size: 1.15rem;
- à à à à à line-height: 1.8;
- à à à à à font-style: italic;
- à à à à à margin-bottom: 30px;
- à à à }
-
- à à à .author-photo-frame {
- à à à à à position: relative;
- à à à à à border: 1px solidvar(--gold);
- à à à à à padding: 10px;
- à à à à à background: #000;
- à à à à à box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
- à à à à à max-width: 350px;
- à à à à à justify-self: center;
- à à à }
-
- à à à .author-photo-frame img {
- à à à à à width: 100%;
- à à à à à display: block;
- à à à à à filter: grayscale(1);
- à à à à à transition: var(--transition);
- à à à }
-
- à à à .author-photo-frame:hover img {
- à à à à à filter: grayscale(0);
- à à à }
-
- à à à /* Video & Genesis Grid*/
- à à à .discovery-grid{
- à à à à à display: grid;
- à à à à à grid-template-columns: 1fr 1fr;
- à à à à à gap: 60px;
- à à à à à padding: 60px 0;
- à à à }
-
- à à à .video-box {
- à à à à à border: 1px solidvar(--border);
- à à à à à border-radius: 2px;
- à à à à à overflow: hidden;
- à à à à à background: #000;
- à à à à à transition: var(--transition);
- à à à }
-
- à à à @media (max-width: 1000px) {
- à à à à à .video-box {
- à à à à à à à width: 80%;
- à à à à à à à margin: 0 auto;
- à à à à à }
- à à à }
-
- à à à .video-legend{
- à à à à à font-family: 'Cinzel', serif;
- à à à à à font-size: 0.8rem;
- à à à à à color: var(--gold);
- à à à à à text-align: center;
- à à à à à margin-top: 15px;
- à à à à à letter-spacing: 0.1em;
- à à à à à opacity: 0.9;
- à à à à à display: block;
- à à à }
-
- à à à .video-box video {
- à à à à à width: 100%;
- à à à à à display: block;
- à à à }
-
- à à à .discovery-text p {
- à à à à à color: #888;
- à à à à à font-weight: 300;
- à à à à à line-height: 1.7;
- à à à à à text-align: justify;
- à à à à à margin-bottom: 20px;
- à à à à à hyphens: auto;
- à à à à à -webkit-hyphens: auto;
- à à à }
-
- à à à .author-info-large p {
- à à à à à font-size: 1.2rem;
- à à à à à font-weight: 300;
- à à à à à color: #bbb;
- à à à à à line-height: 1.8;
- à à à à à margin-bottom: 30px;
- à à à à à text-align: justify;
- à à à à à hyphens: auto;
- à à à à à -webkit-hyphens: auto;
- à à à }
-
- à à à /* MASSIVE SHOP CARDS */
- à à à .shop-section {
- à à à à à padding-bottom: 100px;
- à à à }
-
- à à à .shop-section .label{
- à à à à à font-size: 1.15rem;
- à à à à à font-weight: 700;
- à à à à à color: var(--gold);
- à à à à à letter-spacing: 4px;
- à à à à à position: relative;
- à à à à à padding-bottom: 15px;
- à à à à à display: inline-block;
- à à à à à left: 50%;
- à à à à à transform: translateX(-50%);
- à à à à à margin-bottom: 60px;
- à à à }
-
- à à à .shop-section .label::after {
- à à à à à content: '';
- à à à à à position: absolute;
- à à à à à bottom: 0;
- à à à à à left: 50%;
- à à à à à transform: translateX(-50%);
- à à à à à width: 100px;
- à à à à à height: 1px;
- à à à à à background: radial-gradient(circle, var(--gold) 0%, transparent 80%);
- à à à }
-
- à à à .shop-grid{
- à à à à à display: grid;
- à à à à à grid-template-columns: repeat(2, 1fr);
- à à à à à gap: 25px;
- à à à à à max-width: 950px;
- à à à à à margin: 0 auto;
- à à à }
-
- à à à .shop-card{
- à à à à à background: var(--bg-card);
- à à à à à border: 1px solidvar(--border);
- à à à à à padding: 40px 35px;
- à à à à à text-decoration: none;
- à à à à à color: #A0A0A0;
- à à à à à border-radius: 4px;
- à à à à à transition: var(--transition);
- à à à à à display: flex;
- à à à à à flex-direction: row;
- à à à à à align-items: center;
- à à à à à text-align: left;
- à à à à à gap: 30px;
- à à à à à position: relative;
- à à à à à overflow: hidden;
- à à à }
-
- à à à .shop-card:hover {
- à à à à à border-color: var(--gold);
- à à à à à transform: translateY(-10px);
- à à à à à background: #111;
- à à à }
-
- à à à .shop-cardsvg,
- à à à .shop-cardimg {
- à à à à à width: 48px;
- à à à à à height: 48px;
- à à à à à object-fit: contain;
- à à à à à flex-shrink: 0;
- à à à à à filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
- à à à }
-
- à à à .shop-cardsvg {
- à à à à à stroke: var(--gold);
- à à à à à stroke-width: 1.2;
- à à à }
-
- à à à .shop-card.platform {
- à à à à à font-family: 'Cinzel', serif;
- à à à à à font-size: 0.65rem;
- à à à à à color: var(--gold);
- à à à à à letter-spacing: 0.3em;
- à à à à à margin-bottom: 5px;
- à à à à à opacity: 0.6;
- à à à }
-
- à à à .shop-card.title {
- à à à à à font-size: 1.5rem;
- à à à à à font-weight: 800;
- à à à à à line-height: 1.1;
- à à à à à white-space: nowrap;
- à à à }
-
- à à à .shop-card.tag {
- à à à à à font-size: 0.8rem;
- à à à à à color: #555;
- à à à à à margin-top: 8px;
- à à à }
-
- à à à .shop-card.card-content {
- à à à à à display: flex;
- à à à à à flex-direction: column;
- à à à à à justify-content: center;
- à à à }
-
- à à à /* Footer Nav */
- à à à .footer-nav {
- à à à à à text-align: center;
- à à à à à margin-top: 80px;
- à à à }
-
- à à à .footer-nav a {
- à à à à à color: var(--gold);
- à à à à à text-decoration: none;
- à à à à à font-family: 'Cinzel', serif;
- à à à à à font-size: 0.8rem;
- à à à à à margin: 0 25px;
- à à à à à opacity: 0.5;
- à à à à à transition: all0.5s cubic-bezier(0.4, 0, 0.2, 1);
- à à à à à position: relative;
- à à à à à display: inline-block;
- à à à à à padding-bottom: 5px;
- à à à }
-
- à à à .footer-nav a:hover {
- à à à à à opacity: 1;
- à à à à à transform: translateY(-3px);
- à à à à à text-shadow: 0 0 10px rgba(216, 178, 90, 0.4);
- à à à }
-
- à à à .footer-nav a::after {
- à à à à à content: '';
- à à à à à position: absolute;
- à à à à à bottom: 0px;
- à à à à à left: 50%;
- à à à à à width: 0;
- à à à à à height: 1px;
- à à à à à background: var(--gold);
- à à à à à transition: all0.5s ease;
- à à à à à transform: translateX(-50%);
- à à à }
-
- à à à .footer-nav a:hover::after {
- à à à à à width: 80%;
- à à à à à background: #fff;
- à à à }
-
- à à à footer {
- à à à à à padding: 60px 0;
- à à à à à text-align: center;
- à à à à à border-top: 1px solidvar(--border);
- à à à à à color: #888;
- à à à à à font-size: 0.75rem;
- à à à à à letter-spacing: 0.1em;
- à à à }
-
- à à à /* Testimonials Section */
- à à à .testimonials-area {
- à à à à à margin-top: 80px;
- à à à à à width: 100%;
- à à à à à display: flex;
- à à à à à flex-direction: row;
- à à à à à justify-content: space-between;
- à à à à à gap: 40px;
- à à à à à opacity: 0;
- à à à à à transform: translateY(30px);
- à à à à à animation: reveal1.2s forwards;
- à à à à à animation-delay: 0.4s;
- à à à à à max-width: 1200px;
- à à à à à margin-left: auto;
- à à à à à margin-right: auto;
- à à à }
-
- à à à .testimonial-card{
- à à à à à position: relative;
- à à à à à text-align: center;
- à à à à à padding: 20px 10px;
- à à à à à flex: 1;
- à à à }
-
- à à à .testimonial-card::before {
- à à à à à content: '“';
- à à à à à position: absolute;
- à à à à à left: 50%;
- à à à à à top: -45px;
- à à à à à transform: translateX(-50%);
- à à à à à font-size: 150px;
- à à à à à font-family: 'Cinzel', serif;
- à à à à à color: var(--gold);
- à à à à à opacity: 0.12;
- à à à à à line-height: 1;
- à à à }
-
- à à à .testimonial-text {
- à à à à à font-size: 1.05rem;
- à à à à à font-style: italic;
- à à à à à color: #dfdfdf;
- à à à à à line-height: 1.8;
- à à à à à margin-bottom: 20px;
- à à à à à font-weight: 300;
- à à à à à letter-spacing: 0.5px;
- à à à }
-
- à à à .testimonial-author {
- à à à à à font-size: 0.8rem;
- à à à à à text-transform: uppercase;
- à à à à à letter-spacing: 4px;
- à à à à à color: var(--gold);
- à à à à à opacity: 0.9;
- à à à à à font-family: 'Cinzel', serif;
- à à à }
-
- à à à .testimonial-author::before {
- à à à à à content: '— ';
- à à à }
-
- à à à @media (max-width: 1023px) {
- à à à à à .testimonials-area {
- à à à à à à à flex-direction: column;
- à à à à à à à gap: 60px;
- à à à à à à à max-width: 500px;
- à à à à à à à margin-left: auto;
- à à à à à à à margin-right: auto;
- à à à à à }
-
- à à à à à .testimonial-card{
- à à à à à à à padding: 20px 0;
- à à à à à }
- à à à }
-
- à à à @media (max-width: 1000px) {
- à à à à à .edge-branding {
- à à à à à à à display: none;
- à à à à à }
-
- à à à à à .grid-stage,
- à à à à à .author-portrait-grid,
- à à à à à .discovery-grid{
- à à à à à à à grid-template-columns: 1fr;
- à à à à à à à gap: 40px;
- à à à à à }
-
- à à à à à .hero-stage {
- à à à à à à à padding: 180px 0 40px;
- à à à à à à à text-align: center;
- à à à à à à à display: block;
- à à à à à }
-
- à à à à à .hero-background-title {
- à à à à à à à left: -20px;
- à à à à à à à top: 20px;
- à à à à à à à font-size: clamp(8rem, 35vw, 15rem);
- à à à à à }
-
- à à à à à .hero-title {
- à à à à à à à font-size: clamp(1.6rem, 8vw, 2.3rem);
- à à à à à à à line-height: 1.1;
- à à à à à à à letter-spacing: 0.1em;
- à à à à à à à margin: 0 auto 30px !important;
- à à à à à à à word-wrap: break-word;
- à à à à à à à max-width: 100%;
- à à à à à }
-
- à à à à à .hero-summary {
- à à à à à à à font-size: 0.95rem;
- à à à à à à à text-align: center;
- à à à à à à à margin: 0 auto 40px !important;
- à à à à à à à max-width: 100%;
- à à à à à }
-
- à à à à à .book-frame {
- à à à à à à à max-width: 260px;
- à à à à à à à margin: 0 auto 30px;
- à à à à à }
-
- à à à à à .author-portrait-grid{
- à à à à à à à text-align: center;
- à à à à à }
-
- à à à à à .author-photo-frame {
- à à à à à à à max-width: 400px;
- à à à à à à à margin: 0 auto;
- à à à à à à à order: -1;
- à à à à à }
-
- à à à à à .container {
- à à à à à à à padding: 0 20px;
- à à à à à à à width: 100%;
- à à à à à à à overflow: visible;
- à à à à à }
-
- à à à à à .cta-main {
- à à à à à à à padding: 14px 30px;
- à à à à à à à font-size: 0.8rem;
- à à à à à }
-
- à à à à à /* Responsive Shop Grid*/
- à à à à à .shop-grid{
- à à à à à à à gap: 15px;
- à à à à à }
-
- à à à à à .shop-card{
- à à à à à à à flex-direction: column;
- à à à à à à à text-align: center;
- à à à à à à à padding: 30px 15px;
- à à à à à à à gap: 15px;
- à à à à à }
-
- à à à à à .shop-card.title {
- à à à à à à à font-size: 1.1rem;
- à à à à à }
-
- à à à à à .shop-card.tag {
- à à à à à à à font-size: 0.7rem;
- à à à à à }
-
- à à à à à /* Responsive Footer Nav */
- à à à à à .footer-nav {
- à à à à à à à margin-top: 50px;
- à à à à à à à display: flex;
- à à à à à à à flex-direction: column;
- à à à à à à à gap: 20px;
- à à à à à à à align-items: center;
- à à à à à }
-
- à à à à à .footer-nav a {
- à à à à à à à margin: 0;
- à à à à à à à font-size: 0.75rem;
- à à à à à à à opacity: 0.7;
- à à à à à à à width: 100%;
- à à à à à à à text-align: center;
- à à à à à }
- à à à }
- à </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="manifest" href="manifest.json?v=11">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate">
+  <meta name="robots" content="index, follow">
+  <meta name="msvalidate.01" content="35E5408E2A8BCF95460F1FAFFAB8BED6790A" />
+  <meta name="description"
+    content="Descubre 'Encuentros  la luz de la luna' de Simon Lero, una novela psicológica que explora elamor y la búsqueda de uno mismo.">
+  <meta name="keywords"
+    content="Encuentros  la luz de la luna, Simon Lero, novela psicológica, amor, literatura, introspección, LGBT, libro">
+
+  <title>Simon Lero — Encuentros  la luz de la luna</title>
+  <link rel="canonical" href="https://www.simonlero.com/livre-es.html">
+  <link rel="alternate" hreflang="fr" href="https://www.simonlero.com/livre.html" />
+  <link rel="alternate" hreflang="en" href="https://www.simonlero.com/livre-en.html" />
+  <link rel="alternate" hreflang="es" href="https://www.simonlero.com/livre-es.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.simonlero.com/livre.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="Encuentros  la Luz de la Luna - Simon Lero">
+  <meta property="og:description"
+    content="Descubre 'Encuentros  la Luz de la Luna' de Simon Lero, una novela psicológica sobre elamor y la búsqueda de uno mismo.">
+  <meta property="og:image" content="https://www.simonlero.com/couverture-livre-es.png">
+  <meta property="og:locale" content="es_ES">
+
+  <link rel="alternate" hreflang="fr" href="https://www.simonlero.com/livre.html" />
+  <link rel="alternate" hreflang="en" href="https://www.simonlero.com/livre-en.html" />
+  <link rel="alternate" hreflang="es" href="https://www.simonlero.com/livre-es.html" />
+  <link rel="canonical" href="https://www.simonlero.com/livre-es.html">
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #d8b25a;
+      --gold-bright: #f1d592;
+      --gold-bright: #eec165;
+      --bg: #050505;
+      --bg-card: #0c0c0c;
+      --text: #B0B0B0;
+      --text-dim: #888;
+      --border: rgba(201, 162, 77, 0.12);
+      --transition: all0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+      background-color: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    /* Grain/Noise Overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* SCREEN EDGES DECORATIONS */
+    .edge-branding {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    @media (max-width: 900px) {
+      .edge-branding {
+        display: none;
+      }
+    }
+
+    .hero {
+      position: relative;
+      padding: 320px 40px 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 1400px;
+      margin: 0 auto;
+      z-index: 10;
+      text-align: left;
+      overflow: visible;
+    }
+
+    .hero-background-title {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(8rem, 25vw, 24rem);
+      font-weight: 900;
+      color: rgba(216, 178, 90, 0.15);
+      -webkit-text-stroke: 1px rgba(216, 178, 90, 0.20);
+      position: absolute;
+      top: -40px;
+      left: 80px;
+      line-height: 0.7;
+      text-transform: uppercase;
+      z-index: -1;
+      pointer-events: none;
+      letter-spacing: -0.05em;
+      animation: slideInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .title-line {
+      display: block;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .title-line-1 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.05em;
+      animation: slideInLeft 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .title-line-2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: 800;
+      color: var(--gold);
+      margin-left: clamp(1rem, 5vw, 100px);
+      animation: slideInLeft 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+      opacity: 0;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-150px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .edge-left {
+      left: 0;
+      border-right: 1px solidrgba(201, 162, 77, 0.1);
+    }
+
+    .edge-right {
+      right: 0;
+      border-left: 1px solidrgba(201, 162, 77, 0.1);
+    }
+
+    .edge-text {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.5em;
+      color: var(--gold);
+      text-transform: uppercase;
+      white-space: nowrap;
+      transform: rotate(-90deg);
+      opacity: 0.4;
+    }
+
+    .corner-glow {
+      position: fixed;
+      width: 40vw;
+      height: 40vw;
+      background: radial-gradient(circle, rgba(201, 162, 77, 0.03) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .glow-tl{
+      top: -10vw;
+      left: -10vw;
+    }
+
+    .glow-br {
+      bottom: -10vw;
+      right: -10vw;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      position: relative;
+      z-index: 10;
+    }
+
+    h1,
+    h2,
+    h3,
+    .label{
+      font-family: 'Cinzel', serif;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    .label{
+      font-size: 0.7rem;
+      color: #A0A0A0;
+      margin-bottom: 20px;
+      display: block;
+      opacity: 0.9;
+    }
+
+    /* Revealanimations */
+    .reveal{
+      opacity: 0;
+      transform: translateY(30px);
+      transition: var(--transition);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero Section */
+    .hero-stage {
+      min-height: 95vh;
+      display: flex;
+      align-items: flex-start;
+      padding: 300px 0 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .grid-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 60px;
+    }
+
+    .hero-presentation-grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+      width: 100%;
+      align-items: center;
+    }
+
+    @media (min-width: 1001px) {
+      .hero-presentation-grid{
+        grid-template-columns: 1.1fr 1fr;
+        gap: 80px;
+      }
+
+      .hero-summary {
+        margin-top: 0 !important;
+        text-align: left;
+      }
+
+      .hero-summary p {
+        text-align: left;
+      }
+
+      .book-frame {
+        justify-self: center;
+      }
+    }
+
+    .book-frame {
+      position: relative;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .book-frame img {
+      width: 100%;
+      display: block;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+      transition: var(--transition);
+    }
+
+    .hero-summary {
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: #A0A0A0;
+      margin-top: 50px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .hero-summary p {
+      text-align: justify;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      margin-bottom: 15px;
+    }
+
+    .cta-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 25px;
+      padding: 18px 40px;
+      background: transparent;
+      border: 1px solidtransparent;
+      /* No more sandwich lines */
+      color: var(--gold);
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .cta-main:hover {
+      color: #fff;
+      transform: translateY(-5px);
+      text-shadow: 0 0 15px rgba(216, 178, 90, 0.4);
+    }
+
+    .cta-main::after {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: all 0.5s ease;
+      transform: translateX(-50%);
+    }
+
+    .cta-main:hover::after {
+      width: 60%;
+      background: #fff;
+    }
+
+    .btn-author {
+      display: inline-block;
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 5px;
+      transition: all 0.4s ease;
+      margin-top: 10px;
+    }
+
+    .btn-author::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: all 0.4s ease;
+      transform: translateX(-50%);
+    }
+
+    .btn-author:hover {
+      color: #fff;
+      transform: translateY(-3px);
+      text-shadow: 0 0 10px rgba(216, 178, 90, 0.4);
+    }
+
+    .btn-author:hover::after {
+      width: 100%;
+      background: #fff;
+    }
+
+    /* REFINEdAUTHOR SECTION - Large Portrait */
+    .author-section {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .author-portrait-grid{
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .author-info-large h2 {
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 25px;
+    }
+
+    .author-info-large p {
+      color: #888;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+
+    .author-photo-frame {
+      position: relative;
+      border: 1px solid var(--gold);
+      padding: 10px;
+      background: #000;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+      max-width: 350px;
+      justify-self: center;
+    }
+
+    .author-photo-frame img {
+      width: 100%;
+      display: block;
+      filter: grayscale(1);
+      transition: var(--transition);
+    }
+
+    .author-photo-frame:hover img {
+      filter: grayscale(0);
+    }
+
+    /* Video & Genesis Grid*/
+    .discovery-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      padding: 60px 0;
+    }
+
+    .video-box {
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      background: #000;
+      transition: var(--transition);
+    }
+
+    @media (max-width: 1000px) {
+      .video-box {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    .video-legend{
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      color: var(--gold);
+      text-align: center;
+      margin-top: 15px;
+      letter-spacing: 0.1em;
+      opacity: 0.9;
+      display: block;
+    }
+
+    .video-box video {
+      width: 100%;
+      display: block;
+    }
+
+    .discovery-text p {
+      color: #888;
+      font-weight: 300;
+      line-height: 1.7;
+      text-align: justify;
+      margin-bottom: 20px;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    .author-info-large p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: #bbb;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      text-align: justify;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    /* MASSIVE SHOP CARDS */
+    .shop-section {
+      padding-bottom: 100px;
+    }
+
+    .shop-section .label{
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 4px;
+      position: relative;
+      padding-bottom: 15px;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 60px;
+    }
+
+    .shop-section .label::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 1px;
+      background: radial-gradient(circle, var(--gold) 0%, transparent 80%);
+    }
+
+    .shop-grid{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .shop-card{
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 40px 35px;
+      text-decoration: none;
+      color: #A0A0A0;
+      border-radius: 4px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+      gap: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shop-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-10px);
+      background: #111;
+    }
+
+    .shop-cardsvg,
+    .shop-cardimg {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+    }
+
+    .shop-cardsvg {
+      stroke: var(--gold);
+      stroke-width: 1.2;
+    }
+
+    .shop-card.platform {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      color: var(--gold);
+      letter-spacing: 0.3em;
+      margin-bottom: 5px;
+      opacity: 0.6;
+    }
+
+    .shop-card.title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .shop-card.tag {
+      font-size: 0.8rem;
+      color: #555;
+      margin-top: 8px;
+    }
+
+    .shop-card.card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Footer Nav */
+    .footer-nav {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .footer-nav a {
+      color: var(--gold);
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      margin: 0 25px;
+      opacity: 0.5;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .footer-nav a:hover {
+      opacity: 1;
+      transform: translateY(-3px);
+      text-shadow: 0 0 10px rgba(216, 178, 90, 0.4);
+    }
+
+    .footer-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: all 0.5s ease;
+      transform: translateX(-50%);
+    }
+
+    .footer-nav a:hover::after {
+      width: 80%;
+      background: #fff;
+    }
+
+    footer {
+      padding: 60px 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: #888;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+    }
+
+    /* Testimonials Section */
+    .testimonials-area {
+      margin-top: 80px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 40px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: reveal1.2s forwards;
+      animation-delay: 0.4s;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .testimonial-card{
+      position: relative;
+      text-align: center;
+      padding: 20px 10px;
+      flex: 1;
+    }
+
+    .testimonial-card::before {
+      content: '“';
+      position: absolute;
+      left: 50%;
+      top: -45px;
+      transform: translateX(-50%);
+      font-size: 150px;
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      opacity: 0.12;
+      line-height: 1;
+    }
+
+    .testimonial-text {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #dfdfdf;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    .testimonial-author {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--gold);
+      opacity: 0.9;
+      font-family: 'Cinzel', serif;
+    }
+
+    .testimonial-author::before {
+      content: '— ';
+    }
+
+    @media (max-width: 1023px) {
+      .testimonials-area {
+        flex-direction: column;
+        gap: 60px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .testimonial-card{
+        padding: 20px 0;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .edge-branding {
+        display: none;
+      }
+
+      .grid-stage,
+      .author-portrait-grid,
+      .discovery-grid{
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-stage {
+        padding: 180px 0 40px;
+        text-align: center;
+        display: block;
+      }
+
+      .hero-background-title {
+        left: -20px;
+        top: 20px;
+        font-size: clamp(8rem, 35vw, 15rem);
+      }
+
+      .hero-title {
+        font-size: clamp(1.6rem, 8vw, 2.3rem);
+        line-height: 1.1;
+        letter-spacing: 0.1em;
+        margin: 0 auto 30px !important;
+        word-wrap: break-word;
+        max-width: 100%;
+      }
+
+      .hero-summary {
+        font-size: 0.95rem;
+        text-align: center;
+        margin: 0 auto 40px !important;
+        max-width: 100%;
+      }
+
+      .book-frame {
+        max-width: 260px;
+        margin: 0 auto 30px;
+      }
+
+      .author-portrait-grid{
+        text-align: center;
+      }
+
+      .author-photo-frame {
+        max-width: 400px;
+        margin: 0 auto;
+        order: -1;
+      }
+
+      .container {
+        padding: 0 20px;
+        width: 100%;
+        overflow: visible;
+      }
+
+      .cta-main {
+        padding: 14px 30px;
+        font-size: 0.8rem;
+      }
+
+      /* Responsive Shop Grid*/
+      .shop-grid{
+        gap: 15px;
+      }
+
+      .shop-card{
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 15px;
+        gap: 15px;
+      }
+
+      .shop-card.title {
+        font-size: 1.1rem;
+      }
+
+      .shop-card.tag {
+        font-size: 0.7rem;
+      }
+
+      /* Responsive Footer Nav */
+      .footer-nav {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .footer-nav a {
+        margin: 0;
+        font-size: 0.75rem;
+        opacity: 0.7;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
- à <!-- FIXEdDECORATIONS -->
- à <div class="corner-glow glow-tl"></div>
- à <div class="corner-glow glow-br"></div>
+  <!-- FIXEdDECORATIONS -->
+  <div class="corner-glow glow-tl"></div>
+  <div class="corner-glow glow-br"></div>
 
- à <header class="hero-stage">
- à à à <div class="hero-background-title">NOVELA</div>
- à à à <div class="container">
- à à à à à <div class="grid-stage">
- à à à à à à à <div class="hero-content reveal">
- à à à à à à à à à <span class="label">Una inmersión romántica</span>
- à à à à à à à à à <h1 class="hero-title">
- à à à à à à à à à à à <span class="title-line title-line-1">Encuentros a la</span>
- à à à à à à à à à à à <span class="title-line title-line-2">Luz de la Luna</span>
- à à à à à à à à à </h1>
- à à à à à à à </div>
- à à à à à à à <div class="hero-presentation-grid">
- à à à à à à à à à <div class="book-frame reveal" style="transition-delay: 0.4s;">
- à à à à à à à à à à à <img src="couverture-livre-es.png" alt="Encuentros a la luz de la luna">
- à à à à à à à à à </div>
- à à à à à à à à à <div class="hero-summary reveal" style="transition-delay: 0.6s;">
- à à à à à à à à à à à <p> <span id="current-year"></span> simonlero.com  Todos los derechos reservados</p>
- à à à </div>
- à </footer>
+  <header class="hero-stage">
+    <div class="hero-background-title">NOVELA</div>
+    <div class="container">
+      <div class="grid-stage">
+        <div class="hero-content reveal">
+          <span class="label">Una inmersión romántica</span>
+          <h1 class="hero-title">
+            <span class="title-line title-line-1">Encuentros a la</span>
+            <span class="title-line title-line-2">Luz de la Luna</span>
+          </h1>
+        </div>
+        <div class="hero-presentation-grid">
+          <div class="book-frame reveal" style="transition-delay: 0.4s;">
+            <img src="couverture-livre-es.png" alt="Encuentros  la luz de la luna">
+          </div>
+          <div class="hero-summary reveal" style="transition-delay: 0.6s;">
+            <p> <span id="current-year"></span> simonlero.com  Todos los derechos reservados</p>
+    </div>
+  </footer>
 
- à <script>
- à à à document.getElementById('current-year').textContent = new Date().getFullYear();
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 
- à à à // Intersection Observer
- à à à const observer = new IntersectionObserver((entries) => {
- à à à à à entries.forEach(entry => {
- à à à à à à à if (entry.isIntersecting) {
- à à à à à à à à à entry.target.classList.add('active');
- à à à à à à à }
- à à à à à });
- à à à }, { threshold: 0.1 });
+    // Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
 
- à à à document.querySelectorAll('.reveal').forEach(el=> observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el=> observer.observe(el));
 
- à à à // Smooth scroll
- à à à document.querySelectorAll('a[href^="#"]').forEach(anchor => {
- à à à à à anchor.addEventListener('click', function (e) {
- à à à à à à à e.preventDefault();
- à à à à à à à document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
- à à à à à });
- à à à });
- à </script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 
 
 </body>

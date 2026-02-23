@@ -96,6 +96,40 @@
       }
     }
 
+    /* Navigation */
+    .top-nav {
+      position: fixed;
+      top: 80px;
+      left: 80px;
+      right: 80px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      z-index: 200;
+    }
+
+    .lang-selector {
+      display: flex;
+      gap: 30px;
+    }
+
+    .lang-selector a {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: var(--transition);
+      opacity: 0.85;
+    }
+
+    .lang-selector a:hover {
+      color: var(--gold);
+      opacity: 1;
+    }
+
     .hero {
       position: relative;
       padding: 320px 40px 100px;
@@ -803,6 +837,13 @@
         align-items: center;
       }
 
+      .top-nav {
+        top: 55px;
+        left: 30px;
+        right: 30px;
+        justify-content: flex-end;
+      }
+
       .footer-nav a {
         margin: 0;
         font-size: 0.75rem;
@@ -815,6 +856,13 @@
 </head>
 
 <body>
+
+  <header class="top-nav">
+    <div class="lang-selector">
+      <a href="livre-en.html">English</a>
+      <a href="livre-es.html">Español</a>
+    </div>
+  </header>
 
   <!-- FIXED DECORATIONS -->
   <div class="corner-glow glow-tl"></div>

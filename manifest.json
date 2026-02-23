@@ -1,0 +1,21 @@
+{
+    "name": "Simon Lero - Rencontres au Clair de Lune",
+    "short_name": "Simon Lero",
+    "start_url": "/livre-accueil.html?source=pwa",
+    "display": "standalone",
+    "background_color": "#050505",
+    "theme_color": "#000000",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "iconX480.png",
+            "sizes": "480x480",
+            "type": "image/png"
+        }
+    ]
+}

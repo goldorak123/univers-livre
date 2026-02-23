@@ -29,6 +29,40 @@
         --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
+    /* Navigation */
+    .top-nav {
+        position: fixed;
+        top: 60px;
+        left: 80px;
+        right: 80px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        z-index: 200;
+    }
+
+    .lang-selector {
+        display: flex;
+        gap: 30px;
+    }
+
+    .lang-selector a {
+        color: #fff;
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        transition: var(--transition);
+        opacity: 0.85;
+    }
+
+    .lang-selector a:hover {
+        color: var(--gold);
+        opacity: 1;
+    }
+
     * {
         box-sizing: border-box;
         margin: 0;
@@ -296,10 +330,23 @@
             width: 100%;
             justify-content: center;
         }
+
+        .top-nav {
+            top: 40px;
+            left: 20px;
+            right: 20px;
+        }
     }
 </style>
 
 <body>
+
+    <header class="top-nav">
+        <div class="lang-selector">
+            <a href="resume.html">Français</a>
+            <a href="resume-es.html">Español</a>
+        </div>
+    </header>
 
 
     <div class="corner-glow glow-tl"></div>

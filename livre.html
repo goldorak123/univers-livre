@@ -2,34 +2,30 @@
 <html lang="fr" class="notranslate" translate="no">
 
 <head>
-  <âmeta charset="UTF-8">
-  <âmeta naâme="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <âmeta naâme="theâme-color" content="#000000">
-  <âmeta naâme="mobile-web-app-capable" content="yes">
-  <âmeta naâme="apple-mobile-web-app-capable" content="yes">
-  <âmeta naâme="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <âmeta naâme="msvalidate.01" content="35E5408E2A8BCF95460F1FAFFAB8BED6790A" />
-  <âmeta naâme="description"
-    content="Découvrez 'Rencontres au Clair de Lune' de Simon Lero, un roman psychologique explorant les profondeurs de l'amour et de l'âme.">
-  <âmeta naâme="keywords"
-    content="Rencontres au Clair de Lune, Simon Lero, roman psychologique, amour, littérature, introspection, LGBT, livre">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description"
+    content="Découvrez 'Rencontres au Clair de Lune' de Simon Lero, un roman poétique mêlant art, littérature et introspection. Plongez dans un voyage émotionnel inoubliable.">
+  <meta name="keywords"
+    content="Rencontres au Clair de Lune, Simon Lero, roman poétique, littérature, art, mémoire, LGBT, livre">
 
-  <title>Simon Lero — Rencontres au Clair de Lune</title>
-  <link rel="canonical" href="https://www.simonlero.com/livre.html">
+  <title>Simon Lero – Rencontres au clair de lune</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="Rencontres au Clair de Lune - Simon Lero">
+  <meta property="og:description"
+    content="Découvrez 'Rencontres au Clair de Lune' de Simon Lero, un roman poétique mêlant art, littérature et introspection.">
+  <meta property="og:image" content="https://www.simonlero.com/couverture-livre.png">
+  <meta property="og:locale" content="fr_FR">
+
   <link rel="alternate" hreflang="fr" href="https://www.simonlero.com/livre.html" />
   <link rel="alternate" hreflang="en" href="https://www.simonlero.com/livre-en.html" />
   <link rel="alternate" hreflang="es" href="https://www.simonlero.com/livre-es.html" />
-  <link rel="alternate" hreflang="x-default" href="https://www.simonlero.com/" />
-
-  <!-- Open Graph -->
-  <âmeta property="og:type" content="book">
-  <âmeta property="og:title" content="Rencontres au Clair de Lune - Simon Lero">
-  <âmeta property="og:description"
-    content="Découvrez 'Rencontres au Clair de Lune' de Simon Lero, un roman psychologique sur l'amour et la quête de soi.">
-  <âmeta property="og:image" content="https://www.simonlero.com/couverture-livre.png">
-  <âmeta property="og:locale" content="fr_FR">
-
-  <link rel="manifest" href="manifest.json?v=11">
   <link rel="canonical" href="https://www.simonlero.com/livre.html">
 
   <!-- Fonts -->
@@ -39,8 +35,7 @@
 
   <style>
     :root {
-      --gold: #d8b25a;
-      --gold-bright: #f1d592;
+      --gold: #c9a24d;
       --gold-bright: #eec165;
       --bg: #050505;
       --bg-card: #0c0c0c;
@@ -95,7 +90,7 @@
       pointer-events: none;
     }
 
-    @âmedia (max-width: 900px) {
+    @media (max-width: 900px) {
       .edge-branding {
         display: none;
       }
@@ -112,15 +107,15 @@
       z-index: 10;
       text-align: left;
       overflow: visible;
-      /* Changedto visible for giant letters */
+      /* Changed to visible for giant letters */
     }
 
     .hero-background-title {
       font-family: 'Inter', sans-serif;
       font-size: clamp(8rem, 25vw, 24rem);
       font-weight: 900;
-      color: rgba(216, 178, 90, 0.15);
-      -webkit-text-stroke: 1px rgba(216, 178, 90, 0.20);
+      color: rgba(201, 162, 77, 0.15);
+      -webkit-text-stroke: 1px rgba(201, 162, 77, 0.20);
       position: absolute;
       top: -40px;
       left: 80px;
@@ -157,7 +152,7 @@
       opacity: 0;
     }
 
-    @keyfraâmes slideInLeft {
+    @keyframes slideInLeft {
       from {
         opacity: 0;
         transform: translateX(-150px);
@@ -199,7 +194,7 @@
       z-index: 1;
     }
 
-    .glow-tl{
+    .glow-tl {
       top: -10vw;
       left: -10vw;
     }
@@ -220,23 +215,23 @@
     h1,
     h2,
     h3,
-    .label{
+    .label {
       font-family: 'Cinzel', serif;
       text-transform: uppercase;
       letter-spacing: 0.2em;
     }
 
-    .label{
+    .label {
       font-size: 0.7rem;
       color: #A0A0A0;
-      /* Globally switching labels to white to balance the goldtitles */
+      /* Globally switching labels to white to balance the gold titles */
       margin-bottom: 20px;
       display: block;
       opacity: 0.9;
     }
 
-    /* Revealanimations */
-    .reveal{
+    /* Reveal animations */
+    .reveal {
       opacity: 0;
       transform: translateY(30px);
       transition: var(--transition);
@@ -254,7 +249,7 @@
       align-items: flex-start;
       padding: 300px 0 40px;
       position: relative;
-      /* Essentialfor absolute letters */
+      /* Essential for absolute letters */
     }
 
     .grid-stage {
@@ -264,7 +259,7 @@
       gap: 60px;
     }
 
-    .hero-presentation-grid{
+    .hero-presentation-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 60px;
@@ -272,8 +267,8 @@
       align-items: center;
     }
 
-    @âmedia (min-width: 1001px) {
-      .hero-presentation-grid{
+    @media (min-width: 1001px) {
+      .hero-presentation-grid {
         grid-template-columns: 1.1fr 1fr;
         gap: 80px;
       }
@@ -287,12 +282,12 @@
         text-align: left;
       }
 
-      .book-fraâme {
+      .book-frame {
         justify-self: center;
       }
     }
 
-    .book-fraâme {
+    .book-frame {
       position: relative;
       padding: 15px;
       background: rgba(255, 255, 255, 0.02);
@@ -302,7 +297,7 @@
       max-width: 400px;
     }
 
-    .book-fraâme img {
+    .book-frame img {
       width: 100%;
       display: block;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
@@ -314,7 +309,7 @@
       font-weight: 300;
       color: #A0A0A0;
       margin-top: 50px;
-      /* Spacer after book fraâme */
+      /* Spacer after book frame */
       margin-bottom: 40px;
       line-height: 1.7;
     }
@@ -333,7 +328,7 @@
       margin-top: 25px;
       padding: 18px 40px;
       background: transparent;
-      border: 1px solidtransparent;
+      border: 1px solid transparent;
       /* No more sandwich lines */
       color: var(--gold);
       text-decoration: none;
@@ -402,13 +397,13 @@
       background: #fff;
     }
 
-    /* REFINEdAUTHOR SECTION - Large Portrait */
+    /* REFINED AUTHOR SECTION - Large Portrait */
     .author-section {
       padding: 80px 0;
       border-top: 1px solid var(--border);
     }
 
-    .author-portrait-grid{
+    .author-portrait-grid {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
       gap: 80px;
@@ -429,7 +424,7 @@
       margin-bottom: 30px;
     }
 
-    .author-photo-fraâme {
+    .author-photo-frame {
       position: relative;
       border: 1px solid var(--gold);
       padding: 10px;
@@ -439,19 +434,19 @@
       justify-self: center;
     }
 
-    .author-photo-fraâme img {
+    .author-photo-frame img {
       width: 100%;
       display: block;
       filter: grayscale(1);
       transition: var(--transition);
     }
 
-    .author-photo-fraâme:hover img {
+    .author-photo-frame:hover img {
       filter: grayscale(0);
     }
 
-    /* Video & Genesis Grid*/
-    .discovery-grid{
+    /* Video & Genesis Grid */
+    .discovery-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
@@ -466,14 +461,14 @@
       transition: var(--transition);
     }
 
-    @âmedia (max-width: 1000px) {
+    @media (max-width: 1000px) {
       .video-box {
         width: 80%;
         margin: 0 auto;
       }
     }
 
-    .video-legend{
+    .video-legend {
       font-family: 'Cinzel', serif;
       font-size: 0.8rem;
       color: var(--gold);
@@ -515,7 +510,7 @@
       padding-bottom: 100px;
     }
 
-    .shop-section .label{
+    .shop-section .label {
       font-size: 1.15rem;
       font-weight: 700;
       color: var(--gold);
@@ -539,7 +534,7 @@
       background: radial-gradient(circle, var(--gold) 0%, transparent 80%);
     }
 
-    .shop-grid{
+    .shop-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 25px;
@@ -547,7 +542,7 @@
       margin: 0 auto;
     }
 
-    .shop-card{
+    .shop-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       padding: 40px 35px;
@@ -570,22 +565,22 @@
       background: #111;
     }
 
-    .shop-cardsvg,
-    .shop-cardimg {
+    .shop-card svg,
+    .shop-card img {
       width: 48px;
       height: 48px;
       object-fit: contain;
       flex-shrink: 0;
-      /* Ensure visibility even if backgroundleaks */
+      /* Ensure visibility even if background leaks */
       filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
     }
 
-    .shop-cardsvg {
+    .shop-card svg {
       stroke: var(--gold);
       stroke-width: 1.2;
     }
 
-    .shop-card.platform {
+    .shop-card .platform {
       font-family: 'Cinzel', serif;
       font-size: 0.65rem;
       color: var(--gold);
@@ -594,20 +589,20 @@
       opacity: 0.6;
     }
 
-    .shop-card.title {
+    .shop-card .title {
       font-size: 1.5rem;
       font-weight: 800;
       line-height: 1.1;
       white-space: nowrap;
     }
 
-    .shop-card.tag {
+    .shop-card .tag {
       font-size: 0.8rem;
       color: #555;
       margin-top: 8px;
     }
 
-    .shop-card.card-content {
+    .shop-card .card-content {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -664,88 +659,14 @@
       letter-spacing: 0.1em;
     }
 
-    /* Testimonials Section */
-    .testimonials-area {
-      margin-top: 80px;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 40px;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: reveal1.2s forwards;
-      animation-delay: 0.4s;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .testimonial-card{
-      position: relative;
-      text-align: center;
-      padding: 20px 10px;
-      flex: 1;
-    }
-
-    .testimonial-card::before {
-      content: '“';
-      position: absolute;
-      left: 50%;
-      top: -45px;
-      transform: translateX(-50%);
-      font-size: 150px;
-      font-family: 'Cinzel', serif;
-      color: var(--gold);
-      opacity: 0.12;
-      line-height: 1;
-    }
-
-    .testimonial-text {
-      font-size: 1.05rem;
-      font-style: italic;
-      color: #dfdfdf;
-      line-height: 1.8;
-      margin-bottom: 20px;
-      font-weight: 300;
-      letter-spacing: 0.5px;
-    }
-
-    .testimonial-author {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      color: var(--gold);
-      opacity: 0.9;
-      font-family: 'Cinzel', serif;
-    }
-
-    .testimonial-author::before {
-      content: '— ';
-    }
-
-    @âmedia (max-width: 1023px) {
-      .testimonials-area {
-        flex-direction: column;
-        gap: 60px;
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .testimonial-card{
-        padding: 20px 0;
-      }
-    }
-
-    @âmedia (max-width: 1000px) {
+    @media (max-width: 1000px) {
       .edge-branding {
         display: none;
       }
 
       .grid-stage,
       .author-portrait-grid,
-      .discovery-grid{
+      .discovery-grid {
         grid-template-columns: 1fr;
         gap: 40px;
       }
@@ -778,16 +699,16 @@
         max-width: 100%;
       }
 
-      .book-fraâme {
+      .book-frame {
         max-width: 260px;
         margin: 0 auto 30px;
       }
 
-      .author-portrait-grid{
+      .author-portrait-grid {
         text-align: center;
       }
 
-      @keyfraâmes fadeIn {
+      @keyframes fadeIn {
         from {
           opacity: 0;
         }
@@ -797,7 +718,7 @@
         }
       }
 
-      /* Edge Branding (Verticalside text) */
+      /* Edge Branding (Vertical side text) */
       .edge-branding {
         position: fixed;
         top: 0;
@@ -830,13 +751,13 @@
         opacity: 0.8;
       }
 
-      @âmedia (max-width: 1100px) {
+      @media (max-width: 1100px) {
         .edge-branding {
           display: none;
         }
       }
 
-      .author-photo-fraâme {
+      .author-photo-frame {
         max-width: 400px;
         margin: 0 auto;
         order: -1;
@@ -853,23 +774,23 @@
         font-size: 0.8rem;
       }
 
-      /* Responsive Shop Grid*/
-      .shop-grid{
+      /* Responsive Shop Grid */
+      .shop-grid {
         gap: 15px;
       }
 
-      .shop-card{
+      .shop-card {
         flex-direction: column;
         text-align: center;
         padding: 30px 15px;
         gap: 15px;
       }
 
-      .shop-card.title {
+      .shop-card .title {
         font-size: 1.1rem;
       }
 
-      .shop-card.tag {
+      .shop-card .tag {
         font-size: 0.7rem;
       }
 
@@ -895,7 +816,7 @@
 
 <body>
 
-  <!-- FIXEdDECORATIONS -->
+  <!-- FIXED DECORATIONS -->
   <div class="corner-glow glow-tl"></div>
   <div class="corner-glow glow-br"></div>
 
@@ -904,23 +825,139 @@
     <div class="container">
       <div class="grid-stage">
         <div class="hero-content reveal">
-          <span class="label">Une imâmersion romantique</span>
+          <span class="label">Une immersion romantique</span>
           <h1 class="hero-title">
             <span class="title-line title-line-1">Rencontres au</span>
             <span class="title-line title-line-2">Clair de Lune</span>
           </h1>
         </div>
         <div class="hero-presentation-grid">
-          <div class="book-fraâme reveal" style="transition-delay: 0.4s;">
+          <div class="book-frame reveal" style="transition-delay: 0.4s;">
             <img src="couverture-livre.png" alt="Rencontres au Clair de Lune">
           </div>
           <div class="hero-summary reveal" style="transition-delay: 0.6s;">
-            <p> <span id="current-year"></span> simonlero.com  Tous droits ráservás</p>
+            <p>Alfred Sisley, vieil homme endurci, vit entouré de ses souvenirs. Il attend en silence un
+              signe de son unique amour, véritable et durable.</p>
+            <p>La rencontre avec Joey bouleverse ce fragile équilibre. En lui, Sisley reconnaît le reflet de
+              ses propres trente ans : une résonance intime, une synergie inattendue.</p>
+            <a href="resume.html" class="cta-main">Voir le résumé complet →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="author-section" id="author">
+    <div class="container">
+      <div class="author-portrait-grid">
+        <div class="author-info-large reveal">
+          <span class="label">Simon Lero</span>
+          <h2>L'Auteur derrière le silence</h2>
+          <p>“Je suis Simon Lero, l'auteur de ce livre. Ce récit est né d'une longue pause, d'un retour à
+            l'essentiel et d'une volonté de capturer l'évanescence des souvenirs par les mots.”</p>
+          <a href="contact.html?source=book" class="btn-author">Prendre
+            contact avec l'auteur</a>
+        </div>
+        <div class="author-photo-frame reveal" style="transition-delay:0.3s;">
+          <img src="auteur-pic.png" alt="Simon Lero Portrait">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="discovery">
+    <div class="container">
+      <div class="discovery-grid reveal">
+        <div class="video-box">
+          <video controls preload="metadata" poster="couverture-livre.png">
+            <source src="video-promo-fr.mp4" type="video/mp4">
+          </video>
+          <span class="video-legend">Visionner la présentation du roman</span>
+        </div>
+        <div class="discovery-text">
+          <span class="label">Vidéo & Genèse</span>
+          <h3 style="font-size:1.8rem; margin-bottom:20px; color: var(--gold);">Aux sources du récit</h3>
+          <p>
+            Rencontres au Clair de Lune est né en 2007, après neuf mois d'écriture, durant une période qui a
+            suivi une longue pause professionnelle consacrée au repos et à la réflexion.
+          </p>
+          <p>
+            Ce temps suspendu a permis à l'auteur de revenir à l'essentiel, donnant naissance à une écriture
+            intérieure, patiente, attentive au silence et profondément humaine.
+          </p>
+          <p style="margin-bottom: 0;">
+            L'œuvre est publiée sous le pseudonyme <b>Simon Lero</b>, choisi en hommage à un ancêtre
+            français établi en Amérique, ancrant ce récit dans une mémoire à la fois personnelle et héritée.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop-section" id="buy">
+    <div class="container">
+      <div class="label" style="text-align:center;">Acheter l'œuvre</div>
+      <div class="shop-grid">
+
+        <!-- AMAZON -->
+        <a href="https://books2read.com/u/4jkM5X" class="shop-card reveal" target="_blank">
+          <img src="amazon-icon.svg" alt="Amazon">
+          <div class="card-content">
+            <div class="platform">DISPONIBILITÉ MONDIALE</div>
+            <div class="title">Amazon</div>
+            <div class="tag">Kindle / Livre papier — couverture souple</div>
+          </div>
+        </a>
+
+        <!-- SHOPIFY -->
+        <a href="https://simonlero.myshopify.com/" class="shop-card reveal" style="transition-delay:0.1s;"
+          target="_blank">
+          <img src="shopify-icon.svg" alt="Shopify">
+          <div class="card-content">
+            <div class="platform">DISPONIBILITÉ MONDIALE</div>
+            <div class="title">Shopify</div>
+            <div class="tag">ePub / Livre papier — couverture souple</div>
+          </div>
+        </a>
+
+        <!-- PAYHIP -->
+        <a href="https://payhip.com/simonlero" class="shop-card reveal" style="transition-delay:0.2s;" target="_blank">
+          <img src="payhip-icon.svg" alt="Payhip">
+          <div class="card-content">
+            <div class="platform">RABAIS 20%</div>
+            <div class="title">Payhip</div>
+            <div class="tag">PDF / ePub — Rabais 20% Code: READER20</div>
+          </div>
+        </a>
+
+        <!-- LULU -->
+        <a href="https://www.lulu.com/search?q=simon+lero" class="shop-card reveal" style="transition-delay:0.3s;"
+          target="_blank">
+          <img src="lulu-icon.svg" alt="Lulu">
+          <div class="card-content">
+            <div class="platform">DISPONIBILITÉ MONDIALE</div>
+            <div class="title">Lulu.com</div>
+            <div class="tag">ePub / Livre papier — couverture souple</div>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="footer-nav">
+        <a href="index.html?redirection=false">Visiter ma vitrine personnelle</a>
+        <a href="distribution.html">Partenaires de Distribution</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="current-year"></span> simonlero.com — Tous droits réservés</p>
     </div>
   </footer>
 
   <script>
-    docuâment.getEleâmentById('current-year').textContent = new Date().getFullYear();
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 
     // Intersection Observer
     const observer = new IntersectionObserver((entries) => {
@@ -931,13 +968,13 @@
       });
     }, { threshold: 0.1 });
 
-    docuâment.querySelectorAll('.reveal').forEach(el=> observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // Smooth scroll
-    docuâment.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        docuâment.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
   </script>
@@ -946,4 +983,3 @@
 </body>
 
 </html>
-

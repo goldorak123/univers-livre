@@ -1,0 +1,421 @@
+﻿<!DOCTYPE html>
+<html lang="fr" class="notranslate" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="google" content="notranslate">
+  <meta name="robots" content="index, follow">
+
+  <title>Simon Lero - Rencontres au Clair de Lune</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #c9a24d;
+      --gold-bright: #eec165;
+      --bg: #050505;
+      --text: #e8e6e3;
+      --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-font-smoothing: antialiased;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    /* Grain/Noise Overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* Cinematic Background */
+    .bg-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+      filter: grayscale(20%) contrast(110%);
+      animation: kenBurns 40s linear infinite alternate;
+    }
+
+    .bg-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.4) 50%, #050505 100%),
+        linear-gradient(to bottom, rgba(5, 5, 5, 0.2) 0%, #050505 90%);
+      z-index: 1;
+    }
+
+    @keyframes kenBurns {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.15);
+      }
+    }
+
+    /* Ambient Glows */
+    .glow {
+      position: absolute;
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, rgba(201, 162, 77, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .glow-center {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Edge Decorations */
+    .edge-branding {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    .edge-left {
+      left: 0;
+      border-right: 1px solid rgba(201, 162, 77, 0.3);
+      /* Vertical Line */
+    }
+
+    .edge-right {
+      right: 0;
+      border-left: 1px solid rgba(201, 162, 77, 0.3);
+      /* Vertical Line */
+    }
+
+    .edge-text {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.8em;
+      color: var(--gold);
+      white-space: nowrap;
+      transform: rotate(-90deg);
+      opacity: 1.0;
+    }
+
+    @media (max-width: 900px) {
+      .edge-branding {
+        display: none;
+      }
+    }
+
+    .lang-nav {
+      position: fixed;
+      top: 40px;
+      right: 80px;
+      z-index: 200;
+      display: flex;
+      gap: 30px;
+      transition: var(--transition);
+    }
+
+    .lang-nav a {
+      color: var(--gold);
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      opacity: 1.0;
+      text-transform: uppercase;
+      transition: var(--transition);
+      border-bottom: 1px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .lang-nav a:hover {
+      border-bottom: 1px solid var(--gold);
+      color: #fff;
+    }
+
+    /* Main Stage */
+    .stage {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 900px;
+      padding: 0 40px;
+      margin-top: -8vh;
+    }
+
+    .label {
+      font-family: 'Cinzel', serif;
+      color: #fff;
+      /* Label is now white */
+      font-size: 0.8rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      display: block;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1.2s forwards 0.2s;
+    }
+
+    .main-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 8vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 40px;
+      color: var(--gold);
+      /* Title is now gold */
+      display: block;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1.5s forwards 0.4s;
+    }
+
+    .poetic-text {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: #aaa;
+      line-height: 1.8;
+      margin-bottom: 60px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1.5s forwards 0.8s;
+    }
+
+    .cta-box {
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeInScale 1.8s forwards 1.2s;
+    }
+
+    .main-btn {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 25px 0;
+      background: transparent;
+      border: none;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      border-radius: 0;
+      color: #fff;
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      min-width: 320px;
+    }
+
+    .main-btn:hover {
+      background: transparent;
+      border-color: #fff;
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(216, 178, 90, 0.1);
+    }
+
+    .main-btn .primary {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+    }
+
+    .main-btn .secondary {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      color: var(--gold);
+      opacity: 0.8;
+      letter-spacing: 0.3em;
+    }
+
+    .main-btn:hover {
+      background: var(--gold);
+      color: #000;
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(201, 162, 77, 0.2);
+    }
+
+    .main-btn:hover .secondary {
+      color: #000;
+      opacity: 1;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInScale {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Mobile specific adjustments */
+    @media (max-width: 768px) {
+      body {
+        height: 100dvh;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+      }
+
+      .edge-branding {
+        display: none;
+      }
+
+      .bg-image {
+        opacity: 0.9 !important;
+      }
+
+      .stage {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+      }
+
+      .main-title {
+        font-size: clamp(1.8rem, 10vw, 2.5rem);
+        letter-spacing: 0.1em;
+        margin-bottom: 30px;
+      }
+
+      .poetic-text {
+        font-size: 1rem;
+        margin-bottom: 40px;
+      }
+
+      .lang-nav {
+        right: 20px;
+        top: 20px;
+        background: none;
+        backdrop-filter: none;
+        border: none;
+        padding: 0;
+        gap: 15px;
+      }
+
+      .lang-nav a {
+        font-size: 0.75rem;
+      }
+
+      .main-btn {
+        padding: 18px 30px;
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="bg-wrapper">
+    <div class="bg-overlay"></div>
+    <img src="fond-livre-accueil-ultra.jpg" class="bg-image" alt="Ambiance Litté©raire">
+  </div>
+
+  <div class="glow glow-center"></div>
+
+  <div class="edge-branding edge-left">
+    <div class="edge-text">Simon Lero ” Portfolio Litté©raire</div>
+  </div>
+  <div class="edge-branding edge-right">
+    <div class="edge-text">L'Inaccessible devient murmure</div>
+  </div>
+
+  <nav class="lang-nav">
+    <a href="livre-accueil-en.html">English</a>
+    <a href="livre-accueil-es.html">Espaé±ol</a>
+  </nav>
+
+  <main class="stage">
+    <span class="label">Un Voyage vers l'Inté©rieur</span>
+    <h1 class="main-title">Rencontres au<br>Clair de Lune</h1>
+
+    <div class="poetic-text">
+      <p>Quand tout se tait, l'é©vanescence prend racine.</p>
+      <p style="margin-top: 15px; font-style: italic;">Une symphonie de silences partagé©s entre l™ombre et la
+        lumié¨re.</p>
+      <p style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">Bienvenue dans
+        l'univers de Simon Lero.</p>
+    </div>
+
+    <div class="cta-box">
+      <a href="livre.html" class="main-btn">
+        <span class="primary">Entrer dans l'Oeuvre</span>
+        <span class="secondary">Dé©couvrir le livre & les é©ditions</span>
+      </a>
+    </div>
+  </main>
+
+  <script>
+    // Smooth entrance for characters or words could be added here for extra polish
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,558 @@
+﻿<!DOCTYPE html>
+<html lang="es" class="notranslate" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="manifest" href="manifest.json?v=3">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate">
+  <meta name="robots" content="index, follow">
+
+  <title>Encuentros a la luz de la luna ” Simon Lero</title>
+  <link rel="canonical" href="https://www.simonlero.com/livre-accueil-es.html">
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@200;300;400;600;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #c9a24d;
+      --gold-dark: #8a6d2f;
+      --gold-bright: #eec165;
+      --bg: #050505;
+      --text: #e8e6e3;
+      --text-dim: #888;
+      --transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Grain/Noise Overlay - Animated */
+    .noise-overlay {
+      position: fixed;
+      inset: -200%;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 1000;
+      animation: noiseAnim 0.2s infinite steps(2);
+    }
+
+    @keyframes noiseAnim {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      10% {
+        transform: translate(-5%, -5%);
+      }
+
+      20% {
+        transform: translate(-10%, 5%);
+      }
+
+      30% {
+        transform: translate(5%, -10%);
+      }
+
+      40% {
+        transform: translate(-5%, 15%);
+      }
+
+      50% {
+        transform: translate(-10%, 5%);
+      }
+
+      60% {
+        transform: translate(15%, 0);
+      }
+
+      70% {
+        transform: translate(0, 10%);
+      }
+
+      80% {
+        transform: translate(-15%, 0);
+      }
+
+      90% {
+        transform: translate(10%, 5%);
+      }
+
+      100% {
+        transform: translate(5%, 0);
+      }
+    }
+
+    /* Cinematic Background */
+    .bg-wrapper {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: #000;
+    }
+
+    .bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 1.0;
+      filter: grayscale(10%) contrast(110%) brightness(100%);
+      animation: kenBurns 40s linear infinite alternate;
+    }
+
+    .bg-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 70% 30%, rgba(201, 162, 77, 0.05) 0%, transparent 60%),
+        linear-gradient(to right, #050505 0%, transparent 50%, transparent 70%, #050505 100%),
+        linear-gradient(to bottom, transparent 0%, rgba(5, 5, 5, 0.1) 60%, rgba(5, 5, 5, 0.5) 100%);
+      z-index: 1;
+    }
+
+    @keyframes kenBurns {
+      from {
+        transform: scale(1) translate(0, 0);
+      }
+
+      to {
+        transform: scale(1.1) translate(-2%, -2%);
+      }
+    }
+
+
+
+    /* Navigation */
+    .top-nav {
+      position: fixed;
+      top: 80px;
+      left: 80px;
+      right: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 200;
+    }
+
+    .brand-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.5em;
+      color: #fff;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    .lang-selector {
+      display: flex;
+      gap: 30px;
+    }
+
+    .lang-selector a {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: var(--transition);
+      opacity: 0.7;
+    }
+
+    .lang-selector a:hover {
+      color: var(--gold);
+      opacity: 1;
+    }
+
+    /* Main Content Layout (Asymmetric) */
+    .layout-grid {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 0 100px;
+      z-index: 10;
+      overflow: hidden;
+    }
+
+    .hero-background-title {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(10rem, 30vw, 28rem);
+      font-weight: 900;
+      color: rgba(201, 162, 77, 0.15);
+      -webkit-text-stroke: 1px rgba(201, 162, 77, 0.20);
+      position: absolute;
+      top: -10%;
+      left: -5%;
+      line-height: 0.7;
+      text-transform: uppercase;
+      z-index: -1;
+      pointer-events: none;
+      letter-spacing: -0.05em;
+      animation: slideInLeft 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-200px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .content-left {
+      max-width: 700px;
+      transform: translateY(5px);
+    }
+
+    .kicker {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.6em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: block;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: reveal 1.2s forwards 0.3s;
+    }
+
+    .title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      font-weight: 900;
+      line-height: 0.9;
+      color: #fff;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: reveal 1.5s forwards 0.5s;
+    }
+
+    .title span {
+      display: block;
+      color: var(--gold);
+    }
+
+    .poetic-box {
+      border-left: 2px solid var(--gold);
+      padding-left: 30px;
+      margin-bottom: 60px;
+      opacity: 0;
+      animation: reveal 1.8s forwards 0.8s;
+    }
+
+    .poetic-box p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .poetic-box p em {
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    /* CTA Section */
+    .cta-container {
+      opacity: 0;
+      animation: reveal 2s forwards 1.2s;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+      text-decoration: none;
+      position: relative;
+      padding-right: 120px;
+      transition: var(--transition);
+    }
+
+    .cta-btn .main-txt {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
+      color: #fff;
+      transition: var(--transition);
+    }
+
+    .cta-btn .sub-txt {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      opacity: 0.7;
+      transition: var(--transition);
+    }
+
+    .cta-btn .arrow {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 80px;
+      height: 1px;
+      background: var(--gold);
+      transition: var(--transition);
+    }
+
+    .cta-btn .arrow::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -3px;
+      width: 8px;
+      height: 8px;
+      border-top: 1px solid var(--gold);
+      border-right: 1px solid var(--gold);
+      transform: rotate(45deg);
+      transition: var(--transition);
+    }
+
+    .cta-btn:hover {
+      transform: translateX(10px);
+    }
+
+    .cta-btn:hover .main-txt {
+      color: var(--gold-bright);
+    }
+
+    .cta-btn:hover .arrow {
+      width: 100px;
+      background: var(--gold-bright);
+    }
+
+    .cta-btn:hover .arrow::after {
+      border-color: var(--gold-bright);
+    }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Optimization for small height screens (iPad Landscape, etc.) */
+    @media (max-height: 750px) {
+      .layout-grid {
+        padding-top: 100px;
+        padding-bottom: 40px;
+      }
+
+      .title {
+        font-size: clamp(2.5rem, 8vh, 4.5rem);
+        margin-bottom: 15px;
+      }
+
+      .poetic-box {
+        margin-bottom: 20px;
+        padding-left: 15px;
+      }
+
+      .poetic-box p {
+        font-size: 0.95rem;
+        margin-bottom: 5px;
+      }
+
+      .cta-container {
+        margin-top: 10px;
+      }
+    }
+
+    /* Floating Decor Elements */
+    .decor-float {
+      position: absolute;
+      right: 10%;
+      top: 55%;
+      width: 30%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201, 162, 77, 0.3), transparent);
+      z-index: 5;
+    }
+
+    /* Mobile Responsive */
+    /* Mobile Responsive & Tablet Landscape */
+    @media (max-width: 1366px) {
+      .layout-grid {
+        grid-template-columns: 1fr;
+        padding: 0 60px;
+        align-content: center;
+        min-height: 100vh;
+      }
+
+      .content-left {
+        max-width: 100%;
+      }
+
+      .title {
+        font-size: clamp(2.5rem, 8vw, 4.5rem);
+        margin-bottom: 25px;
+      }
+
+      .poetic-box {
+        margin-bottom: 30px;
+      }
+
+      .edge-branding {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1366px) {
+      body {
+        overflow: auto;
+        height: auto;
+        min-height: 100dvh;
+      }
+
+      .layout-grid {
+        padding: 115px 30px 30px;
+      }
+
+      .top-nav {
+        top: 55px;
+        left: 30px;
+        right: 30px;
+      }
+
+      .brand-logo {
+        display: none;
+      }
+
+      .title {
+        font-size: 2.6rem;
+        margin-bottom: 25px;
+      }
+
+      .poetic-box {
+        padding-left: 20px;
+        margin-bottom: 40px;
+      }
+
+      .poetic-box p {
+        font-size: 0.95rem;
+      }
+
+      .cta-btn .main-txt {
+        font-size: 1rem;
+      }
+
+      .cta-btn .arrow {
+        width: 40px;
+      }
+
+      .cta-btn:hover .arrow {
+        width: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="noise-overlay"></div>
+
+  <div class="bg-wrapper">
+    <div class="bg-overlay"></div>
+    <img src="fond-livre-accueil-ultra.jpg" class="bg-image" alt="Ambiente Literario">
+  </div>
+
+
+
+  <header class="top-nav">
+    <div class="brand-logo">Mon Univers</div>
+    <div class="lang-selector">
+      <a href="livre-accueil.html">Frané§ais</a>
+      <a href="livre-accueil-en.html">English</a>
+    </div>
+  </header>
+
+  <main class="layout-grid">
+    <div class="hero-background-title">CLAIR</div>
+    <div class="content-left">
+      <span class="kicker">Un Viaje hacia el Interior</span>
+      <h1 class="title">
+        Encuentros<br>
+        <span>a la luz de la luna</span>
+      </h1>
+
+      <div class="poetic-box">
+        <p>Cuando todo calla, algo comienza...</p>
+        <p><em>Una sinfoné­a de silencios compartidos entre la sombra y la luz.</em></p>
+        <p
+          style="margin-top: 15px; font-size: 0.8rem; letter-spacing: 0.1em; opacity: 0.6; font-family: 'Cinzel', serif;">
+          Bienvenido al universo de Simon Lero.</p>
+      </div>
+
+      <div class="cta-container">
+        <a href="livre-es.html" class="cta-btn">
+          <span class="main-txt">Entrar en la Obra</span>
+          <span class="sub-txt">Coleccié³n Exclusiva y Ediciones</span>
+          <div class="arrow"></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="decor-float"></div>
+  </main>
+
+  <script>
+    document.addEventListener('mousemove', (e) => {
+      if (window.innerWidth > 1024) {
+        const charTop = document.querySelector('.hero-background-title');
+        const charBottom = document.querySelector('.hero-background-title-bottom');
+
+        const x = (window.innerWidth / 2 - e.pageX) / 50;
+        const y = (window.innerHeight / 2 - e.pageY) / 50;
+
+        if (charTop) charTop.style.transform = `translate(${x}px, ${y}px)`;
+        if (charBottom) charBottom.style.transform = `translate(${-x}px, ${-y}px)`;
+      }
+    });
+  </script>
+
+</body>
+
+</html>

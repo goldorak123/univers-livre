@@ -334,14 +334,17 @@
     }
 
     .cta-btn {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 5px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
       text-decoration: none;
-      position: relative;
-      padding-right: 120px;
       transition: var(--transition);
+    }
+
+    .cta-txt {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
     }
 
     .cta-btn .main-txt {
@@ -363,28 +366,18 @@
       transition: var(--transition);
     }
 
-    .cta-btn .arrow {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 80px;
-      height: 1px;
-      background: var(--gold);
+    .arrow-svg {
+      width: 40px;
+      height: 50px;
+      color: var(--gold);
       transition: var(--transition);
+      filter: drop-shadow(0 0 8px rgba(201, 162, 77, 0.4));
     }
 
-    .cta-btn .arrow::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: -3px;
-      width: 8px;
-      height: 8px;
-      border-top: 1px solid var(--gold);
-      border-right: 1px solid var(--gold);
-      transform: rotate(45deg);
-      transition: var(--transition);
+    .arrow-svg svg {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
     @media (hover: hover) {
@@ -396,13 +389,10 @@
         color: var(--gold-bright);
       }
 
-      .cta-btn:hover .arrow {
-        width: 100px;
-        background: var(--gold-bright);
-      }
-
-      .cta-btn:hover .arrow::after {
-        border-color: var(--gold-bright);
+      .cta-btn:hover .arrow-svg {
+        transform: translateX(10px) scale(1.05);
+        color: #fff;
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
       }
     }
 
@@ -410,22 +400,16 @@
       color: #fff;
     }
 
-    .cta-btn:visited .arrow {
-      width: 80px;
-      background: var(--gold);
-    }
-
-    .cta-btn:visited .arrow::after {
-      border-color: var(--gold);
+    .cta-btn:visited .arrow-svg {
+      color: var(--gold);
     }
 
     .cta-btn:active .main-txt {
       color: var(--gold-bright);
     }
 
-    .cta-btn:active .arrow {
-      width: 100px;
-      background: var(--gold-bright);
+    .cta-btn:active .arrow-svg {
+      color: var(--gold-bright);
     }
 
     @keyframes reveal {
@@ -550,10 +534,10 @@
         width: 50px;
       }
 
-      /* No decorative arrows on mobile */
-      .cta-btn .arrow,
-      .cta-btn .arrow::after {
-        display: none !important;
+      /* Arrow stays visible on mobile */
+      .arrow-svg {
+        width: 30px;
+        height: 40px;
       }
     }
   </style>
@@ -599,9 +583,17 @@
 
       <div class="cta-container">
         <a href="livre-es.html" class="cta-btn">
-          <span class="main-txt">Entrar en la Obra</span>
-          <span class="sub-txt">Colección Exclusiva y Ediciones</span>
-          <div class="arrow"></div>
+          <div class="cta-txt">
+            <span class="main-txt">Entrar en la Obra</span>
+            <span class="sub-txt">Colección Exclusiva y Ediciones</span>
+          </div>
+          <div class="arrow-svg">
+            <svg viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 10C5 30 15 50 35 50" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+              <path d="M25 40L35 50L25 60" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
         </a>
       </div>
     </div>

@@ -852,6 +852,96 @@
         text-align: center;
       }
     }
+
+    /* TESTIMONIALS SECTION */
+    .testimonials-section {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .testimonials-section h2 {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 60px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      padding: 50px 30px 40px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 250px;
+    }
+
+    .testimonial-card:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--gold);
+      transform: translateY(-10px);
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-family: 'Cinzel', serif;
+      font-size: 15rem;
+      color: var(--gold);
+      opacity: 0.12;
+      line-height: 1;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .testimonial-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      font-style: italic;
+      margin-bottom: 25px;
+      text-align: justify;
+    }
+
+    .testimonial-author {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 1000px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .testimonial-card {
+        padding: 40px 25px;
+        min-height: auto;
+      }
+    }
   </style>
 </head>
 
@@ -990,6 +1080,29 @@
         </a>
 
       </div>
+
+      <section class="testimonials-section">
+        <div class="container">
+          <h2 class="reveal">Ce que disent les lecteurs</h2>
+          <div class="testimonials-grid">
+            <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
+              <p class="testimonial-text">"Un voyage onirique d'une rare intensité. Simon Lero capture l'essence même de
+                l'introspection avec une plume d'une élégance absolue."</p>
+              <span class="testimonial-author">— Marie L.</span>
+            </div>
+            <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
+              <p class="testimonial-text">"Rarement un livre ne m'aura autant touché. C'est une œuvre qui se lit comme
+                on contemple un tableau de maître : avec émotion et respect."</p>
+              <span class="testimonial-author">— Jean-Pierre D.</span>
+            </div>
+            <div class="testimonial-card reveal" style="transition-delay: 0.3s;">
+              <p class="testimonial-text">"Une structure narrative audacieuse et une esthétique impeccable. Un
+                incontournable pour les amoureux de la belle littérature."</p>
+              <span class="testimonial-author">— Sophie R.</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div class="footer-nav">
         <a href="https://www.mon-univers.ca/index.html">Visiter ma vitrine personnelle</a>

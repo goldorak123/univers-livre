@@ -804,6 +804,96 @@
         justify-content: flex-end;
       }
     }
+
+    /* TESTIMONIALS SECTION */
+    .testimonials-section {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .testimonials-section h2 {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 60px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      padding: 50px 30px 40px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 250px;
+    }
+
+    .testimonial-card:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--gold);
+      transform: translateY(-10px);
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-family: 'Cinzel', serif;
+      font-size: 15rem;
+      color: var(--gold);
+      opacity: 0.12;
+      line-height: 1;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .testimonial-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      font-style: italic;
+      margin-bottom: 25px;
+      text-align: justify;
+    }
+
+    .testimonial-author {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 1000px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .testimonial-card {
+        padding: 40px 25px;
+        min-height: auto;
+      }
+    }
   </style>
 </head>
 
@@ -894,61 +984,31 @@
     </div>
   </section>
 
-  <section class="shop-section" id="buy">
+  </section>
+
+  <section class="testimonials-section">
     <div class="container">
-      <div class="label" style="text-align:center;">Adquirir la obra</div>
-      <div class="shop-grid">
-
-        <!-- AMAZON -->
-        <a href="https://books2read.com/u/4jkM5X" class="shop-card reveal" target="_blank">
-          <img src="amazon-icon.svg" alt="Amazon">
-          <div class="card-content">
-            <div class="platform">DISPONIBILIDAD MUNDIAL</div>
-            <div class="title">Amazon</div>
-            <div class="tag">Kindle / Libro impreso — tapa blanda</div>
-          </div>
-        </a>
-
-        <!-- SHOPIFY -->
-        <a href="https://simonlero.myshopify.com/" class="shop-card reveal" style="transition-delay:0.1s;"
-          target="_blank">
-          <img src="shopify-icon.svg" alt="Shopify">
-          <div class="card-content">
-            <div class="platform">DISPONIBILIDAD MUNDIAL</div>
-            <div class="title">Shopify</div>
-            <div class="tag">ePub / Libro impreso — tapa blanda</div>
-          </div>
-        </a>
-
-        <!-- PAYHIP -->
-        <a href="https://payhip.com/simonlero" class="shop-card reveal" style="transition-delay:0.2s;" target="_blank">
-          <img src="payhip-icon.svg" alt="Payhip">
-          <div class="card-content">
-            <div class="platform">DESCUENTO 20%</div>
-            <div class="title">Payhip</div>
-            <div class="tag">PDF / ePub — Código: READER20</div>
-          </div>
-        </a>
-
-        <!-- LULU -->
-        <a href="https://www.lulu.com/search?q=simon+lero" class="shop-card reveal" style="transition-delay:0.3s;"
-          target="_blank">
-          <img src="lulu-icon.svg" alt="Lulu">
-          <div class="card-content">
-            <div class="platform">DISPONIBILIDAD MUNDIAL</div>
-            <div class="title">Lulu.com</div>
-            <div class="tag">ePub / Libro impreso — tapa blanda</div>
-          </div>
-        </a>
-
-      </div>
-
-      <div class="footer-nav">
-        <a href="https://www.mon-univers.ca/index.html">Visitar mi vitrina personal (En francés solamente)</a>
-        <a href="distribution-es.html">Socios de Distribución</a>
+      <h2 class="reveal">Testimonios de los lectores</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
+          <p class="testimonial-text">"Un viaje onírico de una intensidad poco común. Simon Lero captura la esencia
+            misma de la introspección con una pluma de absoluta elegancia."</p>
+          <span class="testimonial-author">— Lucía G.</span>
+        </div>
+        <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
+          <p class="testimonial-text">"Rara vez un libro me ha conmovido tanto. Es una obra que se lee como se contempla
+            un cuadro de un maestro: con emoción y respeto."</p>
+          <span class="testimonial-author">— Carlos M.</span>
+        </div>
+        <div class="testimonial-card reveal" style="transition-delay: 0.3s;">
+          <p class="testimonial-text">"Una estructura narrativa audaz y una estética impecable. Imprescindible para los
+            amantes de la buena literatura."</p>
+          <span class="testimonial-author">— Elena V.</span>
+        </div>
       </div>
     </div>
   </section>
+
 
   <footer>
     <div class="container">

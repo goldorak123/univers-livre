@@ -201,6 +201,42 @@
             transform: translateY(0);
         }
 
+        /* Navigation */
+        .top-nav {
+            position: absolute;
+            top: 25px;
+            left: 80px;
+            right: 80px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            z-index: 200;
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 30px;
+        }
+
+        .lang-selector a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transition: var(--transition);
+            opacity: 0.85;
+        }
+
+        @media (hover: hover) {
+            .lang-selector a:hover {
+                color: var(--gold);
+                opacity: 1;
+            }
+        }
+
         /* Hero Section */
         .hero-stage {
             min-height: 95vh;

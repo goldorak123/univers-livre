@@ -41,6 +41,13 @@
             padding: 20px;
         }
 
+        /* Focus Reset */
+        a:focus,
+        button:focus {
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body::before {
             content: "";
             position: fixed;
@@ -81,11 +88,13 @@
             letter-spacing: 2px;
         }
 
-        .btn-return:hover {
-            background: var(--gold);
-            color: #000;
-            box-shadow: 0 0 20px rgba(216, 178, 90, 0.4);
-            transform: translateY(-5px);
+        @media (hover: hover) {
+            .btn-return:hover {
+                background: var(--gold);
+                color: #000;
+                box-shadow: 0 0 20px rgba(216, 178, 90, 0.4);
+                transform: translateY(-5px);
+            }
         }
 
         footer {

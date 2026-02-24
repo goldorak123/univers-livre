@@ -141,6 +141,14 @@
     overflow-x: hidden;
   }
 
+  /* Focus Reset */
+  a:focus,
+  button:focus,
+  .panel:focus {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
   body {
     font-family: Arial, Helvetica, sans-serif;
     background:
@@ -245,8 +253,10 @@
     margin-left: 14px;
   }
 
-  .top-links a:hover {
-    color: #fff;
+  @media (hover: hover) {
+    .top-links a:hover {
+      color: #fff;
+    }
   }
 
   /* LAYOUT */

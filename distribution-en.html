@@ -239,11 +239,13 @@
         min-height: 120px;
     }
 
-    .partner-card:hover {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(216, 178, 90, 0.3);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        transform: translateY(-2px);
+    @media (hover: hover) {
+        .partner-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(216, 178, 90, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
     }
 
     .partner-name {
@@ -257,8 +259,10 @@
         transition: color 0.3s ease;
     }
 
-    .partner-card:hover .partner-name {
-        color: var(--gold);
+    @media (hover: hover) {
+        .partner-card:hover .partner-name {
+            color: var(--gold);
+        }
     }
 
     .actions {
@@ -288,27 +292,17 @@
         position: relative;
     }
 
-    .back-link:hover {
-        color: #fff;
-        transform: translateY(-5px);
-        text-shadow: 0 0 15px rgba(216, 178, 90, 0.4);
-    }
+    @media (hover: hover) {
+        .back-link:hover {
+            color: #fff;
+            transform: translateY(-5px);
+            text-shadow: 0 0 15px rgba(216, 178, 90, 0.4);
+        }
 
-    .back-link::after {
-        content: '';
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        width: 0;
-        height: 1px;
-        background: var(--gold);
-        transition: all 0.5s ease;
-        transform: translateX(-50%);
-    }
-
-    .back-link:hover::after {
-        width: 60%;
-        background: #fff;
+        .back-link:hover::after {
+            width: 60%;
+            background: #fff;
+        }
     }
 
     @media (max-width: 900px) {

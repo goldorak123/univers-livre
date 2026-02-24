@@ -38,6 +38,14 @@
             min-height: 100vh;
         }
 
+        /* Focus Reset */
+        a:focus,
+        button:focus,
+        textarea:focus {
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         /* Grain Overlay */
         body::before {
             content: "";
@@ -261,27 +269,17 @@
             position: relative;
         }
 
-        .btn-submit:hover {
-            color: #fff;
-            transform: translateY(-5px);
-            text-shadow: 0 0 15px rgba(216, 178, 90, 0.4);
-        }
+        @media (hover: hover) {
+            .btn-submit:hover {
+                color: #fff;
+                transform: translateY(-5px);
+                text-shadow: 0 0 15px rgba(216, 178, 90, 0.4);
+            }
 
-        .btn-submit::after {
-            content: '';
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            width: 0;
-            height: 1px;
-            background: var(--gold);
-            transition: all 0.5s ease;
-            transform: translateX(-50%);
-        }
-
-        .btn-submit:hover::after {
-            width: 40%;
-            background: #fff;
+            .btn-submit:hover::after {
+                width: 40%;
+                background: #fff;
+            }
         }
 
         .note {

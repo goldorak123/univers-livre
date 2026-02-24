@@ -58,9 +58,11 @@
         opacity: 0.85;
     }
 
-    .lang-selector a:hover {
-        color: var(--gold);
-        opacity: 1;
+    @media (hover: hover) {
+        .lang-selector a:hover {
+            color: var(--gold);
+            opacity: 1;
+        }
     }
 
     * {
@@ -88,6 +90,13 @@
             radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 40%),
             #050505;
         background-attachment: fixed;
+    }
+
+    /* Focus Reset */
+    a:focus,
+    button:focus {
+        outline: none !important;
+        -webkit-tap-highlight-color: transparent;
     }
 
     body::before {
@@ -243,13 +252,15 @@
         position: relative;
     }
 
-    .btn:hover {
-        background: transparent;
-        color: #fff;
-        border-color: #fff;
-        transform: translateY(-3px);
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        box-shadow: 0 0 15px rgba(216, 178, 90, 0.2);
+    @media (hover: hover) {
+        .btn:hover {
+            background: transparent;
+            color: #fff;
+            border-color: #fff;
+            transform: translateY(-3px);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(216, 178, 90, 0.2);
+        }
     }
 
     footer {

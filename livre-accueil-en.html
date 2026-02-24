@@ -65,6 +65,13 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Focus Reset */
+    a:focus,
+    button:focus {
+      outline: none !important;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     /* Grain/Noise Overlay - Animated */
     .noise-overlay {
       position: fixed;
@@ -201,9 +208,11 @@
       /* Increased opacity */
     }
 
-    .lang-selector a:hover {
-      color: var(--gold);
-      opacity: 1;
+    @media (hover: hover) {
+      .lang-selector a:hover {
+        color: var(--gold);
+        opacity: 1;
+      }
     }
 
     /* Main Content Layout (Asymmetric) */
@@ -367,21 +376,23 @@
       transition: var(--transition);
     }
 
-    .cta-btn:hover {
-      transform: translateX(10px);
-    }
+    @media (hover: hover) {
+      .cta-btn:hover {
+        transform: translateX(10px);
+      }
 
-    .cta-btn:hover .main-txt {
-      color: var(--gold-bright);
-    }
+      .cta-btn:hover .main-txt {
+        color: var(--gold-bright);
+      }
 
-    .cta-btn:hover .arrow {
-      width: 100px;
-      background: var(--gold-bright);
-    }
+      .cta-btn:hover .arrow {
+        width: 100px;
+        background: var(--gold-bright);
+      }
 
-    .cta-btn:hover .arrow::after {
-      border-color: var(--gold-bright);
+      .cta-btn:hover .arrow::after {
+        border-color: var(--gold-bright);
+      }
     }
 
     @keyframes reveal {

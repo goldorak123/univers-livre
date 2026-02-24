@@ -104,20 +104,13 @@
 
 
     /* Navigation */
-    .top-nav {
-      position: absolute;
-      top: 220px;
-      left: 80px;
-      right: 80px;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      z-index: 200;
-    }
-
     .lang-selector {
       display: flex;
       gap: 30px;
+      justify-content: flex-end;
+      margin: 20px 80px 0;
+      position: relative;
+      z-index: 200;
     }
 
     .lang-selector a {
@@ -737,10 +730,8 @@
         display: block;
       }
 
-      .top-nav {
-        top: 230px;
-        left: 0;
-        right: 0;
+      .lang-selector {
+        margin: 10px 0 0;
         justify-content: center;
       }
 
@@ -997,19 +988,16 @@
 
 <body>
 
-  <header class="top-nav">
-    <div class="lang-selector">
-      <a href="livre-en.html">English</a>
-      <a href="livre-es.html">Español</a>
-    </div>
-  </header>
-
   <!-- FIXED DECORATIONS -->
   <div class="corner-glow glow-tl"></div>
   <div class="corner-glow glow-br"></div>
 
   <header class="hero-stage">
     <div class="hero-background-title">ROMAN</div>
+    <div class="lang-selector">
+      <a href="livre-en.html">English</a>
+      <a href="livre-es.html">Español</a>
+    </div>
     <div class="container">
       <div class="grid-stage">
         <div class="hero-content reveal">

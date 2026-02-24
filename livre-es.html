@@ -261,20 +261,14 @@
       overflow: hidden;
     }
 
-    .top-nav {
-      position: absolute;
-      top: 220px;
-      left: 80px;
-      right: 80px;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      z-index: 200;
-    }
-
+    /* Navigation */
     .lang-selector {
       display: flex;
       gap: 30px;
+      justify-content: flex-end;
+      margin: 20px 80px 0;
+      position: relative;
+      z-index: 200;
     }
 
     .lang-selector a {
@@ -725,10 +719,8 @@
         display: block;
       }
 
-      .top-nav {
-        top: 220px;
-        left: 0;
-        right: 0;
+      .lang-selector {
+        margin: 10px 0 0;
         justify-content: center;
       }
 
@@ -818,13 +810,6 @@
         opacity: 0.7;
         width: 100%;
         text-align: center;
-      }
-
-      .top-nav {
-        top: 25px;
-        left: 30px;
-        right: 30px;
-        justify-content: flex-end;
       }
     }
 
@@ -940,15 +925,12 @@
   <div class="corner-glow glow-tl"></div>
   <div class="corner-glow glow-br"></div>
 
-  <header class="top-nav">
+  <header class="hero-stage">
+    <div class="hero-background-title">NOVELA</div>
     <div class="lang-selector">
       <a href="livre.html">Français</a>
       <a href="livre-en.html">English</a>
     </div>
-  </header>
-
-  <header class="hero-stage">
-    <div class="hero-background-title">NOVELA</div>
     <div class="container">
       <div class="grid-stage">
         <div class="hero-content reveal">

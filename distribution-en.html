@@ -206,10 +206,10 @@
     }
 
     .partners-grid {
-        display: grid !important;
-        grid-template-columns: repeat(4, minmax(160px, 220px)) !important;
-        justify-content: center !important;
-        gap: 20px !important;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-content: center;
+        gap: 20px;
         margin-bottom: 40px;
     }
 
@@ -298,6 +298,34 @@
     .back-link:hover::after {
         width: 60%;
         background: #fff;
+    }
+
+    @media (max-width: 900px) {
+        .hero-background-title {
+            font-size: 8rem;
+            top: 20px;
+            left: -20px;
+            color: rgba(216, 178, 90, 0.08);
+            -webkit-text-stroke: 1px rgba(216, 178, 90, 0.15);
+        }
+
+        .title-line-1,
+        .title-line-2 {
+            font-size: 3rem;
+        }
+
+        .container {
+            padding: 0 15px 40px;
+        }
+
+        .hero {
+            padding: 120px 20px 40px;
+        }
+
+        .partners-grid {
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+        }
     }
 </style>
 

@@ -206,10 +206,10 @@
     }
 
     .partners-grid {
-        display: grid !important;
-        grid-template-columns: repeat(4, minmax(160px, 220px)) !important;
-        justify-content: center !important;
-        gap: 20px !important;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-content: center;
+        gap: 20px;
         margin-bottom: 40px;
     }
 
@@ -362,7 +362,8 @@
         }
 
         .partners-grid {
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
         }
     }
 </style>

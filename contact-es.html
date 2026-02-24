@@ -229,7 +229,7 @@
 
         textarea {
             width: 100%;
-            height: 280px;
+            height: 200px;
             background: rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(216, 178, 90, 0.2);
             border-radius: 2px;
@@ -240,9 +240,24 @@
             resize: none;
             outline: none;
             transition: all 0.4s ease;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
+        .input-field {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(216, 178, 90, 0.2);
+            border-radius: 2px;
+            padding: 18px 20px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+            outline: none;
+        }
+
+        .input-field:focus,
         textarea:focus {
             border-color: var(--gold);
             background: rgba(216, 178, 90, 0.05);
@@ -376,17 +391,35 @@
         </div>
         <div class="narrative-box">
             <p>Si desea escribirme o compartir una reflexión, su mensaje me llegará directamente.</p>
-            <form onsubmit="sendMail(event)"> <textarea id="message" maxlength="500" placeholder="Su mensaje...">
-</textarea> <button class="btn-submit" type="submit">Enviar</button> </form>
-            <div class="note"> El mensaje se transmitirá a través de su servicio de mensajería. No se almacenan datos en
-                este servidor. </div>
+            <form action="https://formspree.io/f/support@mon-univers.ca" method="POST">
+                <input type="email" name="email" required placeholder="Su correo electrónico..." class="input-field">
+                <textarea name="message" maxlength="1000" placeholder="Su mensaje..." required></textarea>
+                <button class="btn-submit" type="submit">Enviar</button>
+            </form>
+            <div class="note"> El mensaje se enviará de forma segura. Recibirá una confirmación en pantalla. </div>
         </div>
     </header>
     <footer class="footer">
         <p>© <span id="current-year">
             </span> <span id="copyright-brand">simonlero.com</span> — Todos los derechos reservados</p>
     </footer>
-    <script>         document.getElementById('current-year').textContent = new Date().getFullYear(); const urlParams = new URLSearchParams(window.location.search); const source = urlParams.get('source');          // Dynamic Branding Logic         if (source === 'book') {             const subtitle = document.querySelector('.hero-subtitle');             if (subtitle) {                 subtitle.textContent = "Simon Lero — Portfolio Literario";                 subtitle.style.letterSpacing = "15px";             }             // Update Copyright Brand             const brand = document.getElementById('copyright-brand');             if (brand) brand.textContent = "simonlero.com";         }          function sendMail(event) {             event.preventDefault();             const message = document.getElementById("message").value;              if (message.trim() === "") {                 alert("Por favor, escriba un message antes de enviar.");                 return;             }              let subject = "Mensaje desde simonlero.com";             if (source === 'book') subject = "Mensaje desde simonlero.com";              window.location.href = "mailto:support@mon-univers.ca?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);         }       </script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        const urlParams = new URLSearchParams(window.location.search);
+        const source = urlParams.get('source');
+
+        // Dynamic Branding Logic
+        if (source === 'book') {
+            const subtitle = document.querySelector('.hero-subtitle');
+            if (subtitle) {
+                subtitle.textContent = "Simon Lero — Portfolio Literario";
+                subtitle.style.letterSpacing = "15px";
+            }
+            // Update Copyright Brand
+            const brand = document.getElementById('copyright-brand');
+            if (brand) brand.textContent = "simonlero.com";
+        }
+    </script>
 </body>
 
 </html>

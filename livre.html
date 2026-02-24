@@ -140,6 +140,83 @@
       }
     }
 
+    /* THEMATIC DECORATIONS (Music & Books) */
+    .bg-decoration {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.15;
+      overflow: hidden;
+    }
+
+    .note-svg {
+      position: absolute;
+      fill: var(--gold);
+      filter: blur(1px);
+      animation: floatNote 20s infinite linear;
+    }
+
+    @keyframes floatNote {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.2;
+      }
+
+      90% {
+        opacity: 0.2;
+      }
+
+      100% {
+        transform: translate(100px, -200px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .flying-page-svg {
+      position: absolute;
+      fill: rgba(255, 255, 255, 0.08);
+      animation: flyPage 25s infinite ease-in-out;
+    }
+
+    @keyframes flyPage {
+      0% {
+        transform: translate(-50px, 0) rotate(10deg);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0.1;
+      }
+
+      80% {
+        opacity: 0.1;
+      }
+
+      100% {
+        transform: translate(200px, -400px) rotate(-10deg);
+        opacity: 0;
+      }
+    }
+
+    /* Fixed Moonlight Background */
+    .moonlight-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('sources-lune.png') no-repeat center center;
+      background-size: cover;
+      opacity: 0.12;
+      z-index: -1;
+      pointer-events: none;
+    }
+
     .hero {
       position: relative;
       padding: 320px 40px 100px;
@@ -227,6 +304,16 @@
       white-space: nowrap;
       transform: rotate(-90deg);
       opacity: 0.4;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .edge-text::before,
+    .edge-text::after {
+      content: '♪';
+      font-size: 1rem;
+      opacity: 0.6;
     }
 
     .corner-glow {
@@ -976,6 +1063,31 @@
     <div class="hero-background-title">ROMAN</div>
     <div class="container">
       <div class="grid-stage">
+        <div class="moonlight-bg"></div>
+
+        <!-- BG DECORATIONS CONTAINER -->
+        <div class="bg-decoration">
+          <!-- Music Notes scattered (Desktop only for performance) -->
+          <svg class="note-svg" style="top:20%; left:5%; width:30px; animation-delay: 0s;" viewBox="0 0 24 24">
+            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+          </svg>
+          <svg class="note-svg" style="top:60%; right:8%; width:25px; animation-delay: -5s;" viewBox="0 0 24 24">
+            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+          </svg>
+          <svg class="note-svg" style="top:85%; left:12%; width:20px; animation-delay: -12s;" viewBox="0 0 24 24">
+            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+          </svg>
+
+          <!-- Flying Pages (Hero area) -->
+          <svg class="flying-page-svg" style="top:40%; left:20%; width:80px; animation-delay: 0s;" viewBox="0 0 100 60">
+            <path d="M10,50 Q40,10 90,50 L90,55 Q40,15 10,55 Z" />
+          </svg>
+          <svg class="flying-page-svg" style="top:35%; left:25%; width:60px; animation-delay: -8s;"
+            viewBox="0 0 100 60">
+            <path d="M10,50 Q40,10 90,50 L90,55 Q40,15 10,55 Z" />
+          </svg>
+        </div>
+
         <div class="hero-content reveal">
           <span class="label">Une immersion romantique</span>
           <h1 class="hero-title">
@@ -1028,7 +1140,16 @@
         </div>
         <div class="discovery-text">
           <span class="label">Vidéo & Genèse</span>
-          <h3 style="font-size:1.8rem; margin-bottom:20px; color: var(--gold);">Aux sources du récit</h3>
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <svg width="40" height="40" viewBox="0 0 100 100" fill="var(--gold)">
+              <path d="M50,80 Q70,80 90,70 L90,30 Q70,40 50,40 Q30,40 10,30 L10,70 Q30,80 50,80 Z M50,40 L50,80"
+                fill="none" stroke="var(--gold)" stroke-width="2" />
+              <path d="M55,35 Q70,10 85,35" fill="none" stroke="var(--gold-bright)" stroke-width="1" opacity="0.6">
+                <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite" />
+              </path>
+            </svg>
+            <h3 style="font-size:1.8rem; color: var(--gold); margin: 0;">À la source de l'histoire</h3>
+          </div>
           <p>
             Rencontres au Clair de Lune est né en 2007, après neuf mois d'écriture, durant une période qui a
             suivi une longue pause professionnelle consacrée au repos et à la réflexion.

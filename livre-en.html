@@ -700,13 +700,16 @@
             .hero-title {
                 font-size: clamp(1.6rem, 8vw, 2.3rem);
                 line-height: 1.1;
-                letter-spacing: 0.1em;
+                letter-spacing: 0.05em;
+                /* Tightened from 0.1em */
                 margin: 0 auto 30px !important;
                 word-wrap: normal;
                 overflow-wrap: normal;
                 hyphens: none !important;
                 -webkit-hyphens: none !important;
                 max-width: 100%;
+                transform: translateX(-15px);
+                /* Shift left as requested */
             }
 
             .title-line-1,

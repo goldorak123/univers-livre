@@ -190,20 +190,31 @@
 
     .lang-selector {
       display: flex;
-      gap: 30px;
+      align-items: center;
+      gap: 12px;
     }
 
     .lang-selector a {
       color: #fff;
       text-decoration: none;
       font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: var(--transition);
-      opacity: 0.85;
-      /* Increased opacity */
+      opacity: 0.6;
+    }
+
+    .lang-selector a.active {
+      color: var(--gold);
+      opacity: 1;
+    }
+
+    .lang-selector .sep {
+      width: 1px;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.3);
     }
 
     @media (hover: hover) {
@@ -560,8 +571,11 @@
 
   <header class="top-nav">
     <div class="lang-selector">
-      <a href="livre-accueil-en.html">English</a>
-      <a href="livre-accueil-es.html">Español</a>
+      <a href="livre-accueil.html" class="active">FR</a>
+      <span class="sep"></span>
+      <a href="livre-accueil-en.html">EN</a>
+      <span class="sep"></span>
+      <a href="livre-accueil-es.html">ES</a>
     </div>
   </header>
 

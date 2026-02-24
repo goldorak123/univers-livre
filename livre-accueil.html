@@ -537,6 +537,12 @@
       .cta-btn:hover .arrow {
         width: 50px;
       }
+
+      /* No decorative arrows on mobile */
+      .cta-btn .arrow,
+      .cta-btn .arrow::after {
+        display: none !important;
+      }
     }
   </style>
 </head>

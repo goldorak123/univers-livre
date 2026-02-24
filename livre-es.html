@@ -258,9 +258,20 @@
       min-height: 95vh;
       display: flex;
       align-items: flex-start;
-      padding: 300px 0 40px;
+      padding: 260px 0 40px;
       position: relative;
       overflow: hidden;
+    }
+
+    .top-nav {
+      position: absolute;
+      top: 200px;
+      left: 80px;
+      right: 80px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      z-index: 200;
     }
 
     .grid-stage {
@@ -679,9 +690,16 @@
       }
 
       .hero-stage {
-        padding: 180px 0 40px;
+        padding: 150px 0 40px;
         text-align: center;
         display: block;
+      }
+
+      .top-nav {
+        top: 110px;
+        left: 0;
+        right: 0;
+        justify-content: center;
       }
 
       .hero-background-title {

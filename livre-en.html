@@ -62,8 +62,8 @@
             color: var(--text);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
-            hyphens: none !important;
-            -webkit-hyphens: none !important;
+            hyphens: auto;
+            -webkit-hyphens: auto;
         }
 
         /* Focus Reset */
@@ -717,13 +717,10 @@
             .hero-title {
                 font-size: clamp(1.6rem, 8vw, 2.3rem);
                 line-height: 1.1;
+                letter-spacing: 0.1em;
                 margin: 0 auto 30px !important;
-                word-wrap: normal;
-                overflow-wrap: normal;
-                hyphens: none !important;
-                -webkit-hyphens: none !important;
+                word-wrap: break-word;
                 max-width: 100%;
-                text-align: center;
             }
 
             .title-line-1,

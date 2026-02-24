@@ -402,8 +402,18 @@
       color: var(--gold);
     }
 
+    .cta-main:visited::after {
+      width: 0;
+      background: var(--gold);
+    }
+
     .cta-main:active {
       color: #fff;
+    }
+
+    .cta-main:active::after {
+      width: 60%;
+      background: #fff;
     }
 
     .btn-author {

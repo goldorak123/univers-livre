@@ -399,8 +399,22 @@
       color: #fff;
     }
 
+    .cta-btn:visited .arrow {
+      width: 80px;
+      background: var(--gold);
+    }
+
+    .cta-btn:visited .arrow::after {
+      border-color: var(--gold);
+    }
+
     .cta-btn:active .main-txt {
       color: var(--gold-bright);
+    }
+
+    .cta-btn:active .arrow {
+      width: 100px;
+      background: var(--gold-bright);
     }
 
     @keyframes reveal {

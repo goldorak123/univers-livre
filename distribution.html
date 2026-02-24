@@ -307,8 +307,18 @@
         color: var(--gold);
     }
 
+    .back-link:visited::after {
+        width: 0;
+        background: var(--gold);
+    }
+
     .back-link:active {
         color: #fff;
+    }
+
+    .back-link:active::after {
+        width: 60%;
+        background: #fff;
     }
 
     /* ================= FOOTER ================= */

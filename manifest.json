@@ -25,5 +25,13 @@
             "sizes": "180x180",
             "type": "image/png"
         }
+    ],
+    "scope_extensions": [
+        {
+            "origin": "https://mon-univers.ca"
+        },
+        {
+            "origin": "https://www.mon-univers.ca"
+        }
     ]
 }

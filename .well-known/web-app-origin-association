@@ -1,0 +1,7 @@
+{
+  "web_apps": [
+    {
+      "manifest": "https://www.mon-univers.ca/manifest.json"
+    }
+  ]
+}

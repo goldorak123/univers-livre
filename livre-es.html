@@ -63,8 +63,6 @@
       color: var(--text);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
-      hyphens: auto;
-      -webkit-hyphens: auto;
     }
 
     /* Focus Reset */
@@ -745,7 +743,10 @@
         line-height: 1.1;
         letter-spacing: 0.1em;
         margin: 0 auto 30px !important;
-        word-wrap: break-word;
+        word-wrap: normal;
+        overflow-wrap: normal;
+        hyphens: none !important;
+        -webkit-hyphens: none !important;
         max-width: 100%;
       }
 

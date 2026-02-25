@@ -14,6 +14,34 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <script>
+    // Gestion de l'installation PWA
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      console.log('beforeinstallprompt fired');
+
+      const isPWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+      if (isPWA) return;
+
+      const installBtn = document.getElementById('install-btn');
+      if (installBtn) installBtn.style.display = 'inline-block';
+    });
+
+    function installPWA() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+          }
+          deferredPrompt = null;
+        });
+      } else {
+        alert("L'installation n'est pas disponible pour le moment.\n\nSur iPhone/iPad : Utilisez Partager > 'Sur l'écran d'accueil'.");
+      }
+    }
+
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js')
@@ -563,6 +591,10 @@
 
   <header class="top-nav">
     <div class="lang-selector">
+      <button id="install-btn" onclick="installPWA()"
+        style="display: none; background: none; border: 1px solid #d4a23a; color: #d4a23a; padding: 5px 15px; border-radius: 20px; font-family: 'Cinzel', serif; font-size: 0.7rem; cursor: pointer; margin-right: 15px; letter-spacing: 0.1em;">
+        INSTALLER L'APP
+      </button>
       <a href="livre-accueil.html" class="active">FR</a>
       <span class="sep"></span>
       <a href="livre-accueil-en.html">EN</a>

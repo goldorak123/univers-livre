@@ -396,14 +396,20 @@
 
     <div class="narrative-box">
         <p>Si vous souhaitez m'écrire ou partager une réflexion, votre message me parviendra directement.</p>
-        <form onsubmit="sendMail(event)">
-            <textarea id="message" maxlength="500" placeholder="Votre message..." required></textarea>
-            <button class="btn-submit" type="submit">Envoyer le message</button>
-        </form>
-        <div class="note">
-            Le message sera transmis via votre application de messagerie.<br>
-            Contact direct : <a href="mailto:daniel@mon-univers.ca"
-                style="color: var(--gold); text-decoration: underline;">daniel@mon-univers.ca</a>
+        <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+            <textarea id="message" maxlength="500" placeholder="Votre message..." required
+                style="width: 100%; height: 200px; margin-bottom: 20px;"></textarea>
+
+            <a id="send-btn" href="mailto:daniel@mon-univers.ca?subject=Message%20de%20simonlero.com" class="btn-submit"
+                style="text-decoration: none; display: inline-block;">
+                ENVOYER LE MESSAGE
+            </a>
+
+            <div class="note" style="margin-top: 20px;">
+                (v7.0) — Le message s'ouvrira dans votre application de messagerie.<br>
+                Contact : <a href="mailto:daniel@mon-univers.ca"
+                    style="color: var(--gold); text-decoration: underline;">daniel@mon-univers.ca</a>
+            </div>
         </div>
     </div>
 
@@ -417,6 +423,16 @@
         const urlParams = new URLSearchParams(window.location.search);
         const source = urlParams.get('source');
 
+        // Dynamisation du bouton mailto en temps réel
+        const messageArea = document.getElementById('message');
+        const sendBtn = document.getElementById('send-btn');
+
+        messageArea.addEventListener('input', () => {
+            const body = encodeURIComponent(messageArea.value);
+            const subject = encodeURIComponent("Message de simonlero.com");
+            sendBtn.href = `mailto:daniel@mon-univers.ca?subject=${subject}&body=${body}`;
+        });
+
         // Dynamic Branding Logic
         if (source === 'book') {
             const subtitle = document.querySelector('.hero-subtitle');
@@ -424,15 +440,9 @@
                 subtitle.textContent = "Simon Lero — Portfolio Littéraire";
                 subtitle.style.letterSpacing = "15px";
             }
-            // Update Copyright Brand
             const brand = document.getElementById('copyright-brand');
             if (brand) brand.textContent = "simonlero.com";
         }
-
-        // Debug pour vérifier si la nouvelle version est chargée
-        window.addEventListener('load', () => {
-            console.log("Formulaire prête (v4.0)");
-        });
     </script>
 </body>
 

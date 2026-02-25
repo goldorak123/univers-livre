@@ -527,17 +527,22 @@
       }
 
       .cta-btn .arrow {
-        width: 40px;
+        width: 35px;
+        transition: width 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .cta-btn:hover .arrow {
-        width: 50px;
+        width: 45px;
       }
 
-      /* Arrow stays visible on mobile */
       .arrow-svg {
-        width: 30px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
+        color: var(--gold);
+        transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
       }
     }
   </style>
@@ -588,9 +593,9 @@
             <span class="sub-txt">Colección Exclusiva y Ediciones</span>
           </div>
           <div class="arrow-svg">
-            <svg viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 10C5 30 15 50 35 50" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
-              <path d="M25 40L35 50L25 60" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 20H38" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M28 10L38 20L28 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
           </div>

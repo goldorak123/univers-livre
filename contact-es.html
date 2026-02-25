@@ -267,16 +267,27 @@
             position: relative;
         }
 
+        .btn-submit::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 80px;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         @media (hover: hover) {
             .btn-submit:hover {
-                color: #fff;
+                color: var(--gold);
                 transform: translateY(-5px);
-                text-shadow: 0 0 15px rgba(216, 178, 90, 0.4);
+                text-shadow: 0 0 15px rgba(216, 178, 90, 0.3);
             }
 
             .btn-submit:hover::after {
-                width: 40%;
-                background: #fff;
+                width: calc(100% - 160px);
+                background: var(--gold);
             }
         }
 

@@ -5,6 +5,12 @@
     },
     {
       "manifest": "https://mon-univers.ca/manifest.json"
+    },
+    {
+      "manifest": "https://www.mon-univers.ca/manifest.json?v=11"
+    },
+    {
+      "manifest": "https://mon-univers.ca/manifest.json?v=11"
     }
   ]
 }

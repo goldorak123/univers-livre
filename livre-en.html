@@ -641,44 +641,61 @@
         }
 
         /* Footer Nav */
+        /* Redesigned Footer Section */
         .footer-nav {
             text-align: center;
-            margin-top: 80px;
+            margin: 120px 0 100px;
         }
 
         .footer-nav a {
             color: var(--gold);
             text-decoration: none;
             font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
-            margin: 0 25px;
-            opacity: 0.5;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1.1rem;
+            margin: 0 40px;
+            opacity: 0.8;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: var(--transition);
             position: relative;
             display: inline-block;
-            padding-bottom: 5px;
+            padding-bottom: 8px;
         }
 
         @media (hover: hover) {
             .footer-nav a:hover {
                 opacity: 1;
-                transform: translateY(-3px);
-                text-shadow: 0 0 10px rgba(216, 178, 90, 0.4);
+                color: var(--gold-bright);
+                transform: translateY(-5px);
+                text-shadow: 0 0 20px rgba(201, 162, 77, 0.3);
+            }
+
+            .footer-nav a::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 0;
+                height: 1px;
+                background: var(--gold);
+                transition: var(--transition);
+                transform: translateX(-50%);
             }
 
             .footer-nav a:hover::after {
-                width: 80%;
-                background: #fff;
+                width: 100%;
             }
         }
 
         footer {
-            padding: 60px 0;
+            padding: 45px 0;
             text-align: center;
-            border-top: 1px solid var(--border);
-            color: #888;
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
+            background: #0c0c0c;
+            border-top: 1px solid rgba(201, 162, 77, 0.08);
+            color: #777;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
         }
 
         @media (max-width: 1000px) {
@@ -781,19 +798,25 @@
 
             /* Responsive Footer Nav */
             .footer-nav {
-                margin-top: 50px;
+                margin-top: 80px;
                 display: flex;
                 flex-direction: column;
-                gap: 20px;
+                gap: 35px;
                 align-items: center;
             }
 
             .footer-nav a {
                 margin: 0;
-                font-size: 0.75rem;
-                opacity: 0.7;
+                font-size: 0.9rem;
+                opacity: 0.9;
                 width: 100%;
                 text-align: center;
+                letter-spacing: 0.2em;
+            }
+
+            footer {
+                padding: 35px 0;
+                font-size: 0.7rem;
             }
         }
 

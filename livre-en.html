@@ -316,7 +316,7 @@
         .cta-main {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
             margin-top: 15px;
             padding: 18px 40px;
             background: transparent;
@@ -332,12 +332,9 @@
             position: relative;
         }
 
-        @media (hover: hover) {
-            .cta-main:hover {
-                color: #fff;
-                transform: translateY(-5px);
-                text-shadow: 0 0 15px rgba(216, 178, 90, 0.4);
-            }
+        .cta-main svg {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
         }
 
         .cta-main:visited {
@@ -361,6 +358,17 @@
         }
 
         @media (hover: hover) {
+            .cta-main:hover {
+                color: #fff;
+                transform: translateY(-5px);
+                text-shadow: 0 0 15px rgba(216, 178, 90, 0.4);
+            }
+
+            .cta-main:hover svg {
+                transform: translateX(10px);
+                color: #fff;
+            }
+
             .cta-main:hover::after {
                 width: 60%;
                 background: #fff;
@@ -686,11 +694,6 @@
                 display: block;
             }
 
-            .lang-selector {
-                margin: -10px 30px 0 0;
-                justify-content: flex-end;
-            }
-
             .hero-background-title {
                 left: -10px;
                 top: -10px;
@@ -903,11 +906,6 @@
 
     <header class="hero-stage">
         <div class="hero-background-title">NOVEL</div>
-        <div class="lang-selector">
-            <a href="livre.html">FR</a>
-            <span class="sep">|</span>
-            <a href="livre-es.html">ES</a>
-        </div>
         <div class="container">
             <div class="grid-stage">
 
@@ -927,7 +925,14 @@
                             a sign from his one true, enduring love.</p>
                         <p>A meeting with Joey shatters this fragile balance. In him, Sisley recognizes the reflection
                             of his own thirty years: an intimate resonance, an unexpected synergy.</p>
-                        <a href="resume-en.html" class="cta-main">FULL SUMMARY HERE &rarr;</a>
+                        <a href="resume-en.html" class="cta-main">
+                            FULL SUMMARY HERE
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1001,7 +1006,8 @@
                     <span class="testimonial-author">— Mark T.</span>
                 </div>
                 <div class="testimonial-card reveal" style="transition-delay: 0.3s;">
-                    <p class="testimonial-text">"A must-read for lovers of fine literature. I read it twice, i cried twice"</p>
+                    <p class="testimonial-text">"A must-read for lovers of fine literature. I read it twice, i cried
+                        twice"</p>
                     <span class="testimonial-author">— Sarah J.</span>
                 </div>
             </div>

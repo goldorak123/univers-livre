@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es" class="notranslate" translate="no">
 
 <head>
@@ -262,34 +262,6 @@
     }
 
     /* Navigation */
-    .lang-selector {
-      display: flex;
-      gap: 15px;
-      justify-content: flex-end;
-      margin: 20px 80px 0;
-      position: relative;
-      z-index: 200;
-    }
-
-    .lang-selector a {
-      color: #fff;
-      text-decoration: none;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      transition: var(--transition);
-      opacity: 0.85;
-    }
-
-    @media (hover: hover) {
-      .lang-selector a:hover {
-        color: var(--gold);
-        opacity: 1;
-      }
-    }
-
     .grid-stage {
       display: flex;
       flex-direction: column;
@@ -361,12 +333,11 @@
     .cta-main {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 15px;
       margin-top: 15px;
       padding: 18px 40px;
       background: transparent;
       border: 1px solid transparent;
-      /* No more sandwich lines */
       color: var(--gold);
       text-decoration: none;
       font-family: 'Cinzel', serif;
@@ -375,6 +346,11 @@
       letter-spacing: 4px;
       transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
+    }
+
+    .cta-main svg {
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      flex-shrink: 0;
     }
 
     @media (hover: hover) {
@@ -719,11 +695,6 @@
         display: block;
       }
 
-      .lang-selector {
-        margin: -10px 30px 0 0;
-        justify-content: flex-end;
-      }
-
       .hero-background-title {
         left: -10px;
         top: -10px;
@@ -928,11 +899,6 @@
 
   <header class="hero-stage">
     <div class="hero-background-title">NOVELA</div>
-    <div class="lang-selector">
-      <a href="livre.html">FR</a>
-      <span class="sep">|</span>
-      <a href="livre-en.html">EN</a>
-    </div>
     <div class="container">
       <div class="grid-stage">
         <div class="hero-content reveal">
@@ -951,7 +917,14 @@
               señal de su único amor, verdadero y duradero.</p>
             <p>El encuentro con Joey rompe este frágil equilibrio. En él, Sisley reconoce el reflejo de sus
               propios treinta años: una resonancia íntima, una sinergia inesperada.</p>
-            <a href="resume-es.html" class="cta-main">RESUMEN COMPLETO AQUÍ &rarr;</a>
+            <a href="resume-es.html" class="cta-main">
+              RESUMEN COMPLETO AQUÍ
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
@@ -1022,7 +995,8 @@
           <span class="testimonial-author">— Carlos M.</span>
         </div>
         <div class="testimonial-card reveal" style="transition-delay: 0.3s;">
-          <p class="testimonial-text">"Imprescindible para los amantes de la buena literatura. Lo leí dos veces, lloré dos veces"</p>
+          <p class="testimonial-text">"Imprescindible para los amantes de la buena literatura. Lo leí dos veces, lloré
+            dos veces"</p>
           <span class="testimonial-author">— Elena V.</span>
         </div>
       </div>

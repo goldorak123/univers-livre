@@ -394,19 +394,28 @@
 
     @media (hover: hover) {
       .cta-main:hover {
-        color: #fff;
+        color: var(--gold-bright);
         transform: translateY(-5px);
-        text-shadow: 0 0 15px rgba(216, 178, 90, 0.4);
+        text-shadow: 0 0 15px rgba(201, 162, 77, 0.3);
       }
 
       .cta-main:hover svg {
         transform: translateX(10px);
-        color: #fff;
+      }
+
+      .cta-main::after {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left: 40px;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        transition: var(--transition);
       }
 
       .cta-main:hover::after {
-        width: 60%;
-        background: #fff;
+        width: calc(100% - 80px);
       }
     }
 
@@ -453,14 +462,14 @@
 
     @media (hover: hover) {
       .btn-author:hover {
-        color: #fff;
+        color: var(--gold-bright);
         transform: translateY(-3px);
-        text-shadow: 0 0 10px rgba(216, 178, 90, 0.4);
+        text-shadow: 0 0 15px rgba(201, 162, 77, 0.3);
       }
 
       .btn-author:hover::after {
         width: 100%;
-        background: #fff;
+        background: var(--gold);
       }
     }
 

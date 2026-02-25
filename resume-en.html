@@ -273,12 +273,23 @@
     }
 
     footer {
-        padding: 60px 0;
+        padding: 45px 0;
         text-align: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-        color: #444;
+        background: #0c0c0c;
+        border-top: 1px solid rgba(201, 162, 77, 0.08);
+        color: #777;
         font-size: 0.8rem;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 10;
+    }
+
+    @media (max-width: 1000px) {
+        footer {
+            padding: 35px 0;
+            font-size: 0.7rem;
+        }
     }
 
 
@@ -407,7 +418,9 @@
     </div>
 
     <footer>
-        <p>© <span id="current-year"></span> simonlero.com — All rights reserved</p>
+        <div class="container">
+            <p>© <span id="current-year"></span> simonlero.com — All rights reserved</p>
+        </div>
     </footer>
 
     <script>

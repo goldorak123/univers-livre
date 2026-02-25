@@ -98,18 +98,23 @@
         }
 
         footer {
-            position: absolute;
-            bottom: 40px;
-            width: 100%;
+            padding: 45px 0;
             text-align: center;
+            background: #0c0c0c;
+            border-top: 1px solid rgba(201, 162, 77, 0.08);
+            color: #777;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 10;
         }
 
-        footer p {
-            font-size: 0.65rem;
-            letter-spacing: 0.2em;
-            color: #444;
-            margin: 0;
-            text-transform: uppercase;
+        @media (max-width: 1000px) {
+            footer {
+                padding: 35px 0;
+                font-size: 0.7rem;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -121,7 +126,9 @@
     <a href="index.html" class="btn-return">Retour à l'accueil</a>
 
     <footer>
-        <p>© <span id="current-year"></span> simonlero.com — Tous droits réservés</p>
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <p>© <span id="current-year"></span> simonlero.com — Tous droits réservés</p>
+        </div>
     </footer>
 
     <script>

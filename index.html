@@ -349,13 +349,25 @@
 
 
   /* FOOTER */
-  .footer {
-    position: absolute;
-    bottom: 24px;
-    left: 0;
-    right: 0;
+  footer {
+    padding: 45px 0;
     text-align: center;
-    z-index: 4;
+    background: #0c0c0c;
+    border-top: 1px solid rgba(201, 162, 77, 0.08);
+    /* Bordure or très discrète */
+    color: #777;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+  }
+
+  @media (max-width: 1000px) {
+    footer {
+      padding: 35px 0;
+      font-size: 0.7rem;
+    }
   }
 
   .footer-top-links {
@@ -669,21 +681,12 @@
           <img src="snapchat.png" alt="Snapchat">
         </div>
 
-        <div class="copy">
-          <p>© <span id="current-year"></span> mon-univers.ca <a href="404.html"
-              style="text-decoration: none; color: inherit; padding: 10px 15px; margin: -10px -15px;">—</a> Tous droits
-            réservés</p>
-          <div class="footer-nav" style="margin-top: 15px; opacity: 0.6; font-size: 0.8rem;">
-            <a href="https://www.mon-univers.ca/index.html"
-              style="color: var(--gold); text-decoration: none; font-family: 'Cinzel', serif;">Visiter ma vitrine
-              personnelle</a>
-          </div>
-          <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
-        </div>
-
+        <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
       </div>
 
     </div>
+
+  </div>
   </div>
 
 </body>

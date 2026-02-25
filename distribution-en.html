@@ -157,16 +157,24 @@
         }
     }
 
-    /* DISTRIBUTION CARD (Offset Floating Card) */
     footer {
-        padding: 60px 0;
+        padding: 45px 0;
         text-align: center;
-        border-top: 1px solid rgba(216, 178, 90, 0.1);
-        color: #888;
-        font-size: 0.75rem;
-        letter-spacing: 0.1em;
-        z-index: 10;
+        background: #0c0c0c;
+        border-top: 1px solid rgba(201, 162, 77, 0.08);
+        color: #777;
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
         position: relative;
+        z-index: 10;
+    }
+
+    @media (max-width: 1000px) {
+        footer {
+            padding: 35px 0;
+            font-size: 0.7rem;
+        }
     }
 
     .container {

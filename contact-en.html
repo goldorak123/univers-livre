@@ -449,18 +449,7 @@
             let subject = "Message from simonlero.com";
             window.location.href = "mailto:support@mon-univers.ca?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
         }
-        function sendMail(event) {
-            event.preventDefault();
-            const message = document.getElementById("message").value;
+    </script>
+</body>
 
-            if (message.trim() === "") {
-                alert("Por favor, escriba un mensaje antes de enviar.");
-                return;
-            }
-
-            let subject = "Mensaje de simonlero.com";
-            window.location.href = "mailto:support@mon-univers.ca?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
-        }
-</body >
-
-</html >
+</html>

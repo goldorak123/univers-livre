@@ -436,10 +436,21 @@
                 return;
             }
 
-            const subject = "Message from simonlero.com";
-            window.location.href = "mailto:daniel@mon-univers.ca?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
+            let subject = "Message from simonlero.com";
+            window.location.href = "mailto:support@mon-univers.ca?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
         }
-    </script>
-</body>
+        function sendMail(event) {
+            event.preventDefault();
+            const message = document.getElementById("message").value;
 
-</html>
+            if (message.trim() === "") {
+                alert("Por favor, escriba un mensaje antes de enviar.");
+                return;
+            }
+
+            let subject = "Mensaje de simonlero.com";
+            window.location.href = "mailto:support@mon-univers.ca?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
+        }
+</body >
+
+</html >

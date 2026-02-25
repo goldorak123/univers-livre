@@ -397,19 +397,39 @@
         <div class="hero-subtitle">
         </div>
         <div class="narrative-box">
-            <p>Si desea escribirme o partager une réflexion, su message me llegará directamente.</p>
-            <form onsubmit="sendMail(event)"> <textarea id="message" maxlength="500" placeholder="Su message...">
-</textarea> <button class="btn-submit" type="submit">Enviar</button> </form>
-            <div class="note"> El mensaje se transmitirá a través de su servicio de mensajería. No se almacenan datos en
-                este servidor. </div>
+            <p>Si desea escribirme o compartir un pensamiento, su mensaje me llegará directamente.</p>
+            <form action="https://formspree.io/daniel@mon-univers.ca" method="POST">
+                <textarea id="message" name="message" maxlength="500" placeholder="Su mensaje..." required></textarea>
+                <input type="hidden" name="_subject" value="Nuevo mensaje de simonlero.com">
+                <button class="btn-submit" type="submit">Enviar mensaje</button>
+            </form>
+            <div class="note">
+                El mensaje será transmitido a través del servicio Formspree.<br>
+                En caso de problemas: <a href="mailto:daniel@mon-univers.ca"
+                    style="color: var(--gold); text-decoration: underline;">daniel@mon-univers.ca</a>
+            </div>
         </div>
     </header>
     <footer class="footer">
         <p>© <span id="current-year">
             </span> <span id="copyright-brand">simonlero.com</span> — Todos los derechos reservados</p>
     </footer>
-    <script>         document.getElementById('current-year').textContent = new Date().getFullYear(); const urlParams = new URLSearchParams(window.location.search); const source = urlParams.get('source');          // Dynamic Branding Logic         if (source === 'book') {             const subtitle = document.querySelector('.hero-subtitle');             if (subtitle) {                 subtitle.textContent = "Simon Lero — Portfolio Literario";                 subtitle.style.letterSpacing = "15px";             }             // Update Copyright Brand             const brand = document.getElementById('copyright-brand');
-        if (brand) brand.textContent = "simonlero.com";
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const source = urlParams.get('source');
+
+        // Dynamic Branding Logic
+        if (source === 'book') {
+            const subtitle = document.querySelector('.hero-subtitle');
+            if (subtitle) {
+                subtitle.textContent = "Simon Lero — Portfolio Literario";
+                subtitle.style.letterSpacing = "15px";
+            }
+            // Update Copyright Brand
+            const brand = document.getElementById('copyright-brand');
+            if (brand) brand.textContent = "simonlero.com";
         }
     </script>
 </body>

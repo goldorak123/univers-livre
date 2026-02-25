@@ -1,4 +1,0 @@
-Ceci est un test de déploiement pour Antigravity.
-Si vous lisez ceci, les changements sont bien en ligne !
-Version: 1.0
-Heure: 2026-02-25 08:15

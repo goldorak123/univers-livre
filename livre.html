@@ -521,8 +521,12 @@
       filter: grayscale(0);
     }
 
-    section {
-      border-top: 1px solid var(--border);
+    .section-divider {
+      width: 150px;
+      height: 1px;
+      background: var(--gold);
+      margin: 80px auto;
+      opacity: 0.3;
     }
 
     #discovery {
@@ -1075,6 +1079,8 @@
     </div>
   </header>
 
+  <div class="section-divider"></div>
+
   <section class="author-section" id="author">
     <div class="container">
       <div class="author-portrait-grid">
@@ -1092,6 +1098,8 @@
       </div>
     </div>
   </section>
+
+  <div class="section-divider"></div>
 
   <section id="discovery">
     <div class="container">
@@ -1121,6 +1129,8 @@
       </div>
     </div>
   </section>
+
+  <div class="section-divider"></div>
 
   <section class="shop-section" id="buy">
     <div class="container">
@@ -1169,36 +1179,40 @@
           </div>
         </a>
 
-      </div>
+      </div> <!-- end shop-grid -->
+    </div> <!-- end container -->
+  </section>
 
-      <section class="testimonials-section">
-        <div class="container">
-          <h2 class="reveal">Ce que disent les lecteurs</h2>
-          <div class="testimonials-grid">
-            <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
-              <p class="testimonial-text">"Simon Lero capture l'essence même de
-                l'introspection avec une plume d'une élégance absolue. J'aime le lien avec la musique."</p>
-              <span class="testimonial-author">— Marie L.</span>
-            </div>
-            <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
-              <p class="testimonial-text">"Rarement un livre ne m'aura autant touché. C'est une œuvre qui se lit comme
-                on contemple un tableau de maître. J'adore le lien avec la sonate de Beethoven."</p>
-              <span class="testimonial-author">— Jean-Pierre D.</span>
-            </div>
-            <div class="testimonial-card reveal" style="transition-delay: 0.3s;">
-              <p class="testimonial-text">"Un incontournable pour les amoureux de la belle littérature. J'ai lu 2 fois
-                et peuré 2 fois."</p>
-              <span class="testimonial-author">— Sophie R.</span>
-            </div>
-          </div>
+  <div class="section-divider"></div>
+
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="reveal">Ce que disent les lecteurs</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
+          <p class="testimonial-text">"Simon Lero capture l'essence même de
+            l'introspection avec une plume d'une élégance absolue. J'aime le lien avec la musique."</p>
+          <span class="testimonial-author">— Marie L.</span>
         </div>
-      </section>
-
-      <div class="footer-nav">
-        <a href="https://www.mon-univers.ca/index.html">Visiter ma vitrine personnelle</a>
-        <a href="distribution.html">Partenaires de Distribution</a>
+        <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
+          <p class="testimonial-text">"Rarement un livre ne m'aura autant touché. C'est une œuvre qui se lit comme
+            on contemple un tableau de maître. J'adore le lien avec la sonate de Beethoven."</p>
+          <span class="testimonial-author">— Jean-Pierre D.</span>
+        </div>
+        <div class="testimonial-card reveal" style="transition-delay: 0.3s;">
+          <p class="testimonial-text">"Un incontournable pour les amoureux de la belle littérature. J'ai lu 2 fois
+            et peuré 2 fois."</p>
+          <span class="testimonial-author">— Sophie R.</span>
+        </div>
       </div>
     </div>
+  </section>
+
+  <div class="footer-nav">
+    <a href="https://www.mon-univers.ca/index.html">Visiter ma vitrine personnelle</a>
+    <a href="distribution.html">Partenaires de Distribution</a>
+  </div>
+  </div>
   </section>
 
   <footer>

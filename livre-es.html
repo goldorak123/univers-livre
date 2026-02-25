@@ -477,8 +477,16 @@
       filter: grayscale(0);
     }
 
+    .section-divider {
+      width: 150px;
+      height: 1px;
+      background: var(--gold);
+      margin: 80px auto;
+      opacity: 0.3;
+    }
+
     section {
-      border-top: 1px solid var(--border);
+      border-top: none;
     }
 
     #discovery {
@@ -981,6 +989,8 @@
     </div>
   </header>
 
+  <div class="section-divider"></div>
+
   <section class="author-section" id="author">
     <div class="container">
       <div class="author-portrait-grid">
@@ -998,6 +1008,8 @@
       </div>
     </div>
   </section>
+
+  <div class="section-divider"></div>
 
   <section id="discovery">
     <div class="container">
@@ -1028,7 +1040,49 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
+  <section class="shop-section" id="buy">
+    <div class="container">
+      <div class="label" style="text-align:center;">Comprar el libro</div>
+      <div class="shop-grid">
+
+        <!-- AMAZON -->
+        <a href="https://books2read.com/u/4jkM5X" class="shop-card reveal" target="_blank">
+          <img src="amazon-icon.svg" alt="Amazon">
+          <div class="card-content">
+            <div class="platform">DISPONIBILIDAD MUNDIAL</div>
+            <div class="title">Amazon</div>
+            <div class="tag">Kindle / Libro de bolsillo — tapa blanda</div>
+          </div>
+        </a>
+
+        <!-- PAYHIP -->
+        <a href="https://payhip.com/simonlero" class="shop-card reveal" style="transition-delay:0.2s;" target="_blank">
+          <img src="payhip-icon.svg" alt="Payhip">
+          <div class="card-content">
+            <div class="platform">20% DE DESCUENTO</div>
+            <div class="title">Payhip</div>
+            <div class="tag">PDF / ePub — 20% de descuento Código: READER20</div>
+          </div>
+        </a>
+
+        <!-- LULU -->
+        <a href="https://www.lulu.com/search?q=simon+lero" class="shop-card reveal" style="transition-delay:0.3s;"
+          target="_blank">
+          <img src="lulu-icon.svg" alt="Lulu">
+          <div class="card-content">
+            <div class="platform">DISPONIBILIDAD MUNDIAL</div>
+            <div class="title">Lulu.com</div>
+            <div class="tag">ePub / Libro de bolsillo — tapa blanda</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
   </section>
+
+  <div class="section-divider"></div>
 
   <section class="testimonials-section">
     <div class="container">

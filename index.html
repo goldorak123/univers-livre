@@ -363,7 +363,7 @@
     z-index: 10;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     footer {
       padding: 35px 0;
       font-size: 0.7rem;
@@ -655,8 +655,7 @@
 
       </div>
 
-      <div class="footer">
-
+      <footer class="footer">
         <div class="footer-top-links">
           <button id="install-btn-mobile" onclick="installPWA()"
             style="display: none; background: #d8b25a; color: #000; border: none; padding: 10px 20px; border-radius: 20px; font-weight: bold; cursor: pointer; margin: 0 auto 15px auto; font-size: 14px;">
@@ -681,8 +680,17 @@
           <img src="snapchat.png" alt="Snapchat">
         </div>
 
+        <div class="copy" style="margin-top: 20px;">
+          <p>© <span id="current-year"></span> simonlero.com — Tous droits réservés</p>
+          <div class="footer-nav" style="margin-top: 15px; opacity: 0.6; font-size: 0.8rem;">
+            <a href="https://www.mon-univers.ca/index.html"
+              style="color: var(--gold); text-decoration: none; font-family: 'Cinzel', serif;">Visiter ma vitrine
+              personnelle</a>
+          </div>
+        </div>
+
         <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
-      </div>
+      </footer>
 
     </div>
 

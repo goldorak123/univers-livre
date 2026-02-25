@@ -394,14 +394,13 @@
         </div>
         <div class="narrative-box">
             <p>If you wish to write to me or share a thought, your message will reach me directly.</p>
-            <form action="https://formspree.io/daniel@mon-univers.ca" method="POST">
-                <textarea id="message" name="message" maxlength="500" placeholder="Your message..." required></textarea>
-                <input type="hidden" name="_subject" value="New message from simonlero.com">
+            <form onsubmit="sendMail(event)">
+                <textarea id="message" maxlength="500" placeholder="Your message..." required></textarea>
                 <button class="btn-submit" type="submit">Send Message</button>
             </form>
             <div class="note">
-                The message will be transmitted via the Formspree service.<br>
-                In case of issues: <a href="mailto:daniel@mon-univers.ca"
+                The message will be transmitted via your email application.<br>
+                Direct contact: <a href="mailto:daniel@mon-univers.ca"
                     style="color: var(--gold); text-decoration: underline;">daniel@mon-univers.ca</a>
             </div>
         </div>
@@ -426,6 +425,19 @@
             // Update Copyright Brand
             const brand = document.getElementById('copyright-brand');
             if (brand) brand.textContent = "simonlero.com";
+        }
+
+        function sendMail(event) {
+            event.preventDefault();
+            const message = document.getElementById("message").value;
+
+            if (message.trim() === "") {
+                alert("Please write a message before sending.");
+                return;
+            }
+
+            const subject = "Message from simonlero.com";
+            window.location.href = "mailto:daniel@mon-univers.ca?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
         }
     </script>
 </body>

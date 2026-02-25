@@ -396,15 +396,13 @@
 
     <div class="narrative-box">
         <p>Si vous souhaitez m'écrire ou partager une réflexion, votre message me parviendra directement.</p>
-        <form action="https://formspree.io/daniel@mon-univers.ca" method="POST" id="contact-form">
-            <textarea id="message" name="message" maxlength="500" placeholder="Votre message..." required></textarea>
-            <input type="hidden" name="_subject" value="Nouveau message de simonlero.com">
-            <button class="btn-submit" type="submit">Envoyer le
-                message</button>
+        <form onsubmit="sendMail(event)">
+            <textarea id="message" maxlength="500" placeholder="Votre message..." required></textarea>
+            <button class="btn-submit" type="submit">Envoyer le message</button>
         </form>
         <div class="note">
-            Le message sera transmis via le service Formspree.<br>
-            En cas de problème : <a href="mailto:daniel@mon-univers.ca"
+            Le message sera transmis via votre application de messagerie.<br>
+            Contact direct : <a href="mailto:daniel@mon-univers.ca"
                 style="color: var(--gold); text-decoration: underline;">daniel@mon-univers.ca</a>
         </div>
     </div>

@@ -147,16 +147,16 @@
 
     .hero-background-title {
       font-family: 'Inter', sans-serif;
-      font-size: clamp(8rem, 25vw, 24rem);
+      font-size: clamp(10rem, 30vw, 28rem);
       font-weight: 900;
       color: rgba(216, 178, 90, 0.15);
       -webkit-text-stroke: 1px rgba(216, 178, 90, 0.15);
       position: absolute;
-      top: -40px;
+      top: -10%;
       left: 80px;
       line-height: 0.7;
       text-transform: uppercase;
-      z-index: -1;
+      z-index: 1;
       pointer-events: none;
       letter-spacing: -0.05em;
       animation: slideInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -1031,7 +1031,7 @@
     <div class="hero-background-title">ROMAN</div>
     <div class="container">
       <div class="grid-stage">
-        <div class="hero-content reveal">
+        <div class="hero-content reveal" style="position: relative; z-index: 10;">
           <span class="label">Une immersion romantique</span>
           <h1 class="hero-title">
             <span class="title-line title-line-1">Rencontres au</span>

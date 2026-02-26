@@ -121,16 +121,20 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 1.0;
-      filter: grayscale(10%) contrast(110%) brightness(100%);
+      opacity: 1;
+      filter: grayscale(0%) contrast(100%) brightness(100%);
+      /* Retrait du grayscale et contrast excessif */
       animation: kenBurns 40s linear infinite alternate;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
     }
 
     .bg-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.2);
-      /* Moins d'overlay pour voir l'image */
+      background: rgba(0, 0, 0, 0.15);
+      /* Encore plus léger */
       z-index: 1;
     }
 
@@ -288,8 +292,8 @@
     .poetic-box {
       border-left: 2px solid var(--gold);
       padding-left: 30px;
-      margin-top: 50px;
-      /* Ajouté pour descendre le texte */
+      margin-top: 180px;
+      /* Augmenté drastiquement pour descendre le texte */
       margin-bottom: 60px;
       opacity: 0;
       animation: reveal 1.8s forwards 0.8s;

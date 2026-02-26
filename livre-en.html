@@ -435,7 +435,6 @@
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
             max-width: 350px;
             justify-self: center;
-            overflow: visible;
         }
 
         .author-photo-frame img {
@@ -443,18 +442,6 @@
             display: block;
             filter: grayscale(1);
             transition: var(--transition);
-        }
-
-        .author-photo-frame::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            right: 15px;
-            bottom: 15px;
-            border: 1px solid var(--gold);
-            pointer-events: none;
-            z-index: -1;
         }
 
         .author-photo-frame img {

@@ -811,6 +811,23 @@
         text-align: center;
         letter-spacing: 0.2em;
       }
+
+      /* Supprimer le soulignement sur mobile pour tous les éléments interactifs */
+      a,
+      button,
+      .cta-main,
+      .lang-selector a,
+      .shop-card,
+      .footer-nav a {
+        text-decoration: none !important;
+      }
+
+      a:hover,
+      a:focus,
+      a:active,
+      a:visited {
+        text-decoration: none !important;
+      }
     }
 
     @media (max-width: 1024px) {

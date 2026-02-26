@@ -229,6 +229,20 @@
                 min-width: 200px;
                 text-align: center;
             }
+
+            /* Supprimer le soulignement sur mobile pour tous les éléments interactifs */
+            a,
+            button,
+            .btn-return {
+                text-decoration: none !important;
+            }
+
+            a:hover,
+            a:focus,
+            a:active,
+            a:visited {
+                text-decoration: none !important;
+            }
         }
 
         @media (max-width: 480px) {

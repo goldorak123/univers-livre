@@ -501,6 +501,24 @@
         color: var(--gold);
         transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
       }
+
+      /* Supprimer le soulignement sur mobile pour tous les éléments interactifs */
+      @media (max-width: 900px) {
+
+        a,
+        button,
+        .cta-btn,
+        .lang-selector a {
+          text-decoration: none !important;
+        }
+
+        a:hover,
+        a:focus,
+        a:active,
+        a:visited {
+          text-decoration: none !important;
+        }
+      }
     }
   </style>
 </head>

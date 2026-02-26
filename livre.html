@@ -1386,24 +1386,30 @@
           </div>
         </div>
       </div>
-      <div class="footer-right">
-        <div class="social-grid">
-          <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
-          <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
-          <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
-          <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
-          <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
-          <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
-          <div class="social-btn"><img src="iconX480.png" alt="X"></div>
-          <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
-        </div>
-        <p class="footer-copyright">© <span id="current-year"></span> simonlero.com — Tous droits réservés</p>
+      <div class="footer-nav-links">
+        <a href="livre.html">Le Livre</a>
+        <span class="sep">•</span>
+        <a href="contact.html">Me contacter</a>
+        <span class="sep">•</span>
+        <a href="resume.html">À propos</a>
       </div>
+      <div class="social-grid">
+        <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
+        <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
+        <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
+        <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
+        <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
+        <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
+        <div class="social-btn"><img src="iconX480.png" alt="X"></div>
+        <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
+      </div>
+      <p class="footer-copyright">© <span id="current-year-footer"></span> simonlero.com — Tous droits réservés</p>
+    </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+    document.getElementById('current-year-footer').textContent = new Date().getFullYear();
 
     // Intersection Observer
     const observer = new IntersectionObserver((entries) => {

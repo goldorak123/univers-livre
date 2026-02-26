@@ -1022,7 +1022,15 @@
 
         .pwa-icons-box {
             display: flex;
-            gap: 20px;
+            gap: 35px;
+            /* Increased for label spacing */
+        }
+
+        .pwa-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
         }
 
         .pwa-icon-small {
@@ -1030,6 +1038,15 @@
             width: auto;
             filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.3));
             transition: var(--transition);
+        }
+
+        .pwa-icon-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0.8;
         }
 
         .pwa-icon-small:hover {
@@ -1301,8 +1318,14 @@
                 <div class="pwa-badge-container">
                     <img src="pwa-text-banner-en.png" alt="PWA Optimized" class="pwa-text-banner">
                     <div class="pwa-icons-box">
-                        <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
-                        <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
+                        <div class="pwa-icon-item">
+                            <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
+                            <span class="pwa-icon-label">Simon Lero</span>
+                        </div>
+                        <div class="pwa-icon-item">
+                            <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
+                            <span class="pwa-icon-label">Mon Univers</span>
+                        </div>
                     </div>
                 </div>
             </div>

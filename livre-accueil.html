@@ -129,7 +129,8 @@
     .bg-overlay {
       position: absolute;
       inset: 0;
-      background: #000;
+      background: rgba(0, 0, 0, 0.2);
+      /* Moins d'overlay pour voir l'image */
       z-index: 1;
     }
 
@@ -287,6 +288,8 @@
     .poetic-box {
       border-left: 2px solid var(--gold);
       padding-left: 30px;
+      margin-top: 50px;
+      /* Ajouté pour descendre le texte */
       margin-bottom: 60px;
       opacity: 0;
       animation: reveal 1.8s forwards 0.8s;

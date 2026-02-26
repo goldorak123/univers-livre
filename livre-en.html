@@ -42,7 +42,7 @@
         :root {
             --gold: #c9a24d;
             --gold-bright: #eec165;
-            --bg: #050505;
+            --bg: #000;
             --bg-card: #0c0c0c;
             --text: #B0B0B0;
             --text-dim: #888;
@@ -58,16 +58,21 @@
 
         html,
         body {
+            background: #000 !important;
+            margin: 0;
+            padding: 0;
+            color: #f0f0f0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             overflow-x: hidden;
-            width: 100%;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+            min-height: 100vh;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.5;
-            background-color: var(--bg);
-            color: var(--text);
-            -webkit-font-smoothing: antialiased;
+        button:focus,
+        .shop-card:focus {
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent;
         }
 
         /* Focus Reset */
@@ -78,19 +83,6 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* Grain/Noise Overlay */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.04;
-            pointer-events: none;
-            z-index: 1000;
-        }
 
 
         .corner-glow {
@@ -338,10 +330,6 @@
             position: relative;
         }
 
-        .cta-main svg {
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            flex-shrink: 0;
-        }
 
         .cta-main:visited {
             color: var(--gold);
@@ -370,9 +358,6 @@
                 text-shadow: 0 0 15px rgba(201, 162, 77, 0.3);
             }
 
-            .cta-main:hover svg {
-                transform: translateX(10px);
-            }
 
             .cta-main:hover::after {
                 width: calc(100% - 80px);
@@ -695,13 +680,17 @@
         }
 
         footer {
-            padding: 45px 0;
+            background: #111;
+            border-top: 1px solid rgba(216, 178, 90, 0.1);
+            padding: 40px 0;
+            margin-top: 80px;
             text-align: center;
-            background: #0c0c0c;
-            border-top: 1px solid rgba(201, 162, 77, 0.08);
+        }
+
+        .copyright {
+            font-size: 11px;
             color: #777;
-            font-size: 0.8rem;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
         }
 
@@ -976,11 +965,6 @@
                             of his own thirty years: an intimate resonance, an unexpected synergy.</p>
                         <a href="resume-en.html" class="cta-main">
                             FULL SUMMARY HERE
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
                         </a>
                     </div>
                 </div>
@@ -1125,7 +1109,7 @@
 
     <footer>
         <div class="container">
-            <p>© <span id="current-year"></span> simonlero.com — All rights reserved</p>
+            <p style="color: #555;">© <span id="current-year"></span> simonlero.com — All rights reserved</p>
         </div>
     </footer>
 

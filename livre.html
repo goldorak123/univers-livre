@@ -149,8 +149,8 @@
       font-family: 'Inter', sans-serif;
       font-size: clamp(8rem, 25vw, 24rem);
       font-weight: 900;
-      color: rgba(201, 162, 77, 0.15);
-      -webkit-text-stroke: 1px rgba(201, 162, 77, 0.20);
+      color: rgba(216, 178, 90, 0.15);
+      -webkit-text-stroke: 1px rgba(216, 178, 90, 0.15);
       position: absolute;
       top: -40px;
       left: 80px;
@@ -483,11 +483,33 @@
     .author-photo-frame {
       position: relative;
       border: 1px solid var(--gold);
-      padding: 10px;
+      padding: 0;
+      /* Supprimé le padding pour coller au cadre */
       background: #000;
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
       max-width: 350px;
       justify-self: center;
+      overflow: visible;
+      /* Pour laisser dépasser la tête si besoin */
+    }
+
+    .author-photo-frame img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    /* Effet de dépassement pour le cadre */
+    .author-photo-frame::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      right: 15px;
+      bottom: 15px;
+      border: 1px solid var(--gold);
+      pointer-events: none;
+      z-index: -1;
     }
 
     .author-photo-frame:hover img {

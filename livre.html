@@ -1035,6 +1035,149 @@
         min-height: auto;
       }
     }
+
+    /* ================= NEW PWA FOOTER ================= */
+    .footer-pwa {
+      background: #111;
+      border-top: 1px solid var(--border);
+      padding: 0;
+      margin-top: 0;
+      min-height: 400px;
+      /* Augmenté pour accueillir la grande bannière */
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      z-index: 10;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      flex: 1;
+    }
+
+    .pwa-badge-container {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .pwa-text-banner {
+      height: 120px;
+      /* Réduit par 2 pour un meilleur équilibre */
+      width: auto;
+      object-fit: contain;
+    }
+
+    .pwa-icons-box {
+      display: flex;
+      gap: 20px;
+    }
+
+    .pwa-icon-small {
+      height: 85px;
+      width: auto;
+      filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.3));
+      transition: var(--transition);
+    }
+
+    .pwa-icon-small:hover {
+      filter: drop-shadow(0 0 20px rgba(212, 162, 58, 0.6));
+      transform: scale(1.1);
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 30px;
+      flex: 1;
+    }
+
+    .social-grid {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-btn:hover {
+      background: rgba(214, 162, 58, 0.1);
+      border-color: var(--gold);
+      transform: translateY(-5px);
+    }
+
+    .social-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: grayscale(1) brightness(0.8);
+    }
+
+    .social-btn:hover img {
+      filter: grayscale(0) brightness(1);
+    }
+
+    .footer-copyright {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    @media (max-width: 900px) {
+      .footer-pwa {
+        min-height: auto;
+        padding: 60px 0;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 60px;
+      }
+
+      .pwa-badge-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .footer-right {
+        align-items: center;
+      }
+
+      .social-grid {
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 
@@ -1202,148 +1345,6 @@
     <a href="https://www.mon-univers.ca/index.html">Visiter ma vitrine personnelle</a>
     <a href="distribution.html">Partenaires de Distribution</a>
   </div>
-  </div>
-  </section>
-
-  /* ================= NEW PWA FOOTER ================= */
-  .footer-pwa {
-  background: #111;
-  border-top: 1px solid var(--border);
-  padding: 0;
-  margin-top: 0;
-  min-height: 280px; /* Env. 3 pouces */
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  }
-
-  .footer-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  z-index: 10;
-  }
-
-  .footer-left {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  flex: 1;
-  }
-
-  .pwa-badge-container {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  }
-
-  .pwa-text-banner {
-  height: 65px;
-  width: auto;
-  }
-
-  .pwa-icons-box {
-  display: flex;
-  gap: 20px;
-  }
-
-  .pwa-icon-small {
-  height: 85px;
-  width: auto;
-  filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.3));
-  transition: var(--transition);
-  }
-
-  .pwa-icon-small:hover {
-  filter: drop-shadow(0 0 20px rgba(212, 162, 58, 0.6));
-  transform: scale(1.1);
-  }
-
-  .footer-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 30px;
-  flex: 1;
-  }
-
-  .social-grid {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  }
-
-  .social-btn {
-  width: 44px;
-  height: 44px;
-  padding: 8px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-  }
-
-  .social-btn:hover {
-  background: rgba(214, 162, 58, 0.1);
-  border-color: var(--gold);
-  transform: translateY(-5px);
-  }
-
-  .social-btn img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: grayscale(1) brightness(0.8);
-  }
-
-  .social-btn:hover img {
-  filter: grayscale(0) brightness(1);
-  }
-
-  .footer-copyright {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #555;
-  }
-
-  @media (max-width: 900px) {
-  .footer-pwa {
-  min-height: auto;
-  padding: 60px 0;
-  }
-  .footer-container {
-  flex-direction: column;
-  text-align: center;
-  padding: 20px;
-  gap: 60px;
-  }
-  .pwa-badge-container {
-  flex-direction: column;
-  gap: 20px;
-  }
-  .footer-right {
-  align-items: center;
-  }
-  .social-grid {
-  justify-content: center;
-  }
-  }
-  </style>
-
-
-  <!-- ... (existing code continues) ... -->
 
   <footer class="footer-pwa">
     <div class="footer-container">
@@ -1358,21 +1359,14 @@
       </div>
       <div class="footer-right">
         <div class="social-grid">
-          <a href="https://www.youtube.com/@simon-lero" target="_blank" class="social-btn">
-            <img src="youtube.png" alt="YouTube">
-          </a>
-          <a href="https://wa.me/4188063815" target="_blank" class="social-btn">
-            <img src="whatsapp.png" alt="WhatsApp">
-          </a>
-          <a href="https://www.facebook.com/simonlero" target="_blank" class="social-btn">
-            <img src="facebook.png" alt="Facebook">
-          </a>
-          <a href="https://www.instagram.com/simonlero" target="_blank" class="social-btn">
-            <img src="instagram.png" alt="Instagram">
-          </a>
-          <a href="https://www.linkedin.com/in/daniel-l-heureux-8a2b3c4d" target="_blank" class="social-btn">
-            <img src="linkedin.png" alt="LinkedIn">
-          </a>
+          <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
+          <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
+          <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
+          <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
+          <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
+          <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
+          <div class="social-btn"><img src="iconX480.png" alt="X"></div>
+          <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
         </div>
         <p class="footer-copyright">© <span id="current-year"></span> simonlero.com — Tous droits réservés</p>
       </div>
@@ -1401,7 +1395,6 @@
       });
     });
   </script>
-
 
 </body>
 

@@ -1018,8 +1018,8 @@
         const x = (window.innerWidth / 2 - e.pageX) / 50;
         const y = (window.innerHeight / 2 - e.pageY) / 50;
 
-        if (charTop) charTop.style.transform = `translate(${x}px, ${y}px)`;
-        if (charBottom) charBottom.style.transform = `translate(${-x}px, ${-y}px)`;
+        if (charTop) charTop.style.transform = translate(${x}px, ${y}px);
+        if (charBottom) charBottom.style.transform = translate(${-x}px, ${-y}px);
       }
     });
 

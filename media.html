@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr" class="notranslate" translate="no">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <title>Espace Media — Simon Lero</title>
     <style>
         body {
@@ -14,7 +15,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             text-align: center;
         }
@@ -22,38 +23,255 @@
         h1 {
             color: #d8b25a;
             font-family: 'Cinzel', serif;
+            margin-top: 60px;
         }
 
-        a {
+        .content-placeholder {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .back-btn {
             color: #d8b25a;
             text-decoration: none;
             margin-top: 20px;
             border: 1px solid #d8b25a;
             padding: 10px 20px;
+            transition: all 0.3s ease;
         }
-    
-    /* --- LUXURY UNDERLINE SYSTEM --- */
-    .footer-nav a::after, .footer-nav-links a::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 1px;
-        background: var(--gold);
-        transition: all 0.4s ease;
-        transform: translateX(-50%);
-    }
-    .footer-nav a:hover::after, .footer-nav-links a:hover::after {
-        width: 60%;
-    }
-</style>
+
+        .back-btn:hover {
+            background: rgba(216, 178, 90, 0.1);
+        }
+
+        /* Footer Styles Copy */
+        .footer-pwa {
+            background: #111;
+            border-top: 1px solid rgba(216, 178, 90, 0.15);
+            padding: 60px 0;
+            width: 100%;
+            z-index: 30;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-left {
+            flex: 1;
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 30px;
+            flex: 1;
+        }
+
+        .pwa-badge-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .pwa-text-banner {
+            height: 100px;
+            width: auto;
+        }
+
+        .pwa-icons-box {
+            display: flex;
+            gap: 30px;
+        }
+
+        .pwa-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pwa-icon-small {
+            height: 70px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.4));
+        }
+
+        .pwa-icon-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            color: #d8b25a;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .footer-nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .footer-nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+        }
+
+        .footer-nav-links a:hover {
+            color: #d8b25a;
+            text-shadow: 0 0 15px rgba(216, 178, 90, 0.5);
+        }
+
+        .footer-nav-links .sep {
+            color: #d8b25a;
+            opacity: 0.3;
+            font-size: 0.8rem;
+        }
+
+        .social-grid {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+
+        .social-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(1);
+            opacity: 0.7;
+        }
+
+        .footer-copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(216, 178, 90, 0.1);
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        @media (max-width: 900px) {
+            .footer-main {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .footer-right {
+                align-items: center;
+            }
+
+            .footer-nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .social-grid {
+                justify-content: center;
+            }
+
+            .pwa-badge-container {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Espace Media</h1>
-    <p>Cette page est en cours de création.</p>
-    <a href="livre.html">Retour à l'accueil</a>
+    <div class="content-placeholder">
+        <h1>Espace Media</h1>
+        <p>Cette page est en cours de création.</p>
+        <a href="livre.html" class="back-btn">Retour à l'accueil</a>
+    </div>
+
+    <footer class="footer-pwa">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-left">
+                    <div class="pwa-badge-container">
+                        <img src="pwa-text-banner.png" alt="PWA Optimis&eacute;" class="pwa-text-banner">
+                        <div class="pwa-icons-box">
+                            <div class="pwa-icon-item">
+                                <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
+                                <span class="pwa-icon-label">Simon Lero</span>
+                            </div>
+                            <div class="pwa-icon-item">
+                                <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
+                                <span class="pwa-icon-label">Mon Univers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-right">
+                    <div class="footer-nav-links">
+                        <a href="livre-accueil.html">Accueil</a>
+                        <span class="sep">&bull;</span>
+                        <a href="faq.html">FAQ</a>
+                        <span class="sep">&bull;</span>
+                        <a href="media.html">Espace Media</a>
+                        <span class="sep">&bull;</span>
+                        <a href="contact.html">Me contacter</a>
+                    </div>
+                    <div class="social-grid">
+                        <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
+                        <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
+                        <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
+                        <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
+                        <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
+                        <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
+                        <div class="social-btn"><img src="iconX480.png" alt="X"></div>
+                        <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; Tous droits
+                r&eacute;serv&eacute;s</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year-footer').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>

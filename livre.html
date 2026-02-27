@@ -1175,26 +1175,42 @@
       color: #555;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width:900px) {
       .footer-pwa {
-        min-height: auto;
-        padding: 60px 0;
+        padding: 40px 0;
       }
 
       .footer-container {
         flex-direction: column;
         text-align: center;
-        padding: 20px;
-        gap: 60px;
+        padding: 40px 20px;
+        gap: 40px;
+      }
+
+      .footer-right {
+        align-items: center;
+        order: 1;
+      }
+
+      .footer-left {
+        order: 2;
+      }
+
+      .footer-copyright {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        font-family: 'Cinzel', serif;
+        font-size: 0.65rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #444;
       }
 
       .pwa-badge-container {
         flex-direction: column;
         gap: 20px;
-      }
-
-      .footer-right {
-        align-items: center;
       }
 
       .social-grid {

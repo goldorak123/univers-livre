@@ -214,10 +214,72 @@
             gap: 40px;
         }
 
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .pwa-badge-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .pwa-text-banner {
+            height: 120px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .pwa-icons-box {
+            display: flex;
+            gap: 35px;
+        }
+
+        .pwa-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pwa-icon-small {
+            height: 85px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.3));
+            transition: all 0.4s ease;
+        }
+
+        .pwa-icon-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .pwa-icon-small:hover {
+            filter: drop-shadow(0 0 20px rgba(212, 162, 58, 0.6));
+            transform: scale(1.1);
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 30px;
+            flex: 1;
+            min-width: 300px;
+        }
+
         .footer-nav-links {
             display: flex;
             gap: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
         }
 
         .footer-nav-links a {
@@ -235,9 +297,18 @@
             color: var(--gold);
         }
 
+        .footer-nav-links .sep {
+            color: var(--gold);
+            opacity: 0.4;
+            font-size: 0.8rem;
+            margin: 0 5px;
+        }
+
         .social-grid {
             display: flex;
             gap: 15px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
         .social-btn {
@@ -309,6 +380,22 @@
             .footer-main {
                 flex-direction: column;
                 text-align: center;
+            }
+
+            .footer-right {
+                order: 1;
+                align-items: center;
+                min-width: auto;
+            }
+
+            .footer-left {
+                order: 2;
+                min-width: auto;
+            }
+
+            .pwa-badge-container {
+                flex-direction: column;
+                gap: 10px;
             }
 
             .social-grid {
@@ -411,22 +498,43 @@
     <footer class="footer-pwa">
         <div class="footer-container">
             <div class="footer-main">
-                <div class="footer-nav-links">
-                    <a href="livre.html">Accueil</a>
-                    <a href="faq.html">FAQ</a>
-                    <a href="media.html">Espace Media</a>
-                    <a href="contact.html">Contact</a>
+                <div class="footer-left">
+                    <div class="pwa-badge-container">
+                        <img src="pwa-text-banner.png" alt="PWA Optimisé" class="pwa-text-banner">
+                        <div class="pwa-icons-box">
+                            <div class="pwa-icon-item">
+                                <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
+                                <span class="pwa-icon-label">Simon Lero</span>
+                            </div>
+                            <div class="pwa-icon-item">
+                                <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
+                                <span class="pwa-icon-label">Mon Univers</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="social-grid">
-                    <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
-                    <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
-                    <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
-                    <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
-                    <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
-                    <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
-                    <div class="social-btn"><img src="iconX480.png" alt="X"></div>
-                    <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
+                <div class="footer-right">
+                    <div class="footer-nav-links">
+                        <a href="livre.html">Accueil</a>
+                        <span class="sep">•</span>
+                        <a href="faq.html">FAQ</a>
+                        <span class="sep">•</span>
+                        <a href="media.html">Espace Media</a>
+                        <span class="sep">•</span>
+                        <a href="contact.html">Me contacter</a>
+                    </div>
+
+                    <div class="social-grid">
+                        <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
+                        <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
+                        <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
+                        <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
+                        <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
+                        <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
+                        <div class="social-btn"><img src="iconX480.png" alt="X"></div>
+                        <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
+                    </div>
                 </div>
             </div>
             <p class="footer-copyright">&copy; <span id="year"></span> simonlero.com &mdash; Tous droits réservés</p>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RESET PWA v33</title>
+    <script>
+        async function nuclearReset() {
+            // Unregister all SW
+            if ('serviceWorker' in navigator) {
+                const regs = await navigator.serviceWorker.getRegistrations();
+                for (const r of regs) await r.unregister();
+            }
+            // Clear all Caches
+            if ('caches' in window) {
+                const keys = await caches.keys();
+                for (const k of keys) await caches.delete(k);
+            }
+            // Clear LocalStorage & Session
+            localStorage.clear();
+            sessionStorage.clear();
+
+            alert("RESET TERMINÉ.\n\nFermez tous les onglets simonlero.com et l'application avant de réinstaller via la page d'accueil.");
+            window.location.href = "livre-accueil.html";
+        }
+        nuclearReset();
+    </script>
+</head>
+
+<body
+    style="background:#000; color:#fff; font-family:sans-serif; display:flex; align-items:center; justify-content:center; height:100vh;">
+    <h1>RÉINITIALISATION EN COURS...</h1>
+</body>
+
+</html>

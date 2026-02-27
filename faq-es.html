@@ -290,11 +290,13 @@
             color: #fff;
             text-decoration: none;
             font-family: 'Cinzel', serif;
-            font-size: 0.95rem;
-            letter-spacing: 0.15em;
+            font-size: clamp(0.7rem, 2vw, 1rem);
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
             position: relative;
-            padding-bottom: 6px;
             transition: var(--transition);
+            padding-bottom: 4px;
+            white-space: nowrap;
         }
 
         .footer-nav-links a:hover {

@@ -232,6 +232,29 @@
             width: 60%;
         }
 
+        /* --- MOCKUP --- */
+        .mockup-container {
+            position: relative;
+            margin-top: 20px;
+            perspective: 1000px;
+            z-index: 5;
+        }
+
+        .book-mockup {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 162, 58, 0.1);
+            transition: var(--transition);
+            filter: grayscale(0.2) contrast(1.1);
+        }
+
+        .book-mockup:hover {
+            transform: scale(1.02) rotateY(-5deg);
+            filter: grayscale(0) contrast(1.2);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9), 0 0 50px rgba(212, 162, 58, 0.2);
+        }
+
         @media (max-width: 900px) {
             .grid-editions {
                 grid-template-columns: 1fr;
@@ -258,8 +281,12 @@
         <div class="giant-bg-text">INFO</div>
         <p class="book-subtitle">Simon Lero</p>
         <h1 class="main-title">Ficha Técnica</h1>
-        <p style="color: var(--gold-bright); letter-spacing: 3px; font-weight: 300; opacity: 0.8;">ENCUENTROS A LA LUZ
-            DE LA LUNA</p>
+        <p style="color: var(--gold-bright); letter-spacing: 3px; font-weight: 300; opacity: 0.8; margin-bottom: 40px;">
+            ENCUENTROS A LA LUZ DE LA LUNA</p>
+
+        <div class="mockup-container">
+            <img src="mockup-livre.png" alt="Libro Encuentros a la luz de la luna" class="book-mockup">
+        </div>
     </header>
 
     <main class="container">

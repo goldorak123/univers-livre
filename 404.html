@@ -107,7 +107,14 @@
                 transform: scale(1.05);
             }
         }
-    </style>
+    
+    /* Mobile: Remove decorative underlines/bars on buttons and links */
+    @media (max-width: 768px) {
+      a::after, button::after, [class*="btn"]::after, [class*="link"]::after, .print-btn span::after {
+        display: none !important;
+      }
+    }
+</style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -264,7 +271,14 @@
                 font-size: 10px;
             }
         }
-    </style>
+    
+    /* Mobile: Remove decorative underlines/bars on buttons and links */
+    @media (max-width: 768px) {
+      a::after, button::after, [class*="btn"]::after, [class*="link"]::after, .print-btn span::after {
+        display: none !important;
+      }
+    }
+</style>
 
     <footer style="margin-top: 40px; font-size: 14px; opacity: 0.6;">
         <p>© <span id="current-year"></span> simonlero.com — Tous droits réservés</p>

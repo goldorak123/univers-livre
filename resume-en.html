@@ -577,6 +577,13 @@
             text-decoration: none !important;
         }
     }
+
+    /* Mobile: Remove decorative underlines/bars on buttons and links */
+    @media (max-width: 768px) {
+      a::after, button::after, [class*="btn"]::after, [class*="link"]::after, .print-btn span::after {
+        display: none !important;
+      }
+    }
 </style>
 
 <body>
@@ -662,5 +669,6 @@
 </body>
 
 </html>
+
 
 

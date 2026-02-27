@@ -68,19 +68,34 @@
             overflow: hidden;
         }
 
-        .giant-bg-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .hero-background-title {
+            font-family: 'Inter', sans-serif;
             font-size: clamp(8rem, 25vw, 18rem);
             font-weight: 900;
-            letter-spacing: -0.05em;
-            color: rgba(212, 162, 58, 0.03);
+            color: rgba(216, 178, 90, 0.15);
+            -webkit-text-stroke: 1px rgba(216, 178, 90, 0.15);
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            line-height: 0.7;
             text-transform: uppercase;
-            white-space: nowrap;
             z-index: -1;
-            user-select: none;
+            pointer-events: none;
+            letter-spacing: -0.05em;
+            animation: slideInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+            white-space: nowrap;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .main-title {
@@ -278,7 +293,7 @@
     <div class="corner-glow glow-br"></div>
 
     <header class="hero">
-        <div class="giant-bg-text">SPECS</div>
+        <div class="hero-background-title">SPECS</div>
         <p class="book-subtitle">Simon Lero</p>
         <h1 class="main-title">Book Details</h1>
         <p style="color: var(--gold-bright); letter-spacing: 3px; font-weight: 300; opacity: 0.8; margin-bottom: 40px;">

@@ -1,28 +1,48 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="notranslate" translate="no">
 
 <head>
     <meta charset="UTF-8">
-    <title>SYCHRONISATION v34</title>
+    <title>RESET SIMON LERO v34</title>
     <script>
-        async function nuclearV34() {
+        window.addEventListener('load', async () => {
+            console.log("Démarrage du reset...");
+
+            // 1. Unregister SW
             if ('serviceWorker' in navigator) {
                 const regs = await navigator.serviceWorker.getRegistrations();
-                for (const r of regs) await r.unregister();
+                for (const r of regs) {
+                    await r.unregister();
+                }
             }
+
+            // 2. Clear Caches
             if ('caches' in window) {
                 const keys = await caches.keys();
-                for (const k of keys) await caches.delete(k);
+                for (const k of keys) {
+                    await caches.delete(k);
+                }
             }
+
+            // 3. Clear Storage
             localStorage.clear();
-            window.location.href = "livre-accueil.html?v34=init";
-        }
-        nuclearV34();
+            sessionStorage.clear();
+
+            console.log("Reset terminé.");
+
+            // 4. Alert to confirm
+            alert("NETTOYAGE RÉUSSI (v34) !\n\nL'ancienne icône est effacée de la mémoire.\n\nCliquez sur OK pour terminer.");
+
+            // 5. Redirect
+            window.location.href = "livre-accueil.html?v34=success";
+        });
     </script>
 </head>
 
-<body style="background:#000; color:#fff; display:flex; align-items:center; justify-content:center; height:100vh;">
-    <h1>SYNCHRONISATION V34 EN COURS...</h1>
+<body
+    style="background:#000; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh; font-family:sans-serif; text-align:center; padding: 20px;">
+    <h1>SIMON LERO - SYNCHRONISATION v34</h1>
+    <p>Nettoyage en cours... ne fermez pas cette page.</p>
 </body>
 
 </html>

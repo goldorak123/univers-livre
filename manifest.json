@@ -1,7 +1,7 @@
 {
     "name": "Simon Lero - Rencontres au Clair de Lune",
     "short_name": "Simon Lero",
-    "start_url": "/livre-accueil-v27.html",
+    "start_url": "/livre-accueil-v28.html",
     "scope": "/",
     "display": "minimal-ui",
     "display_override": [
@@ -16,13 +16,13 @@
             "src": "icon-192.png",
             "sizes": "192x192",
             "type": "image/png",
-            "purpose": "any maskable"
+            "purpose": "any"
         },
         {
             "src": "icon-512.png",
             "sizes": "512x512",
             "type": "image/png",
-            "purpose": "any maskable"
+            "purpose": "any"
         },
         {
             "src": "apple-touch-icon.png",

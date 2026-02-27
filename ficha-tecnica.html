@@ -9,17 +9,19 @@
 
     <!-- Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@200;300;400;600;800&display=swap"
         rel="stylesheet">
 
     <style>
         :root {
             --gold: #d4a23a;
             --gold-bright: #eec165;
-            --bg: #000;
+            --bg: #030303;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(212, 162, 58, 0.15);
             --text: #f0f0f0;
             --text-dim: #888;
-            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -37,98 +39,175 @@
             min-height: 100vh;
         }
 
-        /* --- HERO SECTION (GIANT TEXT) --- */
-        .hero {
-            position: relative;
-            padding: 180px 40px 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            max-width: 1400px;
-            margin: 0 auto;
-            z-index: 10;
-        }
-
-        .giant-header {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(4rem, 15vw, 12rem);
-            font-weight: 900;
-            color: rgba(212, 162, 58, 0.1);
-            -webkit-text-stroke: 1px rgba(212, 162, 58, 0.3);
-            text-transform: uppercase;
-            letter-spacing: -0.05em;
-            line-height: 0.8;
-            position: absolute;
-            top: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-            white-space: nowrap;
+        .corner-glow {
+            position: fixed;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(212, 162, 58, 0.05) 0%, transparent 70%);
             z-index: -1;
             pointer-events: none;
         }
 
+        .glow-tl {
+            top: -20vw;
+            left: -20vw;
+        }
+
+        .glow-br {
+            bottom: -20vw;
+            right: -20vw;
+        }
+
+        .hero {
+            position: relative;
+            padding: 160px 20px 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .giant-bg-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: clamp(8rem, 25vw, 18rem);
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            color: rgba(212, 162, 58, 0.03);
+            text-transform: uppercase;
+            white-space: nowrap;
+            z-index: -1;
+            user-select: none;
+        }
+
         .main-title {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 6vw, 4rem);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
             color: var(--gold);
-            margin-bottom: 20px;
-            letter-spacing: 0.2em;
+            margin-bottom: 15px;
+            letter-spacing: 0.25em;
+            text-shadow: 0 0 20px rgba(212, 162, 58, 0.2);
         }
 
-        /* --- SPEC GRID --- */
-        .specs-container {
-            max-width: 900px;
-            margin: 0 auto 100px;
-            padding: 0 20px;
+        .book-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: 40px;
         }
 
-        .spec-item {
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px 100px;
+        }
+
+        .grid-editions {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            padding: 25px 0;
-            border-bottom: 1px solid rgba(212, 162, 58, 0.15);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .spec-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 50px 40px;
+            position: relative;
+            backdrop-filter: blur(15px);
             transition: var(--transition);
         }
 
-        .spec-item:hover {
-            border-bottom-color: var(--gold);
-            background: rgba(212, 162, 58, 0.02);
+        .spec-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        .card-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+        }
+
+        .card-header .edition-type {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .spec-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 12px;
         }
 
         .spec-label {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 0.9rem;
+            color: #ccc;
+            font-weight: 500;
         }
 
         .spec-value {
-            font-size: 1.1rem;
-            color: #fff;
-            text-align: right;
             font-weight: 300;
+            color: #fff;
+            font-size: 1.05rem;
+            text-align: right;
         }
 
-        /* --- BUTTONS --- */
+        .spec-icon {
+            width: 18px;
+            height: 18px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.5;
+            opacity: 0.7;
+        }
+
         .actions {
-            margin-top: 60px;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
+            margin-top: 80px;
+            text-align: center;
         }
 
         .btn-back {
+            display: inline-block;
             color: var(--gold);
             text-decoration: none;
             font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            letter-spacing: 3px;
+            font-size: 0.95rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
             position: relative;
-            padding-bottom: 8px;
+            padding: 10px 0;
             transition: var(--transition);
         }
 
@@ -139,137 +218,223 @@
             left: 50%;
             width: 0;
             height: 1px;
-            background: var(--gold);
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
             transition: var(--transition);
             transform: translateX(-50%);
         }
 
         .btn-back:hover {
-            color: var(--gold-bright);
-            transform: translateY(-3px);
+            color: #fff;
+            letter-spacing: 6px;
         }
 
         .btn-back:hover::after {
             width: 60%;
         }
 
-        @media (max-width: 768px) {
-            .spec-item {
+        @media (max-width: 900px) {
+            .grid-editions {
                 grid-template-columns: 1fr;
-                gap: 10px;
-                text-align: center;
             }
 
-            .spec-value {
-                text-align: center;
-            }
-
-            .giant-header {
+            .giant-bg-text {
                 font-size: 5rem;
-                top: 80px;
+                top: 100px;
+                transform: translateX(-50%);
+            }
+
+            .hero {
+                padding-top: 120px;
             }
         }
     </style>
 </head>
 
 <body>
+    <div class="corner-glow glow-tl"></div>
+    <div class="corner-glow glow-br"></div>
+
     <header class="hero">
-        <div class="giant-header">SPECS</div>
+        <div class="giant-bg-text">INFO</div>
+        <p class="book-subtitle">Simon Lero</p>
         <h1 class="main-title">Ficha Técnica</h1>
-        <p class="label" style="color: var(--text-dim); text-transform: uppercase; letter-spacing: 5px;">Encuentros a la
-            luz de la luna</p>
+        <p style="color: var(--gold-bright); letter-spacing: 3px; font-weight: 300; opacity: 0.8;">ENCUENTROS A LA LUZ
+            DE LA LUNA</p>
     </header>
 
-    <main class="specs-container">
-        <div class="spec-item">
-            <span class="spec-label">Autor</span>
-            <span class="spec-value">Simon Lero</span>
-        </div>
-        <div class="spec-item">
-            <span class="spec-label">Título</span>
-            <span class="spec-value">Encuentros a la luz de la luna</span>
-        </div>
-        <div class="spec-item">
-            <span class="spec-label">Género</span>
-            <span class="spec-value">Novela Poética / Drama Íntimo</span>
-        </div>
-        <div class="spec-item">
-            <span class="spec-label">Idioma</span>
-            <span class="spec-value">Español</span>
-        </div>
-        <div class="spec-item">
-            <span class="spec-label">Longitud de impresión</span>
-            <span class="spec-value">136 páginas</span>
-        </div>
+    <main class="container">
+        <div class="grid-editions">
 
-        <div id="amazon-edition" style="margin-top: 40px;">
-            <h2
-                style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.5rem; margin-bottom: 30px; border-left: 3px solid var(--gold); padding-left: 15px;">
-                Edición Amazon (Tapa blanda)</h2>
+            <!-- AMAZON EDITION -->
+            <article class="spec-card">
+                <div class="card-header">
+                    <h2>Amazon</h2>
+                    <span class="edition-type">Tapa blanda / Softcover</span>
+                </div>
+                <div class="spec-list">
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            Longitud
+                        </span>
+                        <span class="spec-value">136 páginas</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            Idioma
+                        </span>
+                        <span class="spec-value">Español</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path d="M21 16V4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16h14a2 2 0 0 0 2-2z"></path>
+                                <path d="M10 10l-2 2 2 2"></path>
+                                <path d="M14 14l2-2-2-2"></path>
+                            </svg>
+                            ISBN-13
+                        </span>
+                        <span class="spec-value">979-8245765754</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                            ASIN
+                        </span>
+                        <span class="spec-value">B0GKFJXWDN</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                            Dimensiones
+                        </span>
+                        <span class="spec-value">15.2 x 22.9 x 0.8 cm</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
+                                </path>
+                                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                            </svg>
+                            Editorial
+                        </span>
+                        <span class="spec-value">Indep. Published</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Publicación
+                        </span>
+                        <span class="spec-value">26 Ene. 2026</span>
+                    </div>
+                </div>
+            </article>
 
-            <div class="spec-item">
-                <span class="spec-label">Editorial</span>
-                <span class="spec-value">Independently published</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Fecha de publicación</span>
-                <span class="spec-value">26 de enero de 2026</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">ISBN-13</span>
-                <span class="spec-value">979-8245765754</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">ASIN</span>
-                <span class="spec-value">B0GKFJXWDN</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Peso del artículo</span>
-                <span class="spec-value">191 g</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Dimensiones</span>
-                <span class="spec-value">15.24 x 0.79 x 22.86 cm</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Cubierta</span>
-                <span class="spec-value">Blanda (mate)</span>
-            </div>
-        </div>
+            <!-- LULU EDITION -->
+            <article class="spec-card">
+                <div class="card-header">
+                    <h2>Lulu.com</h2>
+                    <span class="edition-type">Tapa blanda / Softcover</span>
+                </div>
+                <div class="spec-list">
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            Longitud
+                        </span>
+                        <span class="spec-value">136 páginas</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            Idioma
+                        </span>
+                        <span class="spec-value">Español</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path d="M21 16V4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16h14a2 2 0 0 0 2-2z"></path>
+                                <path d="M10 10l-2 2 2 2"></path>
+                                <path d="M14 14l2-2-2-2"></path>
+                            </svg>
+                            ISBN-13
+                        </span>
+                        <span class="spec-value">9781105784002</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                            Dimensiones
+                        </span>
+                        <span class="spec-value">US Trade (15x23 cm)</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
+                                </path>
+                                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                            </svg>
+                            Editorial
+                        </span>
+                        <span class="spec-value">Lulu.com</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Publicación
+                        </span>
+                        <span class="spec-value">17 Ene. 2026</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                            Interior
+                        </span>
+                        <span class="spec-value">Blanco y Negro</span>
+                    </div>
+                </div>
+            </article>
 
-        <div id="lulu-edition" style="margin-top: 60px;">
-            <h2
-                style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.5rem; margin-bottom: 30px; border-left: 3px solid var(--gold); padding-left: 15px;">
-                Edición Lulu.com</h2>
-
-            <div class="spec-item">
-                <span class="spec-label">Editorial</span>
-                <span class="spec-value">Lulu.com</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Idioma</span>
-                <span class="spec-value">Francés</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">ISBN</span>
-                <span class="spec-value">9781105784002</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Encuadernación</span>
-                <span class="spec-value">Tapa blanda (Paperback Perfect Bound)</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Color interior</span>
-                <span class="spec-value">Blanco y negro</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Dimensiones</span>
-                <span class="spec-value">US Trade (152 x 229 mm / 6 x 9 pulg.)</span>
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">Categoría</span>
-                <span class="spec-value">Ficción</span>
-            </div>
         </div>
 
         <div class="actions">
@@ -277,8 +442,10 @@
         </div>
     </main>
 
-    <footer style="padding: 40px; text-align: center; border-top: 1px solid rgba(212, 162, 58, 0.1);">
-        <p style="font-size: 0.7rem; color: #555; letter-spacing: 2px;">© SIMONLERO.COM — TODOS LOS DERECHOS RESERVADOS
+    <footer
+        style="padding: 60px 20px; text-align: center; border-top: 1px solid var(--border); background: rgba(0,0,0,0.5);">
+        <p style="font-size: 0.75rem; color: var(--text-dim); letter-spacing: 4px; text-transform: uppercase;">
+            © SIMON LERO — TODOS LOS DERECHOS RESERVADOS
         </p>
     </footer>
 </body>

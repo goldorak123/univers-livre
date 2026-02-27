@@ -3,7 +3,12 @@
     "short_name": "Simon Lero",
     "start_url": "/livre-accueil.html",
     "scope": "/",
-    "display": "standalone",
+    "display": "minimal-ui",
+    "display_override": [
+        "window-controls-overlay",
+        "minimal-ui",
+        "standalone"
+    ],
     "background_color": "#050505",
     "theme_color": "#000000",
     "orientation": "any",

@@ -1100,21 +1100,39 @@
     </div>
   </footer>
 
+  <div id="pwa-update-toast"
+    style="display: none; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: rgba(15, 15, 15, 0.95); border: 1px solid #d8b25a; padding: 15px 25px; border-radius: 50px; z-index: 10000; display: flex; align-items: center; gap: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.8); backdrop-filter: blur(10px);">
+    <span style="color: #fff; font-size: 0.9rem; font-family: 'Inter', sans-serif;">Update available</span>
+    <button onclick="window.location.reload()"
+      style="background: #d8b25a; color: #000; border: none; padding: 8px 18px; border-radius: 20px; font-family: 'Cinzel', serif; font-weight: 900; font-size: 0.75rem; cursor: pointer; letter-spacing: 0.1em;">REFRESH</button>
+  </div>
+
   <script>
+    document.getElementById('current-year-footer').textContent = new Date().getFullYear();
+
     document.addEventListener('mousemove', (e) => {
       if (window.innerWidth > 1024) {
         const charTop = document.querySelector('.hero-background-title');
         const charBottom = document.querySelector('.hero-background-title-bottom');
-
         const x = (window.innerWidth / 2 - e.pageX) / 50;
         const y = (window.innerHeight / 2 - e.pageY) / 50;
-
         if (charTop) charTop.style.transform = `translate(${x}px, ${y}px)`;
         if (charBottom) charBottom.style.transform = `translate(${-x}px, ${-y}px)`;
       }
     });
 
-    document.getElementById('current-year-footer').textContent = new Date().getFullYear();
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(reg => {
+        reg.addEventListener('updatefound', () => {
+          const newWorker = reg.installing;
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              document.getElementById('pwa-update-toast').style.display = 'flex';
+            }
+          });
+        });
+      });
+    }
   </script>
 
 </body>

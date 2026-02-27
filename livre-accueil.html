@@ -209,13 +209,14 @@
     .layout-grid {
       position: relative;
       flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       width: 100%;
       max-width: 1400px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 0 100px;
+      min-height: calc(100vh - 400px);
+      padding: 100px;
       z-index: 10;
       overflow: hidden;
       /* Prevent giant letters from overflowing */
@@ -475,9 +476,9 @@
     }
 
     .footer-nav-links a {
-      color: rgba(208, 208, 208, 0.9);
-      text-decoration: none;
-      font-family: 'Cinzel', serif;
+      color: rgba(208, 208, 208, 0.9) !important;
+      text-decoration: none !important;
+      font-family: 'Cinzel', serif !important;
       font-size: 0.95rem;
       letter-spacing: 0.15em;
       transition: all 0.4s ease;

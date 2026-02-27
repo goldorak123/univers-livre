@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESET SIMON LERO v35</title>
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            margin: 0;
+        }
+
+        button {
+            background: #d4af37;
+            color: #000;
+            border: none;
+            padding: 20px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .status {
+            margin-top: 20px;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>SIMON LERO v35</h1>
+    <p>Pour corriger l'icône, nous devons nettoyer le cache.</p>
+
+    <button id="resetBtn">CLIQUEZ ICI POUR NETTOYER</button>
+
+    <div id="status" class="status">En attente...</div>
+
+    <script>
+        document.getElementById('resetBtn').addEventListener('click', async () => {
+            const status = document.getElementById('status');
+            status.innerText = "Nettoyage en cours...";
+
+            try {
+                // 1. Unregister SW
+                if ('serviceWorker' in navigator) {
+                    const regs = await navigator.serviceWorker.getRegistrations();
+                    for (const r of regs) {
+                        await r.unregister();
+                        console.log("SW unregistred");
+                    }
+                }
+
+                // 2. Clear Caches
+                if ('caches' in window) {
+                    const keys = await caches.keys();
+                    for (const k of keys) {
+                        await caches.delete(k);
+                        console.log("Cache deleted:", k);
+                    }
+                }
+
+                // 3. Storage
+                localStorage.clear();
+                sessionStorage.clear();
+
+                status.innerText = "NETTOYAGE TERMINÉ !";
+                alert("SYCHRONISATION RÉUSSIE (v35) !\n\nCliquez sur OK pour retourner à l'accueil.");
+                window.location.href = "livre-accueil.html?v35=done";
+            } catch (err) {
+                alert("Erreur: " + err);
+            }
+        });
+    </script>
+</body>
+
+</html>

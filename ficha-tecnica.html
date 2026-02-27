@@ -60,11 +60,14 @@
 
         .hero {
             position: relative;
-            padding: 160px 20px 80px;
+            padding: 160px 40px 80px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            align-items: flex-start;
+            max-width: 1400px;
+            margin: 0 auto;
+            z-index: 10;
+            text-align: left;
             overflow: hidden;
         }
 
@@ -98,13 +101,33 @@
             }
         }
 
-        .main-title {
+        .hero-title-main {
+            margin-bottom: 20px;
+        }
+
+        .title-line {
+            display: block;
+            line-height: 0.9;
+            text-transform: uppercase;
+        }
+
+        .title-line-1 {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: -0.05em;
+            animation: slideInLeft 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .title-line-2 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 800;
             color: var(--gold);
-            margin-bottom: 15px;
-            letter-spacing: 0.25em;
-            text-shadow: 0 0 20px rgba(212, 162, 58, 0.2);
+            margin-left: clamp(1rem, 5vw, 100px);
+            animation: slideInLeft 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+            opacity: 0;
         }
 
         .book-subtitle {
@@ -112,7 +135,8 @@
             color: var(--text-dim);
             text-transform: uppercase;
             letter-spacing: 8px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+            margin-left: 5px;
         }
 
         .container {
@@ -295,11 +319,15 @@
     <header class="hero">
         <div class="hero-background-title">INFO</div>
         <p class="book-subtitle">Simon Lero</p>
-        <h1 class="main-title">Ficha Técnica</h1>
-        <p style="color: var(--gold-bright); letter-spacing: 3px; font-weight: 300; opacity: 0.8; margin-bottom: 40px;">
+        <h1 class="hero-title-main">
+            <span class="title-line title-line-1">Ficha</span>
+            <span class="title-line title-line-2">Técnica</span>
+        </h1>
+        <p
+            style="color: var(--gold-bright); letter-spacing: 3px; font-weight: 300; opacity: 0.8; margin-bottom: 40px; margin-left: 5px;">
             ENCUENTROS A LA LUZ DE LA LUNA</p>
 
-        <div class="mockup-container">
+        <div class="mockup-container" style="align-self: center; width: 100%; display: flex; justify-content: center;">
             <img src="mockup-livre.png" alt="Libro Encuentros a la luz de la luna" class="book-mockup">
         </div>
     </header>

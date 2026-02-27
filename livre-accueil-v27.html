@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr" class="notranslate" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+
+    <script>
+        // PURGE CACHE SÉVÈRE v27
+        async function forceReinstall() {
+            const v = 'v27';
+            if (localStorage.getItem('sl_v27') !== v) {
+                if ('serviceWorker' in navigator) {
+                    const regs = await navigator.serviceWorker.getRegistrations();
+                    for (const r of regs) await r.unregister();
+                }
+                if ('caches' in window) {
+                    const keys = await caches.keys();
+                    for (const k of keys) await caches.delete(k);
+                }
+                localStorage.setItem('sl_v27', v);
+                window.location.reload(true);
+            }
+        }
+        forceReinstall();
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw-v27.js');
+            });
+        }
+
+        // NAVIGATION HACK
+        if (window.history.length <= 1) {
+            window.history.pushState({ page: 1 }, "", window.location.href);
+        }
+    </script>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <title>Simon Lero v27 - Restauration Navigation</title>
+    <script>
+        window.location.href = "livre-accueil.html";
+    </script>
+</head>
+
+<body
+    style="background:#000; color:#fff; display:flex; align-items:center; justify-content:center; height:100vh; font-family:sans-serif;">
+    <h2>RESTAURATION DE LA NAVIGATION...</h2>
+</body>
+
+</html>

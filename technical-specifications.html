@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Specifications — Simon Lero</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #d4a23a;
+            --gold-bright: #eec165;
+            --bg: #000;
+            --text: #f0f0f0;
+            --text-dim: #888;
+            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* --- HERO SECTION (GIANT TEXT) --- */
+        .hero {
+            position: relative;
+            padding: 180px 40px 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            z-index: 10;
+        }
+
+        .giant-header {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(4rem, 15vw, 12rem);
+            font-weight: 900;
+            color: rgba(212, 162, 58, 0.1);
+            -webkit-text-stroke: 1px rgba(212, 162, 58, 0.3);
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+            line-height: 0.8;
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .main-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            color: var(--gold);
+            margin-bottom: 20px;
+            letter-spacing: 0.2em;
+        }
+
+        /* --- SPEC GRID --- */
+        .specs-container {
+            max-width: 900px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .spec-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(212, 162, 58, 0.15);
+            transition: var(--transition);
+        }
+
+        .spec-item:hover {
+            border-bottom-color: var(--gold);
+            background: rgba(212, 162, 58, 0.02);
+        }
+
+        .spec-label {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        .spec-value {
+            font-size: 1.1rem;
+            color: #fff;
+            text-align: right;
+            font-weight: 300;
+        }
+
+        /* --- BUTTONS --- */
+        .actions {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .btn-back {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 8px;
+            transition: var(--transition);
+        }
+
+        .btn-back::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .btn-back:hover {
+            color: var(--gold-bright);
+            transform: translateY(-3px);
+        }
+
+        .btn-back:hover::after {
+            width: 60%;
+        }
+
+        @media (max-width: 768px) {
+            .spec-item {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .spec-value {
+                text-align: center;
+            }
+
+            .giant-header {
+                font-size: 5rem;
+                top: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero">
+        <div class="giant-header">SPECS</div>
+        <h1 class="main-title">Book Details</h1>
+        <p class="label" style="color: var(--text-dim); text-transform: uppercase; letter-spacing: 5px;">Encounters in
+            the Moonlight</p>
+    </header>
+
+    <main class="specs-container">
+        <div class="spec-item">
+            <span class="spec-label">Author</span>
+            <span class="spec-value">Simon Lero</span>
+        </div>
+        <div class="spec-item">
+            <span class="spec-label">Title</span>
+            <span class="spec-value">Encounters in the Moonlight</span>
+        </div>
+        <div class="spec-item">
+            <span class="spec-label">Genre</span>
+            <span class="spec-value">Poetic Novel / Intimate Drama</span>
+        </div>
+
+        <div id="dynamic-specs">
+            <p style="text-align: center; color: var(--gold); padding: 40px; font-style: italic; opacity: 0.6;">
+                Waiting for detailed specifications...
+            </p>
+        </div>
+
+        <div class="actions">
+            <a href="livre-en.html" class="btn-back">Back to book</a>
+        </div>
+    </main>
+
+    <footer style="padding: 40px; text-align: center; border-top: 1px solid rgba(212, 162, 58, 0.1);">
+        <p style="font-size: 0.7rem; color: #555; letter-spacing: 2px;">© SIMONLERO.COM — ALL RIGHTS RESERVED</p>
+    </footer>
+</body>
+
+</html>

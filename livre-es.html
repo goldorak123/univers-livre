@@ -1166,14 +1166,19 @@
         justify-content: center;
       }
     }
-  
+
     /* Mobile: Remove decorative underlines/bars on buttons and links */
     @media (max-width: 768px) {
-      a::after, button::after, [class*="btn"]::after, [class*="link"]::after, .print-btn span::after {
+
+      a::after,
+      button::after,
+      [class*="btn"]::after,
+      [class*="link"]::after,
+      .print-btn span::after {
         display: none !important;
       }
     }
-</style>
+  </style>
 </head>
 
 <body>
@@ -1300,7 +1305,7 @@
         <!-- LULU -->
         <a href="https://www.lulu.com/search?q=simon+lero" class="shop-card reveal" style="transition-delay:0.3s;"
           target="_blank">
-          <img src="lulu-icon.svg" alt="Lulu" style="width: 65px; height: 65px;">
+          <img src="lulu-icon.svg" alt="Lulu" style="width: 75px; height: 75px;">
           <div class="card-content">
             <div class="platform">DISPONIBILIDAD MUNDIAL</div>
             <div class="title">Lulu.com</div>
@@ -1343,7 +1348,7 @@
   </div>
 
   <footer class="footer-pwa">
-<div class="footer-container">
+    <div class="footer-container">
       <div class="footer-left">
         <div class="pwa-badge-container">
           <img src="pwa-text-banner-es.png" alt="PWA Optimizado" class="pwa-text-banner">
@@ -1351,31 +1356,32 @@
             <div class="pwa-icon-item">
               <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
               <span class="pwa-icon-label">Simon Lero</span>
-            <div class="pwa-icon-item">
-              <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
-              <span class="pwa-icon-label">Mon Univers</span>
+              <div class="pwa-icon-item">
+                <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
+                <span class="pwa-icon-label">Mon Univers</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="footer-right">
-        <div class="footer-nav-links">
-          <a href="contact-es.html">Contacto</a>
+        <div class="footer-right">
+          <div class="footer-nav-links">
+            <a href="contact-es.html">Contacto</a>
+          </div>
+          <div class="social-grid">
+            <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
+            <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
+            <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
+            <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
+            <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
+            <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
+            <div class="social-btn"><img src="iconX480.png" alt="X"></div>
+            <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
+          </div>
+
         </div>
-        <div class="social-grid">
-          <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
-          <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
-          <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
-          <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
-          <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
-          <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
-          <div class="social-btn"><img src="iconX480.png" alt="X"></div>
-          <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
-        </div>
-        
+        <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; Tous droits
+          r&eacute;serv&eacute;s</p>
       </div>
-      <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; Tous droits r&eacute;serv&eacute;s</p>
-    </div>
   </footer>
 
   <script>
@@ -1404,6 +1410,3 @@
 </body>
 
 </html>
-
-
-

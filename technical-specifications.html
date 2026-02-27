@@ -246,7 +246,9 @@
             letter-spacing: 4px;
             text-transform: uppercase;
             position: relative;
-            padding: 10px 0;
+            padding: 12px 30px;
+            border-top: 1px solid rgba(212, 162, 58, 0.3);
+            border-bottom: 1px solid rgba(212, 162, 58, 0.3);
             transition: var(--transition);
         }
 
@@ -257,7 +259,7 @@
             left: 50%;
             width: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            background: var(--gold);
             transition: var(--transition);
             transform: translateX(-50%);
         }
@@ -265,6 +267,7 @@
         .btn-back:hover {
             color: #fff;
             letter-spacing: 6px;
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         .btn-back:hover::after {

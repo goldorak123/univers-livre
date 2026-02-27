@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr" class="notranslate" translate="no">
 
 <head>
@@ -31,7 +31,23 @@
             border: 1px solid #d8b25a;
             padding: 10px 20px;
         }
-    </style>
+    
+    /* --- LUXURY UNDERLINE SYSTEM --- */
+    .footer-nav a::after, .footer-nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        transition: all 0.4s ease;
+        transform: translateX(-50%);
+    }
+    .footer-nav a:hover::after, .footer-nav-links a:hover::after {
+        width: 60%;
+    }
+</style>
 </head>
 
 <body>

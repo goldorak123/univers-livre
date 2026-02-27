@@ -114,6 +114,22 @@
         display: none !important;
       }
     }
+
+    /* --- LUXURY UNDERLINE SYSTEM --- */
+    .footer-nav a::after, .footer-nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        transition: all 0.4s ease;
+        transform: translateX(-50%);
+    }
+    .footer-nav a:hover::after, .footer-nav-links a:hover::after {
+        width: 60%;
+    }
 </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -277,6 +293,22 @@
       a::after, button::after, [class*="btn"]::after, [class*="link"]::after, .print-btn span::after {
         display: none !important;
       }
+    }
+
+    /* --- LUXURY UNDERLINE SYSTEM --- */
+    .footer-nav a::after, .footer-nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        transition: all 0.4s ease;
+        transform: translateX(-50%);
+    }
+    .footer-nav a:hover::after, .footer-nav-links a:hover::after {
+        width: 60%;
     }
 </style>
 

@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="google" content="notranslate">
+    <meta name="googlebot" content="notranslate">
+    <meta name="robots" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ — Simon Lero</title>
+    <title>Preguntas Frecuentes — Simon Lero</title>
     <meta name="description"
         content="Preguntas frecuentes sobre la novela 'Encuentros a la Luz de la Luna' de Simon Lero.">
 
@@ -409,10 +411,65 @@
                 flex-wrap: wrap;
             }
         }
+
+        /* --- TOP NAV (LANGUAGE SELECTOR) --- */
+        .top-nav {
+            position: absolute;
+            top: 25px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            z-index: 200;
+        }
+
+        .lang-selector {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-selector a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .lang-selector a.active {
+            color: var(--gold);
+            opacity: 1;
+        }
+
+        .lang-selector .sep {
+            width: 1px;
+            height: 12px;
+            background: rgba(216, 178, 90, 0.3);
+        }
+
+        .lang-selector a:hover {
+            color: var(--gold);
+            opacity: 1;
+        }
     </style>
 </head>
 
 <body class="notranslate" translate="no">
+
+    <header class="top-nav">
+        <div class="lang-selector">
+            <a href="faq.html">FR</a>
+            <span class="sep"></span>
+            <a href="faq-en.html">EN</a>
+            <span class="sep"></span>
+            <a href="faq-es.html" class="active">ES</a>
+        </div>
+    </header>
 
     <header class="hero">
         <div class="hero-background-title">FAQ</div>
@@ -453,7 +510,7 @@
                 <div class="faq-answer-content">
                     "Encuentros a la Luz de la Luna" está disponible en las principales plataformas: Amazon (Kindle y
                     Papel), Apple Books, Kobo, Shopify, Payhip (para ePub y la versión PDF exclusiva) y Google Play.
-                    También puede pedirlo a través de la red Ingram, directamente en simonlero.com or consultar la lista
+                    También puede pedirlo a través de la red Ingram, directamente en simonlero.com o consultar la lista
                     completa de nuestros <a href="distribution-es.html"
                         style="color:var(--gold); text-decoration: underline;">socios de distribución</a>.
                 </div>

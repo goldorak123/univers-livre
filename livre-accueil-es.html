@@ -548,66 +548,41 @@
       }
     }
 
-    /* ================= FOOTER PWA PREMIUM ================= */
+        /* ================= FOOTER PWA PREMIUM ================= */
     .footer-pwa {
       background: #111;
       border-top: 1px solid rgba(216, 178, 90, 0.15);
-      padding: 0;
-      margin-top: 0;
-      min-height: 400px;
-      display: flex;
-      align-items: center;
+      padding: 60px 0;
+      margin-top: 0px;
       position: relative;
-      overflow: hidden;
       z-index: 30;
+      display: block;
     }
 
     .footer-container {
-      max-width: 1400px;
+      max-width: 1300px;
       margin: 0 auto;
-      width: 100%;
-      padding: 40px;
+      padding: 0 40px;
+    }
+
+    .footer-main {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      z-index: 10;
+      align-items: flex-start;
+      gap: 60px;
+      margin-bottom: 50px;
     }
 
     .footer-left {
+      flex: 1;
+    }
+
+    .footer-right {
       display: flex;
       flex-direction: column;
-      gap: 25px;
+      align-items: flex-end;
+      gap: 30px;
       flex: 1;
-      min-width: 300px;
-    }
-
-    .footer-nav-links {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 5px;
-    }
-
-    .footer-nav-links a {
-      color: rgba(208, 208, 208, 0.9) !important;
-      text-decoration: none !important;
-      font-family: 'Cinzel', serif !important;
-      font-size: 0.95rem;
-      letter-spacing: 0.15em;
-      transition: all 0.4s ease;
-    }
-
-    .footer-nav-links a:hover {
-      color: var(--gold) !important;
-      text-shadow: 0 0 12px rgba(216, 178, 90, 0.5);
-    }
-
-    .footer-nav-links .sep {
-      color: var(--gold);
-      opacity: 0.4;
-      font-size: 0.8rem;
-      margin: 0 5px;
     }
 
     .pwa-badge-container {
@@ -617,51 +592,87 @@
     }
 
     .pwa-text-banner {
-      height: 120px;
+      height: 100px;
       width: auto;
-      object-fit: contain;
     }
 
     .pwa-icons-box {
       display: flex;
-      gap: 35px;
+      gap: 30px;
     }
 
     .pwa-icon-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .pwa-icon-small {
-      height: 85px;
+      height: 70px;
       width: auto;
-      filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.3));
+      filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.4));
       transition: all 0.4s ease;
+    }
+
+    .pwa-icon-small:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 15px rgba(212, 162, 58, 0.6));
     }
 
     .pwa-icon-label {
       font-family: 'Cinzel', serif;
       font-size: 0.65rem;
       color: var(--gold);
-      letter-spacing: 0.1em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      opacity: 0.8;
     }
 
-    .pwa-icon-small:hover {
-      filter: drop-shadow(0 0 20px rgba(212, 162, 58, 0.6));
-      transform: scale(1.1);
-    }
-
-    .footer-right {
+    .footer-nav-links {
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 30px;
-      flex: 1;
-      min-width: 300px;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .footer-nav-links a {
+      color: var(--gold);
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      position: relative;
+      transition: all 0.4s ease;
+      padding-bottom: 6px;
+    }
+
+    .footer-nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 1.5px;
+      background: var(--gold);
+      transition: all 0.4s ease;
+      transform: translateX(-50%);
+    }
+
+    @media (hover: hover) {
+      .footer-nav-links a:hover {
+        color: #fff;
+        text-shadow: 0 0 15px rgba(216, 178, 90, 0.5);
+      }
+
+      .footer-nav-links a:hover::after {
+        width: 60%;
+      }
+    }
+
+    .footer-nav-links .sep {
+      color: var(--gold);
+      opacity: 0.3;
+      font-size: 0.8rem;
     }
 
     .social-grid {
@@ -674,7 +685,7 @@
     .social-btn {
       width: 44px;
       height: 44px;
-      padding: 8px;
+      padding: 10px;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 50%;
@@ -685,7 +696,7 @@
     }
 
     .social-btn:hover {
-      background: rgba(214, 162, 58, 0.1);
+      background: rgba(214, 162, 58, 0.15);
       border-color: var(--gold);
       transform: translateY(-5px);
     }
@@ -694,22 +705,49 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      filter: grayscale(1) brightness(0.8);
+      filter: invert(1) brightness(0.8);
     }
 
     .social-btn:hover img {
-      filter: grayscale(0) brightness(1);
+      filter: invert(1) brightness(1);
     }
 
     .footer-copyright {
       width: 100%;
       text-align: center;
       margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(216, 178, 90, 0.1);
       font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       letter-spacing: 4px;
       text-transform: uppercase;
-      color: #444;
+      color: #666;
+    }
+
+    @media (max-width: 900px) {
+      .footer-main {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .footer-right {
+        align-items: center;
+      }
+
+      .footer-nav-links {
+        justify-content: center;
+      }
+
+      .social-grid {
+        justify-content: center;
+      }
+
+      .pwa-badge-container {
+        flex-direction: column;
+      }
     }
 
     /* ===== MOBILE ===== */
@@ -928,12 +966,6 @@
 <body>
 
 
-  <div class="bg-wrapper">
-    <div class="bg-overlay"></div>
-  </div>
-
-
-
   <header class="top-nav">
     <div class="lang-selector">
       <a href="livre-accueil.html">FR</a>
@@ -945,7 +977,7 @@
   </header>
 
   <div class="bg-wrapper">
-    <div class="bg-overlay" style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.2); z-index: 1;"></div>
+    <div class="bg-overlay"></div>
     <img src="fond-livre-accueil-ultra.jpg" class="bg-image" alt="">
   </div>
 
@@ -986,40 +1018,43 @@
     <div class="decor-float"></div>
   </main>
 
-  <footer class="footer-pwa">
-<div class="footer-container">
-      <div class="footer-left">
-        <div class="pwa-badge-container">
-          <img src="pwa-text-banner-es.png" alt="PWA Optimizado" class="pwa-text-banner">
-          <div class="pwa-icons-box">
-            <div class="pwa-icon-item">
-              <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
-              <span class="pwa-icon-label">Simon Lero</span>
-            <div class="pwa-icon-item">
-              <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
-              <span class="pwa-icon-label">Mon Univers</span>
+    <footer class="footer-pwa">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-left">
+          <div class="pwa-badge-container">
+            <img src="pwa-text-banner-es.png" alt="PWA Optimizado" class="pwa-text-banner">
+            <div class="pwa-icons-box">
+              <div class="pwa-icon-item">
+                <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
+                <span class="pwa-icon-label">Simon Lero</span>
+              </div>
+              <div class="pwa-icon-item">
+                <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
+                <span class="pwa-icon-label">Mon Univers</span>
+              </div>
             </div>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-nav-links">
+            <a href="faq.html">FAQ</a><span class="sep">&bull;</span><a href="media.html">Espacio Media</a><span class="sep">&bull;</span><a href="contact-es.html">Contactarme</a>
+          </div>
+          <div class="social-grid">
+            <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
+            <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
+            <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
+            <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
+            <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
+            <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
+            <div class="social-btn"><img src="iconX480.png" alt="X"></div>
+            <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
           </div>
         </div>
       </div>
 
-      <div class="footer-right">
-        <div class="footer-nav-links">
-          <a href="contact-es.html">Contacto</a>
-        </div>
-        <div class="social-grid">
-          <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
-          <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
-          <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
-          <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
-          <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
-          <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
-          <div class="social-btn"><img src="iconX480.png" alt="X"></div>
-          <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
-        </div>
-        
-      </div>
-      <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; Tous droits r&eacute;serv&eacute;s</p>
+      <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; Todos los derechos reservados</p>
     </div>
   </footer>
 
@@ -1032,8 +1067,8 @@
         const x = (window.innerWidth / 2 - e.pageX) / 50;
         const y = (window.innerHeight / 2 - e.pageY) / 50;
 
-        if (charTop) charTop.style.transform = translate(${x}px, ${y}px);
-        if (charBottom) charBottom.style.transform = translate(${-x}px, ${-y}px);
+        if (charTop) charTop.style.transform = `translate(${x}px, ${y}px)`;
+        if (charBottom) charBottom.style.transform = `translate(${-x}px, ${-y}px)`;
       }
     });
 

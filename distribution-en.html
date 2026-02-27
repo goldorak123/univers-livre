@@ -292,6 +292,18 @@
         position: relative;
     }
 
+    .back-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(-50%);
+    }
+
     @media (hover: hover) {
         .back-link:hover {
             color: #fff;

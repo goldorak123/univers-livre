@@ -235,6 +235,30 @@
         position: relative;
     }
 
+    .btn::after {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        width: 0;
+        height: 1.5px;
+        background: var(--gold);
+        transition: all 0.4s ease;
+        transform: translateX(-50%);
+    }
+
+    @media (hover: hover) {
+        .btn:hover::after {
+            width: 60%;
+            background: #fff;
+        }
+    }
+
+    .btn:active::after {
+        width: 60%;
+        background: #fff;
+    }
+
     @media (hover: hover) {
         .btn:hover {
             background: transparent;
@@ -538,6 +562,30 @@
             width: 100%;
             justify-content: center;
         }
+
+    .btn::after {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        width: 0;
+        height: 1.5px;
+        background: var(--gold);
+        transition: all 0.4s ease;
+        transform: translateX(-50%);
+    }
+
+    @media (hover: hover) {
+        .btn:hover::after {
+            width: 60%;
+            background: #fff;
+        }
+    }
+
+    .btn:active::after {
+        width: 60%;
+        background: #fff;
+    }
 
         .top-nav {
             top: 25px;

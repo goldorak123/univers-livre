@@ -257,11 +257,11 @@
             position: relative;
         }
 
-        .btn-submit::after {
+        .btn-submit::after {`r`n        transform: translateX(-50%);
             content: '';
             position: absolute;
             bottom: 10px;
-            left: 80px;
+            left: 50%;
             width: 0;
             height: 1px;
             background: var(--gold);
@@ -276,7 +276,7 @@
             }
 
             .btn-submit:hover::after {
-                width: calc(100% - 160px);
+                width: 60%;
                 background: var(--gold);
             }
         }
@@ -565,7 +565,7 @@
             }
 
             /* No decorative bars on mobile */
-            .btn-submit::after {
+            .btn-submit::after {`r`n        transform: translateX(-50%);
                 display: none !important;
             }
 

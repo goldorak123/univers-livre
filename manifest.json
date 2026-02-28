@@ -1,6 +1,7 @@
 {
     "name": "Simon Lero",
     "short_name": "Simon Lero",
+    "version": "1.0.42",
     "start_url": "/livre-accueil.html",
     "scope": "/",
     "display": "standalone",

@@ -16,12 +16,19 @@
   <meta name="color-scheme" content="dark">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json?v=1.0.42">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  <!-- PWA Désactivée pour corriger la cache -->
-
-  <!-- PWA Désactivée -->
-
-  <!-- Scripts de navigation terminés -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('SW Registered'))
+          .catch(err => console.log('SW Failed', err));
+      });
+    }
+  </script>
 
   <meta name="description"
     content="Entrez dans l'univers de 'Rencontres au Clair de Lune', le roman poétique de Simon Lero. Une exploration intime entre art, musique et littérature.">

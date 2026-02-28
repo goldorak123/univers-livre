@@ -1,7 +1,14 @@
-const CACHE_NAME = 'simon-lero-v39';
+const CACHE_NAME = 'simon-lero-v42';
 const urlsToCache = [
+    '/',
     '/livre-accueil.html',
-    '/manifest-v39.json',
+    '/livre.html',
+    '/resume.html',
+    '/fiche-technique.html',
+    '/distribution.html',
+    '/faq.html',
+    '/contact.html',
+    '/manifest.json',
     '/icon-192.png',
     '/icon-512.png',
     '/apple-touch-icon.png',

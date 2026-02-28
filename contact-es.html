@@ -599,68 +599,43 @@
 
         @media (max-width: 900px) {
             .hero {
-                padding: 120px 5px 40px;
+                padding: 80px 20px 40px;
+                align-items: center;
+                text-align: center;
+                background: rgba(10, 10, 10, 0.8);
+                border: 1px solid rgba(216, 178, 90, 0.2);
+                backdrop-filter: blur(15px);
+                margin: 20px 10px;
+                width: calc(100% - 20px);
+                max-width: 600px;
+                align-self: center;
             }
 
             .hero-background-title {
+                display: block;
                 font-size: 8rem;
-                top: 20px;
-                left: -20px;
-                color: rgba(216, 178, 90, 0.08);
-                -webkit-text-stroke: 1px rgba(216, 178, 90, 0.15);
-            }
-
-            .title-line-1 {
-                font-size: 3rem;
+                top: -10px;
+                left: -10px;
+                opacity: 0.15;
             }
 
             .title-line-2 {
-                font-size: 3rem;
+                margin-left: 0;
             }
 
             .narrative-box {
-                width: 98%;
-                max-width: 98%;
-                margin: 20px auto;
-                padding: 30px 10px;
-                align-self: center;
-                text-align: center;
-                background: rgba(5, 5, 5, 0.4);
-                backdrop-filter: blur(5px);
+                background: none;
                 border: none;
+                backdrop-filter: none;
                 box-shadow: none;
+                padding: 20px 0;
+                margin: 0;
+                width: 100%;
+                max-width: 100%;
             }
 
-            /* No decorative bars on mobile */
-            .btn-submit::after {
-                transform: translateX(-50%);
-                display: none !important;
-            }
-
-            .hero {
-                padding-bottom: 0;
-            }
-
-            .container {
-                padding: 0 10px 40px;
-            }
-
-            .note {
-                margin-top: 20px;
-            }
-
-            /* Supprimer le soulignement sur mobile pour todos los elementos interactivos */
-            a,
-            button,
-            .btn-submit {
-                text-decoration: none !important;
-            }
-
-            a:hover,
-            a:focus,
-            a:active,
-            a:visited {
-                text-decoration: none !important;
+            textarea {
+                height: 200px;
             }
         }
 

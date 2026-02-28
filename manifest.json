@@ -32,9 +32,11 @@
     ],
     "scope_extensions": [
         {
+            "type": "origin",
             "origin": "https://mon-univers.ca"
         },
         {
+            "type": "origin",
             "origin": "https://www.mon-univers.ca"
         }
     ]

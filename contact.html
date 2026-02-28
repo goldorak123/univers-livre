@@ -519,6 +519,67 @@
                 display: none !important;
             }
 
+            /* --- HERO & FORM MOBILE CORRECTION --- */
+            .hero {
+                padding: 120px 10px 40px;
+            }
+
+            .hero-background-title {
+                font-size: 8rem;
+                top: 20px;
+                left: -20px;
+                color: rgba(216, 178, 90, 0.15);
+                -webkit-text-stroke: 1px rgba(216, 178, 90, 0.15);
+            }
+
+            .title-line-1 {
+                font-size: 3rem;
+            }
+
+            .title-line-2 {
+                font-size: 3rem;
+            }
+
+            .narrative-box {
+                width: 98% !important;
+                max-width: 98% !important;
+                margin: 20px auto !important;
+                padding: 30px 10px !important;
+                align-self: center !important;
+                text-align: center !important;
+                background: rgba(5, 5, 5, 0.4) !important;
+                backdrop-filter: blur(5px) !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+            /* No decorative bars on mobile */
+            .btn-submit::after {
+                display: none !important;
+            }
+
+            .container {
+                padding: 0 10px 40px;
+            }
+
+            .note {
+                margin-top: 20px;
+            }
+
+            /* Supprimer le soulignement sur mobile pour tous les éléments interactifs */
+            a,
+            button,
+            .btn-submit {
+                text-decoration: none !important;
+            }
+
+            a:hover,
+            a:focus,
+            a:active,
+            a:visited {
+                text-decoration: none !important;
+            }
+
             /* Footer Layout */
             .footer-pwa {
                 padding: 40px 0 !important;

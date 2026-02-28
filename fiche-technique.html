@@ -301,14 +301,26 @@
 
         /* --- RESPONSIVE --- */
         @media (max-width: 900px) {
-            .grid-editions {
-                grid-template-columns: 1fr;
+            .container {
+                padding: 0 15px 80px;
             }
 
-            .giant-bg-text {
-                font-size: 5rem;
-                top: 100px;
-                transform: translateX(-50%);
+            .spec-card {
+                padding: 30px 15px;
+                /* Even tighter for maximum width */
+            }
+
+            .spec-label {
+                gap: 10px;
+                font-size: 0.75rem;
+            }
+
+            .spec-value {
+                font-size: 1rem;
+            }
+
+            .grid-editions {
+                grid-template-columns: 1fr;
             }
 
             .hero {

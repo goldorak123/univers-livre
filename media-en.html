@@ -11,6 +11,54 @@
             --gold: #d4a23a;
         }
 
+        /* Language Selector Color for Dark Backgrounds */
+        .top-nav {
+            position: absolute;
+            top: 25px;
+            left: 80px;
+            right: 80px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            z-index: 200;
+        }
+
+        .lang-selector {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-selector a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+        }
+
+        .lang-selector a.active {
+            color: var(--gold);
+            opacity: 1;
+        }
+
+        .lang-selector .sep {
+            width: 1px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 900px) {
+            .top-nav {
+                top: 60px;
+                left: 30px;
+                right: 30px;
+            }
+        }
+
         /* Premium Back Button */
         .back-hub-btn {
             position: fixed;

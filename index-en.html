@@ -50,6 +50,275 @@
     .footer-nav-links a:hover::after {
       width: 60%;
     }
+
+    .footer-pwa {
+      background: #111;
+      border-top: 1px solid rgba(216, 178, 90, 0.15);
+      padding: 60px 0;
+      margin-top: 0px;
+      position: relative;
+      z-index: 30;
+      display: block;
+    }
+
+    .footer-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+      margin-bottom: 50px;
+    }
+
+    .footer-left {
+      flex: 1;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 30px;
+      flex: 1;
+    }
+
+    .pwa-badge-container {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .pwa-text-banner {
+      height: 100px;
+      width: auto;
+    }
+
+    .pwa-icons-box {
+      display: flex;
+      gap: 30px;
+    }
+
+    .pwa-icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pwa-icon-small {
+      height: 70px;
+      width: auto;
+      filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.4));
+      transition: all 0.4s ease;
+    }
+
+    .pwa-icon-small:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 15px rgba(212, 162, 58, 0.6));
+    }
+
+    .pwa-icon-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .footer-nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .footer-nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      position: relative;
+      padding-bottom: 6px;
+      transition: all 0.4s ease;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    @media (hover: hover) {
+      .footer-nav-links a:hover {
+        color: var(--gold);
+        text-shadow: 0 0 15px rgba(216, 178, 90, 0.5);
+      }
+    }
+
+    .footer-nav-links .sep {
+      color: var(--gold);
+      opacity: 0.3;
+      font-size: 0.8rem;
+    }
+
+    .social-grid {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+    }
+
+    .social-btn:hover {
+      background: rgba(214, 162, 58, 0.15);
+      border-color: var(--gold);
+      transform: translateY(-5px);
+    }
+
+    .social-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: brightness(1);
+      opacity: 0.7;
+    }
+
+    .social-btn:hover img {
+      filter: sepia(1) saturate(5) hue-rotate(10deg);
+      opacity: 1;
+    }
+
+    .footer-copyright {
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(216, 178, 90, 0.1);
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    @media (max-width: 900px) {
+      .footer-main {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 35px;
+      }
+
+      .footer-right {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        order: 1;
+      }
+
+      .footer-left {
+        order: 2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .footer-nav-links {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 25px;
+      }
+
+      .social-grid {
+        order: 2;
+        display: grid;
+        grid-template-columns: repeat(4, 38px);
+        justify-content: center;
+        gap: 19px;
+        margin-bottom: 0px;
+      }
+
+      .footer-copyright {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        font-family: 'Cinzel', serif;
+        font-size: 0.65rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #444;
+      }
+
+      .pwa-badge-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width:900px) {
+      .footer-pwa {
+        min-height: auto;
+        padding: 20px 0 60px 0;
+        position: relative;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 30px;
+      }
+
+      .footer-right {
+        order: 1;
+        align-items: center;
+        min-width: auto;
+      }
+
+      .footer-left {
+        order: 2;
+        min-width: auto;
+      }
+
+      .footer-copyright {
+        order: 3;
+        margin-top: 10px;
+      }
+
+      .pwa-badge-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .pwa-icons-box {
+        gap: 20px;
+      }
+
+      .pwa-icon-small {
+        height: 60px;
+      }
+
+      .social-grid {
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 
@@ -58,9 +327,47 @@
     Loading Simon Lero's Universe...
   </p>
   <!-- Footer (as per instruction to update footer, assuming a new one is desired) -->
-  <footer
-    style="position: fixed; bottom: 10px; width: 100%; text-align: center; color: #c9a24d; font-family: sans-serif; font-size: 0.8em;">
-    &copy; 2023 Simon Lero. All rights reserved.
+  <footer class="footer-pwa">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-left">
+          <div class="pwa-badge-container">
+            <img src="pwa-text-banner-en.png" alt="PWA Optimized" class="pwa-text-banner">
+            <div class="pwa-icons-box">
+              <div class="pwa-icon-item">
+                <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
+                <span class="pwa-icon-label">Simon Lero</span>
+              </div>
+              <div class="pwa-icon-item">
+                <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
+                <span class="pwa-icon-label">My Universe</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-nav-links">
+            <a href="livre-accueil-en.html">Home</a><span class="sep">&bull;</span><a href="faq-en.html">FAQ</a><span
+              class="sep">&bull;</span><a href="media-en.html">Media Space</a><span class="sep">&bull;</span><a
+              href="contact-en.html">Contact Me</a>
+          </div>
+          <div class="social-grid">
+            <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
+            <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
+            <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
+            <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
+            <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
+            <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
+            <div class="social-btn"><img src="iconX480.png" alt="X"></div>
+            <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; All rights
+        reserved</p>
+    </div>
   </footer>
 </body>
 

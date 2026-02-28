@@ -53,8 +53,10 @@
             background: #111;
             border-top: 1px solid rgba(216, 178, 90, 0.15);
             padding: 60px 0;
-            width: 100%;
+            margin-top: 0px;
+            position: relative;
             z-index: 30;
+            display: block;
         }
 
         .footer-container {
@@ -110,12 +112,18 @@
             height: 70px;
             width: auto;
             filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.4));
+            transition: all 0.4s ease;
+        }
+
+        .pwa-icon-small:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 15px rgba(212, 162, 58, 0.6));
         }
 
         .pwa-icon-label {
             font-family: 'Cinzel', serif;
             font-size: 0.65rem;
-            color: #d8b25a;
+            color: var(--gold);
             letter-spacing: 0.15em;
             text-transform: uppercase;
         }
@@ -130,19 +138,24 @@
             color: #fff;
             text-decoration: none;
             font-family: 'Cinzel', serif;
-            font-size: 1rem;
-            letter-spacing: 0.2rem;
-            text-transform: uppercase;
+            font-size: 0.82rem;
+            letter-spacing: 0.12em;
+            position: relative;
+            padding-bottom: 6px;
             transition: all 0.4s ease;
+            display: inline-block;
+            white-space: nowrap;
         }
 
-        .footer-nav-links a:hover {
-            color: #d8b25a;
-            text-shadow: 0 0 15px rgba(216, 178, 90, 0.5);
+        @media (hover: hover) {
+            .footer-nav-links a:hover {
+                color: var(--gold);
+                text-shadow: 0 0 15px rgba(216, 178, 90, 0.5);
+            }
         }
 
         .footer-nav-links .sep {
-            color: #d8b25a;
+            color: var(--gold);
             opacity: 0.3;
             font-size: 0.8rem;
         }
@@ -167,12 +180,23 @@
             transition: all 0.4s ease;
         }
 
+        .social-btn:hover {
+            background: rgba(214, 162, 58, 0.15);
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
         .social-btn img {
             width: 100%;
             height: 100%;
             object-fit: contain;
             filter: brightness(1);
             opacity: 0.7;
+        }
+
+        .social-btn:hover img {
+            filter: sepia(1 snapshot) saturate(5) hue-rotate(10deg);
+            opacity: 1;
         }
 
         .footer-copyright {
@@ -190,53 +214,107 @@
 
         @media (max-width: 900px) {
             .footer-main {
-                flex-direction: column;
+                flex-direction: column-reverse;
                 align-items: center;
-                text-align: center;
-                gap: 40px;
+                gap: 35px;
             }
 
             .footer-right {
                 align-items: center;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                order: 1;
+            }
+
+            .footer-left {
+                order: 2;
+                width: 100%;
+                display: flex;
+                justify-content: center;
             }
 
             .footer-nav-links {
+                order: 1;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 18px;
-                width: 100%;
-                margin: 0 auto 25px;
-            }
-
-            .footer-nav-links .sep {
-                display: none;
-            }
-
-            .footer-nav-links a {
-                font-size: 1rem;
-                letter-spacing: 0.2em;
-                padding-bottom: 8px;
-                text-align: center;
-                width: fit-content;
+                margin-bottom: 25px;
             }
 
             .social-grid {
+                order: 2;
                 display: grid;
                 grid-template-columns: repeat(4, 38px);
                 justify-content: center;
                 gap: 19px;
-                margin: 0 auto 25px;
+                margin-bottom: 0px;
             }
 
-            .social-btn {
-                width: 38px;
-                height: 38px;
-                padding: 8px;
+            .footer-copyright {
+                order: 3;
+                width: 100%;
+                text-align: center;
+                margin-top: 30px;
+                font-family: 'Cinzel', serif;
+                font-size: 0.65rem;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: #444;
             }
 
             .pwa-badge-container {
                 flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width:900px) {
+            .footer-pwa {
+                min-height: auto;
+                padding: 20px 0 60px 0;
+                position: relative;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+                gap: 30px;
+            }
+
+            .footer-right {
+                order: 1;
+                align-items: center;
+                min-width: auto;
+            }
+
+            .footer-left {
+                order: 2;
+                min-width: auto;
+            }
+
+            .footer-copyright {
+                order: 3;
+                margin-top: 10px;
+            }
+
+            .pwa-badge-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .pwa-icons-box {
+                gap: 20px;
+            }
+
+            .pwa-icon-small {
+                height: 60px;
+            }
+
+            .social-grid {
+                justify-content: center;
             }
         }
     </style>
@@ -254,7 +332,7 @@
             <div class="footer-main">
                 <div class="footer-left">
                     <div class="pwa-badge-container">
-                        <img src="pwa-text-banner.png" alt="PWA Optimized" class="pwa-text-banner">
+                        <img src="pwa-text-banner-en.png" alt="PWA Optimized" class="pwa-text-banner">
                         <div class="pwa-icons-box">
                             <div class="pwa-icon-item">
                                 <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
@@ -270,13 +348,9 @@
 
                 <div class="footer-right">
                     <div class="footer-nav-links">
-                        <a href="livre-accueil-en.html">Home</a>
-                        <span class="sep">&bull;</span>
-                        <a href="faq-en.html">FAQ</a>
-                        <span class="sep">&bull;</span>
-                        <a href="media-en.html">Media Space</a>
-                        <span class="sep">&bull;</span>
-                        <a href="contact-en.html">Contact Me</a>
+                        <a href="livre-accueil-en.html">Home</a><span class="sep">&bull;</span><a
+                            href="faq-en.html">FAQ</a><span class="sep">&bull;</span><a href="media-en.html">Media
+                            Space</a><span class="sep">&bull;</span><a href="contact-en.html">Contact Me</a>
                     </div>
                     <div class="social-grid">
                         <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
@@ -290,6 +364,7 @@
                     </div>
                 </div>
             </div>
+
             <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; All rights
                 reserved</p>
         </div>

@@ -1150,82 +1150,133 @@
     @media (max-width:900px) {
       .footer-pwa {
         padding: 40px 0;
-      }
 
-      .footer-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-        gap: 40px;
-      }
+        /* Consolidated Footer System v43 */
+        @media (max-width: 900px) {
 
-      .footer-main {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-      }
+          /* Reset global interactive styles */
+          a,
+          button,
+          .cta-btn,
+          .lang-selector a {
+            text-decoration: none !important;
+          }
 
-      .footer-right {
-        align-items: center;
-        order: 1;
-      }
+          .lang-selector a {
+            color: rgba(255, 255, 255, 0.7);
+          }
 
-      .footer-left {
-        order: 2;
-      }
+          .lang-selector a.active {
+            color: var(--gold);
+          }
 
-      .footer-copyright {
-        width: 100%;
-        text-align: center;
-        margin-top: 30px;
-        font-family: 'Cinzel', serif;
-        font-size: 0.65rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: #444;
-        order: 3;
-      }
+          .lang-selector .sep {
+            background: rgba(255, 255, 255, 0.3);
+          }
 
-      .pwa-badge-container {
-        flex-direction: column;
-        gap: 20px;
-      }
+          .cta-btn::after,
+          .cta-btn::before,
+          .lang-selector a::after,
+          .lang-selector a::before {
+            display: none !important;
+          }
 
-      .social-grid {
-        justify-content: center;
-      }
-    }
+          /* Footer Layout */
+          .footer-pwa {
+            padding: 40px 0 !important;
+          }
 
-    /* Mobile: Remove decorative underlines/bars on buttons and links */
-    @media (max-width: 768px) {
+          .footer-container {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 30px !important;
+          }
 
-      a::after,
-      button::after,
-      [class*="btn"]::after,
-      [class*="link"]::after,
-      .print-btn span::after {
-        display: none !important;
-      }
-    }
+          .footer-main {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 40px !important;
+          }
 
-    /* --- LUXURY UNDERLINE SYSTEM --- */
-    .footer-nav a::after,
-    .footer-nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 1px;
-      background: var(--gold);
-      transition: all 0.4s ease;
-      transform: translateX(-50%);
-    }
+          .footer-right {
+            order: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+            gap: 30px !important;
+          }
 
-    .footer-nav a:hover::after,
-    .footer-nav-links a:hover::after {
-      width: 60%;
-    }
+          .footer-nav-links {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 15px !important;
+            align-items: center !important;
+          }
+
+          .footer-nav-links .sep {
+            display: none !important;
+          }
+
+          .social-grid {
+            display: grid !important;
+            grid-template-columns: repeat(4, 44px) !important;
+            gap: 15px !important;
+            justify-content: center !important;
+            width: 100% !important;
+          }
+
+          .footer-left {
+            order: 2 !important;
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+          }
+
+          .pwa-badge-container {
+            flex-direction: column !important;
+            gap: 20px !important;
+            align-items: center !important;
+          }
+
+          .footer-copyright {
+            order: 3 !important;
+            margin-top: 30px !important;
+            text-align: center !important;
+            width: 100% !important;
+            padding-top: 20px !important;
+            border-top: 1px solid rgba(216, 178, 90, 0.1) !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+
+          a::after,
+          button::after,
+          [class*="btn"]::after,
+          [class*="link"]::after {
+            display: none !important;
+          }
+        }
+
+        /* --- LUXURY UNDERLINE SYSTEM --- */
+        .footer-nav a::after,
+        .footer-nav-links a::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 1px;
+          background: var(--gold);
+          transition: all 0.4s ease;
+          transform: translateX(-50%);
+        }
+
+        .footer-nav a:hover::after,
+        .footer-nav-links a:hover::after {
+          width: 60%;
+        }
   </style>
 </head>
 

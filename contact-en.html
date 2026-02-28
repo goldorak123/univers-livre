@@ -347,98 +347,112 @@
             margin-bottom: 50px;
         }
 
-        .footer-left {
-            flex: 1;
-        }
+        /* Consolidated Footer System v43 */
+        @media (max-width: 900px) {
 
-        .footer-right {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 30px;
-            flex: 1;
-        }
+            /* Reset global interactive styles */
+            a,
+            button,
+            .cta-btn,
+            .lang-selector a {
+                text-decoration: none !important;
+            }
 
-        .pwa-badge-container {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
+            .lang-selector a {
+                color: rgba(255, 255, 255, 0.7);
+            }
 
-        .pwa-text-banner {
-            height: 100px;
-            width: auto;
-        }
-
-        .pwa-icons-box {
-            display: flex;
-            gap: 30px;
-        }
-
-        .pwa-icon-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .pwa-icon-small {
-            height: 70px;
-            width: auto;
-            filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.4));
-            transition: all 0.4s ease;
-        }
-
-        .pwa-icon-small:hover {
-            transform: scale(1.1);
-            filter: drop-shadow(0 0 15px rgba(212, 162, 58, 0.6));
-        }
-
-        .pwa-icon-label {
-            font-family: 'Cinzel', serif;
-            font-size: 0.65rem;
-            color: var(--gold);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-
-        .footer-nav-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .footer-nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-family: 'Cinzel', serif;
-            font-size: 0.82rem;
-            letter-spacing: 0.12em;
-            position: relative;
-            padding-bottom: 6px;
-            transition: all 0.4s ease;
-            display: inline-block;
-            white-space: nowrap;
-        }
-
-        @media (hover: hover) {
-            .footer-nav-links a:hover {
+            .lang-selector a.active {
                 color: var(--gold);
-                text-shadow: 0 0 15px rgba(216, 178, 90, 0.5);
+            }
+
+            .lang-selector .sep {
+                background: rgba(255, 255, 255, 0.3);
+            }
+
+            .cta-btn::after,
+            .cta-btn::before,
+            .lang-selector a::after,
+            .lang-selector a::before {
+                display: none !important;
+            }
+
+            /* Footer Layout */
+            .footer-pwa {
+                padding: 40px 0 !important;
+            }
+
+            .footer-container {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 30px !important;
+            }
+
+            .footer-main {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 40px !important;
+            }
+
+            .footer-right {
+                order: 1 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                width: 100% !important;
+                gap: 30px !important;
+            }
+
+            .footer-nav-links {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 15px !important;
+                align-items: center !important;
+            }
+
+            .footer-nav-links .sep {
+                display: none !important;
+            }
+
+            .social-grid {
+                display: grid !important;
+                grid-template-columns: repeat(4, 44px) !important;
+                gap: 15px !important;
+                justify-content: center !important;
+                width: 100% !important;
+            }
+
+            .footer-left {
+                order: 2 !important;
+                width: 100% !important;
+                display: flex !important;
+                justify-content: center !important;
+            }
+
+            .pwa-badge-container {
+                flex-direction: column !important;
+                gap: 20px !important;
+                align-items: center !important;
+            }
+
+            .footer-copyright {
+                order: 3 !important;
+                margin-top: 30px !important;
+                text-align: center !important;
+                width: 100% !important;
+                padding-top: 20px !important;
+                border-top: 1px solid rgba(216, 178, 90, 0.1) !important;
             }
         }
 
-        .footer-nav-links .sep {
-            color: var(--gold);
-            opacity: 0.3;
-            font-size: 0.8rem;
-        }
+        @media (max-width: 768px) {
 
-        .social-grid {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: flex-end;
+            a::after,
+            button::after,
+            [class*="btn"]::after,
+            [class*="link"]::after {
+                display: none !important;
+            }
         }
 
         .social-btn {
@@ -739,9 +753,13 @@
 
                 <div class="footer-right">
                     <div class="footer-nav-links">
-                        <a href="livre-accueil-en.html">Home</a><span class="sep">&bull;</span><a
-                            href="faq-en.html">FAQ</a><span class="sep">&bull;</span><a href="media-en.html">Media
-                            Space</a><span class="sep">&bull;</span><a href="contact-en.html">Contact Me</a>
+                        <a href="livre-accueil-en.html">Home</a>
+                        <span class="sep">&bull;</span>
+                        <a href="faq-en.html">FAQ</a>
+                        <span class="sep">&bull;</span>
+                        <a href="media-en.html">Media Space</a>
+                        <span class="sep">&bull;</span>
+                        <a href="contact-en.html">Contact Me</a>
                     </div>
                     <div class="social-grid">
                         <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>

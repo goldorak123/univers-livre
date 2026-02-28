@@ -38,7 +38,16 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
+    // Stratégie Network-first : On essaie le réseau, si ça échoue (hors ligne), on prend le cache.
     event.respondWith(
-        fetch(event.request).catch(() => caches.match(event.request))
+        fetch(event.request)
+            .then(response => {
+                // Si la réponse est valide, on peut optionnellement mettre à jour le cache ici
+                // Mais pour l'instant on se contente de la renvoyer pour garantir la fraîcheur.
+                return response;
+            })
+            .catch(() => {
+                return caches.match(event.request);
+            })
     );
 });

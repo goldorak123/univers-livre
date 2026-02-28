@@ -17,68 +17,11 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <script>
-    // SCRIPT DE PURGE ABSOLUE v41
-    async function purgeAndVerify41() {
-      const v = 'v41.fresh_reset';
-      if (localStorage.getItem('pwa_vx') !== v) {
-        if ('serviceWorker' in navigator) {
-          const regs = await navigator.serviceWorker.getRegistrations();
-          for (const r of regs) await r.unregister();
-        }
-        if ('caches' in window) {
-          const keys = await caches.keys();
-          for (const k of keys) await caches.delete(k);
-        }
-        localStorage.setItem('pwa_vx', v);
-        window.location.reload(true);
-      }
-    }
-    purgeAndVerify41();
-  </script>
+  <!-- PWA Désactivée pour corriger la cache -->
 
-  <!-- PWA -->
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="icon-192.png">
+  <!-- PWA Désactivée -->
 
-  <script>
-    // Gestion de l'installation PWA
-    let deferredPrompt;
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      console.log('beforeinstallprompt fired');
-
-      const installBtn = document.getElementById('install-btn');
-      if (installBtn) {
-        installBtn.style.display = 'inline-block';
-        installBtn.innerText = "INSTALLER L'APPLI";
-      }
-    });
-
-    function installPWA() {
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-          if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
-          }
-          deferredPrompt = null;
-        });
-      } else {
-        alert("L'installation n'est pas disponible pour le moment.\n\nSur iPhone/iPad : Utilisez Partager > 'Sur l'écran d'accueil'.");
-      }
-    }
-
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw-v41.js')
-          .then(reg => console.log('SW Registered v41'))
-          .catch(err => console.log('SW Failed', err));
-      });
-    }
-  </script>
+  <!-- Scripts de navigation terminés -->
 
   <meta name="description"
     content="Entrez dans l'univers de 'Rencontres au Clair de Lune', le roman poétique de Simon Lero. Une exploration intime entre art, musique et littérature.">

@@ -330,95 +330,78 @@
             a,
             button,
             .cta-btn,
-            .lang-selector a {
-                text-decoration: none !important;
-            }
-
-            .lang-selector a {
-                color: rgba(255, 255, 255, 0.7);
-            }
-
-            .lang-selector a.active {
-                color: var(--gold);
-            }
-
-            .lang-selector .sep {
-                background: rgba(255, 255, 255, 0.3);
-            }
-
             .cta-btn::after,
-            .cta-btn::before,
-            .lang-selector a::after,
-            .lang-selector a::before {
+            .cta-btn::before {
                 display: none !important;
             }
+        }
 
-            /* Footer Layout */
-            .footer-pwa {
-                padding: 40px 0 !important;
-            }
+        /* Footer Layout */
+        .footer-pwa {
+            padding: 40px 0 !important;
+        }
 
-            .footer-container {
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 30px !important;
-            }
+        .footer-container {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 30px !important;
+        }
 
-            .footer-main {
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 40px !important;
-            }
+        .footer-main {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 40px !important;
+        }
 
-            .footer-right {
-                order: 1 !important;
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                width: 100% !important;
-                gap: 30px !important;
-            }
+        .footer-right {
+            order: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+            gap: 30px !important;
+        }
 
-            .footer-nav-links {
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 15px !important;
-                align-items: center !important;
-            }
+        .footer-nav-links {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 15px !important;
+            align-items: center !important;
+        }
 
-            .footer-nav-links .sep {
-                display: none !important;
-            }
+        .footer-nav-links .sep {
+            display: none !important;
+        }
 
-            .social-grid {
-                display: grid !important;
-                grid-template-columns: repeat(4, 44px) !important;
-                gap: 15px !important;
-                justify-content: center !important;
-                width: 100% !important;
-            }
+        .social-grid {
+            display: grid !important;
+            grid-template-columns: repeat(4, 44px) !important;
+            gap: 15px !important;
+            justify-content: center !important;
+            width: 100% !important;
+        }
 
-            .footer-left {
-                order: 2 !important;
-                width: 100% !important;
-                display: flex !important;
-                justify-content: center !important;
-            }
+        .footer-left {
+            order: 2 !important;
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+        }
 
-            .pwa-badge-container {
-                flex-direction: column !important;
-                gap: 20px !important;
-                align-items: center !important;
-            }
+        .pwa-badge-container {
+            flex-direction: column !important;
+            gap: 20px !important;
+            align-items: center !important;
+        }
 
-            .footer-copyright {
-                order: 3 !important;
-                margin-top: 30px !important;
-                text-align: center !important;
-                width: 100% !important;
-                padding-top: 20px !important;
-                border-top: 1px solid rgba(216, 178, 90, 0.1) !important;
-            }
+        .footer-copyright {
+            order: 3 !important;
+            margin-top: 30px !important;
+            text-align: center !important;
+            width: 100% !important;
+            padding-top: 20px !important;
+            border-top: 1px solid rgba(216, 178, 90, 0.1) !important;
+        }
         }
 
         @media (max-width: 768px) {
@@ -430,65 +413,11 @@
                 display: none !important;
             }
         }
-
-        /* --- TOP NAV (LANGUAGE SELECTOR) --- */
-        .top-nav {
-            position: absolute;
-            top: 25px;
-            left: 40px;
-            right: 40px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            z-index: 200;
-        }
-
-        .lang-selector {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .lang-selector a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            transition: var(--transition);
-        }
-
-        .lang-selector a.active {
-            color: var(--gold);
-            opacity: 1;
-        }
-
-        .lang-selector .sep {
-            width: 1px;
-            height: 12px;
-            background: rgba(216, 178, 90, 0.3);
-        }
-
-        .lang-selector a:hover {
-            color: var(--gold);
-            opacity: 1;
-        }
     </style>
 </head>
 
 <body class="notranslate" translate="no">
 
-    <header class="top-nav">
-        <div class="lang-selector">
-            <a href="faq.html">FR</a>
-            <span class="sep"></span>
-            <a href="faq-en.html" class="active">EN</a>
-            <span class="sep"></span>
-            <a href="faq-es.html">ES</a>
-        </div>
-    </header>
 
     <header class="hero">
         <div class="hero-background-title">FAQ</div>

@@ -8,6 +8,10 @@
         "standalone",
         "minimal-ui"
     ],
+    "capture_links": "existing-app-navigate",
+    "launch_handler": {
+        "client_mode": "navigate-existing"
+    },
     "background_color": "#000000",
     "theme_color": "#000000",
     "orientation": "any",

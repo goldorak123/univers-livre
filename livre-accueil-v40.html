@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RESET ABSOLU v40</title>
+    <style>
+        body {
+            background: #000;
+            color: #d4af37;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .btn {
+            background: #d4af37;
+            color: #000;
+            border: none;
+            padding: 20px 40px;
+            font-size: 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="icon-192.png" width="120" padding="20">
+    <h1>RESET Simon Lero v40</h1>
+    <p>Cette version copie exactement ce qui marche sur mon-univers.ca.</p>
+    <button class="btn" onclick="hardReset40()">DÉCLENCHER LE NETTOYAGE</button>
+
+    <script>
+        async function hardReset40() {
+            if ('serviceWorker' in navigator) {
+                const regs = await navigator.serviceWorker.getRegistrations();
+                for (const r of regs) await r.unregister();
+            }
+            if ('caches' in window) {
+                const keys = await caches.keys();
+                for (const k of keys) await caches.delete(k);
+            }
+            localStorage.clear();
+            sessionStorage.clear();
+            alert("NETTOYAGE RÉUSSI (v40) !\n\nDésinstallez Simon Lero, fermez Chrome et réinstallez.");
+            window.location.href = "livre-accueil.html?v40=init";
+        }
+    </script>
+</body>
+
+</html>

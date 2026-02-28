@@ -9,11 +9,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#000000">
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+  <script>
+    // SCRIPT DE PURGE ABSOLUE v40
+    async function purgeAndVerify40() {
+      const v = 'v40.stable';
+      if (localStorage.getItem('pwa_v') !== v) {
+        if ('serviceWorker' in navigator) {
+          const regs = await navigator.serviceWorker.getRegistrations();
+          for (const r of regs) await r.unregister();
+        }
+        if ('caches' in window) {
+          const keys = await caches.keys();
+          for (const k of keys) await caches.delete(k);
+        }
+        localStorage.setItem('pwa_v', v);
+        window.location.reload(true);
+      }
+    }
+    purgeAndVerify40();
+  </script>
+
   <!-- PWA -->
-  <link rel="manifest" href="manifest-v39.json">
+  <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="icon-192.png">
 
@@ -48,8 +67,8 @@
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js?v=38')
-          .then(reg => console.log('SW Registered v38'))
+        navigator.serviceWorker.register('/sw-v40.js')
+          .then(reg => console.log('SW Registered v40'))
           .catch(err => console.log('SW Failed', err));
       });
     }

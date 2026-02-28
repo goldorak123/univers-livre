@@ -665,10 +665,6 @@
     </footer>
 
     <script>
-        document.getElementById('current-year-footer').textContent = new Date().getFullYear();
-    </script>
-
-    <script>
         // Accordion Logic
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
@@ -678,7 +674,7 @@
         });
 
         // Year update
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('current-year-footer').textContent = new Date().getFullYear();
     </script>
 </body>
 

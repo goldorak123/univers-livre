@@ -1,12 +1,12 @@
 {
     "name": "Simon Lero",
     "short_name": "Simon Lero",
-    "start_url": "/livre-accueil.html?v=41",
+    "start_url": "/livre-accueil.html",
     "scope": "/",
-    "display": "minimal-ui",
+    "display": "standalone",
     "display_override": [
-        "minimal-ui",
-        "standalone"
+        "standalone",
+        "minimal-ui"
     ],
     "background_color": "#000000",
     "theme_color": "#000000",

@@ -1,7 +1,7 @@
 {
     "name": "Simon Lero",
     "short_name": "Simon Lero",
-    "start_url": "/livre-accueil.html?v=40",
+    "start_url": "/livre-accueil.html?v=41",
     "scope": "/",
     "display": "minimal-ui",
     "display_override": [

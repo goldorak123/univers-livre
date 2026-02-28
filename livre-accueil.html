@@ -12,10 +12,10 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <script>
-    // SCRIPT DE PURGE ABSOLUE v40
-    async function purgeAndVerify40() {
-      const v = 'v40.stable';
-      if (localStorage.getItem('pwa_v') !== v) {
+    // SCRIPT DE PURGE ABSOLUE v41
+    async function purgeAndVerify41() {
+      const v = 'v41.correct';
+      if (localStorage.getItem('pwa_vx') !== v) {
         if ('serviceWorker' in navigator) {
           const regs = await navigator.serviceWorker.getRegistrations();
           for (const r of regs) await r.unregister();
@@ -24,11 +24,11 @@
           const keys = await caches.keys();
           for (const k of keys) await caches.delete(k);
         }
-        localStorage.setItem('pwa_v', v);
+        localStorage.setItem('pwa_vx', v);
         window.location.reload(true);
       }
     }
-    purgeAndVerify40();
+    purgeAndVerify41();
   </script>
 
   <!-- PWA -->
@@ -67,8 +67,8 @@
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw-v40.js')
-          .then(reg => console.log('SW Registered v40'))
+        navigator.serviceWorker.register('/sw-v41.js')
+          .then(reg => console.log('SW Registered v41'))
           .catch(err => console.log('SW Failed', err));
       });
     }

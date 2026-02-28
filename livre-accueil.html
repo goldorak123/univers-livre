@@ -23,7 +23,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js?v=42')
+        navigator.serviceWorker.register('/service-worker.js?v=44')
           .then(reg => console.log('SW Registered'))
           .catch(err => console.log('SW Failed', err));
       });
@@ -250,9 +250,9 @@
       color: rgba(201, 162, 77, 0.15);
       -webkit-text-stroke: 1px rgba(201, 162, 77, 0.20);
       position: absolute;
-      top: 5%;
+      top: 100px;
       left: -5%;
-      line-height: 0.7;
+      line-height: 0.9;
       text-transform: uppercase;
       z-index: -1;
       pointer-events: none;

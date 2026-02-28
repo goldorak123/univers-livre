@@ -754,12 +754,10 @@
       }
 
       .social-grid {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(4, 38px);
         justify-content: center;
         gap: 15px;
-        width: 100%;
-        max-width: 260px;
         margin: 0 auto 40px;
       }
 
@@ -767,7 +765,6 @@
         width: 38px;
         height: 38px;
         padding: 8px;
-        flex: 0 0 38px;
       }
 
       .pwa-badge-container {

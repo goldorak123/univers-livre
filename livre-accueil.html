@@ -25,11 +25,11 @@
       deferredPrompt = e;
       console.log('beforeinstallprompt fired');
 
-      const isPWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-      if (isPWA) return;
-
       const installBtn = document.getElementById('install-btn');
-      if (installBtn) installBtn.style.display = 'inline-block';
+      if (installBtn) {
+        installBtn.style.display = 'inline-block';
+        installBtn.innerText = "INSTALLER L'APPLI";
+      }
     });
 
     function installPWA() {

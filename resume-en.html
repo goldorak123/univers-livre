@@ -434,7 +434,7 @@
     }
 
     .social-btn:hover img {
-        filter: sepia(1 snapshot) saturate(5) hue-rotate(10deg);
+        filter: sepia(1) saturate(5) hue-rotate(10deg);
         opacity: 1;
     }
 
@@ -451,109 +451,111 @@
         color: #666;
     }
 
+    /* Consolidated Footer System v43 */
     @media (max-width: 900px) {
-        .footer-main {
-            flex-direction: column-reverse;
-            align-items: center;
-            gap: 35px;
+
+        /* Reset global interactive styles */
+        a,
+        button,
+        [class*="btn"],
+        .lang-selector a {
+            text-decoration: none !important;
         }
 
-        .footer-right {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            order: 1;
+        .lang-selector a {
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        .footer-left {
-            order: 2;
-            width: 100%;
-            display: flex;
-            justify-content: center;
+        .lang-selector a.active {
+            color: var(--gold);
         }
 
-        .footer-nav-links {
-            order: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 18px;
-            margin-bottom: 25px;
+        .lang-selector .sep {
+            background: rgba(255, 255, 255, 0.3);
         }
 
-        .social-grid {
-            order: 2;
-            display: grid;
-            grid-template-columns: repeat(4, 38px);
-            justify-content: center;
-            gap: 19px;
-            margin-bottom: 0px;
+        [class*="btn"]::after,
+        [class*="btn"]::before,
+        .lang-selector a::after,
+        .lang-selector a::before {
+            display: none !important;
         }
 
-        .footer-copyright {
-            order: 3;
-            width: 100%;
-            text-align: center;
-            margin-top: 30px;
-            font-family: 'Cinzel', serif;
-            font-size: 0.65rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #444;
-        }
-
-        .pwa-badge-container {
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-
-    @media (max-width:900px) {
+        /* Footer Layout */
         .footer-pwa {
-            min-height: auto;
-            padding: 20px 0 60px 0;
-            position: relative;
+            padding: 40px 0 !important;
         }
 
         .footer-container {
-            flex-direction: column;
-            text-align: center;
-            padding: 20px;
-            gap: 30px;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 30px !important;
+        }
+
+        .footer-main {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 40px !important;
         }
 
         .footer-right {
-            order: 1;
-            align-items: center;
-            min-width: auto;
+            order: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+            gap: 30px !important;
         }
 
-        .footer-left {
-            order: 2;
-            min-width: auto;
+        .footer-nav-links {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 15px !important;
+            align-items: center !important;
         }
 
-        .footer-copyright {
-            order: 3;
-            margin-top: 10px;
-        }
-
-        .pwa-badge-container {
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .pwa-icons-box {
-            gap: 20px;
-        }
-
-        .pwa-icon-small {
-            height: 60px;
+        .footer-nav-links .sep {
+            display: none !important;
         }
 
         .social-grid {
-            justify-content: center;
+            display: grid !important;
+            grid-template-columns: repeat(4, 44px) !important;
+            gap: 15px !important;
+            justify-content: center !important;
+            width: 100% !important;
+        }
+
+        .footer-left {
+            order: 2 !important;
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+        .pwa-badge-container {
+            flex-direction: column !important;
+            gap: 20px !important;
+            align-items: center !important;
+        }
+
+        .footer-copyright {
+            order: 3 !important;
+            margin-top: 30px !important;
+            text-align: center !important;
+            width: 100% !important;
+            padding-top: 20px !important;
+            border-top: 1px solid rgba(216, 178, 90, 0.1) !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        a::after,
+        button::after,
+        [class*="btn"]::after,
+        [class*="link"]::after {
+            display: none !important;
         }
     }
 
@@ -764,7 +766,7 @@
             <div class="footer-main">
                 <div class="footer-left">
                     <div class="pwa-badge-container">
-                        <img src="pwa-text-banner-en.png" alt="PWA Optimized" class="pwa-text-banner">
+                        <img src="pwa-text-banner-en.png" alt="PWA optimized" class="pwa-text-banner">
                         <div class="pwa-icons-box">
                             <div class="pwa-icon-item">
                                 <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
@@ -780,9 +782,13 @@
 
                 <div class="footer-right">
                     <div class="footer-nav-links">
-                        <a href="livre-accueil-en.html">Home</a><span class="sep">&bull;</span><a
-                            href="faq-en.html">FAQ</a><span class="sep">&bull;</span><a href="media-en.html">Media
-                            Space</a><span class="sep">&bull;</span><a href="contact-en.html">Contact Me</a>
+                        <a href="livre-accueil-en.html">Home</a>
+                        <span class="sep">&bull;</span>
+                        <a href="faq-en.html">FAQ</a>
+                        <span class="sep">&bull;</span>
+                        <a href="media-en.html">Media Kit</a>
+                        <span class="sep">&bull;</span>
+                        <a href="contact-en.html">Contact me</a>
                     </div>
                     <div class="social-grid">
                         <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>

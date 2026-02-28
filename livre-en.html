@@ -1134,6 +1134,8 @@
             a,
             button,
             .cta-btn,
+            .cta-main,
+            .btn-author,
             .lang-selector a {
                 text-decoration: none !important;
             }
@@ -1152,6 +1154,8 @@
 
             .cta-btn::after,
             .cta-btn::before,
+            .cta-main::after,
+            .btn-author::after,
             .lang-selector a::after,
             .lang-selector a::before {
                 display: none !important;
@@ -1232,90 +1236,6 @@
             [class*="btn"]::after,
             [class*="link"]::after {
                 display: none !important;
-            }
-        }
-
-        .footer-nav-links {
-            order: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 18px;
-            margin-bottom: 25px;
-        }
-
-        .social-grid {
-            order: 2;
-            display: grid;
-            grid-template-columns: repeat(4, 38px);
-            justify-content: center;
-            gap: 19px;
-            margin-bottom: 0px;
-        }
-
-        .footer-copyright {
-            order: 3;
-            width: 100%;
-            text-align: center;
-            margin-top: 30px;
-            font-family: 'Cinzel', serif;
-            font-size: 0.65rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #444;
-        }
-
-        .pwa-badge-container {
-            flex-direction: column;
-            align-items: center;
-        }
-        }
-
-        @media (max-width:900px) {
-            .footer-pwa {
-                min-height: auto;
-                padding: 20px 0 60px 0;
-                position: relative;
-            }
-
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-                gap: 30px;
-            }
-
-            .footer-right {
-                order: 1;
-                align-items: center;
-                min-width: auto;
-            }
-
-            .footer-left {
-                order: 2;
-                min-width: auto;
-            }
-
-            .footer-copyright {
-                order: 3;
-                margin-top: 10px;
-            }
-
-            .pwa-badge-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .pwa-icons-box {
-                gap: 20px;
-            }
-
-            .pwa-icon-small {
-                height: 60px;
-            }
-
-            .social-grid {
-                justify-content: center;
             }
         }
 
@@ -1533,7 +1453,7 @@
             <div class="footer-main">
                 <div class="footer-left">
                     <div class="pwa-badge-container">
-                        <img src="pwa-text-banner-en.png" alt="PWA Optimized" class="pwa-text-banner">
+                        <img src="pwa-text-banner-en.png" alt="PWA optimized" class="pwa-text-banner">
                         <div class="pwa-icons-box">
                             <div class="pwa-icon-item">
                                 <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
@@ -1553,9 +1473,9 @@
                         <span class="sep">&bull;</span>
                         <a href="faq-en.html">FAQ</a>
                         <span class="sep">&bull;</span>
-                        <a href="media-en.html">Media Space</a>
+                        <a href="media-en.html">Media Kit</a>
                         <span class="sep">&bull;</span>
-                        <a href="contact-en.html">Contact Me</a>
+                        <a href="contact-en.html">Contact me</a>
                     </div>
                     <div class="social-grid">
                         <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>

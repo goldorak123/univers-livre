@@ -755,22 +755,20 @@
       }
 
       .social-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 38px);
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
-        margin-bottom: 40px;
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto 40px;
       }
 
       .social-btn {
         width: 38px;
         height: 38px;
         padding: 8px;
-      }
-
-      /* Centrer la deuxième ligne (les 3 dernières icônes) */
-      .social-btn:nth-child(n+6) {
-        grid-column: span 1;
+        flex: 0 0 38px;
       }
 
       .pwa-badge-container {

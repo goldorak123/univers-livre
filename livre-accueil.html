@@ -13,9 +13,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <!-- PWA -->
-  <link rel="manifest" href="manifest-v37.json">
-  <link rel="apple-touch-icon" href="plume-v37-512.png">
-  <link rel="icon" type="image/png" href="plume-v37-192.png">
+  <link rel="manifest" href="manifest-v38.json">
+  <link rel="apple-touch-icon" href="pwa-final-512.png">
+  <link rel="icon" type="image/png" href="pwa-final-192.png">
 
   <script>
     // Gestion de l'installation PWA
@@ -48,8 +48,8 @@
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(reg => console.log('SW Registered'))
+        navigator.serviceWorker.register('/service-worker.js?v=38')
+          .then(reg => console.log('SW Registered v38'))
           .catch(err => console.log('SW Failed', err));
       });
     }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>INSTALLATION FIX v38</title>
+    <style>
+        body {
+            background: #000;
+            color: #d4af37;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .btn {
+            background: #d4af37;
+            color: #000;
+            border: none;
+            padding: 20px 40px;
+            font-size: 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>RÉPARER L'INSTALLATION (v38)</h1>
+    <p>Si vous ne voyez pas le bouton 'Installer', cliquez ci-dessous :</p>
+    <button class="btn" onclick="forceFix()">RÉPARER L'INSTALLATION</button>
+
+    <script>
+        async function forceFix() {
+            // Nettoyage agressif
+            if ('serviceWorker' in navigator) {
+                const regs = await navigator.serviceWorker.getRegistrations();
+                for (const r of regs) await r.unregister();
+            }
+            if ('caches' in window) {
+                const keys = await caches.keys();
+                for (const k of keys) await caches.delete(k);
+            }
+            localStorage.clear();
+            sessionStorage.clear();
+
+            alert("RÉPARATION TERMINÉE (v38) !.\n\nFermez Chrome COMPLETEMENT, puis retournez sur simonlero.com pour installer.");
+            window.location.href = "livre-accueil.html?v38=success";
+        }
+    </script>
+</body>
+
+</html>

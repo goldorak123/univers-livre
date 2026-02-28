@@ -717,8 +717,10 @@
         text-shadow: 0 0 20px rgba(212, 162, 58, 0.4);
       }
 
-      .footer-nav a:hover::after {
-        width: 60%;
+      @media (hover: hover) {
+        .footer-nav a:hover::after {
+          width: 60%;
+        }
       }
     }
 
@@ -1327,9 +1329,12 @@
       transform: translateX(-50%);
     }
 
-    .footer-nav a:hover::after,
-    .footer-nav-links a:hover::after {
-      width: 60%;
+    @media (hover: hover) {
+
+      .footer-nav a:hover::after,
+      .footer-nav-links a:hover::after {
+        width: 60%;
+      }
     }
   </style>
 </head>

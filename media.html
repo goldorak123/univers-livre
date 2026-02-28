@@ -26,6 +26,43 @@
             --gold: #d8b25a;
         }
 
+        .hero-background-title {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(12rem, 35vw, 32rem);
+            font-weight: 900;
+            color: rgba(216, 178, 90, 0.15);
+            -webkit-text-stroke: 1px rgba(216, 178, 90, 0.15);
+            position: absolute;
+            top: 20px;
+            left: -40px;
+            line-height: 0.9;
+            text-transform: uppercase;
+            z-index: -1;
+            pointer-events: none;
+            letter-spacing: -0.05em;
+            width: 100%;
+            white-space: nowrap;
+        }
+
+        .hero-background-title-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        @media (max-width: 900px) {
+            .hero-background-title {
+                font-size: clamp(6rem, 25vw, 10rem);
+                top: 10px;
+                left: -20px;
+            }
+        }
+
         /* Language Selector Color for Dark Backgrounds */
         .top-nav {
             position: absolute;

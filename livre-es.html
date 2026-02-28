@@ -1269,8 +1269,15 @@
         }
 
         .footer-nav a:hover::after,
+        .footer-nav-links a:hover::after {
+            display: none;
+        }
+
         @media (hover: hover) {
+
+            .footer-nav a:hover::after,
             .footer-nav-links a:hover::after {
+                display: block;
                 width: 60%;
             }
         }

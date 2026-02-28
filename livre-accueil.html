@@ -23,7 +23,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js?v=44')
+        navigator.serviceWorker.register('/service-worker.js?v=45')
           .then(reg => console.log('SW Registered'))
           .catch(err => console.log('SW Failed', err));
       });
@@ -239,8 +239,8 @@
       min-height: calc(100vh - 400px);
       padding: 220px 100px 100px 100px;
       z-index: 10;
-      overflow: hidden;
-      /* Prevent giant letters from overflowing */
+      z-index: 10;
+      /* overflow: hidden; -- SUPPRIMÉ POUR ÉVITER LE CLIPPING LATÉRAL */
     }
 
     .hero-background-title {
@@ -250,7 +250,7 @@
       color: rgba(201, 162, 77, 0.15);
       -webkit-text-stroke: 1px rgba(201, 162, 77, 0.20);
       position: absolute;
-      top: 100px;
+      top: 40px;
       left: -5%;
       line-height: 0.9;
       text-transform: uppercase;

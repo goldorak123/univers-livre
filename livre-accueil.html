@@ -7,6 +7,11 @@
   <meta name="googlebot" content="notranslate">
   <meta name="robots" content="notranslate">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <style>
+    html {
+      background: #000 !important;
+    }
+  </style>
   <meta name="theme-color" content="#000000">
   <meta name="color-scheme" content="dark">
   <meta name="mobile-web-app-capable" content="yes">
@@ -15,7 +20,7 @@
   <script>
     // SCRIPT DE PURGE ABSOLUE v41
     async function purgeAndVerify41() {
-      const v = 'v41.correct';
+      const v = 'v41.fresh_reset';
       if (localStorage.getItem('pwa_vx') !== v) {
         if ('serviceWorker' in navigator) {
           const regs = await navigator.serviceWorker.getRegistrations();

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RESET TOTAL v37</title>
+    <style>
+        body {
+            background: #000;
+            color: #d4af37;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .btn {
+            background: #d4af37;
+            color: #000;
+            border: none;
+            padding: 20px 40px;
+            font-size: 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="plume-v37-192.png" width="120" height="120" style="border: 3px solid #d4af37; border-radius: 20px;">
+    <h1>NETTOYAGE ULTIME v37</h1>
+    <p>On va supprimer ce "S" une bonne fois pour toutes.</p>
+    <button class="btn" onclick="hardReset()">ACTION : NETTOYAGE COMPLET</button>
+
+    <script>
+        async function hardReset() {
+            if ('serviceWorker' in navigator) {
+                const regs = await navigator.serviceWorker.getRegistrations();
+                for (const r of regs) await r.unregister();
+            }
+            if ('caches' in window) {
+                const keys = await caches.keys();
+                for (const k of keys) await caches.delete(k);
+            }
+            localStorage.clear();
+            sessionStorage.clear();
+            alert("NETTOYAGE RÉUSSI (v37) !\n\nL'icône 'S' est bannie.\n\nDÉINSTALLEZ l'application actuelle, FERMEZ tout, et réinstallez.");
+            window.location.href = "livre-accueil.html?v=37";
+        }
+    </script>
+</body>
+
+</html>

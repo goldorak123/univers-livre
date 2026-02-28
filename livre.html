@@ -1221,7 +1221,7 @@
       text-align: center;
     }
 
-    @media (max-width:900px) {
+    @media (max-width: 900px) {
       .footer-pwa {
         padding: 40px 0;
       }
@@ -1241,15 +1241,44 @@
 
       .footer-right {
         align-items: center;
-        order: 1;
       }
 
-      .footer-left {
-        order: 2;
+      .footer-nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        width: 100%;
+        margin: 0 auto 25px;
+      }
+
+      .footer-nav-links .sep {
+        display: none;
+      }
+
+      .footer-nav-links a {
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+        padding-bottom: 8px;
+        text-align: center;
+        width: fit-content;
+      }
+
+      .social-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 38px);
+        justify-content: center;
+        gap: 19px;
+        margin: 0 auto 25px;
+      }
+
+      .social-btn {
+        width: 38px;
+        height: 38px;
+        padding: 8px;
       }
 
       .footer-copyright {
-        order: 3;
         width: 100%;
         text-align: center;
         margin-top: 30px;
@@ -1262,11 +1291,6 @@
 
       .pwa-badge-container {
         flex-direction: column;
-        gap: 20px;
-      }
-
-      .social-grid {
-        justify-content: center;
       }
     }
 
@@ -1334,7 +1358,7 @@
                 RÉSUMÉ COMPLET ICI
               </a>
               <a href="fiche-technique.html" class="cta-main">
-                FICHA TÉCNICA
+                FICHE TECHNIQUE
               </a>
             </div>
           </div>

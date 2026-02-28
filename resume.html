@@ -283,7 +283,7 @@
         color: #fff;
     }
 
-            /* ================= FOOTER PWA PREMIUM ================= */
+    /* ================= FOOTER PWA PREMIUM ================= */
     .footer-pwa {
         background: #111;
         border-top: 1px solid rgba(216, 178, 90, 0.15);
@@ -369,8 +369,13 @@
         margin-bottom: 5px;
     }
 
-    .footer-nav-links a { 
-        color: #fff; position: relative; padding-bottom: 6px; position: relative; padding-bottom: 6px; padding-bottom: 6px;
+    .footer-nav-links a {
+        color: #fff;
+        position: relative;
+        padding-bottom: 6px;
+        position: relative;
+        padding-bottom: 6px;
+        padding-bottom: 6px;
         text-decoration: none !important;
         font-family: 'Cinzel', serif !important;
         font-size: 0.95rem;
@@ -383,13 +388,13 @@
         text-shadow: 0 0 12px rgba(216, 178, 90, 0.5);
     }
 
-    
 
-    
 
-    
 
-    
+
+
+
+
 
     .footer-right {
         display: flex;
@@ -428,76 +433,68 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
-        filter: brightness(1); opacity: 0.7; opacity: 0.7; opacity: 0.7;
+        filter: brightness(1);
+        opacity: 0.7;
+        opacity: 0.7;
+        opacity: 0.7;
     }
 
     .social-btn:hover img {
-        filter: sepia(1) saturate(5) hue-rotate(10deg); opacity: 1; opacity: 1; opacity: 1;
+        filter: sepia(1) saturate(5) hue-rotate(10deg);
+        opacity: 1;
+        opacity: 1;
+        opacity: 1;
     }
 
-    .footer-copyright {
-        width: 100%;
-        font-family: 'Cinzel', serif !important;
-        font-size: 0.65rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: #555;
-        text-align: center;
-    }
-
-    @media (max-width:900px) {
-        .footer-pwa {
-            padding: 40px 0;
-        }
-
-        .footer-container {
-            flex-direction: column;
-            text-align: center;
-            padding: 40px 20px;
-            gap: 40px;
-        }
-
+    @media (max-width: 900px) {
         .footer-main {
             flex-direction: column;
             align-items: center;
+            text-align: center;
             gap: 40px;
         }
 
         .footer-right {
             align-items: center;
-            order: 1;
         }
 
-        .footer-left {
-            order: 2;
-        }
-
-        .footer-copyright {
-            order: 3;
+        .footer-nav-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
             width: 100%;
+            margin: 0 auto 25px;
+        }
+
+        .footer-nav-links .sep {
+            display: none;
+        }
+
+        .footer-nav-links a {
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            padding-bottom: 8px;
             text-align: center;
-            margin-top: 30px;
-            font-family: 'Cinzel', serif;
-            font-size: 0.65rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #444;
+            width: fit-content;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 38px);
+            justify-content: center;
+            gap: 19px;
+            margin: 0 auto 25px;
+        }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            padding: 8px;
         }
 
         .pwa-badge-container {
             flex-direction: column;
-            gap: 20px;
-        }
-
-        .social-grid {
-            justify-content: center;
-        }
-    }
-
-    @media (max-width: 1024px) {
-        footer {
-            padding: 35px 0;
-            font-size: 0.7rem;
         }
     }
 
@@ -577,29 +574,29 @@
             justify-content: center;
         }
 
-    .btn::after {
-        content: '';
-        position: absolute;
-        bottom: 0px;
-        left: 50%;
-        width: 0;
-        height: 1px;
-        background: var(--gold);
-        transition: all 0.4s ease;
-        transform: translateX(-50%);
-    }
+        .btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
 
-    @media (hover: hover) {
-        .btn:hover::after {
+        @media (hover: hover) {
+            .btn:hover::after {
+                width: 60%;
+                background: #fff;
+            }
+        }
+
+        .btn:active::after {
             width: 60%;
             background: #fff;
         }
-    }
-
-    .btn:active::after {
-        width: 60%;
-        background: #fff;
-    }
 
         .top-nav {
             top: 25px;
@@ -625,13 +622,19 @@
 
     /* Mobile: Remove decorative underlines/bars on buttons and links */
     @media (max-width: 768px) {
-      a::after, button::after, [class*="btn"]::after, [class*="link"]::after, .print-btn span::after {
-        display: none !important;
-      }
+
+        a::after,
+        button::after,
+        [class*="btn"]::after,
+        [class*="link"]::after,
+        .print-btn span::after {
+            display: none !important;
+        }
     }
 
     /* --- LUXURY UNDERLINE SYSTEM --- */
-    .footer-nav a::after, .footer-nav-links a::after {
+    .footer-nav a::after,
+    .footer-nav-links a::after {
         content: '';
         position: absolute;
         bottom: 0;
@@ -642,7 +645,9 @@
         transition: all 0.4s ease;
         transform: translateX(-50%);
     }
-    .footer-nav a:hover::after, .footer-nav-links a:hover::after {
+
+    .footer-nav a:hover::after,
+    .footer-nav-links a:hover::after {
         width: 60%;
     }
 </style>
@@ -691,7 +696,7 @@
 
     </div>
 
-            <footer class="footer-pwa">
+    <footer class="footer-pwa">
         <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-left">
@@ -743,6 +748,3 @@
 </body>
 
 </html>
-
-
-

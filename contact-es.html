@@ -9,6 +9,21 @@
     <meta name="google" content="notranslate">
     <title>Contacto — Simon Lero</title>
     <link rel="canonical" href="https://www.simonlero.com/contact-es.html"> <!-- Fonts -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js?v=72')
+                    .then(reg => {
+                        console.log('SW Registered');
+                        if (localStorage.getItem('sw_version') !== '72') {
+                            reg.update();
+                            localStorage.setItem('sw_version', '72');
+                        }
+                    })
+                    .catch(err => console.log('SW Failed', err));
+            });
+        }
+    </script>
 
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">

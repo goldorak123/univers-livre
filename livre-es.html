@@ -15,9 +15,9 @@
     <meta name="google" content="notranslate">
     <meta name="robots" content="index, follow">
     <meta name="description"
-        content="Descubre 'Encuentros a la luz de la luna' de Simon Lero, una novela poÃ©tica que mezcla arte, literatura e introspecciÃ³n. Explora el viaje emocional en Encuentros a la luz de la luna.">
+        content="Descubre 'Encuentros a la luz de la luna' de Simon Lero, una novela poética que mezcla arte, literatura e introspección. Explora el viaje emocional en Encuentros a la luz de la luna.">
     <meta name="keywords"
-        content="Encuentros a la luz de la luna, Simon Lero, novela poÃ©tica, literatura, arte, memoria, LGBT, libro">
+        content="Encuentros a la luz de la luna, Simon Lero, novela poética, literatura, arte, memoria, LGBT, libro">
 
     <title>Simon Lero â€” Encuentros a la luz de la luna</title>
     <link rel="canonical" href="https://www.simonlero.com/livre-es.html">
@@ -26,7 +26,7 @@
     <meta property="og:type" content="book">
     <meta property="og:title" content="Encuentros a la Luz de la Luna - Simon Lero">
     <meta property="og:description"
-        content="Descubre 'Encuentros a la Luz de la Luna' de Simon Lero, una novela poÃ©tica que mezcla arte, literatura e introspecciÃ³n. Explora el viaje emocional en Encuentros a la luz de la luna.">
+        content="Descubre 'Encuentros a la Luz de la Luna' de Simon Lero, una novela poética que mezcla arte, literatura e introspección. Explora el viaje emocional en Encuentros a la luz de la luna.">
     <meta property="og:image" content="https://www.simonlero.com/couverture-livre-es.png">
     <meta property="og:locale" content="es_ES">
 
@@ -68,7 +68,7 @@
             align-items: center;
             justify-content: center;
             color: var(--gold);
-            text-decoration: none;
+            text-decoration: none !important;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
@@ -261,7 +261,7 @@
 
         .lang-selector a {
             color: #fff;
-            text-decoration: none;
+            text-decoration: none !important;
             font-family: 'Inter', sans-serif;
             font-size: 0.85rem;
             font-weight: 600;
@@ -372,7 +372,7 @@
             border: 1px solid transparent;
             /* No more sandwich lines */
             color: var(--gold);
-            text-decoration: none;
+            text-decoration: none !important;
             font-family: 'Cinzel', serif;
             font-weight: 700;
             text-transform: uppercase;
@@ -420,7 +420,7 @@
             display: inline-block;
             color: var(--gold);
             font-family: 'Cinzel', serif;
-            text-decoration: none;
+            text-decoration: none !important;
             position: relative;
             padding-bottom: 5px;
             transition: all 0.4s ease;
@@ -616,7 +616,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             padding: 40px 35px;
-            text-decoration: none;
+            text-decoration: none !important;
             color: #A0A0A0;
             border-radius: 4px;
             transition: var(--transition);
@@ -701,7 +701,7 @@
             color: var(--gold);
             position: relative;
             padding-bottom: 8px;
-            text-decoration: none;
+            text-decoration: none !important;
             font-family: 'Cinzel', serif;
             font-size: 1.1rem;
             margin: 0 40px;
@@ -870,7 +870,7 @@
                 letter-spacing: 0.2em;
             }
 
-            /* Supprimer le soulignement sur mobile pour tous les Ã©lÃ©ments interactifs */
+            /* Supprimer le soulignement sur mobile pour tous les éléments interactifs */
             a,
             button,
             .cta-main,
@@ -958,7 +958,7 @@
             font-family: 'Cinzel', serif;
             font-size: 18rem;
             color: var(--gold);
-            opacity: 0.25;
+            opacity: 0.5;
             line-height: 1;
             z-index: 0;
             pointer-events: none;
@@ -972,7 +972,7 @@
             font-family: 'Cinzel', serif;
             font-size: 18rem;
             color: var(--gold);
-            opacity: 0.2;
+            opacity: 0.45;
             line-height: 1;
             z-index: 0;
             pointer-events: none;
@@ -1103,7 +1103,7 @@
 
         .footer-nav-links a {
             color: #fff;
-            text-decoration: none;
+            text-decoration: none !important;
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
             font-weight: 500;
@@ -1332,7 +1332,28 @@
                 width: 60%;
             }
         }
-    </style>
+  
+    /* PWA Highlights */
+    .pwa-text-banner,
+    .pwa-icon-small {
+      filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
+      opacity: 1 !important;
+      transition: all 0.4s ease;
+    }
+
+    .pwa-text-banner:hover,
+    .pwa-icon-small:hover {
+      transform: scale(1.05);
+      filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
+    }
+
+    /* Hide back button on Desktop and iPad Landscape only (>=1024px), KEEP for PWA */
+    @media (min-width: 1023px) {
+      :not([display-mode="standalone"]) .back-hub-btn {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="notranslate" translate="no">
@@ -1495,20 +1516,20 @@
             <h2 class="reveal">Testimonios de los lectores</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
-                    <p class="testimonial-text">"Un viaje onírico de una intensidad poco común. Simon Lero captura la
+                    <p class="testimonial-text">“Un viaje onírico de una intensidad poco común. Simon Lero captura la
                         esencia
-                        misma de la introspección con una pluma de absoluta elegancia."</p>
+                        misma de la introspección con una pluma de absoluta elegancia.”</p>
                     <span class="testimonial-author">— Lucía G.</span>
                 </div>
                 <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
                     <p class="testimonial-text">"Rara vez un libro me ha conmovido tanto. Es una obra que se lee como se
                         contempla
-                        un cuadro de un maestro. Me gusta el vínculo con la sonata de Beethoven."</p>
+                        un cuadro de un maestro. Me gusta el vínculo con la sonata de Beethoven.”</p>
                     <span class="testimonial-author">— Carlos M.</span>
                 </div>
                 <div class="testimonial-card reveal" style="transition-delay: 0.3s;">
-                    <p class="testimonial-text">"Imprescindible para los amantes de la buena literatura. Lo leí dos
-                        veces, lloré dos veces"</p>
+                    <p class="testimonial-text">“Imprescindible para los amantes de la buena literatura. Lo leí dos
+                        veces, lloré dos veces”</p>
                     <span class="testimonial-author">— Elena R.</span>
                 </div>
             </div>
@@ -1516,10 +1537,15 @@
     </section>
 
 
-    <div class="footer-nav">
-        <a href="https://www.mon-univers.ca/index.html">Visita mi vitrina personal <br><span
-                style="font-size: 0.6em; opacity: 0.7; letter-spacing: 0.1em;">(Únicamente en francés)</span></a>
-        <a href="distribution-es.html">Red de Distribución</a>
+        <div class="footer-nav">
+        <a href="https://www.mon-univers.ca/index.html"
+            style="color: #c9a24d !important; text-decoration: none !important; font-family: 'Cinzel', serif; font-size: 1.1rem; margin: 0 40px; opacity: 1; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block; vertical-align: top; text-align: center;">
+            Visita mi vitrina personal<br>
+            <span style="font-size: 0.6em; opacity: 0.8; display: block; margin-top: 5px;">(ÚNICAMENTE EN FRANCÉS)</span>
+        </a>
+        <a href="distribution-es.html"
+            style="color: #c9a24d !important; text-decoration: none !important; font-family: 'Cinzel', serif; font-size: 1.1rem; margin: 0 40px; opacity: 1; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block; vertical-align: top; text-align: center;">
+            Red de Distribución</a>
     </div>
 
     <footer class="footer-pwa">
@@ -1564,8 +1590,7 @@
                 </div>
             </div>
 
-            <p class="footer-copyright"><a href="404.html"
-                    style="text-decoration: none; color: inherit; cursor: default;">&copy;</a> <span
+            <p class="footer-copyright">&copy; <span
                     id="current-year-footer"></span> simonlero.com &mdash; Todos los
                 derechos
                 reservados</p>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es" class="notranslate" translate="no">
 
 <head>
@@ -329,7 +329,8 @@
             content: '';
             position: absolute;
             bottom: 10px;
-            left: 20%;
+            left: 50%;
+            transform: translateX(-50%);
             width: 0;
             height: 1px;
             background: var(--gold);
@@ -344,7 +345,7 @@
             }
 
             .btn-submit:hover::after {
-                width: 60%;
+                width: 42%;
                 background: var(--gold);
             }
         }
@@ -706,6 +707,36 @@
         .footer-nav-links a:hover::after {
             width: 60%;
         }
+
+        /* PWA Highlights */
+        .pwa-text-banner,
+        .pwa-icon-small {
+            filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
+            opacity: 1 !important;
+            transition: all 0.4s ease;
+        }
+
+        .pwa-text-banner:hover,
+        .pwa-icon-small:hover {
+            transform: scale(1.05);
+            filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
+        }
+
+        /* Hide back button on Desktop and iPad Landscape only (>=1024px), KEEP for PWA */
+        @media (min-width: 1023px) {
+
+            /* Only hide if NOT in PWA mode */
+            :not([display-mode="standalone"]) .back-hub-btn {
+                display: none !important;
+            }
+        }
+
+        /* Ensure PWA always shows it on Desktop if needed (redundancy) */
+        @media (display-mode: standalone) {
+            .back-hub-btn {
+                display: flex !important;
+            }
+        }
     </style>
 </head>
 
@@ -778,8 +809,7 @@
                 </div>
             </div>
 
-            <p class="footer-copyright"><a href="404.html"
-                    style="text-decoration: none; color: inherit; cursor: default;">&copy;</a> <span
+            <p class="footer-copyright">&copy; <span
                     id="current-year-footer"></span> simonlero.com &mdash; Todos los
                 derechos reservados</p>
         </div>

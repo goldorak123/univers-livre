@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr" class="notranslate" translate="no">
 
 <head>
@@ -63,7 +63,7 @@
       align-items: center;
       justify-content: center;
       color: var(--gold);
-      text-decoration: none;
+      text-decoration: none !important;
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
@@ -158,7 +158,7 @@
 
     .lang-selector a {
       color: #fff;
-      text-decoration: none;
+      text-decoration: none !important;
       font-family: 'Inter', sans-serif;
       font-size: 0.85rem;
       font-weight: 600;
@@ -416,7 +416,7 @@
       background: transparent;
       border: 1px solid transparent;
       color: var(--gold);
-      text-decoration: none;
+      text-decoration: none !important;
       font-family: 'Cinzel', serif;
       font-weight: 700;
       text-transform: uppercase;
@@ -473,7 +473,7 @@
       display: inline-block;
       color: var(--gold);
       font-family: 'Cinzel', serif;
-      text-decoration: none;
+      text-decoration: none !important;
       position: relative;
       padding-bottom: 5px;
       transition: all 0.4s ease;
@@ -661,7 +661,7 @@
       background: var(--bg-card);
       border: 1px solid var(--border);
       padding: 40px 35px;
-      text-decoration: none;
+      text-decoration: none !important;
       color: #A0A0A0;
       border-radius: 4px;
       transition: var(--transition);
@@ -735,7 +735,7 @@
       color: var(--gold);
       position: relative;
       padding-bottom: 8px;
-      text-decoration: none;
+      text-decoration: none !important;
       font-family: 'Cinzel', serif;
       font-size: 1.1rem;
       margin: 0 40px;
@@ -1034,7 +1034,7 @@
       font-family: 'Cinzel', serif;
       font-size: 18rem;
       color: var(--gold);
-      opacity: 0.25;
+      opacity: 0.5;
       line-height: 1;
       z-index: 0;
       pointer-events: none;
@@ -1048,7 +1048,7 @@
       font-family: 'Cinzel', serif;
       font-size: 18rem;
       color: var(--gold);
-      opacity: 0.2;
+      opacity: 0.45;
       line-height: 1;
       z-index: 0;
       pointer-events: none;
@@ -1179,7 +1179,7 @@
 
     .footer-nav-links a {
       color: #fff;
-      text-decoration: none;
+      text-decoration: none !important;
       font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
       font-weight: 500;
@@ -1385,6 +1385,27 @@
         width: 60%;
       }
     }
+
+    /* PWA Highlights */
+    .pwa-text-banner,
+    .pwa-icon-small {
+      filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
+      opacity: 1 !important;
+      transition: all 0.4s ease;
+    }
+
+    .pwa-text-banner:hover,
+    .pwa-icon-small:hover {
+      transform: scale(1.05);
+      filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
+    }
+
+    /* Hide back button on Desktop and iPad Landscape only (>=1024px), KEEP for PWA */
+    @media (min-width: 1023px) {
+      :not([display-mode="standalone"]) .back-hub-btn {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 
@@ -1543,18 +1564,18 @@
       <h2 class="reveal">Ce que disent les lecteurs</h2>
       <div class="testimonials-grid">
         <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
-          <p class="testimonial-text">"Simon Lero capture l'essence même de
-            l'introspection avec une plume d'une élégance absolue. J'aime le lien avec la musique."</p>
+          <p class="testimonial-text">“Simon Lero capture l'essence même de
+            l'introspection avec une plume d'une élégance absolue. J'aime le lien avec la musique.”</p>
           <span class="testimonial-author">— Marie L.</span>
         </div>
         <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
-          <p class="testimonial-text">"Rarement un livre ne m'aura autant touché. C'est une œuvre qui se lit comme
-            on contemple un tableau de maître. J'adore le lien avec la sonate de Beethoven."</p>
+          <p class="testimonial-text">“Rarement un livre ne m'aura autant touché. C'est une œuvre qui se lit comme
+            on contemple un tableau de maître. J'adore le lien avec la sonate de Beethoven.”</p>
           <span class="testimonial-author">— Jean-Pierre D.</span>
         </div>
         <div class="testimonial-card reveal" style="transition-delay: 0.3s;">
-          <p class="testimonial-text">"Un incontournable pour les amoureux de la belle littérature. J'ai lu 2 fois
-            et peuré 2 fois."</p>
+          <p class="testimonial-text">“Un incontournable pour les amoureux de la belle littérature. J'ai lu 2 fois
+            et pleuré 2 fois.”</p>
           <span class="testimonial-author">— Sophie R.</span>
         </div>
       </div>
@@ -1562,8 +1583,12 @@
   </section>
 
   <div class="footer-nav">
-    <a href="https://www.mon-univers.ca/index.html">Visiter ma vitrine personnelle</a>
-    <a href="distribution.html">Partenaires de Distribution</a>
+    <a href="https://www.mon-univers.ca/index.html"
+      style="color: #c9a24d !important; text-decoration: none !important; font-family: 'Cinzel', serif; font-size: 1.1rem; margin: 0 40px; opacity: 1; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block;">Visiter
+      ma vitrine personnelle</a>
+    <a href="distribution.html"
+      style="color: #c9a24d !important; text-decoration: none !important; font-family: 'Cinzel', serif; font-size: 1.1rem; margin: 0 40px; opacity: 1; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block;">Partenaires
+      de Distribution</a>
   </div>
 
   <footer class="footer-pwa">
@@ -1608,8 +1633,7 @@
         </div>
       </div>
 
-      <p class="footer-copyright"><a href="404.html"
-          style="text-decoration: none; color: inherit; cursor: default;">&copy;</a> <span
+      <p class="footer-copyright">&copy; <span
           id="current-year-footer"></span> simonlero.com &mdash; Tous droits
         r&eacute;serv&eacute;s</p>
     </div>

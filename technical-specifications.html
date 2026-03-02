@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="notranslate" translate="no">
 
 <head>
     <meta charset="UTF-8">
     <meta name="google" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Specifications — Simon Lero</title>
+    <title>Technical Specifications â€” Simon Lero</title>
 
     <!-- Fonts -->
     <link
@@ -645,13 +645,34 @@
                 display: none !important;
             }
         }
-    </style>
+    
+    /* PWA Highlights */
+    .pwa-text-banner, .pwa-icon-small {
+      filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
+      opacity: 1 !important;
+      transition: all 0.4s ease;
+    }
+    .pwa-text-banner:hover, .pwa-icon-small:hover {
+      transform: scale(1.05);
+      filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
+    }
+    /* Hide back button on Desktop and iPad Landscape only (>=1024px), KEEP for PWA */
+    @media (min-width: 1023px) {
+      /* Only hide if NOT in PWA mode */
+      :not([display-mode="standalone"]) .back-hub-btn {
+        display: none !important;
+      }
+    }
 
-    <a href="#" onclick="history.back(); return false;" class="back-hub-btn" aria-label="Back to home">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-        </svg>
-    </a>
+    /* Ensure PWA always shows it on Desktop if needed (redundancy) */
+    @media (display-mode: standalone) {
+      .back-hub-btn {
+        display: flex !important;
+      }
+    }
+  </style>
+
+    
 </head>
 
 <body>
@@ -861,9 +882,7 @@
 
         </div>
 
-        <div class="actions">
-            <a href="livre-en.html" class="btn-back">Back to book</a>
-        </div>
+        
     </main>
 
     <footer class="footer-pwa">

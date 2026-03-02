@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="notranslate" translate="no">
 
 <head>
@@ -67,7 +67,7 @@
             align-items: center;
             justify-content: center;
             color: var(--gold);
-            text-decoration: none;
+            text-decoration: none !important;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
@@ -260,7 +260,7 @@
 
         .lang-selector a {
             color: #fff;
-            text-decoration: none;
+            text-decoration: none !important;
             font-family: 'Inter', sans-serif;
             font-size: 0.85rem;
             font-weight: 600;
@@ -371,7 +371,7 @@
             border: 1px solid transparent;
             /* No more sandwich lines */
             color: var(--gold);
-            text-decoration: none;
+            text-decoration: none !important;
             font-family: 'Cinzel', serif;
             font-weight: 700;
             text-transform: uppercase;
@@ -419,7 +419,7 @@
             display: inline-block;
             color: var(--gold);
             font-family: 'Cinzel', serif;
-            text-decoration: none;
+            text-decoration: none !important;
             position: relative;
             padding-bottom: 5px;
             transition: all 0.4s ease;
@@ -615,7 +615,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             padding: 40px 35px;
-            text-decoration: none;
+            text-decoration: none !important;
             color: #A0A0A0;
             border-radius: 4px;
             transition: var(--transition);
@@ -700,7 +700,7 @@
             color: var(--gold);
             position: relative;
             padding-bottom: 8px;
-            text-decoration: none;
+            text-decoration: none !important;
             font-family: 'Cinzel', serif;
             font-size: 1.1rem;
             margin: 0 40px;
@@ -957,7 +957,7 @@
             font-family: 'Cinzel', serif;
             font-size: 18rem;
             color: var(--gold);
-            opacity: 0.25;
+            opacity: 0.5;
             line-height: 1;
             z-index: 0;
             pointer-events: none;
@@ -971,7 +971,7 @@
             font-family: 'Cinzel', serif;
             font-size: 18rem;
             color: var(--gold);
-            opacity: 0.2;
+            opacity: 0.45;
             line-height: 1;
             z-index: 0;
             pointer-events: none;
@@ -1102,7 +1102,7 @@
 
         .footer-nav-links a {
             color: #fff;
-            text-decoration: none;
+            text-decoration: none !important;
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
             font-weight: 500;
@@ -1331,7 +1331,28 @@
                 width: 60%;
             }
         }
-    </style>
+  
+    /* PWA Highlights */
+    .pwa-text-banner,
+    .pwa-icon-small {
+      filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
+      opacity: 1 !important;
+      transition: all 0.4s ease;
+    }
+
+    .pwa-text-banner:hover,
+    .pwa-icon-small:hover {
+      transform: scale(1.05);
+      filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
+    }
+
+    /* Hide back button on Desktop and iPad Landscape only (>=1024px), KEEP for PWA */
+    @media (min-width: 1023px) {
+      :not([display-mode="standalone"]) .back-hub-btn {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="notranslate" translate="no">
@@ -1499,12 +1520,12 @@
                     <span class="testimonial-author">— Emily S.</span>
                 </div>
                 <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
-                    <p class="testimonial-text">"Rarely has a book touched me so much. It is a work that is read as one
+                    <p class="testimonial-text">“Rarely has a book touched me so much. It is a work that is read as one
                         contemplates a master's painting. Love the link with Beethoven's sonata."</p>
                     <span class="testimonial-author">— Mark T.</span>
                 </div>
                 <div class="testimonial-card reveal" style="transition-delay: 0.3s;">
-                    <p class="testimonial-text">"A must-read for lovers of fine literature. I read it twice, i cried
+                    <p class="testimonial-text">“A must-read for lovers of fine literature. I read it twice, i cried
                         twice"</p>
                     <span class="testimonial-author">— Sarah J.</span>
                 </div>
@@ -1513,9 +1534,15 @@
     </section>
 
 
-    <div class="footer-nav">
-        <a href="https://www.mon-univers.ca/index.html">Visit my personal website (French only)</a>
-        <a href="distribution-en.html">Distribution Partners</a>
+        <div class="footer-nav">
+        <a href="https://www.mon-univers.ca/index.html"
+            style="color: #c9a24d !important; text-decoration: none !important; font-family: 'Cinzel', serif; font-size: 1.1rem; margin: 0 40px; opacity: 1; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block; vertical-align: top; text-align: center;">
+            Visit my personal vitrine<br>
+            <span style="font-size: 0.6em; opacity: 0.8; display: block; margin-top: 5px;">(FRENCH ONLY)</span>
+        </a>
+        <a href="distribution-en.html"
+            style="color: #c9a24d !important; text-decoration: none !important; font-family: 'Cinzel', serif; font-size: 1.1rem; margin: 0 40px; opacity: 1; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block; vertical-align: top; text-align: center;">
+            Distribution Partners</a>
     </div>
 
     <footer class="footer-pwa">
@@ -1560,8 +1587,7 @@
                 </div>
             </div>
 
-            <p class="footer-copyright"><a href="404.html"
-                    style="text-decoration: none; color: inherit; cursor: default;">&copy;</a> <span
+            <p class="footer-copyright">&copy; <span
                     id="current-year-footer"></span> simonlero.com &mdash; All rights
                 reserved</p>
         </div>

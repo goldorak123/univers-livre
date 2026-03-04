@@ -1,0 +1,959 @@
+﻿<!DOCTYPE html>
+<html lang="fr" class="notranslate" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="msvalidate.01" content="3E5480EA2A8BCF95460F1FAFFAB8E679A0">
+
+    <meta name="description"
+        content="Réseau de distribution de l'œuvre de Simon Lero. Retrouvez 'Rencontres au Clair de Lune' sur Amazon, Apple Books, Kobo, Google Play, Indigo, Lulu et plus.">
+
+    <title>Réseau de Distribution — Simon Lero</title>
+    <meta property="og:image" content="https://www.simonlero.com/couverture-livre.png">
+    <link rel="canonical" href="https://www.simonlero.com/distribution.html">
+</head>
+
+<style>
+    :root {
+        --gold: #d4a23a;
+    }
+
+    /* Premium Back Button */
+    .back-hub-btn {
+      display: none;
+        position: fixed;
+        top: 30px;
+        left: 30px;
+        z-index: 1000;
+        width: 45px;
+        height: 45px;
+        background: rgba(10, 10, 10, 0.6);
+        border: 1px solid rgba(212, 162, 58, 0.3);
+        backdrop-filter: blur(10px);
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        color: var(--gold);
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .back-hub-btn svg {
+        width: 20px;
+        height: 20px;
+        transition: transform 0.4s ease;
+    }
+
+    @media (hover: hover) {
+        .back-hub-btn:hover {
+            background: rgba(212, 162, 58, 0.15);
+            border-color: var(--gold);
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(212, 162, 58, 0.2);
+        }
+
+        .back-hub-btn:hover svg {
+            transform: translateX(-3px);
+        }
+    }
+
+    @media (max-width: 900px) {
+        .back-hub-btn {
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        background: #000 !important;
+        margin: 0;
+        padding: 0;
+        color: #777;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        position: relative;
+    }
+
+    body {
+        padding: 20px;
+    }
+
+
+    /* HERO SECTION */
+    .hero {
+        position: relative;
+        padding: 180px 40px 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 1400px;
+        margin: 0 auto;
+        z-index: 10;
+        text-align: left;
+        /* overflow: hidden; -- SUPPRIMÉ */
+    }
+
+    .hero-background-title {
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(8rem, 25vw, 24rem);
+        font-weight: 900;
+        color: rgba(216, 178, 90, 0.15);
+        -webkit-text-stroke: 1px rgba(216, 178, 90, 0.15);
+        position: absolute;
+        top: 40px;
+        left: -40px;
+        line-height: 0.9;
+        text-transform: uppercase;
+        letter-spacing: -0.05em;
+        animation: slideInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .title-line {
+        display: block;
+        line-height: 0.9;
+        text-transform: uppercase;
+    }
+
+    .title-line-1 {
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(3rem, 10vw, 8rem);
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: -0.05em;
+        animation: slideInLeft 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .title-line-2 {
+        font-family: 'Cinzel', serif;
+        font-size: clamp(3rem, 10vw, 8rem);
+        font-weight: 800;
+        color: #d8b25a;
+        margin-left: clamp(2rem, 10vw, 150px);
+        animation: slideInLeft 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+        opacity: 0;
+    }
+
+    .hero-subtitle {
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: 200;
+        color: #666;
+        margin-top: 40px;
+        margin-left: 5px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        animation: fadeIn 2s ease-out 0.8s forwards;
+        opacity: 0;
+        max-width: 800px;
+        text-align: left;
+    }
+
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-150px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(150px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+
+
+    /* PARTNERS GRID */
+    .container {
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 0 40px 100px;
+        position: relative;
+        z-index: 20;
+    }
+
+    .section-title {
+        font-family: 'Cinzel', serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--gold);
+        text-align: center;
+        margin-bottom: 40px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-top: 80px;
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 40px;
+        height: 1px;
+        background: radial-gradient(circle, var(--gold) 0%, transparent 100%);
+        transform: translateX(-50%);
+    }
+
+    .partners-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        justify-content: center;
+        gap: 20px;
+        margin: 0 auto 40px;
+        max-width: 1100px;
+    }
+
+    .partner-card {
+        background: rgba(30, 30, 30, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 30px 20px;
+        text-decoration: none;
+        color: #fff;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(10px);
+        min-height: 120px;
+    }
+
+    @media (hover: hover) {
+        .partner-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(216, 178, 90, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+    }
+
+    .partner-card img {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+        margin-bottom: 15px;
+        filter: grayscale(1) brightness(1.5);
+        transition: all 0.4s ease;
+    }
+
+    @media (hover: hover) {
+        .partner-card:hover img {
+            filter: sepia(1) saturate(5) hue-rotate(10deg);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    }
+
+    .partner-name {
+        font-family: 'Cinzel', serif;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        line-height: 1.4;
+    }
+
+    /* ================= ACTION ================= */
+    .actions {
+        margin-top: 80px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .back-link {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 20px 40px;
+        background: transparent;
+        border: 1px solid transparent;
+        color: var(--gold);
+        font-family: 'Inter', sans-serif, serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        text-decoration: none;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+    }
+
+    @media (hover: hover) {
+        .back-link:hover {
+            color: #fff;
+            transform: translateY(-5px);
+            text-shadow: 0 0 15px rgba(216, 178, 90, 0.4);
+        }
+
+        .back-link:hover::after {
+            width: 60%;
+            background: #fff;
+        }
+    }
+
+    .back-link:visited {
+        color: var(--gold);
+    }
+
+    .back-link:visited::after {
+        width: 0;
+        background: var(--gold);
+    }
+
+    .back-link:active {
+        color: #fff;
+    }
+
+    .back-link:active::after {
+        width: 60%;
+        background: #fff;
+    }
+
+    html,
+    body {
+        background: #000 !important;
+        margin: 0;
+        padding: 0;
+        color: #777;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        position: relative;
+    }
+
+    body {
+        padding: 20px;
+    }
+
+    /* ================= FOOTER PWA PREMIUM ================= */
+    .footer-pwa {
+        background: #111;
+        border-top: 1px solid rgba(216, 178, 90, 0.15);
+        padding: 60px 0;
+        margin-top: 0px;
+        position: relative;
+        z-index: 30;
+        display: block;
+    }
+
+    .footer-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+    .footer-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        margin-bottom: 50px;
+    }
+
+    .footer-left {
+        flex: 1;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 30px;
+        flex: 1;
+    }
+
+    .pwa-badge-container {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .pwa-text-banner {
+        height: 100px;
+        width: auto;
+    }
+
+    .pwa-icons-box {
+        display: flex;
+        gap: 30px;
+    }
+
+    .pwa-icon-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .pwa-icon-small {
+        height: 70px;
+        width: auto;
+        filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.4));
+        transition: all 0.4s ease;
+    }
+
+    .pwa-icon-small:hover {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 15px rgba(212, 162, 58, 0.6));
+    }
+
+    .pwa-icon-label {
+        font-family: 'Cinzel', serif;
+        font-size: 0.65rem;
+        color: var(--gold);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+    }
+
+    .footer-nav-links {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .footer-nav-links a {
+        color: var(--gold) ;
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        position: relative;
+        padding-bottom: 6px;
+        transition: all 0.4s ease;
+        display: inline-block;
+        white-space: nowrap;
+    }
+
+    @media (hover: hover) {
+        .footer-nav-links a:hover {
+            color: var(--gold);
+            text-shadow: 0 0 15px rgba(216, 178, 90, 0.5);
+        }
+    }
+
+    .footer-nav-links .sep {
+        color: var(--gold);
+        opacity: 0.6;
+        font-size: 0.8rem;
+    }
+
+    .social-grid {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .social-btn {
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+
+    .social-btn:hover {
+        background: rgba(214, 162, 58, 0.15);
+        border-color: var(--gold);
+        transform: translateY(-5px);
+    }
+
+    .social-btn img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: brightness(1);
+        opacity: 0.7;
+    }
+
+    .social-btn:hover img {
+        filter: sepia(1) saturate(5) hue-rotate(10deg);
+        opacity: 1;
+    }
+
+    .footer-copyright {
+        width: 100%;
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(216, 178, 90, 0.1);
+        font-family: 'Cinzel', serif;
+        font-size: 0.7rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #666;
+    }
+
+    /* Consolidated Footer System v43 */
+    @media (max-width: 900px) {
+
+        /* Reset global interactive styles */
+        a,
+        button,
+        .cta-btn,
+        .lang-selector a {
+            text-decoration: none !important;
+        }
+
+        .lang-selector a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .lang-selector a.active {
+            color: var(--gold);
+        }
+
+        .lang-selector .sep {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-btn::after,
+        .cta-btn::before,
+        .lang-selector a::after,
+        .lang-selector a::before {
+            display: none !important;
+        }
+
+        /* Footer Layout */
+        .footer-pwa {
+            padding: 40px 0 !important;
+        }
+
+        .footer-container {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 30px !important;
+        }
+
+        .footer-main {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 40px !important;
+        }
+
+        .footer-right {
+            order: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+            gap: 30px !important;
+        }
+
+        .footer-nav-links {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 15px !important;
+            align-items: center !important;
+        }
+
+        .footer-nav-links .sep {
+            display: none !important;
+        }
+
+        .social-grid {
+            display: grid !important;
+            grid-template-columns: repeat(4, 44px) !important;
+            gap: 15px !important;
+            justify-content: center !important;
+            width: 100% !important;
+        }
+
+        .footer-left {
+            order: 2 !important;
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+        .pwa-badge-container {
+            flex-direction: column !important;
+            gap: 20px !important;
+            align-items: center !important;
+        }
+
+        .footer-copyright {
+            order: 3 !important;
+            margin-top: 30px !important;
+            text-align: center !important;
+            width: 100% !important;
+            padding-top: 20px !important;
+            border-top: 1px solid rgba(216, 178, 90, 0.1) !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        a::after,
+        button::after,
+        [class*="btn"]::after,
+        [class*="link"]::after {
+            display: none !important;
+        }
+    }
+
+    .footer-nav a::after,
+    .footer-nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        transition: all 0.4s ease;
+        transform: translateX(-50%);
+    }
+
+    .footer-nav a:hover::after,
+    .footer-nav-links a:hover::after {
+        width: 60%;
+    }
+
+    @media (max-width: 1024px) {
+        footer {
+            padding: 35px 0;
+            font-size: 0.7rem;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 900px) {
+        .hero {
+            padding: 100px 20px 20px;
+        }
+
+        .hero-background-title {
+            font-size: 8rem;
+            top: 20px;
+            left: -20px;
+            color: rgba(216, 178, 90, 0.15);
+            -webkit-text-stroke: 1px rgba(216, 178, 90, 0.20);
+        }
+
+        .title-line-1,
+        .title-line-2 {
+            font-size: 3rem;
+        }
+
+        .hero-subtitle {
+            margin-top: 20px;
+        }
+
+        .container {
+            padding: 0 15px 40px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        /* No decorative bars on mobile */
+        .back-link::after {
+            transform: translateX(-50%);
+            display: none !important;
+        }
+
+        .partners-grid {
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .actions {
+            margin-top: 40px;
+        }
+
+        /* Supprimer le soulignement sur mobile pour tous les éléments interactifs */
+        a,
+        button,
+        .partner-card,
+        .back-link {
+            text-decoration: none !important;
+        }
+
+        a:hover,
+        a:focus,
+        a:active,
+        a:visited {
+            text-decoration: none !important;
+        }
+    }
+
+    /* Mobile: Remove decorative underlines/bars on buttons and links */
+    @media (max-width: 768px) {
+
+        a::after,
+        button::after,
+        [class*="btn"]::after,
+        [class*="link"]::after,
+        .print-btn span::after {
+            display: none !important;
+        }
+    }
+
+    /* --- LUXURY UNDERLINE SYSTEM --- */
+    .footer-nav a::after,
+    .footer-nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        transition: all 0.4s ease;
+        transform: translateX(-50%);
+    }
+
+    .footer-nav a:hover::after,
+    .footer-nav-links a:hover::after {
+        width: 60%;
+    }
+
+    /* PWA Highlights */
+    .pwa-text-banner, .pwa-icon-small {
+      filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
+      opacity: 1 !important;
+      transition: all 0.4s ease;
+    }
+    .pwa-text-banner:hover, .pwa-icon-small:hover {
+      transform: scale(1.05);
+      filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
+    }
+    
+
+    /* Ensure PWA always shows it on Desktop if needed (redundancy) */
+    @media (display-mode: standalone) {
+      .back-hub-btn {
+        display: flex !important;
+      }
+    }
+  
+    /* --- PWA-ONLY NAVIGATION --- */
+    .back-hub-btn {
+        display: none !important;
+    }
+
+    @media (display-mode: standalone) {
+        .back-hub-btn {
+            display: flex !important;
+        }
+    }
+
+    .is-pwa .back-hub-btn {
+        display: flex !important;
+    }
+</style>
+
+<body class="notranslate" translate="no">
+
+    <a href="#" onclick="history.back(); return false;" class="back-hub-btn" aria-label="Retour à l'accueil">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </a>
+
+    <div class="distribution-container">
+
+        <header class="hero">
+            <div class="hero-background-title">RESEAU</div>
+            <h1 class="hero-title-main">
+                <span class="title-line title-line-1">Réseau de</span>
+                <span class="title-line title-line-2">Distribution</span>
+            </h1>
+            <div class="hero-subtitle">
+                "Rencontres au Clair de Lune" est référencé à travers un vaste réseau international
+                de librairies, plateformes numériques et bibliothèques.
+            </div>
+        </header>
+
+        <!-- 1. LIBRAIRIES & VENTE -->
+        <div class="section-title">Librairies & Plateformes</div>
+        <div class="partners-grid">
+            <div class="partner-card"><span class="partner-name">Amazon</span></div>
+            <div class="partner-card"><span class="partner-name">Apple Books</span></div>
+            <div class="partner-card"><span class="partner-name">Barnes & Noble</span></div>
+            <div class="partner-card"><span class="partner-name">Chapters / Indigo</span></div>
+            <div class="partner-card"><span class="partner-name">Kobo</span></div>
+            <div class="partner-card"><span class="partner-name">Google Play</span></div>
+            <div class="partner-card"><span class="partner-name">Thalia</span></div>
+            <div class="partner-card"><span class="partner-name">Bol.com</span></div>
+            <div class="partner-card"><span class="partner-name">Adlibris</span></div>
+            <div class="partner-card"><span class="partner-name">Tolino</span></div>
+            <div class="partner-card"><span class="partner-name">Scribd</span></div>
+            <div class="partner-card"><span class="partner-name">Storytel</span></div>
+            <div class="partner-card"><span class="partner-name">Bookmate</span></div>
+            <div class="partner-card"><span class="partner-name">OverDrive</span></div>
+            <div class="partner-card"><span class="partner-name">Hoopla</span></div>
+            <div class="partner-card"><span class="partner-name">24Symbols</span></div>
+            <div class="partner-card"><span class="partner-name">Bookshop.org</span></div>
+            <div class="partner-card"><span class="partner-name">Powell's Books</span></div>
+            <div class="partner-card"><span class="partner-name">AbeBooks</span></div>
+            <div class="partner-card"><span class="partner-name">Book Depository</span></div>
+            <div class="partner-card"><span class="partner-name">Saxo.com</span></div>
+            <div class="partner-card"><span class="partner-name">Ebooks.com</span></div>
+            <div class="partner-card"><span class="partner-name">Fnac (Kobo)</span></div>
+            <div class="partner-card"><span class="partner-name">Romance.io</span></div>
+        </div>
+
+        <!-- 2. DISTRIBUTION & IMPRESSION -->
+        <div class="section-title">Distribution & Édition</div>
+        <div class="partners-grid">
+            <div class="partner-card"><span class="partner-name">Ingram Content Group</span></div>
+            <div class="partner-card"><span class="partner-name">IngramSpark</span></div>
+            <div class="partner-card"><span class="partner-name">Baker & Taylor</span></div>
+            <div class="partner-card"><span class="partner-name">Lulu.com</span></div>
+            <div class="partner-card"><span class="partner-name">Lulu Direct</span></div>
+            <div class="partner-card"><span class="partner-name">Kindle Direct (KDP)</span></div>
+            <div class="partner-card"><span class="partner-name">Bookvault</span></div>
+            <div class="partner-card"><span class="partner-name">Printful</span></div>
+            <div class="partner-card"><span class="partner-name">Libri</span></div>
+        </div>
+
+        <!-- 3. ÉCOSYSTÈME E-COMMERCE -->
+        <div class="section-title">Partenaires Technologiques</div>
+        <div class="partners-grid">
+            <div class="partner-card"><span class="partner-name">Shopify</span></div>
+            <div class="partner-card"><span class="partner-name">Payhip</span></div>
+            <div class="partner-card"><span class="partner-name">SendOwl</span></div>
+            <div class="partner-card"><span class="partner-name">Single</span></div>
+            <div class="partner-card"><span class="partner-name">Klaviyo</span></div>
+            <div class="partner-card"><span class="partner-name">Judge.me</span></div>
+            <div class="partner-card"><span class="partner-name">Loox</span></div>
+            <div class="partner-card"><span class="partner-name">ReConvert</span></div>
+            <div class="partner-card"><span class="partner-name">Facebook</span></div>
+            <div class="partner-card"><span class="partner-name">Instagram</span></div>
+            <div class="partner-card"><span class="partner-name">Snapchat</span></div>
+            <div class="partner-card"><span class="partner-name">TikTok</span></div>
+            <div class="partner-card"><span class="partner-name">X (Twitter)</span></div>
+        </div>
+
+
+
+        <footer class="footer-pwa">
+            <div class="footer-container">
+                <div class="footer-main">
+                    <div class="footer-left" style="display: flex; flex-direction: column; align-items: center;">
+                        <div class="pwa-badge-container">
+                            <img src="pwa-text-banner.png" alt="PWA Optimis&eacute;" class="pwa-text-banner">
+                            <div class="pwa-icons-box">
+                                <div class="pwa-icon-item">
+                                    <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
+                                    <span class="pwa-icon-label">Simon Lero</span>
+                                </div>
+                                <div class="pwa-icon-item">
+                                    <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
+                                    <span class="pwa-icon-label">Mon Univers</span>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <button id="installAppBtn" class="btn-install-pwa" style="display: block; margin-top: 20px; background: transparent; border: 1px solid rgba(212, 162, 58, 0.4); color: var(--gold); padding: 5px 12px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;" onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">Installer l'App</button>
+                </div>
+
+                    <div class="footer-right">
+                        <div class="footer-nav-links">
+                            <a href="livre-accueil.html">Accueil</a>
+                            <span class="sep">&bull;</span>
+                            <a href="faq.html">FAQ</a>
+                            <span class="sep">&bull;</span>
+                            <a href="media.html">Espace Media</a>
+                            <span class="sep">&bull;</span>
+                            <a href="contact.html">Me contacter</a>
+                        </div>
+                        <div class="social-grid">
+                            <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
+                            <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
+                            <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
+                            <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
+                            <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
+                            <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
+                            <div class="social-btn"><img src="iconX480.png" alt="X"></div>
+                            <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; Tous
+                    droits
+                    r&eacute;serv&eacute;s</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        // Year update
+        document.getElementById('current-year-footer').textContent = new Date().getFullYear();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const isPWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+            if (isPWA) {
+                document.documentElement.classList.add('is-pwa');
+            }
+        });
+    </script>
+</body>
+
+</html>

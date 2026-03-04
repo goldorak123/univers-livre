@@ -23,7 +23,7 @@
 
     <!-- Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;800&display=swap"
         rel="stylesheet">
 </head>
 
@@ -39,7 +39,7 @@
 
     /* Premium Back Button */
     .back-hub-btn {
-      display: none;
+        display: none;
         position: fixed;
         top: 30px;
         left: 30px;
@@ -150,7 +150,8 @@
 
     .hero {
         position: relative;
-        padding: 180px 40px 100px;
+        padding: 0;
+        display: none;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -196,7 +197,7 @@
     }
 
     .title-line-2 {
-        font-family: 'Cinzel', serif;
+        font-family: 'Playfair Display', serif;
         font-size: clamp(3.2rem, 12vw, 8rem);
         font-weight: 800;
         color: var(--gold);
@@ -248,7 +249,7 @@
     }
 
     .content-card {
-        padding: 40px 0;
+        padding: 0 0 40px 0; margin-top: 120px; position: relative; z-index: 20;
         /* Ajusté pour le fond noir direct */
         line-height: 1.8;
         font-size: 1.15rem;
@@ -418,7 +419,7 @@
     }
 
     .footer-nav-links a {
-        color: var(--gold) ;
+        color: var(--gold);
         text-decoration: none;
         font-family: 'Inter', sans-serif;
         font-size: 0.95rem;
@@ -615,24 +616,27 @@
     }
 
     /* PWA Highlights */
-    .pwa-text-banner, .pwa-icon-small {
-      filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
-      opacity: 1 !important;
-      transition: all 0.4s ease;
+    .pwa-text-banner,
+    .pwa-icon-small {
+        filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
+        opacity: 1 !important;
+        transition: all 0.4s ease;
     }
-    .pwa-text-banner:hover, .pwa-icon-small:hover {
-      transform: scale(1.05);
-      filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
+
+    .pwa-text-banner:hover,
+    .pwa-icon-small:hover {
+        transform: scale(1.05);
+        filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
     }
-    
+
 
     /* Ensure PWA always shows it on Desktop if needed (redundancy) */
     @media (display-mode: standalone) {
-      .back-hub-btn {
-        display: flex !important;
-      }
+        .back-hub-btn {
+            display: flex !important;
+        }
     }
-  
+
     /* --- PWA-ONLY NAVIGATION --- */
     .back-hub-btn {
         display: none !important;
@@ -646,6 +650,120 @@
 
     .is-pwa .back-hub-btn {
         display: flex !important;
+    }
+
+    /* ================= NOUVEL ENTÊTE LUXE ================= */
+    .header-livre {
+        /* On utilise l'image nettoyée */
+        background-image: url('entete-texture.jpg');
+        /* On zoome un peu (110%) pour recadrer, et on aligne vers le bas pour voir la plume */
+        background-size: cover;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        height: 380px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: none;
+        margin-bottom: 50px;
+        overflow: hidden;
+    }
+
+    
+   .header-livre::before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width: 120px;
+        height: 80px;
+        background: radial-gradient(ellipse at bottom right, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+        z-index: 5;
+        pointer-events: none;
+    }
+
+    .header-livre::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 1) 100%);
+        pointer-events: none;
+    }
+
+    .titre-memoire {
+        font-family: 'Playfair Display', serif;
+        color: #d4a23a;
+        font-size: clamp(3rem, 10vw, 5.5rem);
+        font-weight: 900;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin: 0;
+        text-align: center;
+        position: relative;
+        z-index: 10;
+        padding: 5px 20px;
+        background: linear-gradient(to bottom, #f1d57e 0%, #d4a23a 50%, #a67c00 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.8));
+    }
+
+    @media (max-width: 768px) {
+        .header-livre {
+            height: 250px;
+            background-size: cover;
+        }
+
+        .titre-memoire {
+            font-size: 2.2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .auteur-header {
+            font-size: 0.75rem;
+            letter-spacing: 5px;
+            margin-bottom: 0px;
+        }
+
+        .livre-header {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+    }
+
+    .auteur-header {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1rem;
+        letter-spacing: 8px;
+        text-transform: uppercase;
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 2px;
+        z-index: 10;
+        position: relative;
+    }
+
+    .livre-header {
+        font-family: 'Cinzel', serif;
+        font-size: 1.4rem;
+        letter-spacing: 3px;
+        color: #ffffff;
+        text-align: center;
+        margin-top: 5px;
+        font-style: italic;
+        z-index: 10;
+        position: relative;
+    }
+
+    .overlay-content {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 </style>
 
@@ -662,13 +780,15 @@
     <div class="corner-glow glow-tl"></div>
     <div class="corner-glow glow-br"></div>
 
-    <header class="hero">
-        <div class="hero-background-title">RESUME</div>
-        <h1 class="hero-title-main">
-            <span class="title-line title-line-1">Résumé</span>
-            <span class="title-line title-line-2">Complet</span>
-        </h1>
+
+    <header class="header-livre">
+        <div class="overlay-content">
+            <div class="auteur-header">SIMON LERO</div>
+            <h1 class="titre-memoire">RÉSUMÉ COMPLET</h1>
+            <div class="livre-header">Rencontres au Clair de Lune</div>
+        </div>
     </header>
+
 
     <div class="container">
         <div class="content-card">
@@ -716,8 +836,12 @@
                             </div>
                         </div>
                     </div>
-                
-                    <button id="installAppBtn" class="btn-install-pwa" style="display: block; margin-top: 20px; background: transparent; border: 1px solid rgba(212, 162, 58, 0.4); color: var(--gold); padding: 5px 12px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;" onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">Installer l'App</button>
+
+                    <button id="installAppBtn" class="btn-install-pwa"
+                        style="display: block; margin-top: 20px; background: transparent; border: 1px solid rgba(212, 162, 58, 0.4); color: var(--gold); padding: 5px 12px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;"
+                        onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';"
+                        onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">Installer
+                        l'App</button>
                 </div>
 
                 <div class="footer-right">

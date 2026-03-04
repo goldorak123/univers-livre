@@ -1,0 +1,899 @@
+﻿<!DOCTYPE html>
+<html lang="fr" class="notranslate" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="google" content="notranslate">
+    <meta name="description"
+        content="Contactez Simon Lero, auteur de 'Rencontres au Clair de Lune'. Posez vos questions ou partagez vos réflexions sur l'œuvre.">
+    <title>Me contacter — Simon Lero</title>
+    <link rel="canonical" href="https://www.simonlero.com/contact.html">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js?v=72')
+                    .then(reg => {
+                        console.log('SW Registered');
+                        if (localStorage.getItem('sw_version') !== '72') {
+                            reg.update();
+                            localStorage.setItem('sw_version', '72');
+                        }
+                    })
+                    .catch(err => console.log('SW Failed', err));
+            });
+        }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4a23a;
+        }
+
+        /* Premium Back Button */
+        .back-hub-btn {
+      display: none;
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1000;
+            width: 45px;
+            height: 45px;
+            background: rgba(10, 10, 10, 0.6);
+            border: 1px solid rgba(212, 162, 58, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-hub-btn svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        @media (hover: hover) {
+            .back-hub-btn:hover {
+                background: rgba(212, 162, 58, 0.15);
+                border-color: var(--gold);
+                transform: scale(1.1);
+                box-shadow: 0 15px 40px rgba(212, 162, 58, 0.2);
+            }
+
+            .back-hub-btn:hover svg {
+                transform: translateX(-3px);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .back-hub-btn {
+                top: 20px;
+                left: 20px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        html,
+        body {
+            background: #000 !important;
+            margin: 0;
+            padding: 0;
+            color: #f0f0f0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+            min-height: 100vh;
+            max-width: 100%;
+        }
+
+
+        /* Focus Reset */
+        a:focus,
+        button:focus,
+        textarea:focus {
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        /* Cinematic Background */
+        .bg-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            filter: grayscale(10%) contrast(110%);
+        }
+
+        .bg-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        /* HERO SECTION (ULTRA-BOLD ASIMMETRICAL) */
+        .hero {
+            position: relative;
+            padding: 180px 40px 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 1400px;
+            margin: 0 auto;
+            z-index: 10;
+            text-align: left;
+            /* overflow: hidden; -- SUPPRIMÉ */
+        }
+
+        .hero-background-title {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(8rem, 25vw, 24rem);
+            font-weight: 900;
+            color: rgba(216, 178, 90, 0.15);
+            -webkit-text-stroke: 1px rgba(216, 178, 90, 0.15);
+            position: absolute;
+            top: 40px;
+            left: -100px;
+            line-height: 0.9;
+            text-transform: uppercase;
+            z-index: -1;
+            pointer-events: none;
+            letter-spacing: -0.05em;
+            white-space: nowrap;
+            animation: slideInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .title-line {
+            display: block;
+            line-height: 0.9;
+            text-transform: uppercase;
+        }
+
+        .title-line-1 {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: -0.05em;
+            animation: slideInLeft 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .title-line-2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 800;
+            color: #d8b25a;
+            margin-left: clamp(2rem, 10vw, 150px);
+            animation: slideInLeft 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 200;
+            color: #ccc;
+            margin-top: 40px;
+            margin-left: 5px;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-out 0.8s forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-150px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(150px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* FORM CARD (Offset Floating Card) */
+        .narrative-box {
+            position: relative;
+            align-self: flex-start;
+            width: 100%;
+            max-width: 900px;
+            background: rgba(10, 10, 10, 0.75);
+            border: 1px solid rgba(216, 178, 90, 0.2);
+            backdrop-filter: blur(15px);
+            padding: 60px 40px;
+            margin: 120px 0 40px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+            animation: fadeIn 1.5s ease-out 0.5s forwards;
+            opacity: 0;
+            z-index: 20;
+            text-align: center;
+        }
+
+        .narrative-box p {
+            margin-bottom: 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #aaa;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+            height: 280px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(216, 178, 90, 0.2);
+            border-radius: 2px;
+            padding: 20px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            resize: none;
+            outline: none;
+            transition: all 0.4s ease;
+            margin-bottom: 30px;
+        }
+
+        textarea:focus {
+            border-color: var(--gold);
+            background: rgba(216, 178, 90, 0.05);
+            box-shadow: 0 0 30px rgba(216, 178, 90, 0.1);
+        }
+
+        .btn-submit {
+            display: inline-block;
+            padding: 18px 80px;
+            background: transparent;
+            border: 1px solid transparent;
+            /* No more sandwich lines */
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            text-indent: 0.4em;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            border-radius: 0;
+            position: relative;
+        }
+
+        .btn-submit::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (hover: hover) {
+            .btn-submit:hover {
+                color: var(--gold);
+                transform: translateY(-5px);
+                text-shadow: 0 0 15px rgba(216, 178, 90, 0.3);
+            }
+
+            .btn-submit:hover::after {
+                width: 22%;
+                background: var(--gold);
+            }
+        }
+
+        .btn-submit:visited {
+            color: var(--gold);
+        }
+
+        .btn-submit:visited::after {
+            width: 0;
+            background: var(--gold);
+        }
+
+        .btn-submit:active {
+            color: var(--gold);
+        }
+
+        .btn-submit:active::after {
+            width: 40%;
+            background: var(--gold);
+        }
+
+        .note {
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #666;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            font-style: italic;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ================= FOOTER PWA PREMIUM ================= */
+        .footer-pwa {
+            background: #111;
+            border-top: 1px solid rgba(216, 178, 90, 0.15);
+            padding: 60px 0;
+            margin-top: 0px;
+            position: relative;
+            z-index: 30;
+            display: block;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-left {
+            flex: 1;
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 30px;
+            flex: 1;
+        }
+
+        .pwa-badge-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .pwa-text-banner {
+            height: 100px;
+            width: auto;
+        }
+
+        .pwa-icons-box {
+            display: flex;
+            gap: 30px;
+        }
+
+        .pwa-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pwa-icon-small {
+            height: 70px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.4));
+            transition: all 0.4s ease;
+        }
+
+        .pwa-icon-small:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 15px rgba(212, 162, 58, 0.6));
+        }
+
+        .pwa-icon-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .footer-nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .footer-nav-links a {
+            color: var(--gold) ;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            position: relative;
+            padding-bottom: 6px;
+            transition: all 0.4s ease;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        @media (hover: hover) {
+            .footer-nav-links a:hover {
+                color: var(--gold);
+                text-shadow: 0 0 15px rgba(216, 178, 90, 0.5);
+            }
+        }
+
+        .footer-nav-links .sep {
+            color: var(--gold);
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
+
+        .social-grid {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+
+        .social-btn:hover {
+            background: rgba(214, 162, 58, 0.15);
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .social-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(1);
+            opacity: 0.7;
+        }
+
+        .social-btn:hover img {
+            filter: sepia(1) saturate(5) hue-rotate(10deg);
+            opacity: 1;
+        }
+
+        .footer-copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(216, 178, 90, 0.1);
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        /* Consolidated Footer System v43 */
+        @media (max-width: 900px) {
+
+            /* Reset global interactive styles */
+            a,
+            button,
+            .cta-btn,
+            .lang-selector a {
+                text-decoration: none !important;
+            }
+
+            .lang-selector a {
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            .lang-selector a.active {
+                color: var(--gold);
+            }
+
+            .lang-selector .sep {
+                background: rgba(255, 255, 255, 0.3);
+            }
+
+            .cta-btn::after,
+            .cta-btn::before,
+            .lang-selector a::after,
+            .lang-selector a::before {
+                display: none !important;
+            }
+
+            /* --- HERO & FORM MOBILE CORRECTION --- */
+            .hero {
+                padding: 120px 10px 40px;
+            }
+
+            .hero-background-title {
+                font-size: 8rem;
+                top: 20px;
+                left: -20px;
+                color: rgba(216, 178, 90, 0.15);
+                -webkit-text-stroke: 1px rgba(216, 178, 90, 0.15);
+            }
+
+            .title-line-1 {
+                font-size: 3rem;
+            }
+
+            .title-line-2 {
+                font-size: 3rem;
+            }
+
+            .narrative-box {
+                width: 98% !important;
+                max-width: 98% !important;
+                margin: 20px auto !important;
+                padding: 30px 10px !important;
+                align-self: center !important;
+                text-align: center !important;
+                background: rgba(5, 5, 5, 0.4) !important;
+                backdrop-filter: blur(5px) !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+            /* No decorative bars on mobile */
+            .btn-submit::after {
+                display: none !important;
+            }
+
+            .container {
+                padding: 0 10px 40px;
+            }
+
+            .note {
+                margin-top: 20px;
+            }
+
+            /* Supprimer le soulignement sur mobile pour tous les éléments interactifs */
+            a,
+            button,
+            .btn-submit {
+                text-decoration: none !important;
+            }
+
+            a:hover,
+            a:focus,
+            a:active,
+            a:visited {
+                text-decoration: none !important;
+            }
+
+            /* Footer Layout */
+            .footer-pwa {
+                padding: 40px 0 !important;
+            }
+
+            .footer-container {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 30px !important;
+            }
+
+            .footer-main {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 40px !important;
+            }
+
+            .footer-right {
+                order: 1 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                width: 100% !important;
+                gap: 30px !important;
+            }
+
+            .footer-nav-links {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 15px !important;
+                align-items: center !important;
+            }
+
+            .footer-nav-links .sep {
+                display: none !important;
+            }
+
+            .social-grid {
+                display: grid !important;
+                grid-template-columns: repeat(4, 44px) !important;
+                gap: 15px !important;
+                justify-content: center !important;
+                width: 100% !important;
+            }
+
+            .footer-left {
+                order: 2 !important;
+                width: 100% !important;
+                display: flex !important;
+                justify-content: center !important;
+            }
+
+            .pwa-badge-container {
+                flex-direction: column !important;
+                gap: 20px !important;
+                align-items: center !important;
+            }
+
+            .footer-copyright {
+                order: 3 !important;
+                margin-top: 30px !important;
+                text-align: center !important;
+                width: 100% !important;
+                padding-top: 20px !important;
+                border-top: 1px solid rgba(216, 178, 90, 0.1) !important;
+            }
+        }
+
+        /* --- LUXURY UNDERLINE SYSTEM --- */
+        .footer-nav a::after,
+        .footer-nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
+
+        .footer-nav a:hover::after,
+        .footer-nav-links a:hover::after {
+            width: 60%;
+        }
+
+        /* PWA Highlights */
+        .pwa-text-banner,
+        .pwa-icon-small {
+            filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
+            opacity: 1 !important;
+            transition: all 0.4s ease;
+        }
+
+        .pwa-text-banner:hover,
+        .pwa-icon-small:hover {
+            transform: scale(1.05);
+            filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
+        }
+
+        
+
+        /* Ensure PWA always shows it on Desktop if needed (redundancy) */
+        @media (display-mode: standalone) {
+            .back-hub-btn {
+                display: flex !important;
+            }
+        }
+    
+    /* --- PWA-ONLY NAVIGATION --- */
+    .back-hub-btn {
+        display: none !important;
+    }
+
+    @media (display-mode: standalone) {
+        .back-hub-btn {
+            display: flex !important;
+        }
+    }
+
+    .is-pwa .back-hub-btn {
+        display: flex !important;
+    }
+</style>
+</head>
+
+<body class="notranslate" translate="no">
+
+    <a href="#" onclick="history.back(); return false;" class="back-hub-btn" aria-label="Retour à l'accueil">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </a>
+    <header class="hero">
+        <div class="hero-background-title">CONTACT</div>
+        <h1 class="hero-title-main"> <span class="title-line title-line-1">Me</span> <span
+                class="title-line title-line-2">Contacter</span> </h1>
+        <div class="hero-subtitle">
+        </div>
+
+        <div class="narrative-box">
+            <p>Si vous souhaitez m'écrire ou partager une réflexion, votre message me parviendra directement.</p>
+
+            <form onsubmit="sendMail(event)">
+                <textarea id="message" maxlength="500" placeholder="Votre message..."></textarea>
+                <button class="btn-submit" type="submit">Envoyer</button>
+            </form>
+            <div class="note">
+                Le message sera transmis via votre service de messagerie. Aucune donnée n'est stockée sur ce serveur.
+            </div>
+        </div>
+    </header>
+
+    <footer class="footer-pwa">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-left" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="pwa-badge-container">
+                        <img src="pwa-text-banner.png" alt="PWA Optimis&eacute;" class="pwa-text-banner">
+                        <div class="pwa-icons-box">
+                            <div class="pwa-icon-item">
+                                <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
+                                <span class="pwa-icon-label">Simon Lero</span>
+                            </div>
+                            <div class="pwa-icon-item">
+                                <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
+                                <span class="pwa-icon-label">Mon Univers</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <button id="installAppBtn" class="btn-install-pwa" style="display: block; margin-top: 20px; background: transparent; border: 1px solid rgba(212, 162, 58, 0.4); color: var(--gold); padding: 5px 12px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;" onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">Installer l'App</button>
+                </div>
+
+                <div class="footer-right">
+                    <div class="footer-nav-links">
+                        <a href="livre-accueil.html">Accueil</a>
+                        <span class="sep">&bull;</span>
+                        <a href="faq.html">FAQ</a>
+                        <span class="sep">&bull;</span>
+                        <a href="media.html">Espace Media</a>
+                        <span class="sep">&bull;</span>
+                        <a href="contact.html">Me contacter</a>
+                    </div>
+                    <div class="social-grid">
+                        <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
+                        <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
+                        <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
+                        <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
+                        <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
+                        <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
+                        <div class="social-btn"><img src="iconX480.png" alt="X"></div>
+                        <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer-copyright">&copy; <span
+                    id="current-year-footer"></span> simonlero.com &mdash; Tous droits
+                r&eacute;serv&eacute;s</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year-footer').textContent = new Date().getFullYear();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const source = urlParams.get('source');
+
+        // Dynamic Branding Logic
+        if (source === 'book') {
+            const subtitle = document.querySelector('.hero-subtitle');
+            if (subtitle) {
+                subtitle.textContent = "Simon Lero — Portfolio Littéraire";
+                subtitle.style.letterSpacing = "15px";
+            }
+            // Update Copyright Brand
+            const brand = document.getElementById('copyright-brand');
+            if (brand) brand.textContent = "simonlero.com";
+        }
+
+        function sendMail(event) {
+            event.preventDefault();
+            const message = document.getElementById("message").value;
+
+            if (message.trim() === "") {
+                alert("Veuillez écrire un message avant d'envoyer.");
+                return;
+            }
+
+            let subject = "Message de simonlero.com";
+            window.location.href = "mailto:support@mon-univers.ca?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const isPWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+            if (isPWA) {
+                document.documentElement.classList.add('is-pwa');
+            }
+        });
+    </script>
+</body>
+
+</html>

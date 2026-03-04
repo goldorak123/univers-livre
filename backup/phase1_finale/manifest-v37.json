@@ -1,0 +1,36 @@
+{
+    "name": "Simon Lero - Plume Dorée",
+    "short_name": "Simon Lero",
+    "start_url": "https://simonlero.com/livre-accueil.html?v37=root",
+    "scope": "/",
+    "display": "minimal-ui",
+    "display_override": [
+        "minimal-ui",
+        "standalone"
+    ],
+    "background_color": "#000000",
+    "theme_color": "#d4af37",
+    "description": "Roman poétique de Simon Lero",
+    "icons": [
+        {
+            "src": "https://simonlero.com/plume-v37-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "https://simonlero.com/plume-v37-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "scope_extensions": [
+        {
+            "origin": "https://mon-univers.ca"
+        },
+        {
+            "origin": "https://www.mon-univers.ca"
+        }
+    ]
+}

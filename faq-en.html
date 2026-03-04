@@ -532,9 +532,7 @@
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    Open the site in your mobile browser (Safari on iOS, Chrome on Android), click "Share" (iOS) or the
-                    three dots (Android), then select "Add to Home Screen". A button may also appear on your home screen
-                    to facilitate installation. For a complete experience, we recommend installing both
+                    To activate the Progressive Web App for free and experience full-screen immersion without a navigation bar, simply click the associated button at the bottom of the page in the PWA section. For a complete experience, we recommend installing both
                     of our sites as a PWA: <a href="https://simonlero.com"
                         style="color:var(--gold); text-decoration: underline;">simonlero.com</a> and <a
                         href="https://mon-univers.ca"
@@ -708,7 +706,7 @@
     <footer class="footer-pwa">
         <div class="footer-container">
             <div class="footer-main">
-                <div class="footer-left">
+                <div class="footer-left" style="display: flex; flex-direction: column; align-items: center;">
                     <div class="pwa-badge-container">
                         <img src="pwa-text-banner-en.png" alt="PWA optimized" class="pwa-text-banner">
                         <div class="pwa-icons-box">
@@ -722,6 +720,8 @@
                             </div>
                         </div>
                     </div>
+                
+                    <button id="installAppBtn" class="btn-install-pwa" style="display: block; margin-top: 20px; background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 10px 25px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;" onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">Install App</button>
                 </div>
 
                 <div class="footer-right">

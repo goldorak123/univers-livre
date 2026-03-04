@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+�<!DOCTYPE html>
 <html lang="fr" class="notranslate" translate="no">
 
 <head>
     <meta charset="UTF-8">
     <meta name="google" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiche Technique â€” Simon Lero</title>
+    <title>Fiche Technique � Simon Lero</title>
 
     <!-- Fonts -->
     <link
@@ -26,6 +26,7 @@
 
         /* Premium Back Button */
         .back-hub-btn {
+      display: none;
             position: fixed;
             top: 30px;
             left: 30px;
@@ -36,7 +37,7 @@
             border: 1px solid rgba(212, 162, 58, 0.3);
             backdrop-filter: blur(10px);
             border-radius: 50%;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             color: var(--gold);
@@ -119,7 +120,7 @@
             margin: 0 auto;
             z-index: 10;
             text-align: left;
-            /* overflow: hidden; -- SUPPRIMÃ‰ */
+            /* overflow: hidden; -- SUPPRIM�0 */
         }
 
         .hero-background-title {
@@ -651,13 +652,7 @@
       transform: scale(1.05);
       filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
     }
-    /* Hide back button on Desktop and iPad Landscape only (>=1024px), KEEP for PWA */
-    @media (min-width: 1023px) {
-      /* Only hide if NOT in PWA mode */
-      :not([display-mode="standalone"]) .back-hub-btn {
-        display: none !important;
-      }
-    }
+    
 
     /* Ensure PWA always shows it on Desktop if needed (redundancy) */
     @media (display-mode: standalone) {
@@ -712,7 +707,7 @@
             <article class="spec-card">
                 <div class="card-header">
                     <h2>Amazon</h2>
-                    <span class="edition-type">Livre BrochÃ©</span>
+                    <span class="edition-type">Livre Broché</span>
                 </div>
                 <div class="spec-list">
                     <div class="spec-row">
@@ -732,7 +727,7 @@
                             </svg>
                             Langue
                         </span>
-                        <span class="spec-value">FranÃ§ais</span>
+                        <span class="spec-value">Français</span>
                     </div>
                     <div class="spec-row">
                         <span class="spec-label">
@@ -786,7 +781,7 @@
                                 </path>
                                 <line x1="7" y1="7" x2="7.01" y2="7"></line>
                             </svg>
-                            Ã‰diteur
+                            �0diteur
                         </span>
                         <span class="spec-value">Indep. Published</span>
                     </div>
@@ -800,7 +795,7 @@
                             </svg>
                             Publication
                         </span>
-                        <span class="spec-value">8 FÃ©b. 2026</span>
+                        <span class="spec-value">8 Féb. 2026</span>
                     </div>
                 </div>
             </article>
@@ -809,7 +804,7 @@
             <article class="spec-card">
                 <div class="card-header">
                     <h2>Lulu.com</h2>
-                    <span class="edition-type">Livre BrochÃ©</span>
+                    <span class="edition-type">Livre Broché</span>
                 </div>
                 <div class="spec-list">
                     <div class="spec-row">
@@ -829,7 +824,7 @@
                             </svg>
                             Langue
                         </span>
-                        <span class="spec-value">FranÃ§ais</span>
+                        <span class="spec-value">Français</span>
                     </div>
                     <div class="spec-row">
                         <span class="spec-label">
@@ -860,7 +855,7 @@
                                 </path>
                                 <line x1="7" y1="7" x2="7.01" y2="7"></line>
                             </svg>
-                            Ã‰diteur
+                            �0diteur
                         </span>
                         <span class="spec-value">Lulu.com</span>
                     </div>
@@ -874,7 +869,7 @@
                             </svg>
                             Publication
                         </span>
-                        <span class="spec-value">8 FÃ©b. 2026</span>
+                        <span class="spec-value">8 Féb. 2026</span>
                     </div>
                     <div class="spec-row">
                         <span class="spec-label">
@@ -883,7 +878,7 @@
                                 <path d="M2 17l10 5 10-5"></path>
                                 <path d="M2 12l10 5 10-5"></path>
                             </svg>
-                            IntÃ©rieur
+                            Intérieur
                         </span>
                         <span class="spec-value">Noir & Blanc</span>
                     </div>

@@ -29,6 +29,7 @@
 
     /* Premium Back Button */
     .back-hub-btn {
+      display: none;
         position: fixed;
         top: 30px;
         left: 30px;
@@ -39,7 +40,7 @@
         border: 1px solid rgba(212, 162, 58, 0.3);
         backdrop-filter: blur(10px);
         border-radius: 50%;
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
         color: var(--gold);
@@ -708,13 +709,7 @@
       transform: scale(1.05);
       filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
     }
-    /* Hide back button on Desktop and iPad Landscape only (>=1024px), KEEP for PWA */
-    @media (min-width: 1023px) {
-      /* Only hide if NOT in PWA mode */
-      :not([display-mode="standalone"]) .back-hub-btn {
-        display: none !important;
-      }
-    }
+    
 
     /* Ensure PWA always shows it on Desktop if needed (redundancy) */
     @media (display-mode: standalone) {

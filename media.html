@@ -9,7 +9,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js?v=90')
+                navigator.serviceWorker.register('/service-worker.js?v=92')
                     .then(reg => {
                         console.log('SW Registered');
                         if (localStorage.getItem('sw_version') !== '64') {
@@ -27,7 +27,7 @@
         }
 
         .hero-background-title {
-            font-family: 'Inter', sans-serif;
+            font-family: "Playfair Display", serif;
             font-size: clamp(12rem, 35vw, 32rem);
             font-weight: 900;
             color: rgba(216, 178, 90, 0.09);
@@ -78,7 +78,7 @@
         }
 
         .hero-background-title {
-            font-family: 'Inter', sans-serif;
+            font-family: "Playfair Display", serif;
             font-size: clamp(8rem, 25vw, 24rem);
             font-weight: 900;
             color: rgba(216, 178, 90, 0.09);
@@ -136,7 +136,7 @@
         .lang-selector a {
             color: rgba(216, 178, 90, 0.09);
             text-decoration: none;
-            font-family: 'Inter', sans-serif;
+            font-family: "Playfair Display", serif;
             font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 0.1em;

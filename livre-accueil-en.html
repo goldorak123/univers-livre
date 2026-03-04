@@ -19,7 +19,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js?v=90')
+        navigator.serviceWorker.register('/service-worker.js?v=92')
           .then(reg => console.log('SW Registered'))
           .catch(err => console.log('SW Failed', err));
       });
@@ -244,7 +244,7 @@
     }
 
     .hero-background-title {
-      font-family: 'Inter', sans-serif;
+      font-family: "Playfair Display", serif;
       font-size: clamp(10rem, 30vw, 28rem);
       font-weight: 900;
       color: rgba(216, 178, 90, 0.09);
@@ -833,7 +833,7 @@
       }
 
       .footer-nav-links a {
-        font-family: 'Inter', sans-serif !important;
+        font-family: "Playfair Display", serif !important;
         font-size: 1rem !important;
         letter-spacing: 0.2rem !important;
       }

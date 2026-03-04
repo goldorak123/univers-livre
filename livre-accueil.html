@@ -23,7 +23,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js?v=82')
+        navigator.serviceWorker.register('/service-worker.js?v=86')
           .then(reg => console.log('SW Registered'))
           .catch(err => console.log('SW Failed', err));
       });
@@ -895,7 +895,7 @@
   <header class="top-nav">
     <div class="lang-selector">
       <button id="install-btn" onclick="installPWA()"
-        style="display: none; background: none; border: 1px solid #d4a23a; color: #d4a23a; padding: 5px 15px; border-radius: 20px; font-family: 'Inter', sans-serif, serif; font-size: 0.7rem; cursor: pointer; margin-right: 15px; letter-spacing: 0.1em;">
+        style="display: none; background: none; border: 1px solid #d4a23a; color: #ffffff; padding: 5px 15px; border-radius: 20px; font-family: 'Inter', sans-serif, serif; font-size: 0.7rem; cursor: pointer; margin-right: 15px; letter-spacing: 0.1em;">
         INSTALLER L'APP
       </button>
       <a href="livre-accueil.html" class="active">FR</a>

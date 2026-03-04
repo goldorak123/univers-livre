@@ -14,7 +14,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js?v=82')
+                navigator.serviceWorker.register('/service-worker.js?v=86')
                     .then(reg => {
                         console.log('SW Registered');
                         if (localStorage.getItem('sw_version') !== '72') {
@@ -837,21 +837,29 @@
         }
 
         .titre-memoire {
-            font-size: 2.2rem;
-            letter-spacing: 0.05em;
-        }
+        font-size: 1.65rem;
+        letter-spacing: 0.05em;
+        color: #ffffff !important;
+        background: none !important;
+        -webkit-text-fill-color: #ffffff !important;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+      }
 
         .auteur-header {
-            font-size: 0.75rem;
-            letter-spacing: 5px;
-            margin-bottom: 0px;
-        }
+        font-size: 0.55rem;
+        letter-spacing: 4px;
+        margin-bottom: 0px;
+        color: #ffffff !important;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+      }
 
         .livre-header {
-            font-size: 1rem;
-            letter-spacing: 1px;
-            margin-top: 2px;
-        }
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        margin-top: 2px;
+        color: #ffffff !important;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+      }
     }
 
     .auteur-header {

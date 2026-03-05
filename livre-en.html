@@ -284,7 +284,11 @@
         }
 
         /* Hero Section */
-        .hero-stage {\n      min-height: auto;\n      display: flex;\n      align-items: flex-start;\n      padding: 120px 0 40px;
+        .hero-stage {
+            \n min-height: auto;
+            \n display: flex;
+            \n align-items: flex-start;
+            \n padding: 120px 0 40px;
             position: relative;
             overflow: hidden;
         }
@@ -444,6 +448,57 @@
             .btn-author:hover::after {
                 width: 60%;
                 background: var(--gold);
+            }
+        }
+
+        /* MAGIC BUTTONS ALIGNMENT & DUST */
+        .hero-actions-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+            margin-top: 40px;
+            width: 100%;
+            position: relative;
+        }
+
+        .dust-filigree {
+            position: absolute;
+            top: 150%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 600px;
+            height: 600px;
+            background: url('poussiere-or.png') center / cover no-repeat;
+            mix-blend-mode: screen;
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+            -webkit-mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
+            mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
+        }
+
+        .hero-actions-container .cta-main {
+            z-index: 2;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        @media (min-width: 1001px) {
+            .hero-actions-container {
+                align-items: flex-start;
+            }
+
+            .hero-actions-container .cta-main {
+                width: auto;
+                justify-content: flex-start;
+            }
+
+            .dust-filigree {
+                left: 30%;
             }
         }
 
@@ -761,7 +816,12 @@
                 gap: 40px;
             }
 
-            .hero-stage {\n        padding: 40px 0 10px;\n        text-align: center;\n        display: block;\n      }
+            .hero-stage {
+                \n padding: 40px 0 10px;
+                \n text-align: center;
+                \n display: block;
+                \n
+            }
 
             .hero-background-title {
                 left: -10px;
@@ -1093,7 +1153,7 @@
         }
 
         .footer-nav-links a {
-            color: var(--gold) ;
+            color: var(--gold);
             text-decoration: none !important;
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
@@ -1323,160 +1383,215 @@
                 width: 60%;
             }
         }
-  
-    /* PWA Highlights */
-    .pwa-text-banner,
-    .pwa-icon-small {
-      filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
-      opacity: 1 !important;
-      transition: all 0.4s ease;
-    }
 
-    .pwa-text-banner:hover,
-    .pwa-icon-small:hover {
-      transform: scale(1.05);
-      filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
-    }
+        /* PWA Highlights */
+        .pwa-text-banner,
+        .pwa-icon-small {
+            filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
+            opacity: 1 !important;
+            transition: all 0.4s ease;
+        }
 
-    /* Hide back button on Desktop and iPad Landscape only (>=1024px), KEEP for PWA */
-    @media (min-width: 1023px) {
-      :not([display-mode="standalone"]) .back-hub-btn {
-        display: none !important;
-      }
-    }
-  
-    /* --- PWA-ONLY NAVIGATION --- */
-    .back-hub-btn {
-        display: none !important;
-    }
+        .pwa-text-banner:hover,
+        .pwa-icon-small:hover {
+            transform: scale(1.05);
+            filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
+        }
 
-    @media (display-mode: standalone) {
+        /* Hide back button on Desktop and iPad Landscape only (>=1024px), KEEP for PWA */
+        @media (min-width: 1023px) {
+            :not([display-mode="standalone"]) .back-hub-btn {
+                display: none !important;
+            }
+        }
+
+        /* --- PWA-ONLY NAVIGATION --- */
         .back-hub-btn {
+            display: none !important;
+        }
+
+        @media (display-mode: standalone) {
+            .back-hub-btn {
+                display: flex !important;
+            }
+        }
+
+        .is-pwa .back-hub-btn {
             display: flex !important;
         }
-    }
 
-    .is-pwa .back-hub-btn {
-        display: flex !important;
-    }
-
-    /* ================= NOUVEL ENTÊTE LUXE ================= */
-    .header-livre {
-        font-family: "Playfair Display", serif;
-        background-image: url("entete-texture.jpg");
-        background-size: cover;
-        background-position: center bottom;
-        background-repeat: no-repeat;
-        height: 380px;
-        width: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-bottom: none;
-        margin-bottom: 0px;
-        overflow: hidden;
-    }
-
-    
-   .header-livre::before {
-        content: "";
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
-        width: 120px;
-        height: 80px;
-        background: radial-gradient(ellipse at bottom right, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
-        z-index: 5;
-        pointer-events: none;
-    }
-
-    .header-livre::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 1) 100%);
-        pointer-events: none;
-    }
-
-    .titre-memoire {
-        font-family: "Playfair Display", serif;
-        color: #ffffff;
-        font-size: clamp(3rem, 10vw, 5.5rem);
-        font-weight: 900;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        margin: 0;
-        text-align: center;
-        position: relative;
-        z-index: 10;
-        padding: 5px 20px;
-        background: linear-gradient(to bottom, #f1d57e 0%, #d4a23a 50%, #a67c00 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.8));
-    }
-
-    @media (max-width: 768px) {
+        /* ================= NOUVEL ENTÊTE LUXE ================= */
         .header-livre {
-            height: 250px;
+            font-family: "Playfair Display", serif;
+            background-image: url("entete-texture.jpg");
             background-size: cover;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            height: 380px;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: none;
+            margin-bottom: 0px;
+            overflow: hidden;
+        }
+
+
+        .header-livre::before {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 120px;
+            height: 80px;
+            background: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .header-livre::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 1) 100%);
+            pointer-events: none;
         }
 
         .titre-memoire {
-        font-size: 2.2rem;
-        letter-spacing: 0.05em;
-      }
+            font-family: "Playfair Display", serif;
+            color: #ffffff;
+            font-size: clamp(3rem, 10vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin: 0;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            padding: 5px 20px;
+            background: linear-gradient(to bottom, #f1d57e 0%, #d4a23a 50%, #a67c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.8));
+        }
+
+        @media (max-width: 768px) {
+            .header-livre {
+                height: 250px;
+                background-size: cover;
+            }
+
+            .titre-memoire {
+                font-size: 2.2rem;
+                letter-spacing: 0.05em;
+            }
+
+            .auteur-header {
+                font-size: 0.55rem;
+                letter-spacing: 4px;
+                margin-bottom: 0px;
+                color: #ffffff !important;
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+            }
+
+            .livre-header {
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+                margin-top: 2px;
+                color: #ffffff !important;
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+            }
+        }
 
         .auteur-header {
-        font-size: 0.55rem;
-        letter-spacing: 4px;
-        margin-bottom: 0px;
-        color: #ffffff !important;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-      }
+            font-family: "Inter", sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 2px;
+            z-index: 10;
+            position: relative;
+        }
 
         .livre-header {
-        font-size: 0.75rem;
-        letter-spacing: 1px;
-        margin-top: 2px;
-        color: #ffffff !important;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-      }
-    }
+            font-family: "Cinzel", serif;
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 5px;
+            font-style: italic;
+            z-index: 10;
+            position: relative;
+        }
 
-    .auteur-header {
-        font-family: "Inter", sans-serif;
-        font-size: 1.1rem;
-        letter-spacing: 8px;
-        text-transform: uppercase;
-        color: #ffffff;
-        text-align: center;
-        margin-bottom: 2px;
-        z-index: 10;
-        position: relative;
-    }
+        .overlay-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    .livre-header {
-        font-family: "Cinzel", serif;
-        font-size: 1.4rem;
-        letter-spacing: 3px;
-        color: #ffffff;
-        text-align: center;
-        margin-top: 5px;
-        font-style: italic;
-        z-index: 10;
-        position: relative;
-    }
-    
-    .overlay-content {
-        position: relative;
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-</style>
+        /* Section Magic Quill Inside Text */
+        .magic-quill-inline {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 600px;
+            margin: -120px auto -80px auto;
+            background: url('plume-magique.png') center / contain no-repeat;
+            opacity: 0.9;
+            mix-blend-mode: screen;
+            pointer-events: none;
+            z-index: 10;
+            /* Masque elliptique élargi : protège la pointe en haut ET l'encrier en bas, estompe les bords lointains */
+            -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 40%, black 55%, transparent 100%);
+            mask-image: radial-gradient(ellipse 65% 60% at 50% 40%, black 55%, transparent 100%);
+        }
+
+        /* Effet Filigrane Cuir en bas à droite */
+        .leather-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            z-index: 5;
+        }
+
+        .leather-reveal-corner {
+            position: absolute;
+            bottom: 0px;
+            right: 0;
+            width: 100vw;
+            max-width: 1600px;
+            height: 800px;
+            background: url('cuir-page-fond.jpg') center right / cover no-repeat;
+            -webkit-mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+            mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+            pointer-events: none;
+            mix-blend-mode: screen;
+            filter: contrast(1.2) saturation(1.1) brightness(1.8);
+        }
+
+        .leather-reveal-corner-left {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 100vw;
+            max-width: 1600px;
+            height: 1200px;
+            background: url('cuir-page-fond.jpg') center left / cover no-repeat;
+            -webkit-mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+            mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+            pointer-events: none;
+            mix-blend-mode: screen;
+            filter: contrast(1.2) saturation(1.1) brightness(1.8);
+        }
+    </style>
 </head>
 
 <body class="notranslate" translate="no">
@@ -1493,7 +1608,7 @@
     <div class="corner-glow glow-tl"></div>
     <div class="corner-glow glow-br"></div>
 
-        <header class="header-livre">
+    <header class="header-livre">
         <div class="overlay-content">
             <div class="auteur-header">SIMON LERO</div>
             <h1 class="titre-memoire">Encounters By Moonlight</h1>
@@ -1501,11 +1616,11 @@
         </div>
     </header>
 
-<header class="hero-stage">
+    <header class="hero-stage">
         <div class="container">
             <div class="grid-stage">
 
-                
+
                 <div class="hero-presentation-grid">
                     <div class="book-frame reveal" style="transition-delay: 0.4s;">
                         <img src="couverture-livre-en.png" alt="Encounters by Moonlight">
@@ -1515,7 +1630,8 @@
                             a sign from his one true, enduring love.</p>
                         <p>A meeting with Joey shatters this fragile balance. In him, Sisley recognizes the reflection
                             of his own thirty years: an intimate resonance, an unexpected synergy.</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                        <div class="hero-actions-container">
+                            <div class="dust-filigree"></div>
                             <a href="resume-en.html" class="cta-main">
                                 FULL SUMMARY HERE
                             </a>
@@ -1576,6 +1692,10 @@
                         ancestor who settled in America, anchoring this narrative in a memory both personal and
                         inherited.
                     </p>
+
+                    <!-- IMAGE: PLUME MAGIQUE -->
+                    <div class="magic-quill-inline" aria-hidden="true"></div>
+
                 </div>
             </div>
         </div>
@@ -1659,7 +1779,7 @@
     </section>
 
 
-        <div class="footer-nav">
+    <div class="footer-nav">
         <a href="https://www.mon-univers.ca/index.html"
             style="color: #c9a24d !important; text-decoration: none !important; font-family: 'Cinzel', serif; font-size: 1.1rem; margin: 0 40px; opacity: 1; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block; vertical-align: top; text-align: center;">
             Visit my personal vitrine<br>
@@ -1668,6 +1788,12 @@
         <a href="distribution-en.html"
             style="color: #c9a24d !important; text-decoration: none !important; font-family: 'Cinzel', serif; font-size: 1.1rem; margin: 0 40px; opacity: 1; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block; vertical-align: top; text-align: center;">
             Distribution Partners</a>
+    </div>
+
+    <!-- FILIGRANE CUIR : Apparition dans les coins inférieurs -->
+    <div class="leather-wrapper" aria-hidden="true">
+        <div class="leather-reveal-corner"></div>
+        <div class="leather-reveal-corner-left"></div>
     </div>
 
     <footer class="footer-pwa">
@@ -1687,8 +1813,12 @@
                             </div>
                         </div>
                     </div>
-                
-                    <button id="installAppBtn" class="btn-install-pwa" style="display: block; margin-top: 20px; background: transparent; border: 1px solid rgba(212, 162, 58, 0.4); color: var(--gold); padding: 5px 12px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;" onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">Install App</button>
+
+                    <button id="installAppBtn" class="btn-install-pwa"
+                        style="display: block; margin-top: 20px; background: transparent; border: 1px solid rgba(212, 162, 58, 0.4); color: var(--gold); padding: 5px 12px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;"
+                        onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';"
+                        onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">Install
+                        App</button>
                 </div>
 
                 <div class="footer-right">
@@ -1714,8 +1844,7 @@
                 </div>
             </div>
 
-            <p class="footer-copyright">&copy; <span
-                    id="current-year-footer"></span> simonlero.com &mdash; All rights
+            <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; All rights
                 reserved</p>
         </div>
     </footer>

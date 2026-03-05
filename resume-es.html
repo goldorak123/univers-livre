@@ -39,7 +39,7 @@
 
     /* Premium Back Button */
     .back-hub-btn {
-      display: none;
+        display: none;
         position: fixed;
         top: 30px;
         left: 30px;
@@ -247,7 +247,10 @@
     }
 
     .content-card {
-        padding: 0 0 40px 0; margin-top: 120px; position: relative; z-index: 20;
+        padding: 0 0 40px 0;
+        margin-top: 120px;
+        position: relative;
+        z-index: 20;
         line-height: 1.8;
         font-size: 1.15rem;
         color: #bbb;
@@ -415,7 +418,7 @@
     }
 
     .footer-nav-links a {
-        color: var(--gold) ;
+        color: var(--gold);
         text-decoration: none;
         font-family: 'Inter', sans-serif;
         font-size: 0.95rem;
@@ -658,7 +661,8 @@
 
 
     @media (max-width: 768px) {
-        .hero { padding: 40px 20px 20px;
+        .hero {
+            padding: 40px 20px 20px;
         }
 
         .hero-background-title {
@@ -774,24 +778,27 @@
     }
 
     /* PWA Highlights */
-    .pwa-text-banner, .pwa-icon-small {
-      filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
-      opacity: 1 !important;
-      transition: all 0.4s ease;
+    .pwa-text-banner,
+    .pwa-icon-small {
+        filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
+        opacity: 1 !important;
+        transition: all 0.4s ease;
     }
-    .pwa-text-banner:hover, .pwa-icon-small:hover {
-      transform: scale(1.05);
-      filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
+
+    .pwa-text-banner:hover,
+    .pwa-icon-small:hover {
+        transform: scale(1.05);
+        filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
     }
-    
+
 
     /* Ensure PWA always shows it on Desktop if needed (redundancy) */
     @media (display-mode: standalone) {
-      .back-hub-btn {
-        display: flex !important;
-      }
+        .back-hub-btn {
+            display: flex !important;
+        }
     }
-  
+
     /* --- PWA-ONLY NAVIGATION --- */
     .back-hub-btn {
         display: none !important;
@@ -825,15 +832,15 @@
         overflow: hidden;
     }
 
-    
-   .header-livre::before {
+
+    .header-livre::before {
         content: "";
         position: absolute;
         bottom: 0px;
         right: 0px;
         width: 120px;
         height: 80px;
-        background: radial-gradient(ellipse at bottom right, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+        background: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
         z-index: 5;
         pointer-events: none;
     }
@@ -871,25 +878,25 @@
         }
 
         .titre-memoire {
-        font-size: 2.2rem;
-        letter-spacing: 0.05em;
-      }
+            font-size: 2.2rem;
+            letter-spacing: 0.05em;
+        }
 
         .auteur-header {
-        font-size: 0.55rem;
-        letter-spacing: 4px;
-        margin-bottom: 0px;
-        color: #ffffff !important;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-      }
+            font-size: 0.55rem;
+            letter-spacing: 4px;
+            margin-bottom: 0px;
+            color: #ffffff !important;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+        }
 
         .livre-header {
-        font-size: 0.75rem;
-        letter-spacing: 1px;
-        margin-top: 2px;
-        color: #ffffff !important;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-      }
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-top: 2px;
+            color: #ffffff !important;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+        }
     }
 
     .auteur-header {
@@ -915,13 +922,47 @@
         z-index: 10;
         position: relative;
     }
-    
-    .overlay-content {
+
+    /* Effet Filigrane Cuir en bas à droite */
+    .leather-wrapper {
         position: relative;
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        width: 100%;
+        height: 0;
+        z-index: 5;
+    }
+
+    .leather-reveal-corner {
+        position: absolute;
+        bottom: 0px;
+        right: 0;
+        width: 100vw;
+        max-width: 1600px;
+        height: 450px;
+        /* Utilisation de l'image de cuir pur (sans plume) fournie par l'utilisateur */
+        background: url('cuir-page-fond.jpg') center right / cover no-repeat;
+        /* Le masque radial crée le fondu vers le noir total sur les bords */
+        -webkit-mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+        mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+        pointer-events: none;
+        mix-blend-mode: screen;
+        /* Fait ressortir les écritures et le contraste sur le noir */
+        filter: contrast(1.2) saturation(1.1) brightness(1.8);
+        /* Améliorer la netteté perçue et la luminosité très claire */
+    }
+
+    .leather-reveal-corner-left {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 100vw;
+        max-width: 1600px;
+        height: 450px;
+        background: url('cuir-page-fond.jpg') center left / cover no-repeat;
+        -webkit-mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+        mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+        pointer-events: none;
+        mix-blend-mode: screen;
+        filter: contrast(1.2) saturation(1.1) brightness(1.8);
     }
 </style>
 
@@ -938,7 +979,7 @@
     <div class="corner-glow glow-tl"></div>
     <div class="corner-glow glow-br"></div>
 
-        <header class="header-livre">
+    <header class="header-livre">
         <div class="overlay-content">
             <div class="auteur-header">SIMON LERO</div>
             <h1 class="titre-memoire">Resumen Completo</h1>
@@ -975,6 +1016,12 @@
         </div>
     </div>
 
+    <!-- FILIGRANE CUIR : Apparition dans los rincones inferiores -->
+    <div class="leather-wrapper" aria-hidden="true">
+        <div class="leather-reveal-corner"></div>
+        <div class="leather-reveal-corner-left"></div>
+    </div>
+
     <footer class="footer-pwa">
         <div class="footer-container">
             <div class="footer-main">
@@ -992,8 +1039,12 @@
                             </div>
                         </div>
                     </div>
-                
-                    <button id="installAppBtn" class="btn-install-pwa" style="display: block; margin-top: 20px; background: transparent; border: 1px solid rgba(212, 162, 58, 0.4); color: var(--gold); padding: 5px 12px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;" onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">Instalar App</button>
+
+                    <button id="installAppBtn" class="btn-install-pwa"
+                        style="display: block; margin-top: 20px; background: transparent; border: 1px solid rgba(212, 162, 58, 0.4); color: var(--gold); padding: 5px 12px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;"
+                        onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';"
+                        onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">Instalar
+                        App</button>
                 </div>
 
                 <div class="footer-right">

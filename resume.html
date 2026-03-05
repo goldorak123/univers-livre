@@ -249,7 +249,10 @@
     }
 
     .content-card {
-        padding: 0 0 40px 0; margin-top: 120px; position: relative; z-index: 20;
+        padding: 0 0 40px 0;
+        margin-top: 120px;
+        position: relative;
+        z-index: 20;
         /* Ajusté pour le fond noir direct */
         line-height: 1.8;
         font-size: 1.15rem;
@@ -671,15 +674,15 @@
         overflow: hidden;
     }
 
-    
-   .header-livre::before {
+
+    .header-livre::before {
         content: "";
         position: absolute;
         bottom: 0px;
         right: 0px;
         width: 120px;
         height: 80px;
-        background: radial-gradient(ellipse at bottom right, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+        background: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
         z-index: 5;
         pointer-events: none;
     }
@@ -717,25 +720,25 @@
         }
 
         .titre-memoire {
-        font-size: 2.2rem;
-        letter-spacing: 0.05em;
-      }
+            font-size: 2.2rem;
+            letter-spacing: 0.05em;
+        }
 
         .auteur-header {
-        font-size: 0.55rem;
-        letter-spacing: 4px;
-        margin-bottom: 0px;
-        color: #ffffff !important;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-      }
+            font-size: 0.55rem;
+            letter-spacing: 4px;
+            margin-bottom: 0px;
+            color: #ffffff !important;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+        }
 
         .livre-header {
-        font-size: 0.75rem;
-        letter-spacing: 1px;
-        margin-top: 2px;
-        color: #ffffff !important;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-      }
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-top: 2px;
+            color: #ffffff !important;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+        }
     }
 
     .auteur-header {
@@ -768,6 +771,48 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    /* Effet Filigrane Cuir en bas à droite */
+    .leather-wrapper {
+        position: relative;
+        width: 100%;
+        height: 0;
+        z-index: 5;
+    }
+
+    .leather-reveal-corner {
+        position: absolute;
+        bottom: 0px;
+        right: 0;
+        width: 100vw;
+        max-width: 1600px;
+        height: 450px;
+        /* Utilisation de l'image de cuir pur (sans plume) fournie par l'utilisateur */
+        background: url('cuir-page-fond.jpg') center right / cover no-repeat;
+        /* Le masque radial crée le fondu vers le noir total sur les bords */
+        -webkit-mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+        mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+        pointer-events: none;
+        mix-blend-mode: screen;
+        /* Fait ressortir les écritures et le contraste sur le noir */
+        filter: contrast(1.2) saturation(1.1) brightness(1.8);
+        /* Améliorer la netteté perçue et la luminosité très claire */
+    }
+
+    .leather-reveal-corner-left {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 100vw;
+        max-width: 1600px;
+        height: 450px;
+        background: url('cuir-page-fond.jpg') center left / cover no-repeat;
+        -webkit-mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+        mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+        pointer-events: none;
+        mix-blend-mode: screen;
+        filter: contrast(1.2) saturation(1.1) brightness(1.8);
     }
 </style>
 
@@ -821,6 +866,12 @@
             </p>
         </div>
 
+    </div>
+
+    <!-- FILIGRANE CUIR : Apparition dans les coins inférieurs -->
+    <div class="leather-wrapper" aria-hidden="true">
+        <div class="leather-reveal-corner"></div>
+        <div class="leather-reveal-corner-left"></div>
     </div>
 
     <footer class="footer-pwa">

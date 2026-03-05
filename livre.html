@@ -504,6 +504,58 @@
       }
     }
 
+    /* MAGIC BUTTONS ALIGNMENT & DUST */
+    .hero-actions-container {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
+      margin-top: 40px;
+      width: 100%;
+      position: relative;
+    }
+
+    .dust-filigree {
+      position: absolute;
+      top: 150%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 600px;
+      height: 600px;
+      background: url('poussiere-or.png') center / cover no-repeat;
+      mix-blend-mode: screen;
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+      /* Masque rééquilibré pour la poussière : centre clair étendu, fondu lointain */
+      -webkit-mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
+      mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
+    }
+
+    .hero-actions-container .cta-main {
+      z-index: 2;
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    @media (min-width: 1001px) {
+      .hero-actions-container {
+        align-items: flex-start;
+      }
+
+      .hero-actions-container .cta-main {
+        width: auto;
+        justify-content: flex-start;
+      }
+
+      .dust-filigree {
+        left: 30%;
+      }
+    }
+
     /* REFINED AUTHOR SECTION - Large Portrait */
     .author-section {
       padding: 60px 0;
@@ -724,8 +776,26 @@
       justify-content: center;
     }
 
-    /* Redesigned Footer Section */
+    /* Section Magic Quill Inside Text */
+    .magic-quill-inline {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      height: 600px;
+      margin: -120px auto -80px auto;
+      background: url('plume-magique.png') center / contain no-repeat;
+      opacity: 0.9;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      z-index: 10;
+      /* Masque elliptique élargi : protège la pointe en haut ET l'encrier en bas, estompe les bords lointains */
+      -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 40%, black 55%, transparent 100%);
+      mask-image: radial-gradient(ellipse 65% 60% at 50% 40%, black 55%, transparent 100%);
+    }
+
     .footer-nav {
+      position: relative;
+      z-index: 10;
       text-align: center;
       margin: 70px 0 50px;
     }
@@ -1439,17 +1509,17 @@
       overflow: hidden;
     }
 
-    
-   .header-livre::before {
-        content: "";
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
-        width: 120px;
-        height: 80px;
-        background: radial-gradient(ellipse at bottom right, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
-        z-index: 5;
-        pointer-events: none;
+
+    .header-livre::before {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      width: 120px;
+      height: 80px;
+      background: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+      z-index: 5;
+      pointer-events: none;
     }
 
     .header-livre::after {
@@ -1497,7 +1567,7 @@
         letter-spacing: 4px;
         margin-bottom: 0px;
         color: #ffffff !important;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
       }
 
       .livre-header {
@@ -1505,7 +1575,7 @@
         letter-spacing: 1px;
         margin-top: 2px;
         color: #ffffff !important;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
       }
     }
 
@@ -1539,6 +1609,44 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    /* Effet Filigrane Cuir en bas à droite */
+    .leather-wrapper {
+      position: relative;
+      width: 100%;
+      height: 0;
+      z-index: 5;
+    }
+
+    .leather-reveal-corner {
+      position: absolute;
+      bottom: 0px;
+      right: 0;
+      width: 100vw;
+      max-width: 1600px;
+      height: 800px;
+      background: url('cuir-page-fond.jpg') center right / cover no-repeat;
+      -webkit-mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+      mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+      pointer-events: none;
+      mix-blend-mode: screen;
+      filter: contrast(1.2) saturation(1.1) brightness(1.8);
+    }
+
+    .leather-reveal-corner-left {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      width: 100vw;
+      max-width: 1600px;
+      height: 1200px;
+      background: url('cuir-page-fond.jpg') center left / cover no-repeat;
+      -webkit-mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+      mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+      pointer-events: none;
+      mix-blend-mode: screen;
+      filter: contrast(1.2) saturation(1.1) brightness(1.8);
     }
   </style>
 </head>
@@ -1577,7 +1685,8 @@
               signe de son unique amour, véritable et durable.</p>
             <p>La rencontre avec Joey bouleverse ce fragile équilibre. En lui, Sisley reconnaît le reflet de
               ses propres trente ans : une résonance intime, une synergie inattendue.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <div class="hero-actions-container">
+              <div class="dust-filigree"></div>
               <a href="resume.html" class="cta-main">
                 RÉSUMÉ COMPLET ICI
               </a>
@@ -1635,11 +1744,14 @@
             L'œuvre est publiée sous le pseudonyme <b>Simon Lero</b>, choisi en hommage à un ancêtre
             français établi en Amérique, ancrant ce récit dans une mémoire à la fois personnelle et héritée.
           </p>
+
+          <!-- IMAGE: PLUME MAGIQUE -->
+          <div class="magic-quill-inline" aria-hidden="true"></div>
+
         </div>
       </div>
     </div>
   </section>
-
 
   <section class="shop-section" id="buy">
     <div class="container">
@@ -1723,6 +1835,12 @@
     <a href="distribution.html"
       style="color: #c9a24d !important; text-decoration: none !important; font-family: 'Cinzel', serif; font-size: 1.1rem; margin: 0 40px; opacity: 1; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block;">Partenaires
       de Distribution</a>
+  </div>
+
+  <!-- FILIGRANE CUIR : Apparition dans les coins inférieurs -->
+  <div class="leather-wrapper" aria-hidden="true">
+    <div class="leather-reveal-corner"></div>
+    <div class="leather-reveal-corner-left"></div>
   </div>
 
   <footer class="footer-pwa">

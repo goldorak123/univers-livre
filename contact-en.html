@@ -12,12 +12,12 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js?v=92')
+                navigator.serviceWorker.register('/service-worker.js?v=999')
                     .then(reg => {
                         console.log('SW Registered');
                         if (localStorage.getItem('sw_version') !== '72') {
                             reg.update();
-                            localStorage.setItem('sw_version', '72');
+                            localStorage.setItem('sw_version', '999');
                         }
                     })
                     .catch(err => console.log('SW Failed', err));

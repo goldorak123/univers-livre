@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="google" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="manifest" href="manifest.json?v=1007">
+    <link rel="manifest" href="manifest.json?v=1008">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="theme-color" content="#000000">
     <meta name="mobile-web-app-capable" content="yes">
@@ -486,17 +486,15 @@
       max-width: 350px;
       text-align: center;
       justify-content: center;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     @media (min-width: 1001px) {
-      .hero-actions-container {
-        align-items: flex-start;
-      }
+      .hero-actions-container { align-items: center; }
 
-      .hero-actions-container .cta-main {
-        width: auto;
-        justify-content: flex-start;
-      }
+      .hero-actions-container .cta-main { width: 100%; max-width: 350px; justify-content: center; }
 
       .dust-filigree {
         left: 30%;

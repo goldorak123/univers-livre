@@ -17,13 +17,13 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <!-- PWA -->
-  <link rel="manifest" href="manifest.json?v=1.0.42">
+  <link rel="manifest" href="manifest.json?v=1009.0.42">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js?v=92')
+        navigator.serviceWorker.register('/service-worker.js?v=1009')
           .then(reg => console.log('SW Registered'))
           .catch(err => console.log('SW Failed', err));
       });
@@ -544,7 +544,7 @@
     .footer-nav-links a {
       color: var(--gold) ;
       text-decoration: none;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', sans-serif, serif;
       font-size: 0.95rem;
       font-weight: 500;
       letter-spacing: 0.15em;

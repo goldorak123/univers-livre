@@ -14,12 +14,12 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js?v=1005')
+                navigator.serviceWorker.register('/service-worker.js?v=1009')
                     .then(reg => {
                         console.log('SW Registered');
                         if (localStorage.getItem('sw_version') !== '72') {
                             reg.update();
-                            localStorage.setItem('sw_version', '1005');
+                            localStorage.setItem('sw_version', '1009');
                         }
                     })
                     .catch(err => console.log('SW Failed', err));
@@ -485,7 +485,7 @@
         .footer-nav-links a {
             color: var(--gold);
             text-decoration: none;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif, serif;
             font-size: 0.95rem;
             font-weight: 500;
             letter-spacing: 0.15em;

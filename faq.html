@@ -702,32 +702,32 @@
         }
     </style>
 
-  <style>
-    @media (max-width: 900px) {
-      .mobile-nav-bar {
-        background-color: #000 !important;
-        padding-bottom: 10px;
-        padding-top: 10px;
-      }
-    }
-  </style>
+    <style>
+        @media (max-width: 900px) {
+            .mobile-nav-bar {
+                background-color: #000 !important;
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+        }
+    </style>
     <!-- PWA Installation Logic -->
     <script>
         // SYSTÈME DE GESTION PWA - FORCE UPDATE v42
-        (async function() {
+        (async function () {
             const v = 'v42.pwa_fix';
             if (localStorage.getItem('pwa_v') !== v) {
                 if ('serviceWorker' in navigator) {
                     try {
                         const regs = await navigator.serviceWorker.getRegistrations();
                         for (const r of regs) await r.unregister();
-                    } catch(e) {}
+                    } catch (e) { }
                 }
                 if ('caches' in window) {
                     try {
                         const keys = await caches.keys();
                         for (const k of keys) await caches.delete(k);
-                    } catch(e) {}
+                    } catch (e) { }
                 }
                 localStorage.clear();
                 sessionStorage.clear();
@@ -737,13 +737,13 @@
                 if ('serviceWorker' in navigator) {
                     navigator.serviceWorker.register('/sw-v41.js?v=42_' + Date.now(), {
                         updateViaCache: 'none'
-                    }).catch(() => {});
+                    }).catch(() => { });
                 }
             }
         })();
 
         // LOGIQUE D'INSTALLATION
-        window.installPWA = function() {
+        window.installPWA = function () {
             if (window.deferredPrompt) {
                 window.deferredPrompt.prompt();
                 window.deferredPrompt.userChoice.then(() => {
@@ -753,7 +753,7 @@
                 console.log("Installation non disponible ou l'application est déjà installée.");
             }
         };
-        
+
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             window.deferredPrompt = e;
@@ -811,7 +811,9 @@
                         href="https://simonlero.com"
                         style="color:var(--gold); text-decoration: underline;">simonlero.com</a>
                     et <a href="https://mon-univers.ca"
-                        style="color:var(--gold); text-decoration: underline;">mon-univers.ca</a>.<br><br><strong>Note pour les utilisateurs Apple :</strong> La méthode est différente sur iOS. Il faut cliquer sur le bouton "Installer l'App" dès qu'il apparaît après avoir chargé le site sur Chrome ou Safari.
+                        style="color:var(--gold); text-decoration: underline;">mon-univers.ca</a>.<br><br><strong>Note
+                        pour les utilisateurs Apple :</strong> La méthode est différente sur iOS. Il faut cliquer sur le
+                    bouton "Installer l'App" dès qu'il apparaît après avoir chargé le site sur Chrome ou Safari.
                 </div>
             </div>
         </div>
@@ -934,8 +936,9 @@
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    Des exemplaires sont périodiquement mis en vente lors d'événements. J'en garde également toujours
-                    quelques-uns en réserve pour les offrir ou les vendre si nos chemins viennent à se croiser.
+                    Des exemplaires sont périodiquement mis en vente lors d'événements. L'auteur garde également
+                    toujours
+                    quelques exemplaires en réserve pour les offrir ou les vendre si vos chemins viennent à se croiser.
                 </div>
             </div>
         </div>

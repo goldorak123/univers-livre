@@ -1,48 +1,10 @@
-﻿<!DOCTYPE html>
-<html lang="fr">
+const fs = require('fs');
+const path = require('path');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#000000">
-    <meta name="color-scheme" content="dark">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>RESET ABSOLU v40</title>
-    <style>
-        body {
-            background: #000;
-            color: #d4af37;
-            font-family: sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
+const dir = 'c:\\Users\\danie\\OneDrive\\Desktop\\univers-livre';
+const files = fs.readdirSync(dir).filter(f => f.endsWith('.html'));
 
-        .btn {
-            background: #d4af37;
-            color: #000;
-            border: none;
-            padding: 20px 40px;
-            font-size: 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            margin-top: 30px;
-            font-weight: bold;
-        }
-    </style>
-
-  <style>
-    @media (max-width: 900px) {
-      .mobile-nav-bar {
-        background-color: #000 !important;
-        padding-bottom: 10px;
-        padding-top: 10px;
-      }
-    }
-  </style>
-    <!-- PWA Installation Logic -->
+const pwaScript = `    <!-- PWA Installation Logic -->
     <script>
         // SYSTÈME DE GESTION PWA - FORCE UPDATE v42
         (async function() {
@@ -102,30 +64,24 @@
             });
         });
     </script>
-</head>
+</head>`;
 
-<body>
-    <img src="icon-192.png" width="120" padding="20">
-    <h1>RESET Simon Lero v40</h1>
-    <p>Cette version copie exactement ce qui marche sur mon-univers.ca.</p>
-    <button class="btn" onclick="hardReset40()">DÉCLENCHER LE NETTOYAGE</button>
+let modifiedCounter = 0;
 
-    <script>
-        async function hardReset40() {
-            if ('serviceWorker' in navigator) {
-                const regs = await navigator.serviceWorker.getRegistrations();
-                for (const r of regs) await r.unregister();
-            }
-            if ('caches' in window) {
-                const keys = await caches.keys();
-                for (const k of keys) await caches.delete(k);
-            }
-            localStorage.clear();
-            sessionStorage.clear();
-            alert("NETTOYAGE RÉUSSI (v40) !\n\nDésinstallez Simon Lero, fermez Chrome et réinstallez.");
-            window.location.href = "livre-accueil.html?v40=init";
-        }
-    </script>
-</body>
+files.forEach(file => {
+    let content = fs.readFileSync(path.join(dir, file), 'utf8');
 
-</html>
+    if (content.includes('function installPWA') || content.includes('window.installPWA = function')) {
+        console.log('Skipping ' + file + ' (already has installPWA)');
+        return;
+    }
+
+    if (content.includes('</head>')) {
+        content = content.replace('</head>', pwaScript);
+        fs.writeFileSync(path.join(dir, file), content, 'utf8');
+        console.log('Fixed PWA logic in ' + file);
+        modifiedCounter++;
+    }
+});
+
+console.log('Done! Modified ' + modifiedCounter + ' files.');

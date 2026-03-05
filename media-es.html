@@ -3,18 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="dark">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
     <title>Espacio de Medios — Simon Lero</title>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js?v=1002')
+                navigator.serviceWorker.register('/service-worker.js?v=1005')
                     .then(reg => {
                         console.log('SW Registered');
                         if (localStorage.getItem('sw_version') !== '64') {
                             reg.update();
-                            localStorage.setItem('sw_version', '1002');
+                            localStorage.setItem('sw_version', '1005');
                         }
                     })
                     .catch(err => console.log('SW Failed', err));

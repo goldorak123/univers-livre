@@ -12,12 +12,12 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js?v=1004')
+                navigator.serviceWorker.register('/service-worker.js?v=1005')
                     .then(reg => {
                         console.log('SW Registered');
                         if (localStorage.getItem('sw_version') !== '72') {
                             reg.update();
-                            localStorage.setItem('sw_version', '1004');
+                            localStorage.setItem('sw_version', '1005');
                         }
                     })
                     .catch(err => console.log('SW Failed', err));
@@ -151,11 +151,11 @@
             padding: 60px 40px 60px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             max-width: 1400px;
             margin: 0 auto;
             z-index: 10;
-            text-align: center;
+            text-align: left;
             /* overflow: hidden; -- REMOVED */
         }
 
@@ -208,15 +208,15 @@
             font-weight: 200;
             color: #ccc;
             margin-top: 40px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             letter-spacing: 8px; /* Slightly reduced from 12px to accommodate longer sentence */
             text-transform: uppercase;
             line-height: 1.8;
             max-width: 900px;
             animation: fadeIn 2s ease-out 0.8s forwards;
             opacity: 0;
-            align-self: center;
-            text-align: center;
+            align-self: flex-start;
+            text-align: left;
         }
 
         @keyframes slideInLeft {
@@ -268,7 +268,7 @@
             animation: fadeIn 1.5s ease-out 0.5s forwards;
             opacity: 0;
             z-index: 20;
-            text-align: center;
+            text-align: left;
         }
 
         .narrative-box p {
@@ -278,7 +278,7 @@
             font-weight: 300;
             line-height: 1.6;
             color: #aaa;
-            text-align: center;
+            text-align: left;
         }
 
         form {
@@ -381,7 +381,7 @@
             font-weight: 300;
             line-height: 1.6;
             font-style: italic;
-            text-align: center;
+            text-align: left;
         }
 
         @keyframes fadeIn {
@@ -549,7 +549,7 @@
 
         .footer-copyright {
             width: 100%;
-            text-align: center;
+            text-align: left;
             margin-top: 40px;
             padding-top: 30px;
             border-top: 1px solid rgba(216, 178, 90, 0.1);
@@ -823,7 +823,7 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             margin: 0;
-            text-align: center;
+            text-align: left;
             position: relative;
             z-index: 10;
             padding: 5px 20px;
@@ -867,7 +867,7 @@
             letter-spacing: 8px;
             text-transform: uppercase;
             color: #ffffff;
-            text-align: center;
+            text-align: left;
             margin-bottom: 2px;
             z-index: 10;
             position: relative;
@@ -878,7 +878,7 @@
             font-size: 1.4rem;
             letter-spacing: 3px;
             color: #ffffff;
-            text-align: center;
+            text-align: left;
             margin-top: 5px;
             font-style: italic;
             z-index: 10;

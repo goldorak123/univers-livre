@@ -1,0 +1,36 @@
+livre.html CSS: 518, HTML: 1701
+HTML Context:
+            <p>Alfred Sisley, vieil homme endurci, vit entouré de ses souvenirs. Il attend en silence un
+              signe de son unique amour, véritable et durable.</p>
+            <p>La rencontre avec Joey bouleverse ce fragile équilibre. En lui, Sisley reconnaît le reflet de
+              ses propres trente ans : une résonance intime, une synergie inattendue.</p>
+            <div class="hero-actions-container">
+              <div class="dust-filigree"></div>
+              <a href="resume.html" class="cta-main">
+                RÉSUMÉ COMPLET ICI
+              </a>
+              <a href="fiche-technique.html" class="cta-main">
+livre-en.html CSS: 465, HTML: 1647
+HTML Context:
+                        <p>Alfred Sisley, a hardened old man, lives surrounded by his memories. He waits in silence for
+                            a sign from his one true, enduring love.</p>
+                        <p>A meeting with Joey shatters this fragile balance. In him, Sisley recognizes the reflection
+                            of his own thirty years: an intimate resonance, an unexpected synergy.</p>
+                        <div class="hero-actions-container">
+                            <div class="dust-filigree"></div>
+                            <a href="resume-en.html" class="cta-main">
+                                FULL SUMMARY HERE
+                            </a>
+                            <a href="technical-specifications.html" class="cta-main">
+livre-es.html CSS: 466, HTML: 1647
+HTML Context:
+                        <p>Alfred Sisley, un anciano endurecido, vive rodeado de sus recuerdos. Espera en silencio una
+                            señal de su único amor, verdadero y duradero.</p>
+                        <p>El encuentro con Joey rompe este frágil equilibrio. En él, Sisley reconoce el reflejo de sus
+                            propios treinta años: una resonancia íntima, una sinergia inesperada.</p>
+                        <div class="hero-actions-container">
+                            <div class="dust-filigree"></div>
+                            <a href="resume-es.html" class="cta-main">
+                                RESUMEN COMPLETO AQUÍ
+                            </a>
+                            <a href="ficha-tecnica.html" class="cta-main">

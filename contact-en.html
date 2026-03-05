@@ -12,12 +12,12 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js?v=1001')
+                navigator.serviceWorker.register('/service-worker.js?v=1002')
                     .then(reg => {
                         console.log('SW Registered');
                         if (localStorage.getItem('sw_version') !== '72') {
                             reg.update();
-                            localStorage.setItem('sw_version', '1001');
+                            localStorage.setItem('sw_version', '1002');
                         }
                     })
                     .catch(err => console.log('SW Failed', err));
@@ -836,12 +836,12 @@
             }
 
             .titre-memoire {
-                font-size: 2.4rem;
+                font-size: 2.4rem !important;
                 letter-spacing: 0.05em;
             }
 
             .auteur-header {
-                font-size: 10px;
+                font-size: 10px !important;
                 letter-spacing: 4px;
                 margin-bottom: 0px;
                 color: #ffffff !important;
@@ -849,7 +849,7 @@
             }
 
             .livre-header {
-                font-size: 13px;
+                font-size: 13px !important;
                 letter-spacing: 1px;
                 margin-top: 2px;
                 color: #ffffff !important;

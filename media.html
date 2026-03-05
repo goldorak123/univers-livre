@@ -117,7 +117,8 @@
         }
 
         @media (max-width: 900px) {
-            .hero { padding: 40px 20px 20px;
+            .hero {
+                padding: 40px 20px 20px;
             }
 
             .hero-background-title {
@@ -165,7 +166,7 @@
 
         /* Premium Back Button */
         .back-hub-btn {
-      display: none;
+            display: none;
             position: fixed;
             top: 30px;
             left: 30px;
@@ -341,7 +342,7 @@
         }
 
         .footer-nav-links a {
-            color: var(--gold) ;
+            color: var(--gold);
             text-decoration: none;
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
@@ -433,7 +434,7 @@
             }
 
             .lang-selector a {
-                color: rgba(216, 178, 90, 0.09);
+                color: rgba(216, 178, 90, 0.9);
             }
 
             .lang-selector a.active {
@@ -542,166 +543,186 @@
             transform: translateX(-50%);
         }
 
-        .footer-nav a:hover::after,
-        .footer-nav-links a:hover::after {
-            width: 60%;
+        @media (hover: hover) {
+
+            .footer-nav a:hover::after,
+            .footer-nav-links a:hover::after {
+                width: 60% !important;
+            }
         }
-    
-    /* PWA Highlights */
-    .pwa-text-banner, .pwa-icon-small {
-      filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
-      opacity: 1 !important;
-      transition: all 0.4s ease;
-    }
-    .pwa-text-banner:hover, .pwa-icon-small:hover {
-      transform: scale(1.05);
-      filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
-    }
-    
 
-    /* Ensure PWA always shows it on Desktop if needed (redundancy) */
-    @media (display-mode: standalone) {
-      .back-hub-btn {
-        display: flex !important;
-      }
-    }
-  
-    /* --- PWA-ONLY NAVIGATION --- */
-    .back-hub-btn {
-        display: none !important;
-    }
+        /* PWA Highlights */
+        .pwa-text-banner,
+        .pwa-icon-small {
+            filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
+            opacity: 1 !important;
+            transition: all 0.4s ease;
+        }
 
-    @media (display-mode: standalone) {
+        .pwa-text-banner:hover,
+        .pwa-icon-small:hover {
+            transform: scale(1.05);
+            filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
+        }
+
+
+        /* Ensure PWA always shows it on Desktop if needed (redundancy) */
+        @media (display-mode: standalone) {
+            .back-hub-btn {
+                display: flex !important;
+            }
+        }
+
+        /* --- PWA-ONLY NAVIGATION --- */
         .back-hub-btn {
+            display: none !important;
+        }
+
+        @media (display-mode: standalone) {
+            .back-hub-btn {
+                display: flex !important;
+            }
+        }
+
+        .is-pwa .back-hub-btn {
             display: flex !important;
         }
-    }
 
-    .is-pwa .back-hub-btn {
-        display: flex !important;
-    }
-
-    /* ================= NOUVEL ENTÊTE LUXE ================= */
-    .header-livre {
-        font-family: "Playfair Display", serif;
-        background-image: url("entete-texture.jpg");
-        background-size: cover;
-        background-position: center bottom;
-        background-repeat: no-repeat;
-        height: 380px;
-        width: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-bottom: none;
-        margin-bottom: 0px;
-        overflow: hidden;
-    }
-
-    
-   .header-livre::before {
-        content: "";
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
-        width: 120px;
-        height: 80px;
-        background: radial-gradient(ellipse at bottom right, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
-        z-index: 5;
-        pointer-events: none;
-    }
-
-    .header-livre::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 1) 100%);
-        pointer-events: none;
-    }
-
-    .titre-memoire {
-        font-family: "Playfair Display", serif;
-        color: #ffffff;
-        font-size: clamp(3rem, 10vw, 5.5rem);
-        font-weight: 900;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        margin: 0;
-        text-align: center;
-        position: relative;
-        z-index: 10;
-        padding: 5px 20px;
-        background: linear-gradient(to bottom, #f1d57e 0%, #d4a23a 50%, #a67c00 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.8));
-    }
-
-    @media (max-width: 768px) {
+        /* ================= NOUVEL ENTÊTE LUXE ================= */
         .header-livre {
-            height: 250px;
+            font-family: "Playfair Display", serif;
+            background-image: url("entete-texture.jpg");
             background-size: cover;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            height: 380px;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: none;
+            margin-bottom: 0px;
+            overflow: hidden;
+        }
+
+
+        .header-livre::before {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 120px;
+            height: 80px;
+            background: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .header-livre::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 1) 100%);
+            pointer-events: none;
         }
 
         .titre-memoire {
-        font-size: 2.2rem;
-        letter-spacing: 0.05em;
-      }
+            font-family: "Playfair Display", serif;
+            color: #ffffff;
+            font-size: clamp(3rem, 10vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin: 0;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            padding: 5px 20px;
+            background: linear-gradient(to bottom, #f1d57e 0%, #d4a23a 50%, #a67c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.8));
+        }
+
+        @media (max-width: 768px) {
+            .header-livre {
+                height: 250px;
+                background-size: cover;
+            }
+
+            .titre-memoire {
+                font-size: 2.4rem;
+                letter-spacing: 0.05em;
+            }
+
+            .auteur-header {
+                font-size: 0.45rem;
+                letter-spacing: 4px;
+                margin-bottom: 0px;
+                color: #ffffff !important;
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+            }
+
+            .livre-header {
+                font-size: 0.65rem;
+                letter-spacing: 1px;
+                margin-top: 2px;
+                color: #ffffff !important;
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+            }
+        }
 
         .auteur-header {
-        font-size: 0.55rem;
-        letter-spacing: 4px;
-        margin-bottom: 0px;
-        color: #ffffff !important;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-      }
+            font-family: "Inter", sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 2px;
+            z-index: 10;
+            position: relative;
+        }
 
         .livre-header {
-        font-size: 0.75rem;
-        letter-spacing: 1px;
-        margin-top: 2px;
-        color: #ffffff !important;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-      }
-    }
+            font-family: "Cinzel", serif;
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 5px;
+            font-style: italic;
+            z-index: 10;
+            position: relative;
+        }
 
-    .auteur-header {
-        font-family: "Inter", sans-serif;
-        font-size: 1.1rem;
-        letter-spacing: 8px;
-        text-transform: uppercase;
-        color: #ffffff;
-        text-align: center;
-        margin-bottom: 2px;
-        z-index: 10;
-        position: relative;
-    }
+        .overlay-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 
-    .livre-header {
-        font-family: "Cinzel", serif;
-        font-size: 1.4rem;
-        letter-spacing: 3px;
-        color: #ffffff;
-        text-align: center;
-        margin-top: 5px;
-        font-style: italic;
-        z-index: 10;
-        position: relative;
-    }
-    
-    .overlay-content {
-        position: relative;
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-</style>
+    <style>
+        @media (max-width: 900px) {
+
+            .top-nav,
+            .mobile-nav-bar {
+                background-color: #000 !important;
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body class="notranslate" translate="no">
-        <header class="header-livre">
+
+
+    <header class="header-livre">
         <div class="overlay-content">
             <div class="auteur-header">SIMON LERO</div>
             <h1 class="titre-memoire">Espace Media</h1>
@@ -741,8 +762,12 @@
                             </div>
                         </div>
                     </div>
-                
-                    <button id="installAppBtn" class="btn-install-pwa" style="display: block; margin-top: 20px; background: transparent; border: 1px solid rgba(212, 162, 58, 0.4); color: var(--gold); padding: 5px 12px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;" onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">Installer l'App</button>
+
+                    <button id="installAppBtn" class="btn-install-pwa"
+                        style="display: block; margin-top: 20px; background: transparent; border: 1px solid rgba(212, 162, 58, 0.4); color: var(--gold); padding: 5px 12px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;"
+                        onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';"
+                        onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">Installer
+                        l'App</button>
                 </div>
 
                 <div class="footer-right">
@@ -768,8 +793,7 @@
                 </div>
             </div>
 
-            <p class="footer-copyright">&copy; <span
-                    id="current-year-footer"></span> simonlero.com &mdash; Tous droits
+            <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; Tous droits
                 r&eacute;serv&eacute;s</p>
         </div>
     </footer>

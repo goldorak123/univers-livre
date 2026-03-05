@@ -453,56 +453,57 @@
 
         /* MAGIC BUTTONS ALIGNMENT & DUST */
         .hero-actions-container {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            align-items: center;
-            margin-top: 40px;
-            width: 100%;
-            position: relative;
-        }
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
+      margin-top: 40px;
+      width: 100%;
+      position: relative;
+    }
 
-        .dust-filigree {
-            position: absolute;
-            top: 150%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            max-width: 600px;
-            height: 600px;
-            background: url('poussiere-or.png') center / cover no-repeat;
-            mix-blend-mode: screen;
-            opacity: 0.35;
-            pointer-events: none;
-            z-index: 0;
-            -webkit-mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
-            mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
-        }
+    .dust-filigree {
+      position: absolute;
+      top: 150%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 600px;
+      height: 600px;
+      background: url('poussiere-or.png') center / cover no-repeat;
+      mix-blend-mode: screen;
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+      /* Masque rééquilibré pour la poussière : centre clair étendu, fondu lointain */
+      -webkit-mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
+      mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
+    }
 
-        .hero-actions-container .cta-main {
-            z-index: 2;
-            width: 100%;
-            max-width: 350px;
-            text-align: center;
-            justify-content: center;
-        }
+    .hero-actions-container .cta-main {
+      z-index: 2;
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+      justify-content: center;
+    }
 
-        @media (min-width: 1001px) {
-            .hero-actions-container {
-                align-items: flex-start;
-            }
+    @media (min-width: 1001px) {
+      .hero-actions-container {
+        align-items: flex-start;
+      }
 
-            .hero-actions-container .cta-main {
-                width: auto;
-                justify-content: flex-start;
-            }
+      .hero-actions-container .cta-main {
+        width: auto;
+        justify-content: flex-start;
+      }
 
-            .dust-filigree {
-                left: 30%;
-            }
-        }
+      .dust-filigree {
+        left: 30%;
+      }
+    }
 
-        /* REFINED AUTHOR SECTION - Large Portrait */
+    /* REFINED AUTHOR SECTION - Large Portrait */
         .author-section {
             padding: 60px 0;
         }
@@ -1246,8 +1247,8 @@
             }
 
             .lang-selector a {
-                color: rgba(216, 178, 90, 0.09);
-            }
+        color: rgba(216, 178, 90, 0.9);
+      }
 
             .lang-selector a.active {
                 color: var(--gold);
@@ -1484,12 +1485,12 @@
             }
 
             .titre-memoire {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
                 letter-spacing: 0.05em;
             }
 
             .auteur-header {
-                font-size: 0.55rem;
+                font-size: 0.45rem;
                 letter-spacing: 4px;
                 margin-bottom: 0px;
                 color: #ffffff !important;
@@ -1497,7 +1498,7 @@
             }
 
             .livre-header {
-                font-size: 0.75rem;
+                font-size: 0.65rem;
                 letter-spacing: 1px;
                 margin-top: 2px;
                 color: #ffffff !important;
@@ -1592,9 +1593,21 @@
             filter: contrast(1.2) saturation(1.1) brightness(1.8);
         }
     </style>
+
+  <style>
+    @media (max-width: 900px) {
+      .top-nav, .mobile-nav-bar {
+        background-color: #000 !important;
+        padding-bottom: 10px;
+        padding-top: 10px;
+      }
+    }
+  </style>
 </head>
 
 <body class="notranslate" translate="no">
+
+
 
     <a href="#" onclick="history.back(); return false;" class="back-hub-btn" aria-label="Back to home">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

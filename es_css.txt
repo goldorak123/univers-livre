@@ -1,46 +1,4 @@
-﻿<!DOCTYPE html>
-<html lang="es" class="notranslate" translate="no">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="google" content="notranslate">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="manifest" href="manifest.json?v=3">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <meta name="theme-color" content="#000000">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="manifest" href="manifest.json">
-    <meta name="google" content="notranslate">
-    <meta name="robots" content="index, follow">
-    <meta name="description"
-        content="Descubre 'Encuentros a la luz de la luna' de Simon Lero, una novela poética que mezcla arte, literatura e introspección. Explora el viaje emocional en Encuentros a la luz de la luna.">
-    <meta name="keywords"
-        content="Encuentros a la luz de la luna, Simon Lero, novela poética, literatura, arte, memoria, LGBT, libro">
-
-    <title>Simon Lero â€” Encuentros a la luz de la luna</title>
-    <link rel="canonical" href="https://www.simonlero.com/livre-es.html">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="book">
-    <meta property="og:title" content="Encuentros a la Luz de la Luna - Simon Lero">
-    <meta property="og:description"
-        content="Descubre 'Encuentros a la Luz de la Luna' de Simon Lero, una novela poética que mezcla arte, literatura e introspección. Explora el viaje emocional en Encuentros a la luz de la luna.">
-    <meta property="og:image" content="https://www.simonlero.com/couverture-livre-es.png">
-    <meta property="og:locale" content="es_ES">
-
-    <link rel="alternate" hreflang="fr" href="https://www.simonlero.com/livre.html" />
-    <link rel="alternate" hreflang="en" href="https://www.simonlero.com/livre-en.html" />
-    <link rel="alternate" hreflang="es" href="https://www.simonlero.com/livre-es.html" />
-    <link rel="canonical" href="https://www.simonlero.com/livre-es.html">
-
-    <!-- Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;800&display=swap"
-        rel="stylesheet">
-
-    <style>
         :root {
             --gold: #c9a24d;
             --gold-bright: #eec165;
@@ -454,57 +412,56 @@
 
         /* MAGIC BUTTONS ALIGNMENT & DUST */
         .hero-actions-container {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-      align-items: center;
-      margin-top: 40px;
-      width: 100%;
-      position: relative;
-    }
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+            margin-top: 40px;
+            width: 100%;
+            position: relative;
+        }
 
-    .dust-filigree {
-      position: absolute;
-      top: 150%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      max-width: 600px;
-      height: 600px;
-      background: url('poussiere-or.png') center / cover no-repeat;
-      mix-blend-mode: screen;
-      opacity: 0.35;
-      pointer-events: none;
-      z-index: 0;
-      /* Masque rééquilibré pour la poussière : centre clair étendu, fondu lointain */
-      -webkit-mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
-      mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
-    }
+        .dust-filigree {
+            position: absolute;
+            top: 150%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 600px;
+            height: 600px;
+            background: url('poussiere-or.png') center / cover no-repeat;
+            mix-blend-mode: screen;
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+            -webkit-mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
+            mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
+        }
 
-    .hero-actions-container .cta-main {
-      z-index: 2;
-      width: 100%;
-      max-width: 350px;
-      text-align: center;
-      justify-content: center;
-    }
+        .hero-actions-container .cta-main {
+            z-index: 2;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            justify-content: center;
+        }
 
-    @media (min-width: 1001px) {
-      .hero-actions-container {
-        align-items: flex-start;
-      }
+        @media (min-width: 1001px) {
+            .hero-actions-container {
+                align-items: flex-start;
+            }
 
-      .hero-actions-container .cta-main {
-        width: auto;
-        justify-content: flex-start;
-      }
+            .hero-actions-container .cta-main {
+                width: auto;
+                justify-content: flex-start;
+            }
 
-      .dust-filigree {
-        left: 30%;
-      }
-    }
+            .dust-filigree {
+                left: 30%;
+            }
+        }
 
-    /* REFINED AUTHOR SECTION - Large Portrait */
+        /* REFINED AUTHOR SECTION - Large Portrait */
         .author-section {
             padding: 60px 0;
         }
@@ -1248,8 +1205,8 @@
             }
 
             .lang-selector a {
-        color: rgba(216, 178, 90, 0.9);
-      }
+                color: rgba(216, 178, 90, 0.09);
+            }
 
             .lang-selector a.active {
                 color: var(--gold);
@@ -1486,12 +1443,12 @@
             }
 
             .titre-memoire {
-                font-size: 2.4rem;
+                font-size: 2.2rem;
                 letter-spacing: 0.05em;
             }
 
             .auteur-header {
-                font-size: 0.45rem;
+                font-size: 0.55rem;
                 letter-spacing: 4px;
                 margin-bottom: 0px;
                 color: #ffffff !important;
@@ -1499,7 +1456,7 @@
             }
 
             .livre-header {
-                font-size: 0.65rem;
+                font-size: 0.75rem;
                 letter-spacing: 1px;
                 margin-top: 2px;
                 color: #ffffff !important;
@@ -1593,311 +1550,4 @@
             mix-blend-mode: screen;
             filter: contrast(1.2) saturation(1.1) brightness(1.8);
         }
-    </style>
-
-  <style>
-    @media (max-width: 900px) {
-      .top-nav, .mobile-nav-bar {
-        background-color: #000 !important;
-        padding-bottom: 10px;
-        padding-top: 10px;
-      }
-    }
-  </style>
-</head>
-
-<body class="notranslate" translate="no">
-
-
-
-    <a href="#" onclick="history.back(); return false;" class="back-hub-btn" aria-label="Volver al inicio">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-        </svg>
-    </a>
-
-    <!-- FIXED DECORATIONS -->
-    <div class="corner-glow glow-tl"></div>
-    <div class="corner-glow glow-br"></div>
-
-    <header class="header-livre">
-        <div class="overlay-content">
-            <div class="auteur-header">SIMON LERO</div>
-            <h1 class="titre-memoire">Encuentros a la Luz de la Luna</h1>
-            <div class="livre-header">Una inmersión romántica</div>
-        </div>
-    </header>
-
-    <header class="hero-stage">
-        <div class="container">
-            <div class="grid-stage">
-
-                <div class="hero-presentation-grid">
-                    <div class="book-frame reveal" style="transition-delay: 0.4s;">
-                        <img src="couverture-livre-es.png" alt="Encuentros a la luz de la luna">
-                    </div>
-                    <div class="hero-summary reveal" style="transition-delay: 0.6s;">
-                        <p>Alfred Sisley, un anciano endurecido, vive rodeado de sus recuerdos. Espera en silencio una
-                            señal de su único amor, verdadero y duradero.</p>
-                        <p>El encuentro con Joey rompe este frágil equilibrio. En él, Sisley reconoce el reflejo de sus
-                            propios treinta años: una resonancia íntima, una sinergia inesperada.</p>
-                        <div class="hero-actions-container">
-                            <div class="dust-filigree"></div>
-                            <a href="resume-es.html" class="cta-main">
-                                RESUMEN COMPLETO AQUÍ
-                            </a>
-                            <a href="ficha-tecnica.html" class="cta-main">
-                                FICHA TÉCNICA
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-
-    <section class="author-section" id="author">
-        <div class="container">
-            <div class="author-portrait-grid">
-                <div class="author-info-large reveal">
-                    <span class="label">Simon Lero</span>
-                    <h2>El Autor detrás del silencio</h2>
-                    <p>“Soy Simon Lero, el autor de este libro. Este relato nació de una larga pausa, de un retorno a
-                        lo esencial y de la voluntad de capturar la evanescencia de los recuerdos a través de las
-                        palabras.”</p>
-                    <a href="contact-es.html?source=book" class="btn-author">Contactar
-                        con el autor</a>
-                </div>
-                <div class="author-photo-frame reveal" style="transition-delay:0.3s;">
-                    <img src="auteur-pic.png" alt="Simon Lero Portrait">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="discovery">
-        <div class="container">
-            <div class="discovery-grid reveal">
-                <div class="video-box">
-                    <video controls preload="metadata" poster="couverture-livre-es.png">
-                        <source src="video-promo-es.mp4" type="video/mp4">
-                    </video>
-                    <span class="video-legend">Ver la presentación de la novela</span>
-                </div>
-                <div class="discovery-text">
-                    <span class="label">Video & Génesis</span>
-                    <h3 style="font-size:1.8rem; margin-bottom:20px; color: var(--gold);">En las fuentes del relato</h3>
-                    <p style="color:#888; font-weight:300; line-height:1.7; text-align:justify; margin-bottom:20px;">
-                        Encuentros a la luz de la luna nació en 2007, tras nueve meses de escritura, durante un periodo
-                        que
-                        siguió a una larga pausa profesional dedicada al descanso y la reflexión.
-                    </p>
-                    <p style="color:#888; font-weight:300; line-height:1.7; text-align:justify; margin-bottom:20px;">
-                        Este tiempo suspendido permitió al autor volver a lo esencial, dando lugar a una escritura
-                        interior,
-                        paciente, atenta al silencio y profundamente humana.
-                    </p>
-                    <p style="color:#888; font-weight:300; line-height:1.7; text-align:justify;">
-                        La obra se publica bajo el seudónimo <b>Simon Lero</b>, elegido en homenaje a un antepasado
-                        francés establecido en América, anclando esta narrativa en una memoria a la vez personal y
-                        heredada.
-                    </p>
-
-                    <!-- IMAGE: PLUME MAGIQUE -->
-                    <div class="magic-quill-inline" aria-hidden="true"></div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="shop-section" id="buy">
-        <div class="container">
-            <div class="label" style="text-align:center;">Comprar el libro</div>
-            <div class="shop-grid">
-
-                <!-- AMAZON -->
-                <a href="https://books2read.com/u/4jkM5X" class="shop-card reveal" target="_blank">
-                    <img src="amazon-icon.svg" alt="Amazon">
-                    <div class="card-content">
-                        <div class="platform">DISPONIBILIDAD MUNDIAL</div>
-                        <div class="title">Amazon</div>
-                        <div class="tag">Kindle / Libro de bolsillo — tapa blanda</div>
-                    </div>
-                </a>
-
-                <!-- SHOPIFY -->
-                <a href="https://simonlero.myshopify.com/" class="shop-card reveal" style="transition-delay:0.1s;"
-                    target="_blank">
-                    <img src="shopify-icon.svg" alt="Shopify">
-                    <div class="card-content">
-                        <div class="platform">DISPONIBILIDAD MUNDIAL</div>
-                        <div class="title">Shopify</div>
-                        <div class="tag">ePub / Libro de bolsillo — tapa blanda</div>
-                    </div>
-                </a>
-
-                <!-- PAYHIP -->
-                <a href="https://payhip.com/simonlero" class="shop-card reveal" style="transition-delay:0.2s;"
-                    target="_blank">
-                    <img src="payhip-icon.svg" alt="Payhip">
-                    <div class="card-content">
-                        <div class="platform">20% DE DESCUENTO</div>
-                        <div class="title">Payhip</div>
-                        <div class="tag">PDF / ePub — 20% de descuento Código: READER20</div>
-                    </div>
-                </a>
-
-                <!-- LULU -->
-                <a href="https://www.lulu.com/search?q=simon+lero" class="shop-card reveal"
-                    style="transition-delay:0.3s;" target="_blank">
-                    <img src="lulu-icon.svg" alt="Lulu" style="width: 85px; height: 48px; object-fit: contain;">
-                    <div class="card-content">
-                        <div class="platform">DISPONIBILIDAD MUNDIAL</div>
-                        <div class="title">Lulu.com</div>
-                        <div class="tag">ePub / Libro de bolsillo — tapa blanda</div>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-
-    <section class="testimonials-section">
-        <div class="container">
-            <h2 class="reveal">Testimonios de los lectores</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
-                    <p class="testimonial-text">“Un viaje onírico de una intensidad poco común. Simon Lero captura la
-                        esencia
-                        misma de la introspección con una pluma de absoluta elegancia.”</p>
-                    <span class="testimonial-author">— Lucía G.</span>
-                </div>
-                <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
-                    <p class="testimonial-text">"Rara vez un libro me ha conmovido tanto. Es una obra que se lee como se
-                        contempla
-                        un cuadro de un maestro. Me gusta el vínculo con la sonata de Beethoven.”</p>
-                    <span class="testimonial-author">— Carlos M.</span>
-                </div>
-                <div class="testimonial-card reveal" style="transition-delay: 0.3s;">
-                    <p class="testimonial-text">“Imprescindible para los amantes de la buena literatura. Lo leí dos
-                        veces, lloré dos veces”</p>
-                    <span class="testimonial-author">— Elena R.</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <div class="footer-nav">
-        <a href="https://www.mon-univers.ca/index.html"
-            style="color: #c9a24d !important; text-decoration: none !important; font-family: 'Cinzel', serif; font-size: 1.1rem; margin: 0 40px; opacity: 1; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block; vertical-align: top; text-align: center;">
-            Visita mi vitrina personal<br>
-            <span style="font-size: 0.6em; opacity: 0.8; display: block; margin-top: 5px;">(ÚNICAMENTE EN
-                FRANCÉS)</span>
-        </a>
-        <a href="distribution-es.html"
-            style="color: #c9a24d !important; text-decoration: none !important; font-family: 'Cinzel', serif; font-size: 1.1rem; margin: 0 40px; opacity: 1; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block; vertical-align: top; text-align: center;">
-            Red de Distribución</a>
-    </div>
-
-    <!-- FILIGRANE CUIR : Apparition dans los rincones inferiores -->
-    <div class="leather-wrapper" aria-hidden="true">
-        <div class="leather-reveal-corner"></div>
-        <div class="leather-reveal-corner-left"></div>
-    </div>
-
-    <footer class="footer-pwa">
-        <div class="footer-container">
-            <div class="footer-main">
-                <div class="footer-left" style="display: flex; flex-direction: column; align-items: center;">
-                    <div class="pwa-badge-container">
-                        <img src="pwa-text-banner-es.png" alt="PWA Optimizado" class="pwa-text-banner">
-                        <div class="pwa-icons-box">
-                            <div class="pwa-icon-item">
-                                <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
-                                <span class="pwa-icon-label">Simon Lero</span>
-                            </div>
-                            <div class="pwa-icon-item">
-                                <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
-                                <span class="pwa-icon-label">Mi Universo</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button id="installAppBtn" class="btn-install-pwa"
-                        style="display: block; margin-top: 20px; background: transparent; border: 1px solid rgba(212, 162, 58, 0.4); color: var(--gold); padding: 5px 12px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;"
-                        onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';"
-                        onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">Instalar
-                        App</button>
-                </div>
-
-                <div class="footer-right">
-                    <div class="footer-nav-links">
-                        <a href="livre-accueil-es.html">Inicio</a>
-                        <span class="sep">&bull;</span>
-                        <a href="faq-es.html">FAQ</a>
-                        <span class="sep">&bull;</span>
-                        <a href="media-es.html">Espacio de Medios</a>
-                        <span class="sep">&bull;</span>
-                        <a href="contact-es.html">Contacto</a>
-                    </div>
-                    <div class="social-grid">
-                        <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
-                        <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
-                        <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
-                        <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
-                        <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
-                        <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
-                        <div class="social-btn"><img src="iconX480.png" alt="X"></div>
-                        <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
-                    </div>
-                </div>
-            </div>
-
-            <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; Todos los
-                derechos
-                reservados</p>
-        </div>
-    </footer>
-
-    <script>
-        document.getElementById('current-year-footer').textContent = new Date().getFullYear();
-
-        // Intersection Observer
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const isPWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-            if (isPWA) {
-                document.documentElement.classList.add('is-pwa');
-            }
-        });
-    </script>
-</body>
-
-</html>
+    

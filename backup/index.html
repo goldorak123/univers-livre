@@ -1,63 +1,1261 @@
 ﻿<!DOCTYPE html>
-<!-- TECHNICAL BRIDGE FILE - Redirects to premium landing page -->
 <html lang="fr" class="notranslate" translate="no">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="google" content="notranslate">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=livre-accueil.html">
-  <script>window.location.replace("livre-accueil.html");</script>
-  <title>Simon Lero - Redirecting...</title>
-  <style>
-    html,
-    body {
-      background: #000 !important;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <style>
+        html {
+            background: #000 !important;
+        }
+    @media (max-width: 900px) {
+            /* Fix Footer Mobile: Remove dots, add glow */
+            .footer-nav-links .sep {
+                display: none !important;
+            }
+            .footer-nav-links {
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+            .footer-nav-links a {
+                text-shadow: 0 0 10px rgba(216, 178, 90, 0.4) !important;
+            }
+        }
+        </style>
 
-    /* Mobile: Remove decorative underlines/bars on buttons and links */
-    @media (max-width: 768px) {
+        <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-      a::after,
-      button::after,
-      [class*="btn"]::after,
-      [class*="link"]::after,
-      .print-btn span::after {
-        display: none !important;
-      }
-    }
+    <title>mon-univers.ca - Vitrine Personnelle</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    
+    <script>
+        // SYSTÃˆME DE GESTION PWA - FORCE UPDATE v106
+        (async function() {
+            const v = 'v1011.pwa_fix';
+            if (localStorage.getItem('pwa_v') !== v) {
+                if ('serviceWorker' in navigator) {
+                    try {
+                        const regs = await navigator.serviceWorker.getRegistrations();
+                        for (const r of regs) await r.unregister();
+                    } catch(e) {}
+                }
+                if ('caches' in window) {
+                    try {
+                        const keys = await caches.keys();
+                        for (const k of keys) await caches.delete(k);
+                    } catch(e) {}
+                }
+                localStorage.clear();
+                sessionStorage.clear();
+                localStorage.setItem('pwa_v', v);
+                window.location.reload(true);
+            } else {
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('/sw-v103.js?v=1011_' + Date.now(), {
+                        updateViaCache: 'none'
+                    }).catch(() => {});
+                }
+            }
+        })();
 
-    /* --- LUXURY UNDERLINE SYSTEM --- */
-    .footer-nav a::after,
-    .footer-nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 1px;
-      background: var(--gold);
-      transition: all 0.4s ease;
-      transform: translateX(-50%);
-    }
+        // LOGIQUE D'INSTALLATION
+        function installPWA() {
+            if (window.deferredPrompt) {
+                window.deferredPrompt.prompt();
+                window.deferredPrompt.userChoice.then(() => {
+                    window.deferredPrompt = null;
+                });
+            } else {
+                console.log("Installation non disponible ou l'application est dÃ©jÃ  installÃ©e.");
+            }
+        }
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            window.deferredPrompt = e;
+        });
+    </script>
 
-    .footer-nav a:hover::after,
-    .footer-nav-links a:hover::after {
-      width: 60%;
-    }
-  </style>
+    <style id="footer-nav-gold-override">.footer-nav-links a, .footer-nav a { color: var(--gold, #d8b25a) !important; opacity: 0.9; }</style>
 </head>
 
+<style>
+    :root {
+        --bg: #050505;
+        --panel-dark: #0b0b0b;
+        --panel-light: #1a1a1a;
+        --gold: #d4a23a;
+        --text: #D0D0D0;
+        --text-muted: rgba(208, 208, 208, 0.6);
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif !important;
+    }
+
+    html,
+    body {
+        width: 100%;
+        background: #000 !important;
+        color: rgba(255, 255, 255, 0.88);
+        overflow-x: hidden;
+    }
+
+    .scene {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .frame {
+        width: 100%;
+        height: 100dvh;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0));
+        flex-shrink: 0;
+    }
+
+    .header {
+        position: absolute;
+        top: 40px;
+        left: 32px;
+        right: 32px;
+        z-index: 4;
+        text-align: center;
+    }
+
+    .title {
+        font-size: clamp(28px, 4vw, 52px);
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        color: #fff;
+    }
+
+    .title .gold {
+        color: var(--gold);
+    }
+
+    .top-links {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .top-links button {
+        background: var(--gold);
+        color: #000;
+        border: none;
+        padding: 8px 18px;
+        border-radius: 50px;
+        font-weight: 800;
+        cursor: pointer;
+        font-size: 11px;
+        display: none;
+    }
+
+    .layout {
+        position: absolute;
+        inset: 165px 32px 95px 32px;
+        display: flex;
+        gap: 24px;
+        z-index: 2;
+    }
+
+    .panel {
+        border-radius: 16px;
+        background: linear-gradient(145deg, var(--panel-dark), #151515);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        overflow: hidden;
+        position: relative;
+    }
+
+    .left-panel {
+        flex: 1;
+        padding: 20px 20px 20px 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu {
+        width: 100%;
+        position: relative;
+        z-index: 10;
+    }
+
+    .menu a {
+        display: block;
+        width: fit-content;
+        padding: 16px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.03);
+        text-decoration: none;
+        font-size: clamp(18px, 2.2vw, 24px);
+        color: rgba(255, 255, 255, 0.88);
+        font-weight: 300;
+        position: relative;
+    }
+
+    .menu a::after {
+        content: '';
+        position: absolute;
+        bottom: 8px;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        transition: all 0.4s ease;
+        transform: translateX(-50%);
+    }
+
+    @media (hover: hover) {
+        .menu a:hover::after {
+            width: 60%;
+        }
+    }
+
+    .menu a:first-child {
+        border-top: none;
+    }
+
+    .menu .gold {
+        background: linear-gradient(170deg, #E0B861 0%, #FDF1A9 20%, #D4A23A 40%, #A87A1E 50%, #FDE48D 60%, #C5922C 80%, #8A5E0B 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 800;
+        filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.5));
+    }
+
+    .right-panel {
+        flex: 2;
+        padding: 40px;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .right-panel h2 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .quote {
+        max-width: 650px;
+        margin-left: auto;
+        font-style: italic;
+        color: var(--text-muted);
+        line-height: 1.6;
+    }
+
+    .quote span {
+        display: block;
+        margin-top: 10px;
+        background: linear-gradient(170deg, #E0B861 0%, #FDF1A9 20%, #D4A23A 40%, #A87A1E 50%, #FDE48D 60%, #C5922C 80%, #8A5E0B 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 800;
+        filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.5));
+        font-size: 0.8rem;
+        text-transform: uppercase;
+    }
+
+    .image-box {
+        margin-top: 25px;
+        flex: 1;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .image-quote {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        font-size: 1.5rem;
+        font-style: italic;
+        color: #fff;
+        max-width: 350px;
+        text-align: left;
+        line-height: 1.2;
+        font-weight: 700;
+        text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+
+    /* FOOTER PWA HARMONISÃ‰ */
+    .footer-pwa {
+        background: #111;
+        border-top: 1px solid rgba(216, 178, 90, 0.15);
+        padding: 0;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .footer-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        z-index: 10;
+        position: relative;
+    }
+
+    .footer-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Center children including button */
+        gap: 25px;
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .pwa-badge-container {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .pwa-text-banner {
+        height: 120px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .pwa-icons-box {
+        display: flex;
+        gap: 35px;
+    }
+
+    .pwa-icon-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .pwa-icon-small {
+        height: 85px;
+        width: auto;
+        filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.3));
+        transition: all 0.4s ease;
+    }
+
+    .pwa-icon-small:hover {
+        filter: drop-shadow(0 0 20px rgba(212, 162, 58, 0.6));
+        transform: scale(1.1);
+    }
+
+    .pwa-icon-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.65rem;
+        color: var(--gold);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.8;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 30px;
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .footer-nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 5px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.15em;
+        transition: all 0.4s ease;
+        position: relative;
+        padding-bottom: 6px;
+    }
+
+    .footer-nav-links a:hover {
+        color: var(--gold);
+        text-shadow: 0 0 12px rgba(216, 178, 90, 0.5);
+    }
+
+    .footer-nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        transition: all 0.4s ease;
+        transform: translateX(-50%);
+    }
+
+    @media (hover: hover) {
+        .footer-nav-links a:hover::after {
+            width: 60%;
+        }
+    }
+
+    .footer-nav-links .sep {
+        color: var(--gold);
+        opacity: 0.4;
+        font-size: 0.8rem;
+        margin: 0 5px;
+    }
+
+    .social-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 44px);
+        gap: 15px;
+        justify-content: flex-end;
+    }
+
+    .social-btn {
+        width: 44px;
+        height: 44px;
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+
+    .social-btn:hover {
+        background: rgba(214, 162, 58, 0.1);
+        border-color: var(--gold);
+        transform: translateY(-5px);
+    }
+
+    .social-btn img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0.7;
+    }
+
+    .social-btn:hover img {
+        filter: sepia(1) saturate(5) hue-rotate(10deg);
+        opacity: 1;
+    }
+
+    .footer-copyright {
+        width: 100%;
+        text-align: center;
+        margin-top: 40px;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.65rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #444;
+    }
+
+    .v-badge {
+        position: fixed;
+        bottom: 5px;
+        right: 5px;
+        font-size: 8px;
+        color: #111;
+        z-index: 100;
+    }
+
+    /* PROTECTION DÃ‰FAUT - Cacher les titres gÃ©ants par dÃ©faut */
+
+    /* --- RENDU MOBILE (STRICT) --- */
+    @media (max-width: 900px) {
+
+        .footer-pwa {
+            min-height: auto;
+            padding: 40px 0;
+        }
+
+        .footer-nav-links {
+            position: static;
+            transform: none;
+            margin-bottom: 20px;
+        }
+
+        .footer-container {
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+        }
+
+        .footer-right {
+            order: 1;
+            align-items: center;
+            min-width: auto;
+        }
+
+        .footer-left {
+            order: 2;
+            min-width: auto;
+        }
+
+        .pwa-badge-container {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .pwa-text-banner {
+            filter: drop-shadow(0 0 25px rgba(216, 178, 90, 0.9));
+        }
+
+        .pwa-icon-small {
+            filter: drop-shadow(0 0 25px rgba(216, 178, 90, 0.9)) !important;
+        }
+
+        .social-grid {
+            justify-content: center;
+        }
+
+        .footer-copyright {
+            order: 3;
+            margin-top: 20px;
+        }
+
+        .image-quote {
+            font-size: 1.1rem;
+            top: 20px;
+            left: 20px;
+            max-width: 90%;
+        }
+
+        .right-panel h2 {
+            font-size: 1.4rem;
+            /* RÃ©duit pour mobile */
+            margin-bottom: 10px;
+        }
+
+        .layout {
+            position: relative;
+            inset: auto;
+            padding: 240px 20px 40px;
+            flex-direction: column;
+        }
+
+        .frame {
+            height: auto;
+            overflow: visible;
+        }
+
+        .header {
+            top: 110px;
+        }
+    }
+
+    /* --- RENDU DESKTOP / LAPTOP / IPAD LANDSCAPE --- */
+    @media (min-width: 901px) {
+
+        .header {
+            top: 85px !important;
+            transition: top 0.3s ease;
+        }
+
+        .title {
+            font-size: clamp(40px, 6.5vw, 85px) !important;
+        }
+
+        .layout {
+            inset: 260px 32px 30px 32px !important;
+            transition: inset 0.3s ease;
+        }
+
+        /* PWA Max Glow (Desktop Only) */
+        .pwa-text-banner,
+        .pwa-icon-small {
+            filter: drop-shadow(0 0 25px rgba(216, 178, 90, 1)) brightness(1.1) !important;
+        }
+
+        /* Nav Links en ligne Ã  droite (Desktop Only) */
+        .footer-nav-links {
+            position: static !important;
+            transform: none !important;
+            flex-direction: row !important;
+            gap: 25px !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* Social Icons en une seule ligne (Desktop Only) */
+        .social-grid {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            justify-content: flex-end !important;
+            gap: 15px !important;
+        }
+
+        /* DÃ©placer les boutons du menu vers la droite (Desktop) */
+        .menu { padding-left: 50px !important; }
+
+        /* Grossir lÃ©gÃ¨rement les boutons du menu (Desktop) */
+        .menu a {
+            font-size: clamp(23px, 2.7vw, 32px) !important;
+        }
+
+        /* Filigrane Globe sous le menu (Effet WOW) - Desktop */
+        .left-panel {
+            position: relative !important;
+            z-index: 2 !important;
+        }
+
+        .left-panel::after {
+            content: '' !important;
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            width: 600px !important;
+            height: 600px !important;
+            background: url('icon-gold.png') no-repeat center !important;
+            background-size: contain !important;
+            opacity: 0.15 !important;
+            z-index: -1 !important;
+            pointer-events: none !important;
+        }
+    }
+
+    /* --- MOBILE & IPAD PORTRAIT SPECIFIC UPDATES --- */
+    @media (max-width: 1024px) and (orientation: portrait) {
+        .mobile-menu-bg-title {
+            display: block !important;
+            position: absolute !important;
+            top: -10px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            font-size: 32vw !important;
+            /* Massive as requested */
+            font-weight: 900 !important;
+            color: rgba(212, 162, 58, 0.2) !important;
+            -webkit-text-stroke: 1px rgba(212, 162, 58, 0.1) !important;
+            font-family: 'Inter', sans-serif !important;
+            text-transform: uppercase !important;
+            z-index: 1 !important;
+            pointer-events: none !important;
+            line-height: 1 !important;
+            letter-spacing: -0.05em !important;
+            /* Tightened */
+            white-space: nowrap !important;
+        }
+
+        .header {
+            top: 60px !important;
+            /* RemontÃ© pour laisser de la place au menu */
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+
+        .title {
+            font-size: clamp(3rem, 10vw, 4.5rem) !important;
+            /* Slightly reduced for better fit */
+            line-height: 0.9 !important;
+            white-space: normal !important;
+            /* Allow wrapping for 2 lines */
+            text-align: center !important;
+            color: #fff !important;
+            /* MON blanc par dÃ©faut */
+        }
+
+        /* DÃ©calage esthÃ©tique de "MON" seulement (ajustÃ© +12px) */
+        .mon-text {
+            position: relative !important;
+            left: -92px !important;
+            /* AjustÃ© +6px vers la droite pour alignement parfait */
+        }
+
+        /* Styles spÃ©cifiques pour le titre en 2 lignes */
+        .title .line-break {
+            display: block !important;
+        }
+
+        /* Filigrane Globe sous le menu (Effet WOW) */
+        .left-panel {
+            position: relative !important;
+            z-index: 2 !important;
+        }
+
+        .left-panel::after {
+            content: '' !important;
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            width: 400px !important;
+            /* Plus gros */
+            height: 400px !important;
+            /* Plus gros */
+            background: url('icon-gold.png') no-repeat center !important;
+            background-size: contain !important;
+            opacity: 0.2 !important;
+            /* Plus visible (20%) */
+            z-index: -1 !important;
+            pointer-events: none !important;
+        }
+
+        /* DÃ©calage des boutons vers la droite */
+        .menu {
+            display: flex !important;
+            flex-direction: column !important;
+            padding-left: 20px !important;
+            /* DÃ©calage vers la droite */
+        }
+
+        /* Ajustement du badges PWA (taille plus Ã©quilibrÃ©e) */
+        .pwa-text-banner {
+            height: 130px !important;
+            filter: drop-shadow(0 0 25px rgba(216, 178, 90, 0.9)) !important;
+        }
+
+        .pwa-icon-small {
+            height: 95px !important;
+            filter: drop-shadow(0 0 25px rgba(216, 178, 90, 0.9)) !important;
+        }
+
+        .pwa-badge-container {
+            gap: 25px !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        .pwa-icons-box {
+            gap: 40px !important;
+            justify-content: center !important;
+        }
+
+        /* Espace entre icÃ´nes sociaux et PWA */
+        .footer-right {
+            margin-bottom: 50px !important;
+        }
+
+        /* Agrandissement des icÃ´nes sociaux */
+        .social-btn {
+            width: 50px !important;
+            height: 50px !important;
+        }
+
+        .social-grid {
+            grid-template-columns: repeat(4, 50px) !important;
+            gap: 12px !important;
+        }
+
+        /* Ligne dorÃ©e 95% au-dessus du copyright (TRÃˆS discrÃ¨te) */
+        .footer-copyright {
+            margin-top: 50px !important;
+            position: relative !important;
+            padding-top: 35px !important;
+            width: 100% !important;
+        }
+
+        .footer-copyright::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 95% !important;
+            /* 95% width */
+            height: 1px !important;
+            background: var(--gold) !important;
+            opacity: 0.15 !important;
+            box-shadow: 0 0 3px rgba(212, 162, 58, 0.2) !important;
+        }
+
+        /* Incitation au scroll : Espace augmentÃ© sous l'entÃªte */
+        .layout {
+            padding: 215px 20px 40px !important;
+        }
+    }
+</style>
+
 <body>
-  <p style="color: #c9a24d; font-family: sans-serif; text-align: center; margin-top: 20vh;">
-    Chargement de l'Univers Simon Lero...
-  </p>
+    <div class="v-badge">V100.0</div>
+
+    <div class="scene">
+        <div class="frame">
+            <!-- NOUVEL ENTÃŠTE HAUT DE GAMME (MOCKUP-ACCURATE) -->
+            <div class="premium-header-card">
+                <div class="premium-bg">
+                    <!-- Texture et Ã©toiles -->
+                    <div class="dust-texture"></div>
+                    <!-- Astrolabe SVG - Version Dense / Haute VisibilitÃ© -->
+                    <svg class="astrolabe" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid slice"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="#D4A23A" fill="none" class="astrolabe-group">
+                            <!-- Cercles de base, centrÃ©s -->
+                            <g opacity="0.4" stroke-width="0.8">
+                                <circle cx="500" cy="150" r="80" />
+                                <circle cx="500" cy="150" r="160" />
+                                <circle cx="500" cy="150" r="240" stroke-dasharray="2 4" />
+                                <circle cx="500" cy="150" r="350" stroke-dasharray="1 6" stroke-width="1.2" />
+                            </g>
+
+                            <!-- Arcs et cercles superposÃ©s (Effet riche de carte stellaire) -->
+                            <g opacity="0.4" stroke-width="0.7">
+                                <circle cx="300" cy="50" r="200" stroke-dasharray="4 8" />
+                                <circle cx="700" cy="250" r="200" stroke-dasharray="4 8" />
+                                <circle cx="500" cy="-100" r="350" stroke-width="0.5" />
+                                <circle cx="500" cy="400" r="350" stroke-width="0.5" />
+                            </g>
+
+                            <!-- Lignes radiales et quadrillage stellaire -->
+                            <g opacity="0.3" stroke-width="0.6">
+                                <line x1="0" y1="150" x2="1000" y2="150" />
+                                <line x1="500" y1="-100" x2="500" y2="400" />
+                                <line x1="150" y1="-50" x2="850" y2="350" />
+                                <line x1="150" y1="350" x2="850" y2="-50" />
+                                <line x1="250" y1="-100" x2="750" y2="400" />
+                                <line x1="250" y1="400" x2="750" y2="-100" />
+                            </g>
+
+                            <!-- Constellation (Lignes Ã©paisses et brillantes) -->
+                            <path
+                                d="M 120 100 L 220 50 L 320 160 L 460 70 L 620 200 M 320 160 L 420 250 M 220 50 L 160 220 L 280 250 L 420 250 L 520 150 L 620 200 L 780 120 M 520 150 L 700 80 M 700 80 L 850 180"
+                                fill="none" stroke="#FDE48D" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.75" />
+
+                            <!-- Constellation (Ã‰toiles fixes trÃ¨s brillantes) -->
+                            <g fill="#FDE48D" stroke="none">
+                                <circle cx="120" cy="100" r="3" opacity="0.9" />
+                                <circle cx="220" cy="50" r="5" opacity="1" />
+                                <circle cx="320" cy="160" r="2.5" opacity="0.8" />
+                                <circle cx="460" cy="70" r="4.5" opacity="1" />
+                                <circle cx="620" cy="200" r="4" opacity="0.9" />
+                                <circle cx="420" cy="250" r="3" opacity="0.8" />
+                                <circle cx="160" cy="220" r="2.5" opacity="0.7" />
+                                <circle cx="280" cy="250" r="4" opacity="0.9" />
+                                <circle cx="520" cy="150" r="3" opacity="0.8" />
+                                <circle cx="780" cy="120" r="5" opacity="1" />
+                                <circle cx="700" cy="80" r="3.5" opacity="0.9" />
+                                <circle cx="850" cy="180" r="2.5" opacity="0.7" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="premium-content">
+                    <div class="premium-title-group">
+                        <h1 class="premium-title">
+                            <div class="title-gold-wrapper">
+                                <span class="title-gold" data-text="MON">MON</span>
+                            </div>
+                            <span class="title-white">UNIVERS.ca</span>
+                        </h1>
+
+                        <div class="premium-subtitle">
+                            <div class="compass-mini">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#D4A23A" stroke-width="1">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 2v20M2 12h20" stroke-dasharray="1 2" />
+                                    <polygon points="12,4 14,12 12,20 10,12" fill="#D4A23A" opacity="0.3" />
+                                    <circle cx="12" cy="12" r="2" fill="#000" stroke="#D4A23A" />
+                                </svg>
+                            </div>
+                            <span class="vp-text">VITRINE PERSONNELLE</span>
+                        </div>
+                    </div>
+
+                    <div class="top-links">
+                        <button id="install-btn-nav" onclick="installPWA()"
+                            style="background: transparent; color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; font-size: 9px; cursor: pointer; white-space: nowrap;">INSTALLER
+                            L'APP</button>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+        .premium-header-card {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 64px);
+            max-width: 1400px;
+            min-height: 450px;
+            height: auto;
+            background: radial-gradient(ellipse at 50% -20%, #2a343d 0%, #151a1e 40%, #0a0d10 60%, #000000 80%);
+            border-radius: 16px 16px 0 0;
+            border-top: 1px solid rgba(212, 162, 58, 0.15);
+            border-left: none;
+            border-right: none;
+            border-bottom: none !important;
+            box-shadow: inset 0 30px 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            padding: 60px 40px;
+        }
+
+        .premium-header-card::after {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 75%, #000000 100%);
+            z-index: 5;
+            pointer-events: none;
+        }
+
+
+
+                .premium-bg {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                    z-index: 1;
+                }
+
+                .dust-texture {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+                    opacity: 0.05;
+                    mix-blend-mode: color-dodge;
+                }
+
+                .astrolabe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .premium-content {
+                    position: relative;
+                    z-index: 10;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    gap: 20px;
+                }
+
+                .premium-title-group {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 8px;
+                    flex-wrap: wrap;
+                }
+
+                .premium-title {
+                    font-family: 'Montserrat', 'Inter', sans-serif;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+                    gap: 12px;
+                    line-height: 1;
+                }
+
+                .title-gold-wrapper {
+                    position: relative;
+                    display: inline-block;
+                }
+
+                .title-gold {
+                    font-size: clamp(3rem, 6.5vw, 5rem);
+                    font-weight: 900;
+                    letter-spacing: -0.01em;
+
+                    /* Gold Foil / Metallic Gradient */
+                    background: linear-gradient(170deg,
+                            #E0B861 0%,
+                            #FDF1A9 20%,
+                            #D4A23A 40%,
+                            #A87A1E 50%,
+                            #FDE48D 60%,
+                            #C5922C 80%,
+                            #8A5E0B 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    position: relative;
+                    z-index: 2;
+                    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.5));
+                }
+
+                /* Ombre portÃ©e 3D Ã©paisse (extrusion) */
+                .title-gold::before {
+                    content: attr(data-text);
+                    position: absolute;
+                    left: 1.5px;
+                    top: 2px;
+                    z-index: -1;
+                    background: linear-gradient(170deg, #4a340c, #1f1402);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                .title-white {
+                    font-size: clamp(4rem, 10vw, 6.8rem);
+                    font-weight: 900;
+                    color: #FFFFFF;
+                    letter-spacing: -0.01em;
+                    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.5);
+                }
+
+                .premium-subtitle {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                }
+
+                .compass-mini {
+                    width: 20px;
+                    height: 20px;
+                    opacity: 0.8;
+                }
+
+                .vp-text {
+                    font-family: 'Montserrat', 'Inter', sans-serif;
+                    font-size: clamp(0.7rem, 1.2vw, 1rem);
+                    font-weight: 400;
+                    letter-spacing: 0.5em;
+                    color: rgba(255, 255, 255, 0.55);
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                    margin-left: 2px;
+                }
+
+                .top-links {
+                    margin-left: auto;
+                }
+        @media (max-width: 900px) {
+            .premium-header-card {
+                top: 20px;
+                height: auto;
+                min-height: 160px;
+                background: radial-gradient(ellipse at 50% -10%, #3a4855 0%, #1c242b 30%, #0a0d10 50%, #000000 70%) !important;
+                padding: 45px 10px;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+
+
+                    .premium-content {
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 12px;
+                    }
+
+                    .premium-title-group {
+                        flex-direction: column;
+                        gap: 8px;
+                        text-align: center;
+                        align-items: center;
+                    }
+
+                    .premium-title {
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 2px;
+                    }
+
+                    .title-gold {
+                        font-size: 1.8rem;
+                        line-height: 1.1;
+                    }
+
+                    .title-white {
+                        font-size: clamp(3.2rem, 15vw, 4.5rem); margin-left: -5px;
+                        line-height: 1.1;
+                    }
+
+                    .vp-text {
+                        font-size: 0.75rem;
+                        letter-spacing: 0.4em;
+                    }
+
+                    .top-links {
+                        margin-left: 0;
+                        margin-top: 5px;
+                    }
+                }
+            
+    /* DISABLE LINK UNDERLINES ON MOBILE */
+    @media (max-width: 900px) { a::after, button::after, .footer-nav-links a:hover::after, .footer-nav a:hover::after, .menu a:hover::after { display: none !important; width: 0 !important; content: none !important; } }
+</style>
+
+            <div class="layout">
+                <div class="panel left-panel" style="position: relative; overflow: hidden;">
+                    <!-- Ã‰toiles de fond menu (Or, Argent, Bleues) - Ã‰parpillÃ©es aux coins -->
+                    <svg class="menu-stars"
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
+                        <!-- Gold stars (7) -->
+                        <g fill="#FDE48D">
+                            <circle cx="10%" cy="15%" r="0.75" opacity="0.9" />
+                            <circle cx="92%" cy="12%" r="1" opacity="1" />
+                            <circle cx="8%" cy="85%" r="0.5" opacity="0.8" />
+                            <circle cx="88%" cy="90%" r="0.75" opacity="0.9" />
+                            <circle cx="50%" cy="5%" r="0.5" opacity="1" />
+                            <circle cx="50%" cy="95%" r="0.5" opacity="0.7" />
+                            <circle cx="4%" cy="50%" r="0.5" opacity="0.9" />
+                        </g>
+                        <!-- Silver stars (5) -->
+                        <g fill="#E0E0E0">
+                            <circle cx="20%" cy="8%" r="0.5" opacity="0.8" />
+                            <circle cx="96%" cy="30%" r="0.75" opacity="0.9" />
+                            <circle cx="5%" cy="70%" r="0.5" opacity="0.6" />
+                            <circle cx="95%" cy="75%" r="0.75" opacity="0.9" />
+                            <circle cx="25%" cy="92%" r="0.6" opacity="0.8" />
+                        </g>
+                        <!-- Blue stars (3) -->
+                        <g fill="#87CEFA">
+                            <circle cx="4%" cy="35%" r="0.6" opacity="0.9" />
+                            <circle cx="75%" cy="8%" r="0.75" opacity="0.9" />
+                            <circle cx="80%" cy="85%" r="0.5" opacity="0.8" />
+                        </g>
+                    </svg>
+                    <nav class="menu" style="position: relative; z-index: 1;">
+                        <a href="cv-secure.html?v=48.0"><span class="gold">MON</span> CV</a>
+                        <a href="memoire.html?v=v120_final"><span class="gold">MON</span>
+                            MÃ‰MOIRE</a>
+                        <a href="https://www.simonlero.com/livre-accueil.html" target="_blank"><span
+                                class="gold">MON</span>
+                            LIVRE</a>
+                        <a href="entreprise.html?v=48.0"><span class="gold">MON</span>
+                            ENTREPRISE</a>
+                        <a href="galerie.html?v=48.0"><span class="gold">MA</span> GALERIE</a>
+                        <a href="sources.html?v=48.0"><span class="gold">MES</span>
+                            INSPIRATIONS</a>
+                    </nav>
+                </div>
+
+                <div class="panel right-panel">
+                    <h2>RÃ©flexion</h2>
+                    <div class="quote">
+                        Â« Lâ€™imagination est plus importante que la connaissance,
+                        car la connaissance est limitÃ©e, alors que lâ€™imagination embrasse le monde. Â»
+                        <span>â€” Albert Einstein</span>
+                    </div>
+                    <div class="image-box">
+                        <div class="image-quote">Ici se croisent mes mÃ©moires,<br>le prÃ©sent et mes rÃªves.</div>
+                        <img src="index-photo-univers.jpg" alt="Reflection">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER HARMONISÃ‰ -->
+        <footer class="footer-pwa">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <div class="pwa-badge-container">
+                        <img src="pwa-text-banner.png" alt="PWA OptimisÃ©" class="pwa-text-banner">
+                        <div class="pwa-icons-box">
+                            <div class="pwa-icon-item">
+                                <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
+                                <span class="pwa-icon-label">Simon Lero</span>
+                            </div>
+                            <div class="pwa-icon-item">
+                                <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
+                                <span class="pwa-icon-label">Mon Univers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="install-btn-footer" onclick="installPWA()"
+                        style="margin-top: 5px; background: transparent; color: var(--gold); border: 1px solid rgba(212, 162, 58, 0.4); padding: 8px 16px; font-size: 10px; font-family: 'Inter', sans-serif; letter-spacing: 2px; cursor: pointer; white-space: nowrap; border-radius: 4px; transition: all 0.3s ease; filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.2)); align-self: center;"
+                        onmouseover="this.style.background='rgba(212, 162, 58, 0.1)'; this.style.borderColor='var(--gold)';"
+                        onmouseout="this.style.background='transparent'; this.style.borderColor='rgba(212, 162, 58, 0.4)';">
+                        INSTALLER L'APP
+                    </button>
+                </div>
+
+                <div class="footer-right">
+                    <div class="footer-nav-links">
+                        <a href="index.html?v=31.0">Accueil</a>
+                            <span class="sep">&bull;</span>
+                            <a href="faq.html?v=31.0">FAQ</a>
+                            <span class="sep">&bull;</span>
+                            <a href="apropos.html?v=31.0">Ã€ propos</a>
+                            <span class="sep">&bull;</span>
+                            <a href="contact.html?v=31.0">Me contacter</a>
+                    </div>
+                    <div class="social-grid">
+                        <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
+                        <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
+                        <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
+                        <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
+                        <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
+                        <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
+                        <div class="social-btn"><img src="iconX480.png" alt="X"></div>
+                        <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
+                    </div>
+                </div>
+                <p class="footer-copyright"><a href="404.html"
+                        style="text-decoration: none; color: inherit; cursor: default;">&copy;</a> <span
+                        id="current-year-footer"></span> mon-univers.ca &mdash; Tous
+                    droits rÃ©servÃ©s </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('current-year-footer').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+

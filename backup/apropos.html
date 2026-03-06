@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="google" content="notranslate">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <style>
@@ -25,12 +24,12 @@
             }
         }
         </style>
-    <meta name="msvalidate.01" content="35E5408E2A8BCF95460F1FAFFAB8BED6790A">
-    <meta property="og:image" content="https://www.mon-univers.ca/og-index.jpg">
-    <title>Me contacter â€” mon-univers.ca</title>
-    <link rel="canonical" href="https://www.mon-univers.ca/contact.html">
+    <meta name="google" content="notranslate">
+    <meta name="robots" content="index, follow">
 
-    <!-- PWA -->
+    <meta name="msvalidate.01" content="35E5408E2A8BCF95460F1FAFFAB8BED6790A">
+    <link rel="canonical" href="https://www.mon-univers.ca/apropos.html">
+        <!-- PWA -->
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="mobile-web-app-capable" content="yes">
@@ -38,24 +37,24 @@
 
     <!-- Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;800&family=Dancing+Script:wght@700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         :root {
             --gold: #d4a23a;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         html,
         body {
             background: #000 !important;
-            margin: 0;
-            padding: 0;
             color: #f0f0f0;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             overflow-x: hidden;
@@ -65,6 +64,12 @@
             max-width: 100%;
         }
 
+        /* Focus Reset */
+        a:focus,
+        button:focus {
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
 
         /* Premium Back Button */
         .back-hub-btn {
@@ -83,7 +88,7 @@
             justify-content: center;
             color: var(--gold);
             text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: var(--transition);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
@@ -122,38 +127,11 @@
             }
         }
 
-
-        /* Cinematic Background */
-        .bg-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            overflow: hidden;
-            background: #000;
-        }
-
-        .bg-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.9;
-            filter: grayscale(10%) contrast(110%);
-        }
-
-        .bg-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-        }
-
-        /* HERO SECTION (ULTRA-BOLD ASIMMETRICAL) */
+        /* HERO SECTION */
         .hero {
             position: relative;
-            padding: 230px 40px 85px;
+            padding: 530px 40px 100px;
+            /* Grand espace pour l'en-tÃªte de 450px */
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -165,15 +143,17 @@
 
         .hero-background-title {
             white-space: nowrap;
+            /* EmpÃªche les lettres gÃ©antes de revenir Ã  la ligne (effet accordÃ©on) */
             font-family: 'Inter', sans-serif !important;
             font-size: clamp(8rem, 25vw, 24rem);
             font-weight: 900;
-            color: #d8b25a !important;
+            color: #d8b25a;
             -webkit-text-stroke: 1px #d8b25a;
             opacity: 0.15;
             position: absolute;
             top: 40px;
             left: 0;
+            /* AlignÃ© Ã  gauche sans couper les lettres */
             line-height: 0.9;
             text-transform: uppercase;
             z-index: -1;
@@ -201,22 +181,9 @@
             font-family: 'Inter', sans-serif !important;
             font-size: clamp(3rem, 10vw, 8rem);
             font-weight: 800;
-            color: #d8b25a;
+            color: var(--gold);
             margin-left: clamp(2rem, 10vw, 150px);
             animation: slideInLeft 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
-            opacity: 0;
-        }
-
-        .hero-subtitle {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 200;
-            color: #ccc;
-            margin-top: 40px;
-            margin-left: 5px;
-            letter-spacing: 12px;
-            text-transform: uppercase;
-            animation: fadeIn 2s ease-out 0.8s forwards;
             opacity: 0;
         }
 
@@ -232,18 +199,6 @@
             }
         }
 
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(150px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -254,179 +209,76 @@
             }
         }
 
-        /* FORM CARD (Offset Floating Card) */
+        /* NARRATIVE BOX */
         .narrative-box {
             position: relative;
-            align-self: flex-end;
-            width: 100%;
-            max-width: 900px;
-            background: rgba(10, 10, 10, 0.75);
-            border: 1px solid rgba(216, 178, 90, 0.2);
-            backdrop-filter: blur(15px);
-            padding: 60px 40px;
-            margin: 120px 0 40px;
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+            align-self: center;
+            max-width: 800px;
+            padding: 20px 0;
+            margin-top: 50px;
+            /* Moins de margin parce que le padding est dans .hero */
             animation: fadeIn 1.5s ease-out 0.5s forwards;
             opacity: 0;
             z-index: 20;
-            text-align: center;
+            text-align: justify;
         }
 
         .narrative-box p {
             margin-bottom: 30px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 300;
-            line-height: 1.6;
-            color: #aaa;
-            text-align: center;
+            line-height: 1.8;
+            color: #ccc;
+            hyphens: auto;
+            -webkit-hyphens: auto;
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-
-        textarea {
-            width: 100%;
-            height: 280px;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(216, 178, 90, 0.2);
-            border-radius: 2px;
-            padding: 20px;
+        .narrative-box strong {
             color: #fff;
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            resize: none;
-            outline: none;
-            transition: all 0.4s ease;
-            margin-bottom: 30px;
+            font-weight: 600;
         }
 
-        textarea:focus {
-            border-color: var(--gold);
-            background: rgba(216, 178, 90, 0.05);
-            box-shadow: 0 0 30px rgba(216, 178, 90, 0.1);
-        }
-
-        .btn-submit {
-            display: inline-block;
-            padding: 12px 0;
-            min-width: 150px;
-            background: transparent;
-            border: 1px solid transparent;
-            /* No more sandwich lines */
-            color: var(--gold);
-            font-family: 'Inter', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.4em;
-            text-indent: 0.4em;
-            font-size: 0.9rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-            border-radius: 0;
-            position: relative;
-        }
-
-        .btn-submit::after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            left: 50%;
-            /* Centrage horizontal */
-            transform: translateX(-50%);
-            /* Centrage horizontal */
-            width: 0;
-            /* Initialement Ã  0, s'active au survol */
-            height: 1px;
-            /* Ã‰paisseur 1px */
-            background: var(--gold);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        .narrative-box a {
+            color: #3498db;
+            text-decoration: underline dotted;
+            font-style: italic;
+            transition: 0.3s;
         }
 
         @media (hover: hover) {
-            .btn-submit:hover {
-                color: var(--gold);
-                transform: translateY(-5px);
-                text-shadow: 0 0 15px rgba(216, 178, 90, 0.3);
-            }
-
-            .btn-submit:hover::after {
-                width: 60%;
-                /* Soulignement 60% centrÃ© sur Desktop */
-                background: var(--gold);
+            .narrative-box a:hover {
+                color: #fff;
+                text-decoration: underline;
             }
         }
 
-        .btn-submit:visited {
+        .signature {
+            text-align: right;
+            margin-top: 60px;
+            font-family: 'Dancing Script', cursive;
             color: var(--gold);
-        }
-
-        .btn-submit:visited::after {
-            width: 0;
-            background: var(--gold);
-        }
-
-        .btn-submit:active {
-            color: var(--gold);
-        }
-
-        .btn-submit:active::after {
-            width: 30%;
-            /* Plus court sur le clic pour un feedback visuel fin */
-            background: var(--gold);
-        }
-
-        .note {
-            margin-top: 40px;
-            font-size: 0.85rem;
-            color: #666;
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            line-height: 1.6;
-            font-style: italic;
-            text-align: center;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+            font-size: 2rem;
         }
 
         /* ================= FOOTER PWA PREMIUM ================= */
         .footer-pwa {
             background: #111;
             border-top: 1px solid rgba(216, 178, 90, 0.15);
-            padding: 0;
-            margin-top: 0;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
+            padding: 60px 0;
+            margin-top: 80px;
             position: relative;
-            overflow: hidden;
+            z-index: 30;
         }
 
         .footer-container {
             max-width: 1400px;
             margin: 0 auto;
-            width: 100%;
-            padding: 40px;
+            padding: 0 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 40px;
-            z-index: 10;
-            position: relative;
         }
 
         .footer-left {
@@ -437,51 +289,6 @@
             gap: 25px;
             flex: 1;
             min-width: 300px;
-        }
-
-        .footer-nav-links {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 5px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .footer-nav-links a {
-            color: #fff;
-            position: relative;
-            padding-bottom: 6px;
-            position: relative;
-            padding-bottom: 6px;
-            padding-bottom: 6px;
-            text-decoration: none;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            letter-spacing: 0.15em;
-            transition: var(--transition, all 0.4s ease);
-        }
-
-        .footer-nav-links a:hover {
-            color: var(--gold);
-            text-shadow: 0 0 12px rgba(216, 178, 90, 0.5);
-        }
-
-
-
-
-
-
-
-
-
-        .footer-nav-links .sep {
-            color: var(--gold);
-            opacity: 0.4;
-            font-size: 0.8rem;
-            margin: 0 5px;
         }
 
         .pwa-badge-container {
@@ -515,6 +322,11 @@
             transition: all 0.4s ease;
         }
 
+        .pwa-icon-small:hover {
+            filter: drop-shadow(0 0 20px rgba(212, 162, 58, 0.6));
+            transform: scale(1.1);
+        }
+
         .pwa-icon-label {
             font-family: 'Inter', sans-serif;
             font-size: 0.65rem;
@@ -524,11 +336,6 @@
             opacity: 0.8;
         }
 
-        .pwa-icon-small:hover {
-            filter: drop-shadow(0 0 20px rgba(212, 162, 58, 0.6));
-            transform: scale(1.1);
-        }
-
         .footer-right {
             display: flex;
             flex-direction: column;
@@ -536,6 +343,51 @@
             gap: 30px;
             flex: 1;
             min-width: 300px;
+        }
+
+        .footer-nav-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 5px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .footer-nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.15em;
+            transition: all 0.4s ease;
+            position: relative;
+            padding-bottom: 6px;
+        }
+
+        .footer-nav-links a:hover {
+            color: var(--gold);
+            text-shadow: 0 0 12px rgba(216, 178, 90, 0.5);
+        }
+
+        .footer-nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
+
+        @media (hover: hover) {
+            .footer-nav-links a:hover::after {
+                width: 60%;
+            }
         }
 
         .social-grid {
@@ -568,16 +420,11 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: brightness(1);
-            opacity: 0.7;
-            opacity: 0.7;
             opacity: 0.7;
         }
 
         .social-btn:hover img {
             filter: sepia(1) saturate(5) hue-rotate(10deg);
-            opacity: 1;
-            opacity: 1;
             opacity: 1;
         }
 
@@ -592,25 +439,12 @@
             color: #444;
         }
 
-        /* ===== MOBILE ===== */
-        @media (max-width:900px) {
+        /* MOBILE FIXES */
+        @media (max-width: 900px) {
             .footer-pwa {
                 min-height: auto;
                 padding: 20px 0 60px 0;
                 position: relative;
-            }
-
-            .pwa-badge-container {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .pwa-text-banner {
-                filter: drop-shadow(0 0 25px rgba(216, 178, 90, 0.9)) !important;
-            }
-
-            .pwa-icon-small {
-                filter: drop-shadow(0 0 25px rgba(216, 178, 90, 0.9)) !important;
             }
 
             .footer-nav-links {
@@ -632,9 +466,34 @@
                 min-width: auto;
             }
 
+            .hero-background-title {
+                font-size: 10rem !important;
+                top: 40px;
+                left: -20px;
+                color: rgba(216, 178, 90, 0.15);
+                -webkit-text-stroke: 1px rgba(216, 178, 90, 0.15);
+            }
+
             .footer-left {
                 order: 2;
                 min-width: auto;
+            }
+
+            .pwa-badge-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .pwa-text-banner {
+                filter: drop-shadow(0 0 25px rgba(216, 178, 90, 0.9)) !important;
+            }
+
+            .pwa-icon-small {
+                filter: drop-shadow(0 0 25px rgba(216, 178, 90, 0.9)) !important;
+            }
+
+            .social-grid {
+                justify-content: center;
             }
 
             .footer-copyright {
@@ -670,99 +529,6 @@
             .social-btn {
                 width: 50px !important;
                 height: 50px !important;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            footer {
-                padding: 35px 0;
-                font-size: 0.7rem;
-            }
-        }
-
-        @media (max-width: 900px) {
-
-            .narrative-box {
-                width: 98%;
-                max-width: 98%;
-                margin: 20px auto;
-                padding: 30px 10px;
-                align-self: center;
-                text-align: center;
-                background: rgba(5, 5, 5, 0.4);
-                backdrop-filter: blur(5px);
-                border: none;
-                box-shadow: none;
-            }
-
-            /* No decorative bars on mobile */
-            .btn-submit::after {
-                display: none !important;
-            }
-
-            .container {
-                padding: 0 10px 40px;
-            }
-
-            .note {
-                margin-top: 20px;
-            }
-
-            /* Supprimer le soulignement sur mobile pour tous les Ã©lÃ©ments interactifs */
-            a,
-            button,
-            .btn-submit {
-                text-decoration: none !important;
-            }
-
-            a:hover,
-            a:focus,
-            a:active,
-            a:visited {
-                text-decoration: none !important;
-            }
-        }
-
-        /* Mobile: Remove decorative underlines/bars on buttons and links */
-        @media (max-width: 768px) {
-
-            a::after,
-            button::after,
-            [class*="btn"]::after,
-            [class*="link"]::after,
-            .print-btn span::after {
-                display: none !important;
-            }
-        }
-
-        /* --- LUXURY UNDERLINE SYSTEM --- */
-        .footer-nav a::after,
-        .footer-nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 1px;
-            background: var(--gold);
-            transition: all 0.4s ease;
-            transform: translateX(-50%);
-        }
-
-        @media (hover: hover) {
-
-            .footer-nav a:hover::after,
-            .footer-nav-links a:hover::after {
-                width: 60%;
-            }
-        }
-
-        /* --- SÃ‰CURITÃ‰ : RÃ©tablir largeur 0 sur Mobile pour Ã©viter conflits --- */
-        @media (max-width: 900px) {
-
-            .btn-submit::after,
-            .footer-nav-links a::after {
-                display: none !important;
             }
         }
     </style>
@@ -802,24 +568,34 @@
                 justify-content: flex-end !important;
                 gap: 15px !important;
             }
+
+            .hero {
+                padding-top: 530px !important;
+            }
+
+            .narrative-box {
+                margin-top: 50px !important;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
     </style>
     <script>
         // SYSTÃˆME DE GESTION PWA - FORCE UPDATE v106
-        (async function () {
-            const v = 'v106.radical_kill_switch';
+        (async function() {
+            const v = 'v1011.pwa_fix';
             if (localStorage.getItem('pwa_v') !== v) {
                 if ('serviceWorker' in navigator) {
                     try {
                         const regs = await navigator.serviceWorker.getRegistrations();
                         for (const r of regs) await r.unregister();
-                    } catch (e) { }
+                    } catch(e) {}
                 }
                 if ('caches' in window) {
                     try {
                         const keys = await caches.keys();
                         for (const k of keys) await caches.delete(k);
-                    } catch (e) { }
+                    } catch(e) {}
                 }
                 localStorage.clear();
                 sessionStorage.clear();
@@ -827,9 +603,9 @@
                 window.location.reload(true);
             } else {
                 if ('serviceWorker' in navigator) {
-                    navigator.serviceWorker.register('/sw-v103.js?v=106_' + Date.now(), {
+                    navigator.serviceWorker.register('/sw-v103.js?v=1011_' + Date.now(), {
                         updateViaCache: 'none'
-                    }).catch(() => { });
+                    }).catch(() => {});
                 }
             }
         })();
@@ -892,25 +668,32 @@
         </svg>
     </div>
 
-    <!-- NOUVEL ENTÃŠTE HAUT DE GAMME -->
+    <!-- NOUVEL ENTÃŠTE HAUT DE GAMME (MOCKUP-ACCURATE) -->
     <div class="premium-header-card">
         <div class="premium-bg">
+            <!-- Texture et Ã©toiles -->
             <div class="dust-texture"></div>
+            <!-- Astrolabe SVG - Version Dense / Haute VisibilitÃ© -->
             <svg class="astrolabe" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid slice"
                 xmlns="http://www.w3.org/2000/svg">
                 <g stroke="#D4A23A" fill="none" class="astrolabe-group">
+                    <!-- Cercles de base, centrÃ©s -->
                     <g opacity="0.4" stroke-width="0.8">
                         <circle cx="500" cy="150" r="80" />
                         <circle cx="500" cy="150" r="160" />
                         <circle cx="500" cy="150" r="240" stroke-dasharray="2 4" />
                         <circle cx="500" cy="150" r="350" stroke-dasharray="1 6" stroke-width="1.2" />
                     </g>
+
+                    <!-- Arcs et cercles superposÃ©s (Effet riche de carte stellaire) -->
                     <g opacity="0.4" stroke-width="0.7">
                         <circle cx="300" cy="50" r="200" stroke-dasharray="4 8" />
                         <circle cx="700" cy="250" r="200" stroke-dasharray="4 8" />
                         <circle cx="500" cy="-100" r="350" stroke-width="0.5" />
                         <circle cx="500" cy="400" r="350" stroke-width="0.5" />
                     </g>
+
+                    <!-- Lignes radiales et quadrillage stellaire -->
                     <g opacity="0.3" stroke-width="0.6">
                         <line x1="0" y1="150" x2="1000" y2="150" />
                         <line x1="500" y1="-100" x2="500" y2="400" />
@@ -919,9 +702,13 @@
                         <line x1="250" y1="-100" x2="750" y2="400" />
                         <line x1="250" y1="400" x2="750" y2="-100" />
                     </g>
+
+                    <!-- Constellation (Lignes Ã©paisses et brillantes) -->
                     <path
                         d="M 120 100 L 220 50 L 320 160 L 460 70 L 620 200 M 320 160 L 420 250 M 220 50 L 160 220 L 280 250 L 420 250 L 520 150 L 620 200 L 780 120 M 520 150 L 700 80 M 700 80 L 850 180"
                         fill="none" stroke="#FDE48D" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.75" />
+
+                    <!-- Constellation (Ã‰toiles fixes trÃ¨s brillantes) -->
                     <g fill="#FDE48D" stroke="none">
                         <circle cx="120" cy="100" r="3" opacity="0.9" />
                         <circle cx="220" cy="50" r="5" opacity="1" />
@@ -939,14 +726,13 @@
                 </g>
             </svg>
         </div>
+
         <div class="premium-content">
-            <div class="premium-title-group" style="gap: 15px;">
+                        <div class="premium-title-group" style="gap: 15px;">
                 <h1 class="premium-title" style="flex-direction: column; align-items: flex-start; gap: 5px;">
-                    <span class="title-white"
-                        style="font-size: clamp(2rem, 7vw, 4.5rem); line-height: 0.9; margin-left: 5px;">ME</span>
+                    <span class="title-white" style="font-size: clamp(2rem, 9vw, 5.5rem); line-height: 0.9; margin-left: 5px;">Ã€</span>
                     <div class="title-gold-wrapper">
-                        <span class="title-gold" data-text="CONTACTER"
-                            style="font-size: clamp(3rem, 11vw, 8.5rem); line-height: 0.9;">CONTACTER</span>
+                        <span class="title-gold" data-text="PROPOS" style="font-size: clamp(3rem, 13vw, 10.5rem); line-height: 0.9;">PROPOS</span>
                     </div>
                 </h1>
             </div>
@@ -954,15 +740,6 @@
     </div>
 
     <style>
-        .hero {
-            padding: 530px 40px 100px !important;
-        }
-
-        .narrative-box {
-            margin-top: 50px !important;
-            margin-left: auto;
-            margin-right: auto;
-        }
         .premium-header-card {
             position: absolute;
             top: 20px;
@@ -1062,10 +839,19 @@
         }
 
         .title-gold {
-            font-size: clamp(5.6rem, 13vw, 8.4rem);
+            font-size: clamp(7.8rem, 17.4vw, 12rem);
             font-weight: 900;
             letter-spacing: -0.01em;
-            background: linear-gradient(170deg, #E0B861 0%, #FDF1A9 20%, #D4A23A 40%, #A87A1E 50%, #FDE48D 60%, #C5922C 80%, #8A5E0B 100%);
+
+            /* Gold Foil / Metallic Gradient */
+            background: linear-gradient(170deg,
+                    #E0B861 0%,
+                    #FDF1A9 20%,
+                    #D4A23A 40%,
+                    #A87A1E 50%,
+                    #FDE48D 60%,
+                    #C5922C 80%,
+                    #8A5E0B 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
@@ -1073,38 +859,54 @@
             filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.5));
         }
 
+        /* Ombre portÃ©e 3D Ã©paisse (extrusion) enlevÃ©e */
+
         .title-white {
-            font-size: clamp(6.8rem, 15vw, 10rem);
+            font-size: clamp(9.6rem, 19.5vw, 14.4rem);
             font-weight: 900;
             color: #FFFFFF;
             letter-spacing: -0.01em;
             text-shadow: 0 5px 15px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
+        .premium-subtitle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .compass-mini {
+            width: 20px;
+            height: 20px;
+            opacity: 0.8;
+        }
+
+        .vp-text {
+            font-family: 'Montserrat', 'Inter', sans-serif;
+            font-size: clamp(0.6rem, 1vw, 0.8rem);
+            font-weight: 400;
+            letter-spacing: 0.5em;
+            color: rgba(255, 255, 255, 0.55);
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-left: 2px;
+        }
+
         .top-links {
             margin-left: auto;
         }
-
         @media (max-width: 900px) {
-            .hero {
-                padding: 250px 10px 80px !important;
-            }
-
-            .narrative-box {
-                margin-top: 20px !important;
-                width: 96% !important;
-                max-width: 96% !important;
-                padding: 20px 2% !important;
-            }
-
             .premium-header-card {
                 top: 20px;
                 height: auto;
                 min-height: 160px;
+                background: radial-gradient(ellipse at 50% -10%, #3a4855 0%, #1c242b 30%, #0a0d10 50%, #000000 70%) !important;
                 padding: 45px 10px;
                 flex-direction: column;
                 justify-content: center;
             }
+
+
 
             .premium-content {
                 flex-direction: column;
@@ -1127,19 +929,33 @@
             }
 
             .title-gold {
-                font-size: clamp(2.5rem, 12vw, 3.4rem);
                 line-height: 1.1;
             }
 
             .title-white {
-                font-size: clamp(2rem, 11vw, 3.8rem);
                 line-height: 1.1;
                 letter-spacing: -1px;
+            }
+
+            .vp-text {
+                font-size: 0.6rem;
+                letter-spacing: 0.4em;
             }
 
             .top-links {
                 margin-left: 0;
                 margin-top: 5px;
+            }
+
+            .hero {
+                padding: 250px 10px 80px !important;
+            }
+
+            .narrative-box {
+                margin-top: 20px !important;
+                width: 96% !important;
+                max-width: 96% !important;
+                padding: 20px 2% !important;
             }
         }
     
@@ -1161,19 +977,64 @@
 
     <!-- NARRATIVE SECTION (Extracted from inside the header so it doesn't overlap) -->
     <header class="hero">
-
         <div class="narrative-box">
-            <p>Si vous souhaitez m'Ã©crire ou partager une rÃ©flexion, votre message me parviendra directement.</p>
+            <p>
+                <strong>Mon Univers.ca</strong> est un espace personnel de rÃ©flexion, de crÃ©ation
+                et de transmission. Câ€™est une vitrine intime, nÃ©e du dÃ©sir de
+                rassembler des fragments de parcours, de pensÃ©e et de sens.
+            </p>
 
-            <form onsubmit="sendMail(event)">
-                <textarea id="message" maxlength="500" placeholder="Votre message..."></textarea>
-                <button class="btn-submit" type="submit">Envoyer</button>
-            </form>
-            <div class="note">
-                Le message sera transmis via votre service de messagerie. Aucune donnÃ©e n'est stockÃ©e sur ce serveur.
+            <p>
+                Au-delÃ  de mon livre <a href="https://www.simonlero.com/livre-accueil.html">Rencontres au Clair de
+                    Lune</a> et de mon <a href="cv-secure.html">curriculum vitae</a>, ce site est conÃ§u comme un
+                <strong>scrapbook numÃ©rique</strong> rassemblant les fragments essentiels de mon univers :
+                mon <a href="parcours_entrepreneurial.html">parcours entrepreneurial</a>,
+                ma <a href="galerie.html">galerie personnelle</a>, mes <a href="sources.html">sources
+                    dâ€™inspiration</a> et
+                mon <a href="memoire.html">mÃ©moire universitaire</a>.
+            </p>
+
+            <p>
+                Le choix du titre <em>Mon Univers.ca</em> se veut Ã  la fois au sens figurÃ©
+                et au sens propre. Il dÃ©signe autant mon univers intÃ©rieur â€”
+                fait de rÃ©flexions, de mÃ©moire et de crÃ©ation â€” que lâ€™univers
+                au sens scientifique, vaste, mystÃ©rieux et encore largement inconnu.
+            </p>
+
+            <p>
+                Ce site nâ€™a pas vocation Ã  convaincre, mais Ã  partager une maniÃ¨re de regarder le monde, de
+                penser le temps, la mÃ©moire, et ce qui relie les choses entre elles â€” non pas comme des vÃ©-
+                ritÃ©s figÃ©es, mettant en relief ce qui nous unit.
+            </p>
+
+            <p>
+                Une part importante de mon temps libre est consacrÃ©e Ã  lâ€™Ã©coute de confÃ©rences et Ã  la rÃ©-
+                flexion autour de lâ€™astronomie, de lâ€™astrophysique et des sciences quantiques. Ces domaines
+                nourrissent ma curiositÃ© et influencent profondÃ©ment le thÃ¨me central de ce site.
+            </p>
+
+            <p>
+                Albert Einstein disait que lâ€™imagination est plus importante que la connaissance, car la
+                connaissance est limitÃ©e, alors que lâ€™imagination embrasse le monde. Cette idÃ©e mâ€™accom-
+                pagne depuis longtemps. Elle traverse ce site, oÃ¹ lâ€™univers nâ€™est pas abordÃ© uniquement
+                comme un objet dâ€™Ã©tude scientifique, mais aussi comme un espace dâ€™Ã©merveillement et de li-
+                bertÃ© intÃ©rieure.
+            </p>
+
+            <p>
+                Il sâ€™adresse Ã  celles et ceux qui prennent le temps,
+                qui doutent, qui observent,
+                et qui savent que la rÃ©flexion
+                est parfois plus importante que la rÃ©ponse.
+            </p>
+
+            <div class="signature">
+                â€” Daniel
             </div>
         </div>
     </header>
+
+
 
     <footer class="footer-pwa">
         <div class="footer-container">
@@ -1201,13 +1062,13 @@
 
             <div class="footer-right">
                 <div class="footer-nav-links">
-                    <a href="index.html?v=32.0">Accueil</a>
+                    <a href="index.html?v=31.0">Accueil</a>
                             <span class="sep">&bull;</span>
-                            <a href="faq.html?v=32.0">FAQ</a>
+                            <a href="faq.html?v=31.0">FAQ</a>
                             <span class="sep">&bull;</span>
-                            <a href="apropos.html?v=32.0">Ã€ propos</a>
+                            <a href="apropos.html?v=31.0">Ã€ propos</a>
                             <span class="sep">&bull;</span>
-                            <a href="contact.html?v=32.0">Me contacter</a>
+                            <a href="contact.html?v=31.0">Me contacter</a>
                 </div>
                 <div class="social-grid">
                     <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
@@ -1225,19 +1086,8 @@
                 droits rÃ©servÃ©s </p>
         </div>
     </footer>
-    <script>document.getElementById('current-year-footer').textContent = new Date().getFullYear();</script>
-
     <script>
-        function sendMail(event) {
-            event.preventDefault();
-            const message = document.getElementById('message').value;
-            if (message.trim() === "") {
-                alert("Veuillez saisir un message.");
-                return;
-            }
-            const body = encodeURIComponent(message);
-            window.location.href = `mailto:daniel_l_heureux@hotmail.com?subject=Contact via mon-univers.ca&body=${body}`;
-        }
+        document.getElementById('current-year-footer').textContent = new Date().getFullYear();
     </script>
 </body>
 

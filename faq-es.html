@@ -755,6 +755,26 @@
             });
         });
     </script>
+
+    <!-- PWA Install Logic -->
+    <script>
+        function installPWA() {
+            if (window.deferredPrompt) {
+                window.deferredPrompt.prompt();
+                window.deferredPrompt.userChoice.then(() => {
+                    window.deferredPrompt = null;
+                });
+            } else {
+                // If deferredPrompt is null, meaning prompt cannot be shown
+                // We could dispatch an event or log it.
+                console.log("Installation non disponible ou l'application est déjà installée.");
+            }
+        }
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            window.deferredPrompt = e;
+        });
+    </script>
 </head>
 
 <body class="notranslate" translate="no">

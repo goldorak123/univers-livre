@@ -526,6 +526,7 @@
 
       .poetic-box {
         padding-left: 20px;
+        margin-top: 90px;
         margin-bottom: 40px;
       }
 
@@ -574,8 +575,8 @@
         }
 
         .lang-selector a {
-        color: rgba(216, 178, 90, 0.9);
-      }
+          color: rgba(216, 178, 90, 0.9);
+        }
 
         .lang-selector a.active {
           color: var(--gold);
@@ -688,7 +689,7 @@
     }
 
     .footer-nav-links a {
-      color: var(--gold) ;
+      color: var(--gold);
       text-decoration: none;
       font-family: 'Inter', sans-serif, serif;
       font-size: 0.95rem;
@@ -921,18 +922,21 @@
     .footer-nav-links a:hover::after {
       width: 60%;
     }
-  
+
     /* PWA Highlights */
-    .pwa-text-banner, .pwa-icon-small {
+    .pwa-text-banner,
+    .pwa-icon-small {
       filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
       opacity: 1 !important;
       transition: all 0.4s ease;
     }
-    .pwa-text-banner:hover, .pwa-icon-small:hover {
+
+    .pwa-text-banner:hover,
+    .pwa-icon-small:hover {
       transform: scale(1.05);
       filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
     }
-    
+
 
     /* Ensure PWA always shows it on Desktop if needed (redundancy) */
     @media (display-mode: standalone) {
@@ -941,66 +945,66 @@
       }
     }
   </style>
-    <!-- PWA Installation Logic -->
-    <script>
-        // SYSTÈME DE GESTION PWA - FORCE UPDATE v42
-        (async function() {
-            const v = 'v42.pwa_fix';
-            if (localStorage.getItem('pwa_v') !== v) {
-                if ('serviceWorker' in navigator) {
-                    try {
-                        const regs = await navigator.serviceWorker.getRegistrations();
-                        for (const r of regs) await r.unregister();
-                    } catch(e) {}
-                }
-                if ('caches' in window) {
-                    try {
-                        const keys = await caches.keys();
-                        for (const k of keys) await caches.delete(k);
-                    } catch(e) {}
-                }
-                localStorage.clear();
-                sessionStorage.clear();
-                localStorage.setItem('pwa_v', v);
-                window.location.reload(true);
-            } else {
-                if ('serviceWorker' in navigator) {
-                    navigator.serviceWorker.register('/sw-v41.js?v=42_' + Date.now(), {
-                        updateViaCache: 'none'
-                    }).catch(() => {});
-                }
-            }
-        })();
+  <!-- PWA Installation Logic -->
+  <script>
+    // SYSTÈME DE GESTION PWA - FORCE UPDATE v42
+    (async function () {
+      const v = 'v42.pwa_fix';
+      if (localStorage.getItem('pwa_v') !== v) {
+        if ('serviceWorker' in navigator) {
+          try {
+            const regs = await navigator.serviceWorker.getRegistrations();
+            for (const r of regs) await r.unregister();
+          } catch (e) { }
+        }
+        if ('caches' in window) {
+          try {
+            const keys = await caches.keys();
+            for (const k of keys) await caches.delete(k);
+          } catch (e) { }
+        }
+        localStorage.clear();
+        sessionStorage.clear();
+        localStorage.setItem('pwa_v', v);
+        window.location.reload(true);
+      } else {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw-v41.js?v=42_' + Date.now(), {
+            updateViaCache: 'none'
+          }).catch(() => { });
+        }
+      }
+    })();
 
-        // LOGIQUE D'INSTALLATION
-        window.installPWA = function() {
-            if (window.deferredPrompt) {
-                window.deferredPrompt.prompt();
-                window.deferredPrompt.userChoice.then(() => {
-                    window.deferredPrompt = null;
-                });
-            } else {
-                console.log("Installation non disponible ou l'application est déjà installée.");
-            }
-        };
-        
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            window.deferredPrompt = e;
+    // LOGIQUE D'INSTALLATION
+    window.installPWA = function () {
+      if (window.deferredPrompt) {
+        window.deferredPrompt.prompt();
+        window.deferredPrompt.userChoice.then(() => {
+          window.deferredPrompt = null;
         });
+      } else {
+        console.log("Installation non disponible ou l'application est déjà installée.");
+      }
+    };
 
-        // BIND BUTTONS AUTOMATICALLY
-        document.addEventListener('DOMContentLoaded', () => {
-            const btns = document.querySelectorAll('#installAppBtn, #install-btn');
-            btns.forEach(btn => {
-                btn.style.cursor = 'pointer';
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    window.installPWA();
-                });
-            });
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      window.deferredPrompt = e;
+    });
+
+    // BIND BUTTONS AUTOMATICALLY
+    document.addEventListener('DOMContentLoaded', () => {
+      const btns = document.querySelectorAll('#installAppBtn, #install-btn');
+      btns.forEach(btn => {
+        btn.style.cursor = 'pointer';
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.installPWA();
         });
-    </script>
+      });
+    });
+  </script>
 </head>
 
 <body class="notranslate" translate="no">
@@ -1083,9 +1087,13 @@
               </div>
             </div>
           </div>
-        
-                    <button id="installAppBtn" class="btn-install-pwa" style="display: block; margin-top: 20px; background: transparent; border: 1px solid rgba(212, 162, 58, 0.4); color: var(--gold); padding: 5px 12px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;" onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">Instalar App</button>
-                </div>
+
+          <button id="installAppBtn" class="btn-install-pwa"
+            style="display: block; margin-top: 20px; background: transparent; border: 1px solid rgba(212, 162, 58, 0.4); color: var(--gold); padding: 5px 12px; border-radius: 30px; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;"
+            onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';"
+            onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';">Instalar
+            App</button>
+        </div>
 
         <div class="footer-right">
           <div class="footer-nav-links">
@@ -1110,7 +1118,9 @@
         </div>
       </div>
 
-      <p class="footer-copyright"><a href="404.html" style="text-decoration: none; color: inherit; cursor: default;">C</a>opyright &copy; <span id="current-year-footer"></span> simonlero.com &mdash; Todos los derechos
+      <p class="footer-copyright"><a href="404.html"
+          style="text-decoration: none; color: inherit; cursor: default;">C</a>opyright &copy; <span
+          id="current-year-footer"></span> simonlero.com &mdash; Todos los derechos
         reservados</p>
     </div>
   </footer>

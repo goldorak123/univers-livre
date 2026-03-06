@@ -448,10 +448,32 @@
             transition: all 0.4s ease;
         }
 
-        .pwa-icon-small:hover {
-            transform: scale(1.1);
-            filter: drop-shadow(0 0 15px rgba(212, 162, 58, 0.6));
+        
+        .pwa-text-banner {
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        .pwa-text-banner:hover {
+            filter: drop-shadow(0 0 25px rgba(216, 178, 90, 1)) !important;
+            transform: scale(1.02);
+        }
+        .pwa-install-hint {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.55rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: rgba(170, 170, 170, 0.8);
+            text-transform: uppercase;
+            margin-top: 2px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+        }
+        .pwa-install-hint:hover {
+            color: var(--gold, #d8b25a);
+        }
+
 
         .pwa-icon-label {
             font-family: 'Cinzel', serif;
@@ -651,10 +673,32 @@
       opacity: 1 !important;
       transition: all 0.4s ease;
     }
-    .pwa-text-banner:hover, .pwa-icon-small:hover {
-      transform: scale(1.05);
-      filter: brightness(1.4) saturate(1.4) drop-shadow(0 0 20px rgba(212, 162, 58, 0.8)) !important;
-    }
+    .pwa-text-banner:hover, 
+        .pwa-text-banner {
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .pwa-text-banner:hover {
+            filter: drop-shadow(0 0 25px rgba(216, 178, 90, 1)) !important;
+            transform: scale(1.02);
+        }
+        .pwa-install-hint {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.55rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: rgba(170, 170, 170, 0.8);
+            text-transform: uppercase;
+            margin-top: 2px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+        }
+        .pwa-install-hint:hover {
+            color: var(--gold, #d8b25a);
+        }
+
     
 
     /* Ensure PWA always shows it on Desktop if needed (redundancy) */
@@ -1101,7 +1145,8 @@
             <div class="footer-main">
                 <div class="footer-left" style="display: flex; flex-direction: column; align-items: center;">
                     <div class="pwa-badge-container">
-                        <img src="pwa-text-banner.png" alt="PWA Optimis&eacute;" class="pwa-text-banner">
+                        <img src="pwa-text-banner.png" alt="PWA Optimisé" class="pwa-text-banner" onclick="if(typeof installPWA === 'function') installPWA();" title="Cliquez pour installer l'application">
+                    <div class="pwa-install-hint" onclick="if(typeof installPWA === 'function') installPWA();">Cliquez pour installer l'application</div>
                         <div class="pwa-icons-box">
                             <div class="pwa-icon-item">
                                 <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
@@ -1114,7 +1159,7 @@
                         </div>
                     </div>
                 
-                    <button id="installAppBtn" class="btn-install-pwa" style="display: block; margin-top: 20px; background: transparent; border: 1px solid rgba(212, 162, 58, 0.4); color: var(--gold); padding: 8px 16px; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.4s ease;" onmouseover="this.style.background='rgba(216, 178, 90, 0.15)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='transparent'; this.style.transform='translateY(0)';" onclick="if(typeof installPWA === 'function') { installPWA(); }">Installer l'App</button>
+                    
                 </div>
 
                 <div class="footer-right">

@@ -54,7 +54,33 @@
     .footer-nav-links a:hover::after {
       width: 60%;
     }
-  </style>
+  
+        .pwa-text-banner {
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .pwa-text-banner:hover {
+            filter: drop-shadow(0 0 25px rgba(216, 178, 90, 1)) !important;
+            transform: scale(1.02);
+        }
+        .pwa-install-hint {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.55rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: rgba(170, 170, 170, 0.8);
+            text-transform: uppercase;
+            margin-top: 2px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+        }
+        .pwa-install-hint:hover {
+            color: var(--gold, #d8b25a);
+        }
+
+    </style>
 
   <style>
     @media (max-width: 900px) {

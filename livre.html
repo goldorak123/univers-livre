@@ -522,15 +522,15 @@
       transform: translate(-50%, -50%);
       width: 100%;
       max-width: 600px;
-      height: 1200px;
-      /* Allongé x2 */
+      height: 600px;
       background: url('poussiere-or.png') center / cover no-repeat;
       mix-blend-mode: screen;
       opacity: 0.35;
       pointer-events: none;
       z-index: 0;
-      -webkit-mask-image: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
-      mask-image: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
+      /* Masque rééquilibré pour la poussière : centre clair étendu, fondu lointain */
+      -webkit-mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
+      mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
     }
 
     .hero-actions-container .cta-main {
@@ -545,15 +545,9 @@
     }
 
     @media (min-width: 1001px) {
-      .hero-actions-container {
-        align-items: center;
-      }
+      .hero-actions-container { align-items: center; }
 
-      .hero-actions-container .cta-main {
-        width: 100%;
-        max-width: 350px;
-        justify-content: center;
-      }
+      .hero-actions-container .cta-main { width: 100%; max-width: 350px; justify-content: center; }
 
       .dust-filigree {
         left: 30%;
@@ -562,7 +556,7 @@
 
     /* REFINED AUTHOR SECTION - Large Portrait */
     .author-section {
-      padding: 0 0 60px 0;
+      padding: 60px 0;
     }
 
     .author-portrait-grid {
@@ -608,7 +602,7 @@
     }
 
     section {
-      /* border-top a été supprimé pour laisser la poussière d'or déborder */
+      border-top: 1px solid var(--border);
     }
 
     #discovery {
@@ -1663,66 +1657,66 @@
       }
     }
   </style>
-  <!-- PWA Installation Logic -->
-  <script>
-    // SYSTÈME DE GESTION PWA - FORCE UPDATE v42
-    (async function () {
-      const v = 'v42.pwa_fix';
-      if (localStorage.getItem('pwa_v') !== v) {
-        if ('serviceWorker' in navigator) {
-          try {
-            const regs = await navigator.serviceWorker.getRegistrations();
-            for (const r of regs) await r.unregister();
-          } catch (e) { }
-        }
-        if ('caches' in window) {
-          try {
-            const keys = await caches.keys();
-            for (const k of keys) await caches.delete(k);
-          } catch (e) { }
-        }
-        localStorage.clear();
-        sessionStorage.clear();
-        localStorage.setItem('pwa_v', v);
-        window.location.reload(true);
-      } else {
-        if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('/sw-v41.js?v=42_' + Date.now(), {
-            updateViaCache: 'none'
-          }).catch(() => { });
-        }
-      }
-    })();
+    <!-- PWA Installation Logic -->
+    <script>
+        // SYSTÈME DE GESTION PWA - FORCE UPDATE v42
+        (async function() {
+            const v = 'v42.pwa_fix';
+            if (localStorage.getItem('pwa_v') !== v) {
+                if ('serviceWorker' in navigator) {
+                    try {
+                        const regs = await navigator.serviceWorker.getRegistrations();
+                        for (const r of regs) await r.unregister();
+                    } catch(e) {}
+                }
+                if ('caches' in window) {
+                    try {
+                        const keys = await caches.keys();
+                        for (const k of keys) await caches.delete(k);
+                    } catch(e) {}
+                }
+                localStorage.clear();
+                sessionStorage.clear();
+                localStorage.setItem('pwa_v', v);
+                window.location.reload(true);
+            } else {
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('/sw-v41.js?v=42_' + Date.now(), {
+                        updateViaCache: 'none'
+                    }).catch(() => {});
+                }
+            }
+        })();
 
-    // LOGIQUE D'INSTALLATION
-    window.installPWA = function () {
-      if (window.deferredPrompt) {
-        window.deferredPrompt.prompt();
-        window.deferredPrompt.userChoice.then(() => {
-          window.deferredPrompt = null;
+        // LOGIQUE D'INSTALLATION
+        window.installPWA = function() {
+            if (window.deferredPrompt) {
+                window.deferredPrompt.prompt();
+                window.deferredPrompt.userChoice.then(() => {
+                    window.deferredPrompt = null;
+                });
+            } else {
+                console.log("Installation non disponible ou l'application est déjà installée.");
+            }
+        };
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            window.deferredPrompt = e;
         });
-      } else {
-        console.log("Installation non disponible ou l'application est déjà installée.");
-      }
-    };
 
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      window.deferredPrompt = e;
-    });
-
-    // BIND BUTTONS AUTOMATICALLY
-    document.addEventListener('DOMContentLoaded', () => {
-      const btns = document.querySelectorAll('#installAppBtn, #install-btn');
-      btns.forEach(btn => {
-        btn.style.cursor = 'pointer';
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          window.installPWA();
+        // BIND BUTTONS AUTOMATICALLY
+        document.addEventListener('DOMContentLoaded', () => {
+            const btns = document.querySelectorAll('#installAppBtn, #install-btn');
+            btns.forEach(btn => {
+                btn.style.cursor = 'pointer';
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.installPWA();
+                });
+            });
         });
-      });
-    });
-  </script>
+    </script>
 </head>
 
 <body class="notranslate" translate="no">

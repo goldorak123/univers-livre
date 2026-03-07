@@ -1,0 +1,2032 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="manifest" href="manifest.json?v=1009">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#000000">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="robots" content="index, follow">
+    <meta name="description"
+        content="Discover 'Encounters by Moonlight' by Simon Lero, a poetic novel blending art, literature, and introspection. Explore the emotional journey in Encounters by Moonlight.">
+    <meta name="keywords"
+        content="Encounters by Moonlight, Simon Lero, poetic novel, literature, art, memory, LGBT, book">
+
+    <title>Simon Lero – Encounters by Moonlight</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="book">
+    <meta property="og:title" content="Encounters by Moonlight - Simon Lero">
+    <meta property="og:description"
+        content="Discover 'Encounters by Moonlight' by Simon Lero, a poetic novel blending art, literature, and introspection. Explore the emotional journey in Encounters by Moonlight.">
+    <meta property="og:image" content="https://www.simonlero.com/couverture-livre-en.png">
+    <meta property="og:locale" content="en_US">
+
+    <link rel="alternate" hreflang="fr" href="https://www.simonlero.com/livre.html" />
+    <link rel="alternate" hreflang="en" href="https://www.simonlero.com/livre-en.html" />
+    <link rel="alternate" hreflang="es" href="https://www.simonlero.com/livre-es.html" />
+    <link rel="canonical" href="https://www.simonlero.com/livre-en.html">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #c9a24d;
+            --gold-bright: #eec165;
+            --bg: #000;
+            --bg-card: #0c0c0c;
+            --text: #B0B0B0;
+            --text-dim: #888;
+            --border: rgba(201, 162, 77, 0.12);
+            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Premium Back Button */
+        .back-hub-btn {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1000;
+            width: 45px;
+            height: 45px;
+            background: rgba(10, 10, 10, 0.6);
+            border: 1px solid rgba(212, 162, 58, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            text-decoration: none !important;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-hub-btn svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        @media (hover: hover) {
+            .back-hub-btn:hover {
+                background: rgba(212, 162, 58, 0.15);
+                border-color: var(--gold);
+                transform: scale(1.1);
+                box-shadow: 0 15px 40px rgba(212, 162, 58, 0.2);
+            }
+
+            .back-hub-btn:hover svg {
+                transform: translateX(-3px);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .back-hub-btn {
+                top: 20px;
+                left: 20px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            background: #000 !important;
+            margin: 0;
+            padding: 0;
+            color: #f0f0f0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        button:focus,
+        .shop-card:focus {
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Focus Reset */
+        a:focus,
+        button:focus,
+        .shop-card:focus {
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+
+        .corner-glow {
+            position: fixed;
+            width: 40vw;
+            opacity: 0.8;
+        }
+
+        .glow-tl {
+            top: -10vw;
+            left: -10vw;
+        }
+
+        .glow-br {
+            bottom: -10vw;
+            right: -10vw;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        h1,
+        h2,
+        h3,
+        .label {
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .hero {
+            position: relative;
+            padding: 280px 40px 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 1400px;
+            margin: 0 auto;
+            z-index: 10;
+            text-align: left;
+            overflow: visible;
+        }
+
+        .hero-background-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(10rem, 30vw, 28rem);
+            font-weight: 900;
+            color: rgba(216, 178, 90, 0.09);
+            -webkit-text-stroke: 1px rgba(216, 178, 90, 0.09);
+            position: absolute;
+            top: 40px;
+            left: 80px;
+            line-height: 0.9;
+            text-transform: uppercase;
+            z-index: 1;
+            pointer-events: none;
+            letter-spacing: -0.05em;
+            animation: slideInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .title-line {
+            display: block;
+            line-height: 0.9;
+            text-transform: uppercase;
+        }
+
+        .title-line-1 {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: -0.05em;
+            animation: slideInLeft 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .title-line-2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 800;
+            color: var(--gold);
+            margin-left: clamp(1rem, 5vw, 100px);
+            animation: slideInLeft 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-150px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Navigation */
+        .lang-selector {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            margin: 20px 80px 0;
+            position: relative;
+            z-index: 200;
+            align-items: center;
+        }
+
+        .lang-selector a {
+            color: #fff;
+            text-decoration: none !important;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transition: var(--transition);
+            opacity: 0.6;
+        }
+
+        .lang-selector .sep {
+            color: #fff;
+            opacity: 0.3;
+            font-size: 0.8rem;
+        }
+
+        @media (hover: hover) {
+            .lang-selector a:hover {
+                color: var(--gold);
+                opacity: 1;
+            }
+        }
+
+        /* Hero Section */
+        .hero-stage {
+            \n min-height: auto;
+            \n display: flex;
+            \n align-items: flex-start;
+            \n            padding: 180px 0 40px;
+            position: relative;
+            overflow: visible;
+        }
+
+        .grid-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .hero-presentation-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            width: 100%;
+            align-items: center;
+        }
+
+        @media (min-width: 1001px) {
+            .hero-presentation-grid {
+                grid-template-columns: 1.1fr 1fr;
+                gap: 80px;
+            }
+
+            .hero-summary {
+                margin-top: 0 !important;
+                text-align: left;
+            }
+
+            .hero-summary p {
+                text-align: left;
+            }
+
+            .book-frame {
+                justify-self: center;
+            }
+        }
+
+        .book-frame {
+            position: relative;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .book-frame img {
+            width: 100%;
+            display: block;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+            transition: var(--transition);
+        }
+
+        .hero-summary {
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: #A0A0A0;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .hero-summary p {
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            margin-bottom: 10px;
+        }
+
+        .cta-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+            padding: 18px 40px;
+            background: transparent;
+            border: 1px solid transparent;
+            /* No more sandwich lines */
+            color: var(--gold);
+            text-decoration: none !important;
+            font-family: 'Inter', sans-serif, serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+
+        .cta-main:visited {
+            color: var(--gold);
+        }
+
+        .cta-main:active {
+            color: #fff;
+        }
+
+        .cta-main::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: all 0.5s ease;
+            transform: translateX(-50%);
+        }
+
+        @media (hover: hover) {
+            .cta-main:hover {
+                color: var(--gold-bright);
+                transform: translateY(-5px);
+                text-shadow: 0 0 15px rgba(201, 162, 77, 0.3);
+            }
+
+
+            .cta-main:hover::after {
+                width: 60%;
+                background: var(--gold);
+            }
+        }
+
+        .btn-author {
+            display: inline-block;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif, serif;
+            text-decoration: none !important;
+            position: relative;
+            padding-bottom: 5px;
+            transition: all 0.4s ease;
+            margin-top: 10px;
+        }
+
+        .btn-author::after {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
+
+        @media (hover: hover) {
+            .btn-author:hover {
+                color: var(--gold-bright);
+                transform: translateY(-3px);
+                text-shadow: 0 0 15px rgba(201, 162, 77, 0.3);
+            }
+
+            .btn-author:hover::after {
+                width: 60%;
+                background: var(--gold);
+            }
+        }
+
+        /* MAGIC BUTTONS ALIGNMENT & DUST */
+        .hero-actions-container {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
+      margin-top: 40px;
+      width: 100%;
+      position: relative;
+    }
+
+    .dust-filigree {
+      position: absolute;
+      top: 150%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 600px;
+      height: 600px;
+      background: url('poussiere-or.png') center / cover no-repeat;
+      mix-blend-mode: screen;
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+      /* Masque rééquilibré pour la poussière : centre clair étendu, fondu lointain */
+      -webkit-mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
+      mask-image: radial-gradient(closest-side, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 90%);
+    }
+
+    .hero-actions-container .cta-main {
+      z-index: 2;
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+      justify-content: center;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: 1001px) {
+      .hero-actions-container { align-items: center; }
+
+      .hero-actions-container .cta-main { width: 100%; max-width: 350px; justify-content: center; }
+
+      .dust-filigree {
+        left: 30%;
+      }
+    }
+
+    /* REFINED AUTHOR SECTION - Large Portrait */
+        .author-section {
+            padding: 60px 0;
+        }
+
+        .author-portrait-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .author-info-large h2 {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 25px;
+        }
+
+        .author-info-large p {
+            color: #888;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .author-photo-frame {
+            position: relative;
+            border: 1px solid var(--gold);
+            padding: 0;
+            background: #000;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+            max-width: 350px;
+            justify-self: center;
+        }
+
+        .author-photo-frame img {
+            width: 100%;
+            display: block;
+            filter: grayscale(1);
+            transition: var(--transition);
+        }
+
+        .author-photo-frame img {
+            width: 100%;
+            display: block;
+            filter: grayscale(1);
+            transition: var(--transition);
+        }
+
+        .author-photo-frame:hover img {
+            filter: grayscale(0);
+        }
+
+        section {
+            border-top: 1px solid var(--border);
+        }
+
+        #discovery {
+            padding: 60px 0;
+        }
+
+        .discovery-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 60px;
+            padding: 10px 0;
+            align-items: center;
+        }
+
+        .video-box {
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+            background: #000;
+            transition: var(--transition);
+        }
+
+
+        @media (max-width: 1000px) {
+            .video-box {
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+
+        .video-legend {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            color: var(--gold);
+            text-align: center;
+            margin-top: 15px;
+            letter-spacing: 0.1em;
+            opacity: 0.9;
+            display: block;
+        }
+
+        .video-box video {
+            width: 100%;
+            display: block;
+        }
+
+        .discovery-text p {
+            color: #888;
+            font-weight: 300;
+            line-height: 1.7;
+            text-align: justify;
+            margin-bottom: 20px;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        .author-info-large p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #bbb;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        /* MASSIVE SHOP CARDS */
+        .shop-section {
+            padding: 60px 0;
+        }
+
+        .shop-section .label {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 4px;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 60px;
+        }
+
+        .shop-section .label::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background: radial-gradient(circle, var(--gold) 0%, transparent 80%);
+        }
+
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .shop-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 40px 35px;
+            text-decoration: none !important;
+            color: #A0A0A0;
+            border-radius: 4px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            gap: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (hover: hover) {
+            .shop-card:hover {
+                border-color: var(--gold);
+                transform: translateY(-10px);
+                background: #111;
+            }
+        }
+
+        .shop-card svg,
+        .shop-card img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+        }
+
+        .shop-card svg {
+            stroke: var(--gold);
+            stroke-width: 1.2;
+        }
+
+        .shop-card .platform {
+            font-family: 'Inter', sans-serif, serif;
+            font-size: 0.65rem;
+            color: var(--gold);
+            letter-spacing: 0.3em;
+            margin-bottom: 5px;
+            opacity: 0.6;
+        }
+
+        .edge-text {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.5em;
+            color: var(--gold);
+            text-transform: uppercase;
+            white-space: nowrap;
+            transform: rotate(-90deg);
+            opacity: 0.4;
+        }
+
+        .shop-card .title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            white-space: nowrap;
+        }
+
+        .shop-card .tag {
+            font-size: 0.8rem;
+            color: #555;
+            margin-top: 8px;
+        }
+
+        .shop-card .card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Footer Nav */
+        /* Redesigned Footer Section */
+        .footer-nav {
+            text-align: center;
+            margin: 120px 0 100px;
+        }
+
+        .footer-nav a {
+            color: var(--gold);
+            position: relative;
+            padding-bottom: 8px;
+            text-decoration: none !important;
+            font-family: 'Inter', sans-serif, serif;
+            font-size: 1.1rem;
+            margin: 0 40px;
+            opacity: 0.9;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        @media (hover: hover) {
+            .footer-nav a:hover {
+                opacity: 1;
+                color: #fff;
+                transform: translateY(-5px);
+                text-shadow: 0 0 20px rgba(212, 162, 58, 0.4);
+            }
+
+            @media (hover: hover) {
+                .footer-nav a:hover::after {
+                    width: 60%;
+                }
+            }
+        }
+
+        footer {
+            background: #111;
+            border-top: 1px solid rgba(216, 178, 90, 0.1);
+            padding: 40px 0;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .copyright {
+            font-size: 11px;
+            color: #777;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 1000px) {
+            .edge-branding {
+                display: none;
+            }
+
+            .grid-stage,
+            .author-portrait-grid,
+            .discovery-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-stage {
+                \n                padding: 80px 0 10px;
+                \n text-align: center;
+                \n display: block;
+                \n
+            }
+
+            .hero-background-title {
+                left: -10px;
+                top: -10px;
+                font-size: clamp(8rem, 35vw, 15rem);
+            }
+
+            .hero-title {
+                font-size: clamp(1.6rem, 8vw, 2.3rem);
+                line-height: 1.1;
+                letter-spacing: 0.05em;
+                /* Tightened from 0.1em */
+                margin: 0 auto 30px !important;
+                word-wrap: normal;
+                overflow-wrap: normal;
+                hyphens: none !important;
+                -webkit-hyphens: none !important;
+                max-width: 100%;
+                transform: translateX(-15px);
+                /* Shift left as requested */
+            }
+
+            .title-line-1,
+            .title-line-2 {
+                margin-left: 0 !important;
+            }
+
+            .hero-summary {
+                font-size: 0.95rem;
+                text-align: center;
+                margin: 0 auto 40px !important;
+                max-width: 100%;
+            }
+
+            .book-frame {
+                max-width: 260px;
+                margin: 0 auto 30px;
+            }
+
+            .author-portrait-grid {
+                text-align: center;
+            }
+
+            .author-photo-frame {
+                max-width: 400px;
+                margin: 0 auto;
+                order: -1;
+            }
+
+            .container {
+                padding: 0 20px;
+                width: 100%;
+                overflow: visible;
+                margin-top: 40px;
+            }
+
+            .cta-main {
+                padding: 14px 30px;
+                font-size: 0.8rem;
+            }
+
+            /* Responsive Shop Grid */
+            .shop-grid {
+                gap: 15px;
+            }
+
+            .shop-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 15px;
+                gap: 15px;
+            }
+
+            .shop-card .title {
+                font-size: 1.1rem;
+            }
+
+            .shop-card .tag {
+                font-size: 0.7rem;
+            }
+
+            /* Responsive Footer Nav */
+            .footer-nav {
+                margin-top: 80px;
+                display: flex;
+                flex-direction: column;
+                gap: 35px;
+                align-items: center;
+            }
+
+            .footer-nav a {
+                margin: 0;
+                font-size: 0.9rem;
+                opacity: 0.9;
+                width: 100%;
+                text-align: center;
+                letter-spacing: 0.2em;
+            }
+
+            /* Supprimer le soulignement sur mobile pour tous les éléments interactifs */
+            a,
+            button,
+            .cta-main,
+            .lang-selector a,
+            .shop-card,
+            .footer-nav a {
+                text-decoration: none !important;
+            }
+
+            .cta-main::after,
+            .btn-author::after,
+
+
+            a:hover,
+            a:focus,
+            a:active,
+            a:visited {
+                text-decoration: none !important;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            footer {
+                padding: 35px 0;
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 1000px) {
+
+            .shop-section,
+            .author-section,
+            #discovery,
+            .testimonials-section {
+                padding: 40px 0 !important;
+            }
+        }
+
+        /* TESTIMONIALS SECTION */
+        .testimonials-section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .testimonials-section h2 {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 60px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            padding: 50px 30px 40px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 250px;
+        }
+
+        .testimonial-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--gold);
+            transform: translateY(-10px);
+        }
+
+        .testimonial-card::before {
+            content: '“';
+            position: absolute;
+            top: -40px;
+            left: -20px;
+            font-family: 'Cinzel', serif;
+            font-size: 18rem;
+            color: var(--gold);
+            opacity: 0.5;
+            line-height: 1;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .testimonial-card::after {
+            content: '”';
+            position: absolute;
+            bottom: -60px;
+            right: -20px;
+            font-family: 'Cinzel', serif;
+            font-size: 18rem;
+            color: var(--gold);
+            opacity: 0.45;
+            line-height: 1;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .testimonial-text {
+            font-family: "Playfair Display", serif;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+            margin-bottom: 25px;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        .testimonial-author {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 1000px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .testimonial-card {
+                padding: 40px 25px;
+                min-height: auto;
+            }
+        }
+
+        /* ================= FOOTER PWA PREMIUM ================= */
+        .footer-pwa {
+            background: #111;
+            border-top: 1px solid rgba(216, 178, 90, 0.15);
+            padding: 60px 0;
+            margin-top: 0px;
+            position: relative;
+            z-index: 30;
+            display: block;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-left {
+            flex: 1;
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 30px;
+            flex: 1;
+        }
+
+        .pwa-badge-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .pwa-text-banner {
+            height: 100px;
+            width: auto;
+        }
+
+        .pwa-icons-box {
+            display: flex;
+            gap: 30px;
+        }
+
+        .pwa-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pwa-icon-small {
+            height: 70px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.4));
+            transition: all 0.4s ease;
+        }
+
+        
+        .pwa-text-banner {
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .pwa-text-banner:hover {
+            filter: drop-shadow(0 0 25px rgba(216, 178, 90, 1)) !important;
+            transform: scale(1.02);
+        }
+        .pwa-install-hint {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.55rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: rgba(170, 170, 170, 0.8);
+            text-transform: uppercase;
+            margin-top: 2px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+        }
+        .pwa-install-hint:hover {
+            color: var(--gold, #d8b25a);
+        }
+
+
+        .pwa-icon-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .footer-nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .footer-nav-links a {
+            color: var(--gold);
+            text-decoration: none !important;
+            font-family: 'Inter', sans-serif, serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            position: relative;
+            padding-bottom: 6px;
+            transition: all 0.4s ease;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        @media (hover: hover) {
+            .footer-nav-links a:hover {
+                color: var(--gold);
+                text-shadow: 0 0 15px rgba(216, 178, 90, 0.5);
+            }
+        }
+
+        .footer-nav-links .sep {
+            color: var(--gold);
+            opacity: 0.3;
+            font-size: 0.8rem;
+        }
+
+        .social-grid {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+
+        .social-btn:hover {
+            background: rgba(214, 162, 58, 0.15);
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .social-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(1);
+            opacity: 0.7;
+        }
+
+        .social-btn:hover img {
+            filter: sepia(1) saturate(5) hue-rotate(10deg);
+            opacity: 1;
+        }
+
+        .footer-copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(216, 178, 90, 0.1);
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        /* Consolidated Footer System v43 */
+        @media (max-width: 900px) {
+
+            /* Reset global interactive styles */
+            a,
+            button,
+            .cta-btn,
+            .cta-main,
+            .btn-author,
+            .lang-selector a {
+                text-decoration: none !important;
+            }
+
+            .lang-selector a {
+        color: rgba(216, 178, 90, 0.9);
+      }
+
+            .lang-selector a.active {
+                color: var(--gold);
+            }
+
+            .lang-selector .sep {
+                background: rgba(255, 255, 255, 0.3);
+            }
+
+            .cta-btn::after,
+            .cta-btn::before,
+            .cta-main::after,
+            .btn-author::after,
+            .lang-selector a::after,
+            .lang-selector a::before {
+                display: none !important;
+            }
+
+            /* Footer Layout */
+            .footer-pwa {
+                padding: 40px 0 !important;
+            }
+
+            .footer-container {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 30px !important;
+            }
+
+            .footer-main {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 40px !important;
+            }
+
+            .footer-right {
+                order: 1 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                width: 100% !important;
+                gap: 30px !important;
+            }
+
+            .footer-nav-links {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 15px !important;
+                align-items: center !important;
+            }
+
+            .footer-nav-links .sep {
+                display: none !important;
+            }
+
+            .social-grid {
+                display: grid !important;
+                grid-template-columns: repeat(4, 44px) !important;
+                gap: 15px !important;
+                justify-content: center !important;
+                width: 100% !important;
+            }
+
+            .footer-left {
+                order: 2 !important;
+                width: 100% !important;
+                display: flex !important;
+                justify-content: center !important;
+            }
+
+            .pwa-badge-container {
+                flex-direction: column !important;
+                gap: 20px !important;
+                align-items: center !important;
+            }
+
+            .footer-copyright {
+                order: 3 !important;
+                margin-top: 30px !important;
+                text-align: center !important;
+                width: 100% !important;
+                padding-top: 20px !important;
+                border-top: 1px solid rgba(216, 178, 90, 0.1) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            a::after,
+            button::after,
+            [class*="btn"]::after,
+            [class*="link"]::after {
+                display: none !important;
+            }
+        }
+
+        /* Mobile: Remove decorative underlines/bars on buttons and links */
+        @media (max-width: 768px) {
+
+            a::after,
+            button::after,
+            [class*="btn"]::after,
+            [class*="link"]::after,
+            .print-btn span::after {
+                display: none !important;
+            }
+        }
+
+        /* --- LUXURY UNDERLINE SYSTEM --- */
+        .footer-nav a::after,
+        .footer-nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
+
+        .footer-nav a:hover::after,
+        .footer-nav-links a:hover::after {
+            display: none;
+        }
+
+        @media (hover: hover) {
+
+            .footer-nav a:hover::after,
+            .footer-nav-links a:hover::after {
+                display: block;
+                width: 60%;
+            }
+        }
+
+        /* PWA Highlights */
+        .pwa-text-banner,
+        .pwa-icon-small {
+            filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
+            opacity: 1 !important;
+            transition: all 0.4s ease;
+        }
+
+        .pwa-text-banner:hover,
+        
+        .pwa-text-banner {
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .pwa-text-banner:hover {
+            filter: drop-shadow(0 0 25px rgba(216, 178, 90, 1)) !important;
+            transform: scale(1.02);
+        }
+        .pwa-install-hint {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.55rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: rgba(170, 170, 170, 0.8);
+            text-transform: uppercase;
+            margin-top: 2px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+        }
+        .pwa-install-hint:hover {
+            color: var(--gold, #d8b25a);
+        }
+
+
+        /* Hide back button on Desktop and iPad Landscape only (>=1024px), KEEP for PWA */
+        @media (min-width: 1023px) {
+            :not([display-mode="standalone"]) .back-hub-btn {
+                display: none !important;
+            }
+        }
+
+        /* --- PWA-ONLY NAVIGATION --- */
+        .back-hub-btn {
+            display: none !important;
+        }
+
+        @media (display-mode: standalone) {
+            .back-hub-btn {
+                display: flex !important;
+            }
+        }
+
+        .is-pwa .back-hub-btn {
+            display: flex !important;
+        }
+
+        /* ================= NOUVEL ENTÊTE LUXE ================= */
+        .header-livre {
+            font-family: "Playfair Display", serif;
+            background-image: url("entete-texture.jpg");
+            background-size: cover;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            height: 380px;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: none;
+            margin-bottom: 0px;
+            overflow: hidden;
+        }
+
+
+        .header-livre::before {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 120px;
+            height: 80px;
+            background: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .header-livre::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 1) 100%);
+            pointer-events: none;
+        }
+
+        .titre-memoire {
+            font-family: "Playfair Display", serif;
+            color: #ffffff;
+            font-size: clamp(3rem, 10vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin: 0;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            padding: 5px 20px;
+            background: linear-gradient(to bottom, #f1d57e 0%, #d4a23a 50%, #a67c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.8));
+        }
+
+        @media (max-width: 768px) {
+            .header-livre {
+                height: 250px;
+                background-size: cover;
+            }
+
+            .titre-memoire {
+                font-size: 2.4rem !important;
+                letter-spacing: 0.05em;
+            }
+
+            .auteur-header {
+                font-size: 10px !important;
+                letter-spacing: 4px;
+                margin-bottom: 0px;
+                color: #ffffff !important;
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+            }
+
+            .livre-header {
+                font-size: 13px !important;
+                letter-spacing: 1px;
+                margin-top: 2px;
+                color: #ffffff !important;
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        .auteur-header {
+            font-family: "Inter", sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 2px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .livre-header {
+            font-family: "Cinzel", serif;
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 5px;
+            font-style: italic;
+            z-index: 10;
+            position: relative;
+        }
+
+        .overlay-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Section Magic Quill Inside Text */
+        .magic-quill-inline {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 600px;
+            margin: -120px auto -80px auto;
+            background: url('plume-magique.png') center / contain no-repeat;
+            opacity: 0.9;
+            mix-blend-mode: screen;
+            pointer-events: none;
+            z-index: 10;
+            /* Masque elliptique élargi : protège la pointe en haut ET l'encrier en bas, estompe les bords lointains */
+            -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 40%, black 55%, transparent 100%);
+            mask-image: radial-gradient(ellipse 65% 60% at 50% 40%, black 55%, transparent 100%);
+        }
+
+        /* Effet Filigrane Cuir en bas à droite */
+        .leather-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            z-index: 5;
+        }
+
+        .leather-reveal-corner {
+            position: absolute;
+            bottom: 0px;
+            right: 0;
+            width: 100vw;
+            max-width: 1600px;
+            height: 800px;
+            background: url('cuir-page-fond.jpg') center right / cover no-repeat;
+            -webkit-mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+            mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+            pointer-events: none;
+            mix-blend-mode: screen;
+            filter: contrast(1.2) saturation(1.1) brightness(1.8);
+        }
+
+        .leather-reveal-corner-left {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 100vw;
+            max-width: 1600px;
+            height: 1200px;
+            background: url('cuir-page-fond.jpg') center left / cover no-repeat;
+            -webkit-mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+            mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 75%);
+            pointer-events: none;
+            mix-blend-mode: screen;
+            filter: contrast(1.2) saturation(1.1) brightness(1.8);
+        }
+    
+        /* PWA Uniform Sub-Icons */
+        .pwa-icon-item {
+            cursor: pointer;
+        }
+        .pwa-icon-item:hover .pwa-icon-small {
+            filter: drop-shadow(0 0 15px rgba(216, 178, 90, 0.8)) !important;
+            transform: scale(1.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .pwa-icon-item:hover .pwa-icon-label {
+            color: var(--gold, #d8b25a);
+            transition: color 0.3s ease;
+        }
+
+    </style>
+
+  <style>
+    @media (max-width: 900px) {
+      .mobile-nav-bar {
+        background-color: #000 !important;
+        padding-bottom: 10px;
+        padding-top: 10px;
+      }
+    }
+  </style>
+    <!-- PWA Installation Logic -->
+    <script>
+        // SYSTÈME DE GESTION PWA - FORCE UPDATE v42
+        (async function() {
+            const v = 'v42.pwa_fix';
+            if (localStorage.getItem('pwa_v') !== v) {
+                if ('serviceWorker' in navigator) {
+                    try {
+                        const regs = await navigator.serviceWorker.getRegistrations();
+                        for (const r of regs) await r.unregister();
+                    } catch(e) {}
+                }
+                if ('caches' in window) {
+                    try {
+                        const keys = await caches.keys();
+                        for (const k of keys) await caches.delete(k);
+                    } catch(e) {}
+                }
+                localStorage.clear();
+                sessionStorage.clear();
+                localStorage.setItem('pwa_v', v);
+                window.location.reload(true);
+            } else {
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('/sw-v41.js?v=42_' + Date.now(), {
+                        updateViaCache: 'none'
+                    }).catch(() => {});
+                }
+            }
+        })();
+
+        // LOGIQUE D'INSTALLATION
+        window.installPWA = function() {
+            if (window.deferredPrompt) {
+                window.deferredPrompt.prompt();
+                window.deferredPrompt.userChoice.then(() => {
+                    window.deferredPrompt = null;
+                });
+            } else {
+                console.log("Installation non disponible ou l'application est déjà installée.");
+            }
+        };
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            window.deferredPrompt = e;
+        });
+
+        // BIND BUTTONS AUTOMATICALLY
+        document.addEventListener('DOMContentLoaded', () => {
+            const btns = document.querySelectorAll('#installAppBtn, #install-btn');
+            btns.forEach(btn => {
+                btn.style.cursor = 'pointer';
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.installPWA();
+                });
+            });
+        });
+    </script>
+
+    <!-- PWA Install Logic -->
+    <script>
+        function installPWA() {
+            if (window.deferredPrompt) {
+                window.deferredPrompt.prompt();
+                window.deferredPrompt.userChoice.then(() => {
+                    window.deferredPrompt = null;
+                });
+            } else {
+                // If deferredPrompt is null, meaning prompt cannot be shown
+                // We could dispatch an event or log it.
+                console.log("Installation non disponible ou l'application est déjà installée.");
+                alert("L'application est déjà installée ou votre navigateur ne la supporte pas en mode PWA. Sur iOS, utilisez 'Partager > Sur l'écran d'accueil'.");
+            }
+        }
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            window.deferredPrompt = e;
+        });
+    </script>
+</head>
+
+<body class="notranslate" translate="no">
+
+
+
+    <a href="#" onclick="history.back(); return false;" class="back-hub-btn" aria-label="Back to home">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </a>
+
+    <!-- FIXED DECORATIONS -->
+    <div class="corner-glow glow-tl"></div>
+    <div class="corner-glow glow-br"></div>
+
+    <header class="header-livre">
+        <div class="overlay-content">
+            <div class="auteur-header">SIMON LERO</div>
+            <h1 class="titre-memoire">Encounters By Moonlight</h1>
+            <div class="livre-header">A Romantic Immersion</div>
+        </div>
+    </header>
+
+    <header class="hero-stage">
+        <div class="container">
+            <div class="grid-stage">
+
+
+                <div class="hero-presentation-grid">
+                    <div class="book-frame reveal" style="transition-delay: 0.4s;">
+                        <img src="couverture-livre-en.png" alt="Encounters by Moonlight">
+                    </div>
+                    <div class="hero-summary reveal" style="transition-delay: 0.6s;">
+                        <p>Alfred Sisley, a hardened old man, lives surrounded by his memories. He waits in silence for
+                            a sign from his one true, enduring love.</p>
+                        <p>A meeting with Joey shatters this fragile balance. In him, Sisley recognizes the reflection
+                            of his own thirty years: an intimate resonance, an unexpected synergy.</p>
+                        <div class="hero-actions-container">
+                            <div class="dust-filigree"></div>
+                            <a href="resume-en.html" class="cta-main">
+                                FULL SUMMARY HERE
+                            </a>
+                            <a href="technical-specifications.html" class="cta-main">
+                                BOOK DETAILS
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="author-section" id="author">
+        <div class="container">
+            <div class="author-portrait-grid">
+                <div class="author-info-large reveal">
+                    <span class="label">Simon Lero</span>
+                    <h2>The Author behind the silence</h2>
+                    <p>“I am Simon Lero, the author of this book. This story was born from a long pause, a return to
+                        essentials and a desire to capture the evanescence of memories through words.”</p>
+                    <a href="contact-en.html?source=book" class="btn-author">Contact
+                        the author</a>
+                </div>
+                <div class="author-photo-frame reveal" style="transition-delay:0.3s;">
+                    <img src="auteur-pic.png" alt="Simon Lero Portrait">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="discovery">
+        <div class="container">
+            <div class="discovery-grid reveal">
+                <div class="video-box">
+                    <video controls preload="metadata" poster="couverture-livre-en.png">
+                        <source src="video-promo-en.mp4" type="video/mp4">
+                    </video>
+                    <span class="video-legend">Watch the book presentation</span>
+                </div>
+                <div class="discovery-text">
+                    <span class="label">Video & Genesis</span>
+                    <h3 style="font-size:1.8rem; margin-bottom:20px; color: var(--gold);">At the source of the story
+                    </h3>
+                    <p style="color:#888; font-weight:300; line-height:1.7; text-align:justify; margin-bottom:20px;">
+                        Encounters by Moonlight came into being in 2007, after nine months of writing, during a period
+                        that
+                        followed a long professional pause devoted to rest and reflection.
+                    </p>
+                    <p style="color:#888; font-weight:300; line-height:1.7; text-align:justify; margin-bottom:20px;">
+                        This suspended time allowed the author to return to what is essential, giving rise to an inward,
+                        patient form of writing—attentive to silence and deeply human.
+                    </p>
+                    <p style="color:#888; font-weight:300; line-height:1.7; text-align:justify;">
+                        The work is published under the pen name <b>Simon Lero</b>, chosen in tribute to a French
+                        ancestor who settled in America, anchoring this narrative in a memory both personal and
+                        inherited.
+                    </p>
+
+                    <!-- IMAGE: PLUME MAGIQUE -->
+                    <div class="magic-quill-inline" aria-hidden="true"></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="shop-section" id="buy">
+        <div class="container">
+            <div class="label" style="text-align:center;">Buy the book</div>
+            <div class="shop-grid">
+
+                <!-- AMAZON -->
+                <a href="https://books2read.com/u/4jkM5X" class="shop-card reveal" target="_blank">
+                    <img src="amazon-icon.svg" alt="Amazon">
+                    <div class="card-content">
+                        <div class="platform">GLOBAL AVAILABILITY</div>
+                        <div class="title">Amazon</div>
+                        <div class="tag">Kindle / Paperback — soft cover</div>
+                    </div>
+                </a>
+
+                <!-- SHOPIFY -->
+                <a href="https://simonlero.myshopify.com/" class="shop-card reveal" style="transition-delay:0.1s;"
+                    target="_blank">
+                    <img src="shopify-icon.svg" alt="Shopify">
+                    <div class="card-content">
+                        <div class="platform">GLOBAL AVAILABILITY</div>
+                        <div class="title">Shopify</div>
+                        <div class="tag">ePub / Paperback — soft cover</div>
+                    </div>
+                </a>
+
+                <!-- PAYHIP -->
+                <a href="https://payhip.com/simonlero" class="shop-card reveal" style="transition-delay:0.2s;"
+                    target="_blank">
+                    <img src="payhip-icon.svg" alt="Payhip">
+                    <div class="card-content">
+                        <div class="platform">20% DISCOUNT</div>
+                        <div class="title">Payhip</div>
+                        <div class="tag">PDF / ePub — 20% Discount Code: READER20</div>
+                    </div>
+                </a>
+
+                <!-- LULU -->
+                <a href="https://www.lulu.com/search?q=simon+lero" class="shop-card reveal"
+                    style="transition-delay:0.3s;" target="_blank">
+                    <img src="lulu-icon.svg" alt="Lulu" style="width: 85px; height: 48px; object-fit: contain;">
+                    <div class="card-content">
+                        <div class="platform">GLOBAL AVAILABILITY</div>
+                        <div class="title">Lulu.com</div>
+                        <div class="tag">ePub / Paperback — soft cover</div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="reveal">Reader Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
+                    <p class="testimonial-text">"A dreamlike journey of rare intensity. Simon Lero captures the very
+                        essence of introspection with a pen of absolute elegance."</p>
+                    <span class="testimonial-author">— Emily S.</span>
+                </div>
+                <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
+                    <p class="testimonial-text">“Rarely has a book touched me so much. It is a work that is read as one
+                        contemplates a master's painting. Love the link with Beethoven's sonata."</p>
+                    <span class="testimonial-author">— Mark T.</span>
+                </div>
+                <div class="testimonial-card reveal" style="transition-delay: 0.3s;">
+                    <p class="testimonial-text">“A must-read for lovers of fine literature. I read it twice, i cried
+                        twice"</p>
+                    <span class="testimonial-author">— Sarah J.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="footer-nav">
+        <a href="https://www.mon-univers.ca/index.html"
+            style="color: #c9a24d !important; text-decoration: none !important; font-family: 'Cinzel', serif; font-size: 1.1rem; margin: 0 40px; opacity: 1; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block; vertical-align: top; text-align: center;">
+            Visit my personal vitrine<br>
+            <span style="font-size: 0.6em; opacity: 0.8; display: block; margin-top: 5px;">(FRENCH ONLY)</span>
+        </a>
+        <a href="distribution-en.html"
+            style="color: #c9a24d !important; text-decoration: none !important; font-family: 'Cinzel', serif; font-size: 1.1rem; margin: 0 40px; opacity: 1; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block; vertical-align: top; text-align: center;">
+            Distribution Partners</a>
+    </div>
+
+    <!-- FILIGRANE CUIR : Apparition dans les coins inférieurs -->
+    <div class="leather-wrapper" aria-hidden="true">
+        <div class="leather-reveal-corner"></div>
+        <div class="leather-reveal-corner-left"></div>
+    </div>
+
+    <footer class="footer-pwa">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-left" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="pwa-badge-container">
+                        <img src="pwa-text-banner-en.png" alt="PWA optimized" class="pwa-text-banner">
+                        <div class="pwa-icons-box">
+                            <div class="pwa-icon-item" onclick="if(typeof installPWA === 'function') installPWA();" title="Click to install app">
+                                <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
+                                <span class="pwa-icon-label">Simon Lero</span>
+                            </div>
+                            <div class="pwa-icon-item" onclick="if(typeof installPWA === 'function') installPWA();" title="Click to install app">
+                                <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
+                                <span class="pwa-icon-label">My Universe</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+                <div class="footer-right">
+                    <div class="footer-nav-links">
+                        <a href="livre-accueil-en.html">Home</a>
+                        <span class="sep">&bull;</span>
+                        <a href="faq-en.html">FAQ</a>
+                        <span class="sep">&bull;</span>
+                        <a href="media-en.html">Media Kit</a>
+                        <span class="sep">&bull;</span>
+                        <a href="contact-en.html">Contact me</a>
+                    </div>
+                    <div class="social-grid">
+                        <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
+                        <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
+                        <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
+                        <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
+                        <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
+                        <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
+                        <div class="social-btn"><img src="iconX480.png" alt="X"></div>
+                        <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; All rights
+                reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year-footer').textContent = new Date().getFullYear();
+
+        // Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const isPWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+            if (isPWA) {
+                document.documentElement.classList.add('is-pwa');
+            }
+        });
+    </script>
+</body>
+
+</html>

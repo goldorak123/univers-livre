@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ========================= -->
+  <!-- SIMONLERO.COM -->
+  <!-- ========================= -->
+
+  <!-- ROOT -->
+  <url>
+    <loc>https://www.simonlero.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- FR -->
+  <url>
+    <loc>https://www.simonlero.com/livre-accueil.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- EN -->
+  <url>
+    <loc>https://www.simonlero.com/livre-accueil-en.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ES -->
+  <url>
+    <loc>https://www.simonlero.com/livre-accueil-es.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- BOOK CONTENT (FR) -->
+  <url>
+    <loc>https://www.simonlero.com/livre.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- BOOK CONTENT (EN) -->
+  <url>
+    <loc>https://www.simonlero.com/livre-en.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- BOOK CONTENT (ES) -->
+  <url>
+    <loc>https://www.simonlero.com/livre-es.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- SHARED PAGES -->
+  <url>
+    <loc>https://www.simonlero.com/resume.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.simonlero.com/resume-en.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.simonlero.com/resume-es.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.simonlero.com/distribution.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.simonlero.com/distribution-en.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.simonlero.com/distribution-es.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.simonlero.com/contact.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.simonlero.com/contact-en.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.simonlero.com/contact-es.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

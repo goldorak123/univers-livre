@@ -131,7 +131,7 @@
         .hero {
             position: relative;
             padding: 530px 40px 100px;
-            /* Grand espace pour l'en-tÃªte de 450px */
+            /* Grand espace pour l'en-tête de 450px */
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -143,7 +143,7 @@
 
         .hero-background-title {
             white-space: nowrap;
-            /* EmpÃªche les lettres gÃ©antes de revenir Ã  la ligne (effet accordÃ©on) */
+            /* Empêche les lettres géantes de revenir à la ligne (effet accordéon) */
             font-family: 'Inter', sans-serif !important;
             font-size: clamp(8rem, 25vw, 24rem);
             font-weight: 900;
@@ -153,7 +153,7 @@
             position: absolute;
             top: 40px;
             left: 0;
-            /* AlignÃ© Ã  gauche sans couper les lettres */
+            /* Aligné à gauche sans couper les lettres */
             line-height: 0.9;
             text-transform: uppercase;
             z-index: -1;
@@ -581,7 +581,7 @@
         }
     </style>
     <script>
-        // SYSTÃˆME DE GESTION PWA - FORCE UPDATE v106
+        // SYSTÈME DE GESTION PWA - FORCE UPDATE v106
         (async function() {
             const v = 'v1011.pwa_fix';
             if (localStorage.getItem('pwa_v') !== v) {
@@ -618,7 +618,7 @@
                     window.deferredPrompt = null;
                 });
             } else {
-                console.log("Installation non disponible ou l'application est dÃ©jÃ  installÃ©e.");
+                console.log("Installation non disponible ou l'application est déjà installée.");
             }
         }
         window.addEventListener('beforeinstallprompt', (e) => {
@@ -632,11 +632,11 @@
 
 <body class="notranslate" translate="no">
 
-    <!-- Ã‰TOILES D'ARRIÃˆRE-PLAN GLOABLES -->
+    <!-- ÉTOILES D'ARRIÈRE-PLAN GLOABLES -->
     <div
         style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; pointer-events: none; z-index: 0; overflow: hidden;">
         <svg style="width: 100%; height: 100%;">
-            <!-- Ã‰toiles dorÃ©es -->
+            <!-- Étoiles dorées -->
             <g fill="#FDE48D">
                 <circle cx="10%" cy="15%" r="1" opacity="0.8" />
                 <circle cx="85%" cy="8%" r="1.5" opacity="0.9" />
@@ -647,7 +647,7 @@
                 <circle cx="75%" cy="70%" r="1.5" opacity="0.5" />
                 <circle cx="30%" cy="60%" r="2" opacity="0.9" />
             </g>
-            <!-- Ã‰toiles blanc/argent -->
+            <!-- Étoiles blanc/argent -->
             <g fill="#E0E0E0">
                 <circle cx="25%" cy="25%" r="1" opacity="0.8" />
                 <circle cx="70%" cy="12%" r="1.5" opacity="0.6" />
@@ -658,7 +658,7 @@
                 <circle cx="40%" cy="40%" r="1.5" opacity="1" />
                 <circle cx="55%" cy="75%" r="1" opacity="0.7" />
             </g>
-            <!-- Ã‰toiles bleutÃ©es lointaines -->
+            <!-- Étoiles bleutées lointaines -->
             <g fill="#87CEFA">
                 <circle cx="18%" cy="10%" r="0.8" opacity="0.6" />
                 <circle cx="88%" cy="60%" r="1" opacity="0.5" />
@@ -668,16 +668,16 @@
         </svg>
     </div>
 
-    <!-- NOUVEL ENTÃŠTE HAUT DE GAMME (MOCKUP-ACCURATE) -->
+    <!-- NOUVEL ENTÊTE HAUT DE GAMME (MOCKUP-ACCURATE) -->
     <div class="premium-header-card">
         <div class="premium-bg">
-            <!-- Texture et Ã©toiles -->
+            <!-- Texture et étoiles -->
             <div class="dust-texture"></div>
-            <!-- Astrolabe SVG - Version Dense / Haute VisibilitÃ© -->
+            <!-- Astrolabe SVG - Version Dense / Haute Visibilité -->
             <svg class="astrolabe" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid slice"
                 xmlns="http://www.w3.org/2000/svg">
                 <g stroke="#D4A23A" fill="none" class="astrolabe-group">
-                    <!-- Cercles de base, centrÃ©s -->
+                    <!-- Cercles de base, centrés -->
                     <g opacity="0.4" stroke-width="0.8">
                         <circle cx="500" cy="150" r="80" />
                         <circle cx="500" cy="150" r="160" />
@@ -685,7 +685,7 @@
                         <circle cx="500" cy="150" r="350" stroke-dasharray="1 6" stroke-width="1.2" />
                     </g>
 
-                    <!-- Arcs et cercles superposÃ©s (Effet riche de carte stellaire) -->
+                    <!-- Arcs et cercles superposés (Effet riche de carte stellaire) -->
                     <g opacity="0.4" stroke-width="0.7">
                         <circle cx="300" cy="50" r="200" stroke-dasharray="4 8" />
                         <circle cx="700" cy="250" r="200" stroke-dasharray="4 8" />
@@ -703,12 +703,12 @@
                         <line x1="250" y1="400" x2="750" y2="-100" />
                     </g>
 
-                    <!-- Constellation (Lignes Ã©paisses et brillantes) -->
+                    <!-- Constellation (Lignes épaisses et brillantes) -->
                     <path
                         d="M 120 100 L 220 50 L 320 160 L 460 70 L 620 200 M 320 160 L 420 250 M 220 50 L 160 220 L 280 250 L 420 250 L 520 150 L 620 200 L 780 120 M 520 150 L 700 80 M 700 80 L 850 180"
                         fill="none" stroke="#FDE48D" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.75" />
 
-                    <!-- Constellation (Ã‰toiles fixes trÃ¨s brillantes) -->
+                    <!-- Constellation (Étoiles fixes très brillantes) -->
                     <g fill="#FDE48D" stroke="none">
                         <circle cx="120" cy="100" r="3" opacity="0.9" />
                         <circle cx="220" cy="50" r="5" opacity="1" />
@@ -730,7 +730,7 @@
         <div class="premium-content">
                         <div class="premium-title-group" style="gap: 15px;">
                 <h1 class="premium-title" style="flex-direction: column; align-items: flex-start; gap: 5px;">
-                    <span class="title-white" style="font-size: clamp(2rem, 9vw, 5.5rem); line-height: 0.9; margin-left: 5px;">Ã€</span>
+                    <span class="title-white" style="font-size: clamp(2rem, 9vw, 5.5rem); line-height: 0.9; margin-left: 5px;">À</span>
                     <div class="title-gold-wrapper">
                         <span class="title-gold" data-text="PROPOS" style="font-size: clamp(3rem, 13vw, 10.5rem); line-height: 0.9;">PROPOS</span>
                     </div>
@@ -859,7 +859,7 @@
             filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.5));
         }
 
-        /* Ombre portÃ©e 3D Ã©paisse (extrusion) enlevÃ©e */
+        /* Ombre portée 3D épaisse (extrusion) enlevée */
 
         .title-white {
             font-size: clamp(9.6rem, 19.5vw, 14.4rem);
@@ -967,7 +967,7 @@
     @media (max-width: 900px) { .premium-title-group, .premium-title { align-items: center !important; text-align: center !important; justify-content: center !important; } .title-white { margin-left: 0 !important; } }
 </style>
 
-    <a href="#" onclick="history.back(); return false;" class="back-hub-btn" aria-label="Retour Ã  l'accueil">
+    <a href="#" onclick="history.back(); return false;" class="back-hub-btn" aria-label="Retour à l'accueil">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -979,57 +979,57 @@
     <header class="hero">
         <div class="narrative-box">
             <p>
-                <strong>Mon Univers.ca</strong> est un espace personnel de rÃ©flexion, de crÃ©ation
-                et de transmission. Câ€™est une vitrine intime, nÃ©e du dÃ©sir de
-                rassembler des fragments de parcours, de pensÃ©e et de sens.
+                <strong>Mon Univers.ca</strong> est un espace personnel de réflexion, de création
+                et de transmission. C’est une vitrine intime, née du désir de
+                rassembler des fragments de parcours, de pensée et de sens.
             </p>
 
             <p>
-                Au-delÃ  de mon livre <a href="https://www.simonlero.com/livre-accueil.html">Rencontres au Clair de
-                    Lune</a> et de mon <a href="cv-secure.html">curriculum vitae</a>, ce site est conÃ§u comme un
-                <strong>scrapbook numÃ©rique</strong> rassemblant les fragments essentiels de mon univers :
+                Au-delà de mon livre <a href="https://www.simonlero.com/livre-accueil.html">Rencontres au Clair de
+                    Lune</a> et de mon <a href="cv-secure.html">curriculum vitae</a>, ce site est conçu comme un
+                <strong>scrapbook numérique</strong> rassemblant les fragments essentiels de mon univers :
                 mon <a href="parcours_entrepreneurial.html">parcours entrepreneurial</a>,
                 ma <a href="galerie.html">galerie personnelle</a>, mes <a href="sources.html">sources
-                    dâ€™inspiration</a> et
-                mon <a href="memoire.html">mÃ©moire universitaire</a>.
+                    d’inspiration</a> et
+                mon <a href="memoire.html">mémoire universitaire</a>.
             </p>
 
             <p>
-                Le choix du titre <em>Mon Univers.ca</em> se veut Ã  la fois au sens figurÃ©
-                et au sens propre. Il dÃ©signe autant mon univers intÃ©rieur â€”
-                fait de rÃ©flexions, de mÃ©moire et de crÃ©ation â€” que lâ€™univers
-                au sens scientifique, vaste, mystÃ©rieux et encore largement inconnu.
+                Le choix du titre <em>Mon Univers.ca</em> se veut à la fois au sens figuré
+                et au sens propre. Il désigne autant mon univers intérieur —
+                fait de réflexions, de mémoire et de création — que l’univers
+                au sens scientifique, vaste, mystérieux et encore largement inconnu.
             </p>
 
             <p>
-                Ce site nâ€™a pas vocation Ã  convaincre, mais Ã  partager une maniÃ¨re de regarder le monde, de
-                penser le temps, la mÃ©moire, et ce qui relie les choses entre elles â€” non pas comme des vÃ©-
-                ritÃ©s figÃ©es, mettant en relief ce qui nous unit.
+                Ce site n’a pas vocation à convaincre, mais à partager une manière de regarder le monde, de
+                penser le temps, la mémoire, et ce qui relie les choses entre elles — non pas comme des vé-
+                rités figées, mettant en relief ce qui nous unit.
             </p>
 
             <p>
-                Une part importante de mon temps libre est consacrÃ©e Ã  lâ€™Ã©coute de confÃ©rences et Ã  la rÃ©-
-                flexion autour de lâ€™astronomie, de lâ€™astrophysique et des sciences quantiques. Ces domaines
-                nourrissent ma curiositÃ© et influencent profondÃ©ment le thÃ¨me central de ce site.
+                Une part importante de mon temps libre est consacrée à l’écoute de conférences et à la ré-
+                flexion autour de l’astronomie, de l’astrophysique et des sciences quantiques. Ces domaines
+                nourrissent ma curiosité et influencent profondément le thème central de ce site.
             </p>
 
             <p>
-                Albert Einstein disait que lâ€™imagination est plus importante que la connaissance, car la
-                connaissance est limitÃ©e, alors que lâ€™imagination embrasse le monde. Cette idÃ©e mâ€™accom-
-                pagne depuis longtemps. Elle traverse ce site, oÃ¹ lâ€™univers nâ€™est pas abordÃ© uniquement
-                comme un objet dâ€™Ã©tude scientifique, mais aussi comme un espace dâ€™Ã©merveillement et de li-
-                bertÃ© intÃ©rieure.
+                Albert Einstein disait que l’imagination est plus importante que la connaissance, car la
+                connaissance est limitée, alors que l’imagination embrasse le monde. Cette idée m’accom-
+                pagne depuis longtemps. Elle traverse ce site, où l’univers n’est pas abordé uniquement
+                comme un objet d’étude scientifique, mais aussi comme un espace d’émerveillement et de li-
+                berté intérieure.
             </p>
 
             <p>
-                Il sâ€™adresse Ã  celles et ceux qui prennent le temps,
+                Il s’adresse à celles et ceux qui prennent le temps,
                 qui doutent, qui observent,
-                et qui savent que la rÃ©flexion
-                est parfois plus importante que la rÃ©ponse.
+                et qui savent que la réflexion
+                est parfois plus importante que la réponse.
             </p>
 
             <div class="signature">
-                â€” Daniel
+                — Daniel
             </div>
         </div>
     </header>
@@ -1040,7 +1040,7 @@
         <div class="footer-container">
             <div class="footer-left">
                 <div class="pwa-badge-container">
-                    <img src="pwa-text-banner.png" alt="PWA OptimisÃ©" class="pwa-text-banner">
+                    <img src="pwa-text-banner.png" alt="PWA Optimisé" class="pwa-text-banner">
                     <div class="pwa-icons-box">
                         <div class="pwa-icon-item">
                             <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
@@ -1066,7 +1066,7 @@
                             <span class="sep">&bull;</span>
                             <a href="faq.html?v=31.0">FAQ</a>
                             <span class="sep">&bull;</span>
-                            <a href="apropos.html?v=31.0">Ã€ propos</a>
+                            <a href="apropos.html?v=31.0">À propos</a>
                             <span class="sep">&bull;</span>
                             <a href="contact.html?v=31.0">Me contacter</a>
                 </div>
@@ -1083,7 +1083,7 @@
             </div>
             <p class="footer-copyright">&copy; <span
                     id="current-year-footer"></span> mon-univers.ca &mdash; Tous
-                droits rÃ©servÃ©s </p>
+                droits réservés </p>
         </div>
     </footer>
     <script>

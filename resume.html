@@ -164,20 +164,38 @@
         });
     </script>
     
-    <!-- Definitive Back Button Logic -->
+    
+
+    <!-- STRICT BACK BUTTON HYGIENE V2 -->
     <style>
-        /* Force hide the back button strictly globally */
-        html body .back-hub-btn {
-            display: none !important;
+        /* ABSOLUTE KILL SWITCH FOR MOBILE: 
+           Never show on screens <= 900px, regardless of PWA */
+        @media (max-width: 900px) {
+            .back-hub-btn, a.back-hub-btn, a[class*="back-hub-btn"] {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
+                z-index: -9999 !important;
+            }
         }
 
-        /* ONLY show it if in PWA (standalone) AND on Desktop (min-width: 901px) */
+        /* ONLY SHOW on DESKTOP (min-width: 901px) AND ONLY IF PWA */
         @media (display-mode: standalone) and (min-width: 901px) {
-            html body .back-hub-btn {
+            .back-hub-btn, a.back-hub-btn, a[class*="back-hub-btn"] {
                 display: flex !important;
             }
         }
+        
+        /* Default hide for non-PWA desktop just in case */
+        @media (min-width: 901px) {
+            .back-hub-btn:not(:window-inactive) {
+                /* We rely on the standalone query above to override this. But default to none. */
+                display: none;
+            }
+        }
     </style>
+
 </head>
 
     <style>

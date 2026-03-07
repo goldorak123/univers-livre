@@ -1057,6 +1057,7 @@
                 // If deferredPrompt is null, meaning prompt cannot be shown
                 // We could dispatch an event or log it.
                 console.log("Installation non disponible ou l'application est déjà installée.");
+                alert("L'application est déjà installée ou votre navigateur ne la supporte pas en mode PWA. Sur iOS, utilisez 'Partager > Sur l'écran d'accueil'.");
             }
         }
         window.addEventListener('beforeinstallprompt', (e) => {

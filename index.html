@@ -220,6 +220,54 @@
         }
     </style>
 
+
+    <!-- GLOBAL HYPHENATION & TEXT WRAP FIX -->
+    <style>
+        /* Force hyphenation on ALL paragraphs, subtitles, and text blocks to prevent huge gaps in justified text */
+        p, .hero-subtitle, .hero-summary, .hero-summary p, .author-info-large p, .testimonial-text, .text-block, [class*="subtitle"], [class*="text"] {
+            -webkit-hyphens: auto !important;
+            -moz-hyphens: auto !important;
+            -ms-hyphens: auto !important;
+            hyphens: auto !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+
+        /* Specifically for mobile to avoid 2 words per line with giant spaces */
+        @media (max-width: 900px) {
+            h1, h2, h3, h4, .hero-title, .hero-subtitle {
+                word-wrap: break-word !important;
+                overflow-wrap: break-word !important;
+                -webkit-hyphens: auto !important;
+                hyphens: auto !important;
+            }
+            
+            p, .hero-summary, .hero-summary p, .text-content {
+                text-align: left !important; /* Fallback from justify if hyphenation isn't enough, but justify is often requested, so let's keep justify but ensure hyphenation */
+            }
+            
+            /* Actually, if justify creates too big gaps even with hyphens, we force left alignment on mobile for very tricky blocks, but user specifically asked to "activer la coupure de mots" (hyphenation). */
+        }
+    </style>
+
+
+    <!-- STRICT MOBILE TEXT SPACING OVERRIDE -->
+    <style>
+        @media (max-width: 900px) {
+            /* Forcing normal letter spacing and automatic hyphens on subtitles to prevent 2-words-per-line justify gaps */
+            p, .hero-subtitle, .hero-summary, .author-info-large p, .testimonial-text, .text-block {
+                letter-spacing: 0.02em !important;
+                text-align: justify !important;
+                -webkit-hyphens: auto !important;
+                -moz-hyphens: auto !important;
+                -ms-hyphens: auto !important;
+                hyphens: auto !important;
+                word-wrap: break-word !important;
+                overflow-wrap: break-word !important;
+            }
+        }
+    </style>
+
 </head>
 
 <body>

@@ -979,6 +979,21 @@
             mix-blend-mode: screen;
             filter: contrast(1.2) saturation(1.1) brightness(1.8);
         }
+    
+        /* PWA Uniform Sub-Icons */
+        .pwa-icon-item {
+            cursor: pointer;
+        }
+        .pwa-icon-item:hover .pwa-icon-small {
+            filter: drop-shadow(0 0 15px rgba(216, 178, 90, 0.8)) !important;
+            transform: scale(1.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .pwa-icon-item:hover .pwa-icon-label {
+            color: var(--gold, #d8b25a);
+            transition: color 0.3s ease;
+        }
+
     </style>
 
   <style>
@@ -1122,11 +1137,11 @@
                         <img src="pwa-text-banner.png" alt="PWA Optimisé" class="pwa-text-banner" onclick="if(typeof installPWA === 'function') installPWA();" title="Cliquer pour installer l'app">
                     <div class="pwa-install-hint" onclick="if(typeof installPWA === 'function') installPWA();">Cliquer pour installer l'app</div>
                         <div class="pwa-icons-box">
-                            <div class="pwa-icon-item">
+                            <div class="pwa-icon-item" onclick="if(typeof installPWA === 'function') installPWA();" title="Cliquer pour installer l'app">
                                 <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
                                 <span class="pwa-icon-label">Simon Lero</span>
                             </div>
-                            <div class="pwa-icon-item">
+                            <div class="pwa-icon-item" onclick="if(typeof installPWA === 'function') installPWA();" title="Cliquer pour installer l'app">
                                 <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
                                 <span class="pwa-icon-label">Mon Univers</span>
                             </div>

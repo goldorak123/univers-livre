@@ -56,6 +56,21 @@
             color: var(--gold, #d8b25a);
         }
 
+    
+        /* PWA Uniform Sub-Icons */
+        .pwa-icon-item {
+            cursor: pointer;
+        }
+        .pwa-icon-item:hover .pwa-icon-small {
+            filter: drop-shadow(0 0 15px rgba(216, 178, 90, 0.8)) !important;
+            transform: scale(1.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .pwa-icon-item:hover .pwa-icon-label {
+            color: var(--gold, #d8b25a);
+            transition: color 0.3s ease;
+        }
+
     </style>
 
   <style>

@@ -199,45 +199,7 @@
     </style>
 
 
-    <!-- FOOTER NAV VISIBILITY ENHANCEMENT -->
-    <style>
-        .footer-nav a {
-            color: #eec165 !important; /* Brighter gold */
-            text-shadow: 0 4px 15px rgba(0,0,0,0.9), 0 0 10px rgba(238,193,101,0.4) !important;
-            font-weight: 700 !important;
-            opacity: 1 !important;
-            text-transform: uppercase !important;
-            letter-spacing: 0.15em !important;
-        }
-
-        @media (max-width: 900px) {
-            .footer-nav {
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                gap: 20px !important;
-                background: linear-gradient(to bottom, rgba(10,10,10,0.9) 0%, rgba(0,0,0,0.95) 100%) !important;
-                padding: 30px 15px !important;
-                margin: 20px auto !important;
-                width: 90% !important;
-                max-width: 400px !important;
-                border: 1px solid rgba(201, 162, 77, 0.3) !important;
-                border-radius: 12px !important;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.8) !important;
-            }
-            
-            .footer-nav a {
-                font-size: 1.15rem !important;
-                margin: 0 !important;
-                text-align: center !important;
-                width: 100% !important;
-                padding: 12px !important;
-                background: rgba(201, 162, 77, 0.05) !important;
-                border: 1px solid rgba(201, 162, 77, 0.15) !important;
-                border-radius: 6px !important;
-            }
-        }
-    </style>
+    
 
 
     <!-- GLOBAL HYPHENATION & TEXT WRAP FIX -->
@@ -283,6 +245,48 @@
                 hyphens: auto !important;
                 word-wrap: break-word !important;
                 overflow-wrap: break-word !important;
+            }
+        }
+    </style>
+
+
+    <!-- FOOTER NAV VISIBILITY ENHANCEMENT V2 -->
+    <style>
+        .footer-nav a {
+            color: #FFDF8D !important; /* Even brighter gold, almost glowing white/yellow */
+            text-shadow: 0 4px 15px rgba(0,0,0,1), 0 0 15px rgba(255, 223, 141, 0.8) !important;
+            font-weight: 800 !important;
+            opacity: 1 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.15em !important;
+        }
+
+        @media (max-width: 900px) {
+            .footer-nav {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 20px !important;
+                background: linear-gradient(to bottom, rgba(5,5,5,0.98) 0%, rgba(0,0,0,1) 100%) !important;
+                padding: 30px 15px !important;
+                margin: 20px auto !important;
+                width: 90% !important;
+                max-width: 400px !important;
+                border: 1px solid rgba(212, 162, 58, 0.6) !important; /* Brighter border */
+                border-radius: 12px !important;
+                box-shadow: 0 10px 40px rgba(0,0,0,1), inset 0 0 20px rgba(212, 162, 58, 0.1) !important;
+            }
+            
+            .footer-nav a {
+                font-size: 1.25rem !important; /* Slightly larger text */
+                margin: 0 !important;
+                text-align: center !important;
+                width: 100% !important;
+                padding: 15px !important; /* More padding for bigger hit area */
+                background: rgba(212, 162, 58, 0.15) !important; /* Brighter inner background */
+                border: 1px solid rgba(212, 162, 58, 0.4) !important; /* Brighter inner border */
+                border-radius: 8px !important;
+                backdrop-filter: blur(5px) !important; /* Blur the noisy background behind it just in case */
             }
         }
     </style>

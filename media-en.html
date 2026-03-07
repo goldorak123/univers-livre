@@ -911,8 +911,64 @@
     </a>
 
 
-    <div class="content-placeholder">
-        <p>Page en construction</p>
+        <style>
+        .media-hub {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 40px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .media-intro {
+            font-size: 1.1rem;
+            color: #ccc;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+        .btn-media {
+            display: inline-block;
+            padding: 20px 60px;
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(216, 178, 90, 0.4);
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+        @media (hover: hover) {
+            .btn-media:hover {
+                transform: translateY(-5px);
+                border-color: var(--gold);
+                box-shadow: 0 15px 40px rgba(216, 178, 90, 0.2);
+                color: #fff;
+            }
+        }
+        .media-note {
+            font-size: 0.8rem;
+            color: #666;
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+        }
+    </style>
+    <div class="media-hub">
+        <p class="media-intro">Complete press kit for journalists, bloggers, and partners.<br>Includes the official biography, detailed technical specifications of the work, full synopsis, and high-resolution photos (Cover and Author).</p>
+        
+        <a href="Media-Kit-Simon-Lero.zip" class="btn-media" download>DOWNLOAD FULL PRESS KIT (.ZIP)</a>
+        <p class="media-note">ZIP Archive - Approx. 2.5 MB</p>
     </div>
 
     <footer class="footer-pwa">
@@ -971,6 +1027,7 @@
 </body>
 
 </html>
+
 
 
 

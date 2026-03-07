@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="notranslate" translate="no">
 
 <head>
@@ -10,7 +10,7 @@
     <meta name="googlebot" content="notranslate">
     <meta name="robots" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frequently Asked Questions — Simon Lero</title>
+    <title>Frequently Asked Questions â€” Simon Lero</title>
     <meta name="description"
         content="Frequently Asked Questions about the novel 'Encounters by Moonlight' by Simon Lero.">
 
@@ -530,8 +530,8 @@
 
 
         /* Ensure PWA always shows it on Desktop if needed (redundancy) */
-        @media (display-mode: standalone) {
-            .back-hub-btn {
+        @media (display-mode: standalone) and (min-width: 901px) {
+    .back-hub-btn {
                 display: flex !important;
             }
         }
@@ -541,8 +541,8 @@
             display: none !important;
         }
 
-        @media (display-mode: standalone) {
-            .back-hub-btn {
+        @media (display-mode: standalone) and (min-width: 901px) {
+    .back-hub-btn {
                 display: flex !important;
             }
         }
@@ -551,7 +551,7 @@
             display: flex !important;
         }
 
-        /* ================= NOUVEL ENTÊTE LUXE ================= */
+        /* ================= NOUVEL ENTÃŠTE LUXE ================= */
         .header-livre {
             font-family: "Playfair Display", serif;
             background-image: url("entete-texture.jpg");
@@ -687,7 +687,7 @@
             width: 60%;
         }
 
-        /* Effet Filigrane Cuir en bas à droite */
+        /* Effet Filigrane Cuir en bas Ã  droite */
         .leather-wrapper {
             position: relative;
             width: 100%;
@@ -777,7 +777,7 @@
   </style>
     <!-- PWA Installation Logic -->
     <script>
-        // SYSTÈME DE GESTION PWA - FORCE UPDATE v42
+        // SYSTÃˆME DE GESTION PWA - FORCE UPDATE v42
         (async function() {
             const v = 'v42.pwa_fix';
             if (localStorage.getItem('pwa_v') !== v) {
@@ -814,7 +814,7 @@
                     window.deferredPrompt = null;
                 });
             } else {
-                console.log("Installation non disponible ou l'application est déjà installée.");
+                console.log("Installation non disponible ou l'application est dÃ©jÃ  installÃ©e.");
             }
         };
         
@@ -847,8 +847,8 @@
             } else {
                 // If deferredPrompt is null, meaning prompt cannot be shown
                 // We could dispatch an event or log it.
-                console.log("Installation non disponible ou l'application est déjà installée.");
-                alert("L'application est déjà installée ou votre navigateur ne la supporte pas en mode PWA. Sur iOS, utilisez 'Partager > Sur l'écran d'accueil'.");
+                console.log("Installation non disponible ou l'application est dÃ©jÃ  installÃ©e.");
+                alert("L'application est dÃ©jÃ  installÃ©e ou votre navigateur ne la supporte pas en mode PWA. Sur iOS, utilisez 'Partager > Sur l'Ã©cran d'accueil'.");
             }
         }
         window.addEventListener('beforeinstallprompt', (e) => {
@@ -1077,16 +1077,6 @@
                     <img src="pwa-text-banner-en.png" alt="PWA Optimized" class="pwa-text-banner" onclick="if(typeof installPWA === 'function') installPWA();" title="Click to install app">
                     <div class="pwa-install-hint" onclick="if(typeof installPWA === 'function') installPWA();">Click to install app</div>
                 </div>
-                        <div class="pwa-icons-box">
-                            <div class="pwa-icon-item" onclick="if(typeof installPWA === 'function') installPWA();" title="Click to install app">
-                                <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
-                                <span class="pwa-icon-label">Simon Lero</span>
-                            </div>
-                            <div class="pwa-icon-item" onclick="if(typeof installPWA === 'function') installPWA();" title="Click to install app">
-                                <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
-                                <span class="pwa-icon-label">My Universe</span>
-                            </div>
-                        </div>
                     </div>
 
                     
@@ -1143,3 +1133,5 @@
 </body>
 
 </html>
+
+

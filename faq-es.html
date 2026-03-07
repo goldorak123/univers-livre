@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es" class="notranslate" translate="no">
 
 <head>
@@ -10,7 +10,7 @@
     <meta name="googlebot" content="notranslate">
     <meta name="robots" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preguntas Frecuentes — Simon Lero</title>
+    <title>Preguntas Frecuentes â€” Simon Lero</title>
     <meta name="description"
         content="Preguntas frecuentes sobre la novela 'Encuentros a la Luz de la Luna' de Simon Lero.">
 
@@ -534,8 +534,8 @@
 
 
         /* Ensure PWA always shows it on Desktop if needed (redundancy) */
-        @media (display-mode: standalone) {
-            .back-hub-btn {
+        @media (display-mode: standalone) and (min-width: 901px) {
+    .back-hub-btn {
                 display: flex !important;
             }
         }
@@ -545,8 +545,8 @@
             display: none !important;
         }
 
-        @media (display-mode: standalone) {
-            .back-hub-btn {
+        @media (display-mode: standalone) and (min-width: 901px) {
+    .back-hub-btn {
                 display: flex !important;
             }
         }
@@ -555,7 +555,7 @@
             display: flex !important;
         }
 
-        /* ================= NOUVEL ENTÊTE LUXE ================= */
+        /* ================= NOUVEL ENTÃŠTE LUXE ================= */
         .header-livre {
             font-family: "Playfair Display", serif;
             background-image: url("entete-texture.jpg");
@@ -691,7 +691,7 @@
             width: 60%;
         }
 
-        /* Effet Filigrane Cuir en bas à droite */
+        /* Effet Filigrane Cuir en bas Ã  droite */
         .leather-wrapper {
             position: relative;
             width: 100%;
@@ -781,7 +781,7 @@
   </style>
     <!-- PWA Installation Logic -->
     <script>
-        // SYSTÈME DE GESTION PWA - FORCE UPDATE v42
+        // SYSTÃˆME DE GESTION PWA - FORCE UPDATE v42
         (async function() {
             const v = 'v42.pwa_fix';
             if (localStorage.getItem('pwa_v') !== v) {
@@ -818,7 +818,7 @@
                     window.deferredPrompt = null;
                 });
             } else {
-                console.log("Installation non disponible ou l'application est déjà installée.");
+                console.log("Installation non disponible ou l'application est dÃ©jÃ  installÃ©e.");
             }
         };
         
@@ -851,8 +851,8 @@
             } else {
                 // If deferredPrompt is null, meaning prompt cannot be shown
                 // We could dispatch an event or log it.
-                console.log("Installation non disponible ou l'application est déjà installée.");
-                alert("L'application est déjà installée ou votre navigateur ne la supporte pas en mode PWA. Sur iOS, utilisez 'Partager > Sur l'écran d'accueil'.");
+                console.log("Installation non disponible ou l'application est dÃ©jÃ  installÃ©e.");
+                alert("L'application est dÃ©jÃ  installÃ©e ou votre navigateur ne la supporte pas en mode PWA. Sur iOS, utilisez 'Partager > Sur l'Ã©cran d'accueil'.");
             }
         }
         window.addEventListener('beforeinstallprompt', (e) => {
@@ -889,18 +889,18 @@
         <!-- Question 1 -->
         <div class="faq-item">
             <div class="faq-question">
-                ¿Cómo instalar la aplicación (PWA) en mi teléfono?
+                Â¿CÃ³mo instalar la aplicaciÃ³n (PWA) en mi telÃ©fono?
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    Para activar la Progressive Web App de forma gratuita y vivir una inmersión a pantalla completa sin
-                    barra de navegación, simplemente haga clic en el botón asociado en la parte inferior de la página,
-                    en la sección PWA. Para una
+                    Para activar la Progressive Web App de forma gratuita y vivir una inmersiÃ³n a pantalla completa sin
+                    barra de navegaciÃ³n, simplemente haga clic en el botÃ³n asociado en la parte inferior de la pÃ¡gina,
+                    en la secciÃ³n PWA. Para una
                     experiencia completa, le recomendamos instalar nuestros dos sitios como PWA: <a
                         href="https://simonlero.com"
                         style="color:var(--gold); text-decoration: underline;">simonlero.com</a> y <a
                         href="https://mon-univers.ca"
-                        style="color:var(--gold); text-decoration: underline;">mon-univers.ca</a>.<br><br><strong>Nota para los usuarios de Apple:</strong> El método es diferente en iOS. Debe hacer clic en el botón "Instalar App" tan pronto como aparezca después de cargar el sitio en Chrome o Safari.
+                        style="color:var(--gold); text-decoration: underline;">mon-univers.ca</a>.<br><br><strong>Nota para los usuarios de Apple:</strong> El mÃ©todo es diferente en iOS. Debe hacer clic en el botÃ³n "Instalar App" tan pronto como aparezca despuÃ©s de cargar el sitio en Chrome o Safari.
                 </div>
             </div>
         </div>
@@ -908,15 +908,15 @@
         <!-- Question 2 -->
         <div class="faq-item">
             <div class="faq-question">
-                ¿Dónde puedo comprar el libro?
+                Â¿DÃ³nde puedo comprar el libro?
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    "Encuentros a la Luz de la Luna" está disponible en las principales plataformas: Amazon (Kindle y
-                    Papel), Apple Books, Kobo, Shopify, Payhip (para ePub y la versión PDF exclusiva) y Google Play.
-                    También puede pedirlo a través de la red Ingram, directamente en simonlero.com o consultar la lista
+                    "Encuentros a la Luz de la Luna" estÃ¡ disponible en las principales plataformas: Amazon (Kindle y
+                    Papel), Apple Books, Kobo, Shopify, Payhip (para ePub y la versiÃ³n PDF exclusiva) y Google Play.
+                    TambiÃ©n puede pedirlo a travÃ©s de la red Ingram, directamente en simonlero.com o consultar la lista
                     completa de nuestros <a href="distribution-es.html"
-                        style="color:var(--gold); text-decoration: underline;">socios de distribución</a>.
+                        style="color:var(--gold); text-decoration: underline;">socios de distribuciÃ³n</a>.
                 </div>
             </div>
         </div>
@@ -924,13 +924,13 @@
         <!-- Question 3 -->
         <div class="faq-item">
             <div class="faq-question">
-                ¿Está el libro disponible en versión papel?
+                Â¿EstÃ¡ el libro disponible en versiÃ³n papel?
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    Absolutamente. Puede pedir la edición de tapa blanda premium en Amazon, Shopify
-                    o a través de Lulu.com. La impresión bajo demanda garantiza una calidad impecable y una
-                    entrega rápida.
+                    Absolutamente. Puede pedir la ediciÃ³n de tapa blanda premium en Amazon, Shopify
+                    o a travÃ©s de Lulu.com. La impresiÃ³n bajo demanda garantiza una calidad impecable y una
+                    entrega rÃ¡pida.
                 </div>
             </div>
         </div>
@@ -938,12 +938,12 @@
         <!-- Question 4 -->
         <div class="faq-item">
             <div class="faq-question">
-                ¿Cuáles son las temáticas de la novela?
+                Â¿CuÃ¡les son las temÃ¡ticas de la novela?
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    La novela es una inmersión poética a través de la música, una novela de amor psicológico y LGBT, que
-                    explora también la nostalgia, el autodescubrimiento a través del arte y la belleza melancólica del
+                    La novela es una inmersiÃ³n poÃ©tica a travÃ©s de la mÃºsica, una novela de amor psicolÃ³gico y LGBT, que
+                    explora tambiÃ©n la nostalgia, el autodescubrimiento a travÃ©s del arte y la belleza melancÃ³lica del
                     paso del tiempo.
                 </div>
             </div>
@@ -952,12 +952,12 @@
         <!-- Question 5 -->
         <div class="faq-item">
             <div class="faq-question">
-                ¿En qué idiomas está disponible el libro?
+                Â¿En quÃ© idiomas estÃ¡ disponible el libro?
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    Actualmente, la novela está disponible en francés ("Rencontres au Clair de Lune"), inglés
-                    ("Encounters by Moonlight") y español ("Encuentros a la Luz de la Luna").
+                    Actualmente, la novela estÃ¡ disponible en francÃ©s ("Rencontres au Clair de Lune"), inglÃ©s
+                    ("Encounters by Moonlight") y espaÃ±ol ("Encuentros a la Luz de la Luna").
                 </div>
             </div>
         </div>
@@ -965,13 +965,13 @@
         <!-- Question 6 -->
         <div class="faq-item">
             <div class="faq-question">
-                ¿Por qué el título "Encuentros a la Luz de la Luna"?
+                Â¿Por quÃ© el tÃ­tulo "Encuentros a la Luz de la Luna"?
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    El título evoca el instante suspendido donde la verdad se revela, lejos del bullicio del día. Es una
-                    metáfora de la claridad interior, íntimamente ligada a la atmósfera de la famosa Sonata al Claro de
-                    Luna de Beethoven. En este universo, todo está conectado.
+                    El tÃ­tulo evoca el instante suspendido donde la verdad se revela, lejos del bullicio del dÃ­a. Es una
+                    metÃ¡fora de la claridad interior, Ã­ntimamente ligada a la atmÃ³sfera de la famosa Sonata al Claro de
+                    Luna de Beethoven. En este universo, todo estÃ¡ conectado.
                 </div>
             </div>
         </div>
@@ -979,11 +979,11 @@
         <!-- Question 7 -->
         <div class="faq-item">
             <div class="faq-question">
-                ¿Es una serie o un libro único?
+                Â¿Es una serie o un libro Ãºnico?
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    Esta novela está concebida como una obra completa e independiente.
+                    Esta novela estÃ¡ concebida como una obra completa e independiente.
                 </div>
             </div>
         </div>
@@ -991,13 +991,13 @@
         <!-- Question 8 -->
         <div class="faq-item">
             <div class="faq-question">
-                ¿Quién es Simon Lero?
+                Â¿QuiÃ©n es Simon Lero?
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    Simon Lero es un autor quebequense que busca, a través de sus palabras, hacer hablar a la música, ya
-                    que cada nota que llega a su oídos le dice lo que las palabras no pueden expresar. Escribe para
-                    capturar lo impalpable y ofrecer una evasión fuera del tiempo, donde cada frase resuena como una
+                    Simon Lero es un autor quebequense que busca, a travÃ©s de sus palabras, hacer hablar a la mÃºsica, ya
+                    que cada nota que llega a su oÃ­dos le dice lo que las palabras no pueden expresar. Escribe para
+                    capturar lo impalpable y ofrecer una evasiÃ³n fuera del tiempo, donde cada frase resuena como una
                     nota suspendida.
                 </div>
             </div>
@@ -1006,11 +1006,11 @@
         <!-- Question 9 -->
         <div class="faq-item">
             <div class="faq-question">
-                ¿Hay ilustraciones en el libro?
+                Â¿Hay ilustraciones en el libro?
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    La edición no contiene ilustraciones para dejar todo el espacio a la imaginación del lector.
+                    La ediciÃ³n no contiene ilustraciones para dejar todo el espacio a la imaginaciÃ³n del lector.
                 </div>
             </div>
         </div>
@@ -1018,11 +1018,11 @@
         <!-- Question 10 -->
         <div class="faq-item">
             <div class="faq-question">
-                ¿Puedo obtener una edición dedicada?
+                Â¿Puedo obtener una ediciÃ³n dedicada?
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    Periódicamente se ponen a la venta ejemplares durante eventos. También siempre guardo algunos en
+                    PeriÃ³dicamente se ponen a la venta ejemplares durante eventos. TambiÃ©n siempre guardo algunos en
                     reserva para regalarlos o venderlos si nuestros caminos se cruzan.
                 </div>
             </div>
@@ -1031,11 +1031,11 @@
         <!-- Question 11 -->
         <div class="faq-item">
             <div class="faq-question">
-                ¿Es el libro apto para lectores jóvenes?
+                Â¿Es el libro apto para lectores jÃ³venes?
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    La novela es un relato de amor psicológico gay (LGBT) y está recomendada para lectores de 18 años en
+                    La novela es un relato de amor psicolÃ³gico gay (LGBT) y estÃ¡ recomendada para lectores de 18 aÃ±os en
                     adelante debido a la profundidad de sus temas y su madurez.
                 </div>
             </div>
@@ -1044,11 +1044,11 @@
         <!-- Question 12 -->
         <div class="faq-item">
             <div class="faq-question">
-                ¿Cómo apoyar el trabajo del autor?
+                Â¿CÃ³mo apoyar el trabajo del autor?
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    La mejor manera de apoyar a Simon Lero es dejar una reseña en Amazon o Kobo después de su lectura, y
+                    La mejor manera de apoyar a Simon Lero es dejar una reseÃ±a en Amazon o Kobo despuÃ©s de su lectura, y
                     compartir sus pasajes favoritos en sus redes sociales con el hashtag #SimonLero.
                 </div>
             </div>
@@ -1057,15 +1057,15 @@
         <!-- Question 13 -->
         <div class="faq-item">
             <div class="faq-question">
-                ¿Cómo contactar al autor para una entrevista?
+                Â¿CÃ³mo contactar al autor para una entrevista?
             </div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
                     Para cualquier solicitud de medios, entrevistas o colaboraciones, utilice el <a
                         href="contact-es.html" style="color:var(--gold); text-decoration: underline;">formulario de
                         contacto</a> o visite el <a href="media-es.html"
-                        style="color:var(--gold); text-decoration: underline;">Espacio de Medios</a> (Página en
-                    construcción).
+                        style="color:var(--gold); text-decoration: underline;">Espacio de Medios</a> (PÃ¡gina en
+                    construcciÃ³n).
                 </div>
             </div>
         </div>
@@ -1086,16 +1086,6 @@
                     <img src="pwa-text-banner-es.png" alt="PWA Optimizado" class="pwa-text-banner" onclick="if(typeof installPWA === 'function') installPWA();" title="Clic para instalar app">
                     <div class="pwa-install-hint" onclick="if(typeof installPWA === 'function') installPWA();">Clic para instalar app</div>
                 </div>
-                        <div class="pwa-icons-box">
-                            <div class="pwa-icon-item" onclick="if(typeof installPWA === 'function') installPWA();" title="Clic para instalar app">
-                                <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
-                                <span class="pwa-icon-label">Simon Lero</span>
-                            </div>
-                            <div class="pwa-icon-item" onclick="if(typeof installPWA === 'function') installPWA();" title="Clic para instalar app">
-                                <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
-                                <span class="pwa-icon-label">Mi Universo</span>
-                            </div>
-                        </div>
                     </div>
 
                     
@@ -1153,3 +1143,5 @@
 </body>
 
 </html>
+
+

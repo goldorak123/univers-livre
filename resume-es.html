@@ -968,8 +968,8 @@
 
 
     /* Ensure PWA always shows it on Desktop if needed (redundancy) */
-    @media (display-mode: standalone) {
-        .back-hub-btn {
+    @media (display-mode: standalone) and (min-width: 901px) {
+    .back-hub-btn {
             display: flex !important;
         }
     }
@@ -979,8 +979,8 @@
         display: none !important;
     }
 
-    @media (display-mode: standalone) {
-        .back-hub-btn {
+    @media (display-mode: standalone) and (min-width: 901px) {
+    .back-hub-btn {
             display: flex !important;
         }
     }
@@ -1208,16 +1208,6 @@
                     <img src="pwa-text-banner-es.png" alt="PWA Optimizado" class="pwa-text-banner" onclick="if(typeof installPWA === 'function') installPWA();" title="Clic para instalar app">
                     <div class="pwa-install-hint" onclick="if(typeof installPWA === 'function') installPWA();">Clic para instalar app</div>
                 </div>
-                        <div class="pwa-icons-box">
-                            <div class="pwa-icon-item" onclick="if(typeof installPWA === 'function') installPWA();" title="Clic para instalar app">
-                                <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">
-                                <span class="pwa-icon-label">Simon Lero</span>
-                            </div>
-                            <div class="pwa-icon-item" onclick="if(typeof installPWA === 'function') installPWA();" title="Clic para instalar app">
-                                <img src="pwa-icon-world.png" alt="PWA World Icon" class="pwa-icon-small">
-                                <span class="pwa-icon-label">Mi Universo</span>
-                            </div>
-                        </div>
                     </div>
 
                     
@@ -1264,3 +1254,5 @@
 </body>
 
 </html>
+
+

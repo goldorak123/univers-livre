@@ -268,12 +268,22 @@
     
 
 
+    
+
+
     <!-- SIMPLE FOOTER COLOR -->
     <style>
-        .footer-nav a, .footer-nav-links a {
+        /* TARGETING ONLY THE 2 MAIN BUTTONS - DO NOT TOUCH FOOTER NAV LINKS */
+        .footer-nav a {
             color: #FFEA9E !important; /* Brighter gold, solid contrast */
             text-shadow: 0 4px 8px rgba(0,0,0,1), 0 0 10px rgba(0,0,0,0.9), 0 0 15px rgba(255, 234, 158, 0.4) !important;
             opacity: 1 !important;
+        }
+
+        /* Reverting the 4 footer links explicitly to their default theme gold just in case */
+        .footer-nav-links a {
+            color: #c9a24d !important;
+            text-shadow: none !important;
         }
 
         /* FIX THE TESTIMONIAL TITLE BREAKING */

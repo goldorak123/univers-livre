@@ -1110,6 +1110,21 @@
             window.deferredPrompt = e;
         });
     </script>
+
+    <!-- Definitive Back Button Logic -->
+    <style>
+        /* Force hide the back button strictly globally */
+        html body .back-hub-btn {
+            display: none !important;
+        }
+
+        /* ONLY show it if in PWA (standalone) AND on Desktop (min-width: 901px) */
+        @media (display-mode: standalone) and (min-width: 901px) {
+            html body .back-hub-btn {
+                display: flex !important;
+            }
+        }
+    </style>
 </head>
 
 <body class="notranslate" translate="no">

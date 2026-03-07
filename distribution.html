@@ -978,6 +978,23 @@
             transition: color 0.3s ease;
         }
 
+    
+    .pwa-banner-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        margin-right: 20px;
+    }
+    
+    .pwa-badge-container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+
     </style>
 
   <style>
@@ -1168,8 +1185,10 @@
                 <div class="footer-main">
                     <div class="footer-left" style="display: flex; flex-direction: column; align-items: center;">
                         <div class="pwa-badge-container">
-                            <img src="pwa-text-banner.png" alt="PWA Optimisé" class="pwa-text-banner" onclick="if(typeof installPWA === 'function') installPWA();" title="Cliquer pour installer l'app">
+                            <div class="pwa-banner-wrapper" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+                    <img src="pwa-text-banner.png" alt="PWA Optimisé" class="pwa-text-banner" onclick="if(typeof installPWA === 'function') installPWA();" title="Cliquer pour installer l'app">
                     <div class="pwa-install-hint" onclick="if(typeof installPWA === 'function') installPWA();">Cliquer pour installer l'app</div>
+                </div>
                             <div class="pwa-icons-box">
                                 <div class="pwa-icon-item" onclick="if(typeof installPWA === 'function') installPWA();" title="Cliquer pour installer l'app">
                                     <img src="pwa-icon-writer.png" alt="PWA Book Icon" class="pwa-icon-small">

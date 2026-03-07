@@ -11,51 +11,53 @@
     html {
       background: #000 !important;
     }
-  
-        /* PWA Uniform Sub-Icons */
-        .pwa-icon-item {
-            cursor: pointer;
-        }
-        .pwa-icon-item:hover .pwa-icon-small {
-            filter: drop-shadow(0 0 15px rgba(216, 178, 90, 0.8)) !important;
-            transform: scale(1.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .pwa-icon-item:hover .pwa-icon-label {
-            color: var(--gold, #d8b25a);
-            transition: color 0.3s ease;
-        }
 
-    
+    /* PWA Uniform Sub-Icons */
+    .pwa-icon-item {
+      cursor: pointer;
+    }
+
+    .pwa-icon-item:hover .pwa-icon-small {
+      filter: drop-shadow(0 0 15px rgba(216, 178, 90, 0.8)) !important;
+      transform: scale(1.05);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .pwa-icon-item:hover .pwa-icon-label {
+      color: var(--gold, #d8b25a);
+      transition: color 0.3s ease;
+    }
+
+
     .pwa-banner-wrapper {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 5px !important;
-        margin-right: 20px;
-    }
-    
-    .pwa-badge-container {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        flex-wrap: wrap !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 5px !important;
+      margin-right: 20px;
     }
 
-    
+    .pwa-badge-container {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+    }
+
+
     /* HIDE BACK HUB BTN ON MOBILE */
     @media (max-width: 900px) {
-        .back-hub-btn {
-            display: none !important;
-        }
+      .back-hub-btn {
+        display: none !important;
+      }
     }
-
-    </style>
+  </style>
   <meta name="theme-color" content="#000000">
   <meta name="color-scheme" content="dark">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google-site-verification" content="FKVZaOxixI2wBoMk8Qq36h_12dAvRA70omiTrvBmd1s">
   <!-- PWA -->
   <link rel="manifest" href="manifest.json?v=1009.0.42">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -562,31 +564,34 @@
       transition: all 0.4s ease;
     }
 
-    
-        .pwa-text-banner {
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .pwa-text-banner:hover {
-            filter: drop-shadow(0 0 25px rgba(216, 178, 90, 1)) !important;
-            transform: scale(1.02);
-        }
-        .pwa-install-hint {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.55rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-            color: rgba(170, 170, 170, 0.8);
-            text-transform: uppercase;
-            margin-top: 17px;
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            text-align: center;
-        }
-        .pwa-install-hint:hover {
-            color: var(--gold, #d8b25a);
-        }
+
+    .pwa-text-banner {
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .pwa-text-banner:hover {
+      filter: drop-shadow(0 0 25px rgba(216, 178, 90, 1)) !important;
+      transform: scale(1.02);
+    }
+
+    .pwa-install-hint {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: rgba(170, 170, 170, 0.8);
+      text-transform: uppercase;
+      margin-top: 17px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      text-align: center;
+    }
+
+    .pwa-install-hint:hover {
+      color: var(--gold, #d8b25a);
+    }
 
 
     .pwa-icon-label {
@@ -937,37 +942,40 @@
     }
 
     .pwa-text-banner:hover,
-    
-        .pwa-text-banner {
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .pwa-text-banner:hover {
-            filter: drop-shadow(0 0 25px rgba(216, 178, 90, 1)) !important;
-            transform: scale(1.02);
-        }
-        .pwa-install-hint {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.55rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-            color: rgba(170, 170, 170, 0.8);
-            text-transform: uppercase;
-            margin-top: 17px;
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            text-align: center;
-        }
-        .pwa-install-hint:hover {
-            color: var(--gold, #d8b25a);
-        }
+
+    .pwa-text-banner {
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .pwa-text-banner:hover {
+      filter: drop-shadow(0 0 25px rgba(216, 178, 90, 1)) !important;
+      transform: scale(1.02);
+    }
+
+    .pwa-install-hint {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: rgba(170, 170, 170, 0.8);
+      text-transform: uppercase;
+      margin-top: 17px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      text-align: center;
+    }
+
+    .pwa-install-hint:hover {
+      color: var(--gold, #d8b25a);
+    }
 
 
 
     /* Ensure PWA always shows it on Desktop if needed (redundancy) */
     @media (display-mode: standalone) and (min-width: 901px) {
-    .back-hub-btn {
+      .back-hub-btn {
         display: flex !important;
       }
     }
@@ -1033,149 +1041,180 @@
     });
   </script>
 
-    <!-- PWA Install Logic -->
-    <script>
-        function installPWA() {
-            if (window.deferredPrompt) {
-                window.deferredPrompt.prompt();
-                window.deferredPrompt.userChoice.then(() => {
-                    window.deferredPrompt = null;
-                });
-            } else {
-                // If deferredPrompt is null, meaning prompt cannot be shown
-                // We could dispatch an event or log it.
-                console.log("Installation non disponible ou l'application est déjà installée.");
-                alert("L'application est déjà installée ou votre navigateur ne la supporte pas en mode PWA. Sur iOS, utilisez 'Partager > Sur l'écran d'accueil'.");
-            }
-        }
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            window.deferredPrompt = e;
+  <!-- PWA Install Logic -->
+  <script>
+    function installPWA() {
+      if (window.deferredPrompt) {
+        window.deferredPrompt.prompt();
+        window.deferredPrompt.userChoice.then(() => {
+          window.deferredPrompt = null;
         });
-    </script>
+      } else {
+        // If deferredPrompt is null, meaning prompt cannot be shown
+        // We could dispatch an event or log it.
+        console.log("Installation non disponible ou l'application est déjà installée.");
+        alert("L'application est déjà installée ou votre navigateur ne la supporte pas en mode PWA. Sur iOS, utilisez 'Partager > Sur l'écran d'accueil'.");
+      }
+    }
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      window.deferredPrompt = e;
+    });
+  </script>
 
-    
 
-    <!-- STRICT BACK BUTTON HYGIENE V2 -->
-    <style>
-        /* ABSOLUTE KILL SWITCH FOR MOBILE: 
+
+  <!-- STRICT BACK BUTTON HYGIENE V2 -->
+  <style>
+    /* ABSOLUTE KILL SWITCH FOR MOBILE: 
            Never show on screens <= 900px, regardless of PWA */
-        @media (max-width: 900px) {
-            .back-hub-btn, a.back-hub-btn, a[class*="back-hub-btn"] {
-                display: none !important;
-                visibility: hidden !important;
-                opacity: 0 !important;
-                pointer-events: none !important;
-                z-index: -9999 !important;
-            }
-        }
+    @media (max-width: 900px) {
 
-        /* ONLY SHOW on DESKTOP (min-width: 901px) AND ONLY IF PWA */
-        @media (display-mode: standalone) and (min-width: 901px) {
-            .back-hub-btn, a.back-hub-btn, a[class*="back-hub-btn"] {
-                display: flex !important;
-            }
-        }
-        
-        /* Default hide for non-PWA desktop just in case */
-        @media (min-width: 901px) {
-            .back-hub-btn:not(:window-inactive) {
-                /* We rely on the standalone query above to override this. But default to none. */
-                display: none;
-            }
-        }
-    </style>
+      .back-hub-btn,
+      a.back-hub-btn,
+      a[class*="back-hub-btn"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        z-index: -9999 !important;
+      }
+    }
 
+    /* ONLY SHOW on DESKTOP (min-width: 901px) AND ONLY IF PWA */
+    @media (display-mode: standalone) and (min-width: 901px) {
 
-    
+      .back-hub-btn,
+      a.back-hub-btn,
+      a[class*="back-hub-btn"] {
+        display: flex !important;
+      }
+    }
 
-
-    <!-- GLOBAL HYPHENATION & TEXT WRAP FIX -->
-    <style>
-        /* Force hyphenation on ALL paragraphs, subtitles, and text blocks to prevent huge gaps in justified text */
-        p, .hero-subtitle, .hero-summary, .hero-summary p, .author-info-large p, .testimonial-text, .text-block, [class*="subtitle"], [class*="text"] {
-            -webkit-hyphens: auto !important;
-            -moz-hyphens: auto !important;
-            -ms-hyphens: auto !important;
-            hyphens: auto !important;
-            word-wrap: break-word !important;
-            overflow-wrap: break-word !important;
-        }
-
-        /* Specifically for mobile to avoid 2 words per line with giant spaces */
-        @media (max-width: 900px) {
-            h1, h2, h3, h4, .hero-title, .hero-subtitle {
-                word-wrap: break-word !important;
-                overflow-wrap: break-word !important;
-                -webkit-hyphens: auto !important;
-                hyphens: auto !important;
-            }
-            
-            p, .hero-summary, .hero-summary p, .text-content {
-                text-align: justify !important;
-            }
-            
-            /* Actually, if justify creates too big gaps even with hyphens, we force left alignment on mobile for very tricky blocks, but user specifically asked to "activer la coupure de mots" (hyphenation). */
-        }
-    </style>
+    /* Default hide for non-PWA desktop just in case */
+    @media (min-width: 901px) {
+      .back-hub-btn:not(:window-inactive) {
+        /* We rely on the standalone query above to override this. But default to none. */
+        display: none;
+      }
+    }
+  </style>
 
 
-    <!-- STRICT MOBILE TEXT SPACING OVERRIDE -->
-    <style>
-        @media (max-width: 900px) {
-            /* Forcing normal letter spacing and automatic hyphens on subtitles to prevent 2-words-per-line justify gaps */
-            p, .hero-subtitle, .hero-summary, .author-info-large p, .testimonial-text, .text-block {
-                letter-spacing: 0.02em !important;
-                text-align: justify !important;
-                -webkit-hyphens: auto !important;
-                -moz-hyphens: auto !important;
-                -ms-hyphens: auto !important;
-                hyphens: auto !important;
-                word-wrap: break-word !important;
-                overflow-wrap: break-word !important;
-            }
-        }
-    </style>
 
 
-    
+
+  <!-- GLOBAL HYPHENATION & TEXT WRAP FIX -->
+  <style>
+    /* Force hyphenation on ALL paragraphs, subtitles, and text blocks to prevent huge gaps in justified text */
+    p,
+    .hero-subtitle,
+    .hero-summary,
+    .hero-summary p,
+    .author-info-large p,
+    .testimonial-text,
+    .text-block,
+    [class*="subtitle"],
+    [class*="text"] {
+      -webkit-hyphens: auto !important;
+      -moz-hyphens: auto !important;
+      -ms-hyphens: auto !important;
+      hyphens: auto !important;
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+    }
+
+    /* Specifically for mobile to avoid 2 words per line with giant spaces */
+    @media (max-width: 900px) {
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .hero-title,
+      .hero-subtitle {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        -webkit-hyphens: auto !important;
+        hyphens: auto !important;
+      }
+
+      p,
+      .hero-summary,
+      .hero-summary p,
+      .text-content {
+        text-align: justify !important;
+      }
+
+      /* Actually, if justify creates too big gaps even with hyphens, we force left alignment on mobile for very tricky blocks, but user specifically asked to "activer la coupure de mots" (hyphenation). */
+    }
+  </style>
 
 
-    
+  <!-- STRICT MOBILE TEXT SPACING OVERRIDE -->
+  <style>
+    @media (max-width: 900px) {
+
+      /* Forcing normal letter spacing and automatic hyphens on subtitles to prevent 2-words-per-line justify gaps */
+      p,
+      .hero-subtitle,
+      .hero-summary,
+      .author-info-large p,
+      .testimonial-text,
+      .text-block {
+        letter-spacing: 0.02em !important;
+        text-align: justify !important;
+        -webkit-hyphens: auto !important;
+        -moz-hyphens: auto !important;
+        -ms-hyphens: auto !important;
+        hyphens: auto !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+    }
+  </style>
 
 
-    
 
 
-    
 
 
-    <!-- SIMPLE FOOTER COLOR -->
-    <style>
-        /* TARGETING ONLY THE 2 MAIN BUTTONS - DO NOT TOUCH FOOTER NAV LINKS */
-        .footer-nav a {
-            color: #c9a24d !important; /* Theme gold matching testimonials */
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8) !important;
-            opacity: 1 !important;
-            font-size: 0.95rem !important; /* Reduced by 2px as requested */
-        }
 
-        /* Reverting the 4 footer links explicitly to their default theme gold just in case */
-        .footer-nav-links a {
-            color: #c9a24d !important;
-            text-shadow: none !important;
-        }
 
-        /* FIX THE TESTIMONIAL TITLE BREAKING */
-        .testimonials-section h2 {
-            -webkit-hyphens: none !important;
-            -moz-hyphens: none !important;
-            -ms-hyphens: none !important;
-            hyphens: none !important;
-            word-wrap: normal !important;
-            overflow-wrap: normal !important;
-        }
-    </style>
+
+
+
+
+
+
+  <!-- SIMPLE FOOTER COLOR -->
+  <style>
+    /* TARGETING ONLY THE 2 MAIN BUTTONS - DO NOT TOUCH FOOTER NAV LINKS */
+    .footer-nav a {
+      color: #c9a24d !important;
+      /* Theme gold matching testimonials */
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+      opacity: 1 !important;
+      font-size: 0.95rem !important;
+      /* Reduced by 2px as requested */
+    }
+
+    /* Reverting the 4 footer links explicitly to their default theme gold just in case */
+    .footer-nav-links a {
+      color: #c9a24d !important;
+      text-shadow: none !important;
+    }
+
+    /* FIX THE TESTIMONIAL TITLE BREAKING */
+    .testimonials-section h2 {
+      -webkit-hyphens: none !important;
+      -moz-hyphens: none !important;
+      -ms-hyphens: none !important;
+      hyphens: none !important;
+      word-wrap: normal !important;
+      overflow-wrap: normal !important;
+    }
+  </style>
 
 </head>
 
@@ -1191,7 +1230,7 @@
 
   <header class="top-nav">
     <div class="lang-selector">
-      
+
       <a href="livre-accueil.html" class="active">FR</a>
       <span class="sep"></span>
       <a href="livre-accueil-en.html">EN</a>
@@ -1250,13 +1289,16 @@
       <div class="footer-main">
         <div class="footer-left" style="display: flex; flex-direction: column; align-items: center;">
           <div class="pwa-badge-container">
-            <div class="pwa-banner-wrapper" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
-                    <img src="pwa-text-banner.png" alt="PWA Optimisé" class="pwa-text-banner" onclick="if(typeof installPWA === 'function') installPWA();" title="Cliquer pour installer l'app">
-                    <div class="pwa-install-hint" onclick="if(typeof installPWA === 'function') installPWA();">Cliquer pour installer l'app</div>
-                </div>
+            <div class="pwa-banner-wrapper"
+              style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+              <img src="pwa-text-banner.png" alt="PWA Optimisé" class="pwa-text-banner"
+                onclick="if(typeof installPWA === 'function') installPWA();" title="Cliquer pour installer l'app">
+              <div class="pwa-install-hint" onclick="if(typeof installPWA === 'function') installPWA();">Cliquer pour
+                installer l'app</div>
+            </div>
           </div>
 
-          
+
         </div>
 
         <div class="footer-right">
@@ -1308,7 +1350,3 @@
 </body>
 
 </html>
-
-
-
-

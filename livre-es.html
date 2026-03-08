@@ -1937,89 +1937,96 @@
 
 
 
-<!-- FIX CTA MAIN UNDERLINE -->
-<style>
-  /* Retirer le width: 100% qui allonge le bouton a 350px au lieu du texte */
-  .hero-actions-container .cta-main {
-    width: max-content !important;
-  }
-
-  /* Cacher le trait par defaut */
-  .cta-main::after {
-    width: 0 !important;
-  }
-  
-  /* Sur desktop au hover Seulement (>=901px), afficher a 60% DE LA LARGEUR DU TEXTE ET ON GARDE L'OR ! */
-  @media (hover: hover) and (min-width: 901px) {
-    .cta-main:hover::after {
-      width: 60% !important;
-      background: var(--gold) !important;
-    }
-  }
-</style>
-
-<!-- SMOOTH PAGE TRANSITIONS -->
-<style>
-  body {
-    animation: fadeInPage 0.6s ease-out forwards;
-    opacity: 0;
-  }
-  @keyframes fadeInPage {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  body.fade-out {
-    opacity: 0 !important;
-    transition: opacity 0.4s ease-out !important;
-  }
-</style>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Fallback de securite
-    setTimeout(() => { document.body.style.opacity = '1'; }, 700);
-
-    const links = document.querySelectorAll('a[href]');
-    
-    links.forEach(link => {
-      link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        const target = this.getAttribute('target');
-        
-        // Ignorer les liens speciaux, ancres, externes, _blank
-        if (!href || 
-            href.startsWith('#') || 
-            href.startsWith('http') || 
-            href.startsWith('mailto:') || 
-            href.startsWith('tel:') || 
-            href.startsWith('javascript:') || 
-            target === '_blank' || 
-            link.hasAttribute('download')) {
-          return;
+    <!-- FIX CTA MAIN UNDERLINE -->
+    <style>
+        /* Retirer le width: 100% qui allonge le bouton a 350px au lieu du texte */
+        .hero-actions-container .cta-main {
+            width: max-content !important;
         }
-        
-        e.preventDefault();
-        document.body.classList.add('fade-out');
-        
-        // Attendre que la transition se termine avant de changer de page
-        setTimeout(() => {
-          window.location.href = href;
-        }, 400); 
-      });
-    });
-  });
 
-  // Correction pour la navigation "Précédent/Suivant" du navigateur (BFCache)
-  window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-      document.body.classList.remove('fade-out');
-      document.body.style.opacity = '1';
-    }
-  });
-</script>
+        /* Cacher le trait par defaut */
+        .cta-main::after {
+            width: 0 !important;
+        }
+
+        /* Sur desktop au hover Seulement (>=901px), afficher a 60% DE LA LARGEUR DU TEXTE ET ON GARDE L'OR ! */
+        @media (hover: hover) and (min-width: 901px) {
+            .cta-main:hover::after {
+                width: 60% !important;
+                background: var(--gold) !important;
+            }
+        }
+    </style>
+
+    <!-- SMOOTH PAGE TRANSITIONS -->
+    <style>
+        body {
+            animation: fadeInPage 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInPage {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        body.fade-out {
+            opacity: 0 !important;
+            transition: opacity 0.4s ease-out !important;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fallback de securite
+            setTimeout(() => { document.body.style.opacity = '1'; }, 700);
+
+            const links = document.querySelectorAll('a[href]');
+
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    const target = this.getAttribute('target');
+
+                    // Ignorer les liens speciaux, ancres, externes, _blank
+                    if (!href ||
+                        href.startsWith('#') ||
+                        href.startsWith('http') ||
+                        href.startsWith('mailto:') ||
+                        href.startsWith('tel:') ||
+                        href.startsWith('javascript:') ||
+                        target === '_blank' ||
+                        link.hasAttribute('download')) {
+                        return;
+                    }
+
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+
+                    // Attendre que la transition se termine avant de changer de page
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 400);
+                });
+            });
+        });
+
+        // Correction pour la navigation "Précédent/Suivant" du navigateur (BFCache)
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                document.body.classList.remove('fade-out');
+                document.body.style.opacity = '1';
+            }
+        });
+    </script>
 
 
-<!-- STRUCTURED DATA SEO FOR GOOGLE -->
-<script type="application/ld+json">
+    <!-- STRUCTURED DATA SEO FOR GOOGLE -->
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Book",
@@ -2101,6 +2108,9 @@
                             propios treinta años: una resonancia íntima, una sinergia inesperada.</p>
                         <div class="hero-actions-container">
                             <div class="dust-filigree"></div>
+                                          <a href="extrait-es.html" class="cta-main cta-premium">
+                LEER UN EXTRACTO GRATUITO
+              </a>
                             <a href="resume-es.html" class="cta-main">
                                 RESUMEN COMPLETO AQUÍ
                             </a>

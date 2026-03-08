@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Free Excerpt - Encounters in the Moonlight | Simon Lero</title>
+    <meta name="description" content="Discover an exclusive excerpt from the LGBTQ+ novel 'Encounters in the Moonlight' by Simon Lero.">
+    <meta name="google" content="notranslate">
+
+    <link rel="alternate" hreflang="fr" href="https://simonlero.com/extrait.html" />
+    <link rel="alternate" hreflang="en" href="https://simonlero.com/extrait-en.html" />
+    <link rel="alternate" hreflang="es" href="https://simonlero.com/extrait-es.html" />
+    <link rel="alternate" hreflang="x-default" href="https://simonlero.com/extrait.html" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f9f6f0; /* Couleur crème riche */
+            --text-color: #2c2b29; /* Noir très légèrement chaud pour le confort */
+            --font-reading: 'Lora', serif;
+            --font-display: 'Playfair Display', serif;
+        }
+
+        body {
+            background-color: #f7f1e3; /* Beige légèrement plus vieilli */
+            background-image: 
+                /* 1. Assombrissement très organique sur les bords (style vieux bouquin) */
+                radial-gradient(ellipse at center, transparent 30%, rgba(139, 115, 85, 0.08) 100%),
+                /* 2. Micro-taches et variations de papier (marbrure monochrome) */
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02' numOctaves='4' result='noise'/%3E%3CfeColorMatrix type='saturate' values='0' result='monoNoise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.08'/%3E%3C/svg%3E"),
+                /* 3. Grain fin régulier de la fibre de papier (monochrome) */
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.06'/%3E%3C/svg%3E");
+            color: var(--text-color);
+            font-family: var(--font-reading);
+            line-height: 1.8;
+            font-size: 1.15rem;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .reader-header {
+            position: sticky;
+            top: 0;
+            background: rgba(247, 241, 227, 0.92); /* Teinte assortie au parchemin avec forte translucidité */
+            backdrop-filter: blur(12px);
+            padding: 15px 5%;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        /* Flèche de retour PWA Officielle */
+        .back-hub-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            width: 45px;
+            height: 45px;
+            background: rgba(10, 10, 10, 0.6);
+            border: 1px solid rgba(212, 162, 58, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: none !important; /* ONLY VIA PWA */
+            align-items: center;
+            justify-content: center;
+            color: #d4af37;
+            text-decoration: none !important;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .back-hub-btn svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        @media (hover: hover) {
+            .back-hub-btn:hover {
+                background: rgba(212, 162, 58, 0.15);
+                border-color: #d4af37;
+                transform: scale(1.1);
+                box-shadow: 0 15px 40px rgba(212, 162, 58, 0.2);
+            }
+            .back-hub-btn:hover svg {
+                transform: translateX(-3px);
+            }
+        }
+        
+        @media (display-mode: standalone) {
+            .back-hub-btn { display: flex !important; }
+        }
+        
+        .is-pwa .back-hub-btn { display: flex !important; }
+
+
+
+        .reader-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #666;
+            margin: 0;
+        }
+
+    
+
+        .reader-container {
+            max-width: 680px;
+            margin: 60px auto;
+            padding: 0 25px;
+        }
+
+        h1.chapter-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        p {
+            margin-bottom: 1.5em;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .reader-container p:first-of-type::first-letter {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            float: left;
+            line-height: 0.8;
+            margin-right: 8px;
+            margin-top: 4px;
+            color: #d4af37;
+        }
+
+        .reader-footer {
+            margin-top: 80px;
+            padding: 60px 25px;
+            text-align: center;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.02));
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .cta-buy {
+            display: inline-block;
+            background: #111;
+            color: #d4af37;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            letter-spacing: 2px;
+            padding: 16px 40px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .cta-buy:hover {
+            background: #d4af37;
+            color: #111;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .reader-container {
+                margin: 40px auto;
+                padding: 0 20px;
+            }
+            body {
+                font-size: 1.05rem;
+            }
+            h1.chapter-title {
+                font-size: 2rem;
+            }
+            .reader-title {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <a href="livre-en.html" class="back-hub-btn" aria-label="Retour au site">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </a>
+
+    <header class="reader-header">
+        <span class="reader-title">Free Excerpt</span>
+    </header>
+
+    <main class="reader-container">
+        
+        <h1 class="chapter-title">Chapter I</h1>
+
+                <p>It was a beautiful, crisp evening in October 2024. The celestial vault shone in all its glory; the moon dominated the darkness, the chimneys smoked, and the chirping of crickets reached the ear like the softness of cotton wool against the skin. A westerly wind blew hard enough to wash up, at the foot of an old cedar plank fence, the broad deciduous foliage of a red maple plantation. Candid young children formed heaps there where they hid, letting out cries of joy.</p>
+        <p>Not far away, in a field, the long stems of goldenrod and fireweed waved like the rolling waves of the sea. At the edge of the woods, a hedge of weeping willows, already stripped bare, swung their branches like the pendulum of a clock. Just across a small, bumpy asphalt road, through the barely open window of an old Norman house, escaped soft piano notes with harmonious consonances, carried freely by the autumn breeze. There was, that evening, something of Eden mingled with all the melancholy of an autumn landscape.</p>
+        <p>This fragile harmony seemed, however, to hang by a thread, as if the slightest sudden gesture, the slightest thought too heavy, could crack this delicate balance. Autumn, in its silent splendor, was never anything but a reminder: all that shines is destined to transform, to shed its leaves.</p>
+        <p>In this deceptive sweetness, time seemed suspended, as if refusing to advance at the same pace as ordinary days. October evenings always had this effect on old Mr. Sisley: they invited contemplation, but above all a return to oneself.</p>
+        <p>The beauty of the landscape brought no solace. It reminded him. It reminded him of past seasons, absent faces, voices that echoed only in his memory. It awakened images that Mr. Sisley thought had long since been buried, but which, in reality, had never ceased to keep a silent watch.</p>
+        <p>The house itself seemed to breathe at his rhythm, as if the walls had learned to know his silences, his sighs, his long inner absences. Nothing was truly modern, but everything was in its place, frozen in an era that resembled him.</p>
+        <p>Huddled in his house, he liked to rest in his peccary leather armchair, worn by time, two or three large pillows well placed, bundled up in a mended but still warm percale blanket. He wasn't sleeping, quite the contrary: his mind alert, his thoughts in motion. He awakened his memories in this way while listening to his favorite music.</p>
+        <p>He often remained motionless for long minutes, his gaze lost in an invisible point in the room. The armchair had molded to his body over the years. Every crack in the leather, every sag in the cushion bore the mark of faithful, almost ritual use. Once settled, he knew there was nothing else to do but listen... and wait.</p>
+        <p>Wait for what, exactly, he couldn't have said. Perhaps a memory more vivid than the rest. Perhaps a peace that never came. Or simply the slow passage of hours, like letting a river flow, knowing it will not turn back.</p>
+        <p>It was then that music took its full place. It became both refuge and mirror, incapable of lying. It didn't soothe him; it kept him in touch with who he had been. Without it, he would have felt he was betraying himself, denying an essential part of his being. It was the last tangible link with the man he once was, before the renunciations, before the prolonged silences.</p>
+        <p>It was from this loyalty that he drew his listening choices. Mr. Sisley especially favored classical and instrumental music, deep and highly melodious. Often, he dozed off amidst his memories, the music playing on through the night, sometimes leaving the trail of dried tears on his cheeks. There seemed to be a perfect harmony between the outpouring of his memories and the notes he heard. Some pieces seemed to have been composed for him alone, as if every measure already knew his wounds and regrets.</p>
+        <p>That evening, the music's volume was just high enough to still let him hear the crackling of the slowly burning wood, keeping time with the passing hours. He often found himself, listening to Beethoven, bringing his silk handkerchief to his nose, overwhelmed by the never-appeased intensity of his emotions.</p>
+        <p>It was as if the music understood and answered him. It became the echo of his memories and, in the same motion, revived his pain, preventing him from forgetting the lingering shadow of their passing.</p>
+        <p>Every note seemed to reopen an old scar, never closed, yet never entirely painful either. A familiar, tamed, almost necessary pain. He knew these notes stirred up what he nonetheless tried to hold at bay. But he preferred this familiar ache over complete silence, which he dreaded even more.</p>
+        <p>Silence, for him, was not rest. It was void, and the void frightened him. When he closed his eyes and looked back on all those nostalgic moments, the effect was like an intense light that lingers after the eye has received a vivid luminous impression. But here, it wasn't a glare, but rather a lived event from the past that had deeply marked him and crystallized in his memory. These images returned without warning, often when he least expected them, imposing their presence with unsettling clarity.</p>
+        <p>An octogenarian, Mr. Sisley particularly cherished moments of tranquility, undisturbed by anyone. Like Beethoven, he isolated himself in his silence. Those who know Mr. Sisley say he seemed full of embarrassment and, moreover, that he felt a sense of something unfinished.</p>
+        <p>Despite this, he is a good and fair man, demonstrating pleasant sociability despite his taciturn appearance, and being clumsy in expressing his emotions. Touching and touched by everything around him, even philosophical at times, he knows how to appreciate the beautiful things in life and share them with whoever wishes to listen.</p>
+        <p>He often gave the impression of being elsewhere, as if listening to an inner music others could not hear. He sometimes spoke for a long time, then paused for no apparent reason. Certain sentences hung in the air, as if they had reached a line he dared not cross. These silences often said more than his words.</p>
+        <p>This loneliness hadn't imposed itself abruptly. It had settled in slowly, almost comfortably, through the course of renunciations. It had slipped into the spaces between his life, between two seasons, between two decisions, until it became a natural, almost reassuring state.</p>
+        <p>Sisley, as he liked to be called, wasn't rich, but he couldn't complain of poverty. Becoming a landscaper, he founded a small property maintenance company in the late 1950s when he was only 21. He devoted ten years of his life to it, working a hundred to a hundred and twenty hours a week.</p>
+        <p>At his peak, Sisley managed around twenty employees and owned a variety of machinery, from the humblest lawnmower to the backhoe, including agricultural tractors used for snow removal. He received an average of a thousand phone calls a month. This didn't frighten him; on the contrary, he thrived on it.</p>
+        <p>He had the wind in his sails until the day he broke down, unable to bear the weight on his shoulders any longer: the whims of employees, customer complaints, quotes, and everything that came with it. He worked seven days a week. The words <i>vacation</i> and <i>holidays</i> had no place in his daily life.</p>
+        <p>In the years that followed, Sisley found a job as a laborer-operator near the small town of Lambton—on the shores of Lake Saint-François, in the Eastern Townships. This period of relentless labor forged his character as much as it had contributed to wearing him out prematurely.</p>
+
+    </main>
+
+    <footer class="reader-footer">
+        <p style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #666; text-align: center; margin-bottom: 30px;">
+            Did you enjoy this excerpt? Discover the rest of the story.
+        </p>
+        <a href="livre-en.html#buy" class="cta-buy">Order the book</a>
+    </footer>
+</body>
+</html>

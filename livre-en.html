@@ -1701,7 +1701,7 @@
     <script>
         // SYSTÈME DE GESTION PWA - FORCE UPDATE v43
         (async function () {
-            const v = 'v45.pwa_fix';
+            const v = 'v46.pwa_fix';
             if (localStorage.getItem('pwa_v') !== v) {
                 if ('serviceWorker' in navigator) {
                     try {
@@ -1721,7 +1721,7 @@
                 window.location.reload(true);
             } else {
                 if ('serviceWorker' in navigator) {
-                    navigator.serviceWorker.register('/sw-v41.js?v=45_' + Date.now(), {
+                    navigator.serviceWorker.register('/sw-v41.js?v=46_' + Date.now(), {
                         updateViaCache: 'none'
                     }).catch(() => { });
                 }
@@ -1934,14 +1934,20 @@
     </style>
 
 
+
 <!-- FIX CTA MAIN UNDERLINE -->
 <style>
+  /* Retirer le width: 100% qui allonge le bouton a 350px au lieu du texte */
+  .hero-actions-container .cta-main {
+    width: max-content !important;
+  }
+
   /* Cacher le trait par defaut */
   .cta-main::after {
     width: 0 !important;
   }
   
-  /* Sur desktop au hover Seulement (>=901px), afficher a 60% */
+  /* Sur desktop au hover Seulement (>=901px), afficher a 60% DE LA LARGEUR DU TEXTE ET ON GARDE L'OR ! */
   @media (hover: hover) and (min-width: 901px) {
     .cta-main:hover::after {
       width: 60% !important;

@@ -439,16 +439,14 @@
         bottom: 10px;
         left: 50%;
         transform: translateX(-50%);
-        width: 0;
+        width: 60%;
         height: 1px;
         background: var(--gold);
         transition: var(--transition);
       }
 
       .cta-main:hover::after {
-        width: 60%;
-        background: var(--gold);
-        /* Ensure it stays gold or turns white based on preference, button is gold, let's make line gold or white? User wants 60% underline. Standard is gold. */
+        background: #fff;
       }
     }
 
@@ -1751,7 +1749,7 @@
   <script>
     // SYSTÈME DE GESTION PWA - FORCE UPDATE v42
     (async function () {
-      const v = 'v43.pwa_fix';
+      const v = 'v44.pwa_fix';
       if (localStorage.getItem('pwa_v') !== v) {
         if ('serviceWorker' in navigator) {
           try {
@@ -1771,7 +1769,7 @@
         window.location.reload(true);
       } else {
         if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('/sw-v41.js?v=42_' + Date.now(), {
+          navigator.serviceWorker.register('/sw-v41.js?v=44_' + Date.now(), {
             updateViaCache: 'none'
           }).catch(() => { });
         }
@@ -1983,6 +1981,29 @@
     }
   </style>
 
+<!-- FIX CTA MAIN UNDERLINE -->
+<style>
+  /* Cacher le trait sur mobile (et annuler width:60% s'il y est) */
+  .cta-main::after {
+    width: 0 !important;
+  }
+  
+  /* Sur desktop Seulement (>=901px), forcer a 60% permanent */
+  @media (min-width: 901px) {
+    .cta-main::after {
+      width: 60% !important;
+      background: var(--gold) !important;
+    }
+  }
+
+  /* Sur desktop au hover, changer la couleur si on veut ou garder 60% */
+  @media (hover: hover) {
+    .cta-main:hover::after {
+      width: 60% !important;
+      background: #fff !important;
+    }
+  }
+</style>
 </head>
 
 <body class="notranslate" translate="no">

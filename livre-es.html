@@ -1702,7 +1702,7 @@
     <script>
         // SYSTÈME DE GESTION PWA - FORCE UPDATE v43
         (async function () {
-            const v = 'v44.pwa_fix';
+            const v = 'v45.pwa_fix';
             if (localStorage.getItem('pwa_v') !== v) {
                 if ('serviceWorker' in navigator) {
                     try {
@@ -1722,7 +1722,7 @@
                 window.location.reload(true);
             } else {
                 if ('serviceWorker' in navigator) {
-                    navigator.serviceWorker.register('/sw-v41.js?v=44_' + Date.now(), {
+                    navigator.serviceWorker.register('/sw-v41.js?v=45_' + Date.now(), {
                         updateViaCache: 'none'
                     }).catch(() => { });
                 }
@@ -1934,26 +1934,19 @@
         }
     </style>
 
+
 <!-- FIX CTA MAIN UNDERLINE -->
 <style>
-  /* Cacher le trait sur mobile (et annuler width:60% s'il y est) */
+  /* Cacher le trait par defaut */
   .cta-main::after {
     width: 0 !important;
   }
   
-  /* Sur desktop Seulement (>=901px), forcer a 60% permanent */
-  @media (min-width: 901px) {
-    .cta-main::after {
-      width: 60% !important;
-      background: var(--gold) !important;
-    }
-  }
-
-  /* Sur desktop au hover, changer la couleur si on veut ou garder 60% */
-  @media (hover: hover) {
+  /* Sur desktop au hover Seulement (>=901px), afficher a 60% */
+  @media (hover: hover) and (min-width: 901px) {
     .cta-main:hover::after {
       width: 60% !important;
-      background: #fff !important;
+      background: var(--gold) !important;
     }
   }
 </style>

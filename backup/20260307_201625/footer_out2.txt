@@ -1,0 +1,16 @@
+\n--- HTML Context distribution-es.html ---\niv class="footer-nav-links">
+                            <a href="livre-accueil-es.html">Inicio</a>
+                            <span class="sep">&bull;</span>
+                            <a href="faq-es.html">FAQ</a>
+                            <span class="sep">&bull;</span>
+                            <a href="media-es.html">Espacio de Medios</a>
+                            <span class="s\n--- HTML Context livre.html ---\n
+        <div class="footer-right">
+          <div class="footer-nav-links">
+            <a href="livre-accueil.html">Accueil</a>
+            <span class="sep">&bull;</span>
+            <a href="faq.html">FAQ</a>
+            <span class="sep">&bull;</span>
+            <a href="media.html">Espace Media</a>
+            <span class="sep">&bull;</span>
+            <a href="contact.html">Me co

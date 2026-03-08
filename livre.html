@@ -1749,7 +1749,7 @@
   <script>
     // SYSTÈME DE GESTION PWA - FORCE UPDATE v42
     (async function () {
-      const v = 'v48.pwa_fix';
+      const v = 'v49.pwa_fix';
       if (localStorage.getItem('pwa_v') !== v) {
         if ('serviceWorker' in navigator) {
           try {
@@ -1769,7 +1769,7 @@
         window.location.reload(true);
       } else {
         if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('/sw-v41.js?v=48_' + Date.now(), {
+          navigator.serviceWorker.register('/sw-v41.js?v=49_' + Date.now(), {
             updateViaCache: 'none'
           }).catch(() => { });
         }
@@ -2064,6 +2064,49 @@
   });
 </script>
 
+
+<!-- STRUCTURED DATA SEO FOR GOOGLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Rencontres au Clair de Lune",
+  "author": {
+    "@type": "Person",
+    "name": "Simon Lero"
+  },
+  "url": "https://www.simonlero.com/livre.html",
+  "image": "https://www.simonlero.com/couverture-livre.png",
+  "description": "Alfred Sisley, vieil homme endurci, vit entouré de ses souvenirs. Il attend en silence un signe de son unique amour, véritable et durable. La rencontre avec Joey bouleverse ce fragile équilibre.",
+  "inLanguage": "fr",
+  "bookFormat": [
+    "https://schema.org/EBook",
+    "https://schema.org/Paperback"
+  ],
+  "offers": [
+    {
+      "@type": "Offer",
+      "url": "https://books2read.com/u/4jkM5X",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "url": "https://simonlero.myshopify.com/",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "url": "https://payhip.com/simonlero",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "url": "https://www.lulu.com/search?q=simon+lero",
+      "availability": "https://schema.org/InStock"
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="notranslate" translate="no">

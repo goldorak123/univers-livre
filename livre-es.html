@@ -1952,7 +1952,7 @@
         /* Sur desktop au hover Seulement (>=901px), afficher a 60% DE LA LARGEUR DU TEXTE ET ON GARDE L'OR ! */
         @media (hover: hover) and (min-width: 901px) {
             .cta-main:hover::after {
-                width: 60% !important;
+                width: calc((100% - 80px) * 0.6) !important;
                 background: var(--gold) !important;
             }
         }

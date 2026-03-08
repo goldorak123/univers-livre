@@ -102,6 +102,17 @@ const htmlTemplate = `<!DOCTYPE html>
         
         .is-pwa .back-hub-btn { display: flex !important; }
 
+        /* ABSOLUTE KILL SWITCH FOR MOBILE: Never show on screens <= 900px */
+        @media (max-width: 900px) {
+            .back-hub-btn {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
+                z-index: -9999 !important;
+            }
+        }
+
 
 
         .reader-title {

@@ -1,0 +1,1454 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="dark">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Specifications — Simon Lero</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@200;300;400;600;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #d4a23a;
+            --gold-bright: #eec165;
+            --bg: #030303;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(212, 162, 58, 0.15);
+            --text: #f0f0f0;
+            --text-dim: #888;
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Premium Back Button */
+        .back-hub-btn {
+            display: none;
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 1000;
+            width: 45px;
+            height: 45px;
+            background: rgba(10, 10, 10, 0.6);
+            border: 1px solid rgba(212, 162, 58, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-hub-btn svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        @media (hover: hover) {
+            .back-hub-btn:hover {
+                background: rgba(212, 162, 58, 0.15);
+                border-color: var(--gold);
+                transform: scale(1.1);
+                box-shadow: 0 15px 40px rgba(212, 162, 58, 0.2);
+            }
+
+            .back-hub-btn:hover svg {
+                transform: translateX(-3px);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .back-hub-btn {
+                top: 20px;
+                left: 20px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .corner-glow {
+            position: fixed;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(212, 162, 58, 0.05) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .glow-tl {
+            top: -20vw;
+            left: -20vw;
+        }
+
+        .glow-br {
+            bottom: -20vw;
+            right: -20vw;
+        }
+
+        .hero {
+            position: relative;
+            padding: 40px 40px 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 1400px;
+            margin: 0 auto;
+            z-index: 10;
+            text-align: left;
+            /* overflow: hidden; -- REMOVED */
+        }
+
+        .hero-background-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(8rem, 25vw, 18rem);
+            font-weight: 900;
+            color: rgba(216, 178, 90, 0.09);
+            -webkit-text-stroke: 1px rgba(216, 178, 90, 0.09);
+            position: absolute;
+            top: 40px;
+            left: -40px;
+            line-height: 0.9;
+            text-transform: uppercase;
+            z-index: -1;
+            pointer-events: none;
+            letter-spacing: -0.05em;
+            animation: slideInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+            white-space: nowrap;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-title-main {
+            margin-bottom: 20px;
+        }
+
+        .title-line {
+            display: block;
+            line-height: 0.9;
+            text-transform: uppercase;
+        }
+
+        .title-line-1 {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: -0.05em;
+            animation: slideInLeft 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .title-line-2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 800;
+            color: var(--gold);
+            margin-left: clamp(1rem, 5vw, 100px);
+            animation: slideInLeft 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+            opacity: 0;
+        }
+
+        .book-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            margin-left: 5px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px 100px;
+        }
+
+        .grid-editions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 120px;
+        }
+
+        .spec-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 50px 40px;
+            position: relative;
+            backdrop-filter: blur(15px);
+            transition: var(--transition);
+        }
+
+        .spec-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        .card-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+        }
+
+        .card-header .edition-type {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .spec-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 12px;
+        }
+
+        .spec-label {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ccc;
+            font-weight: 500;
+        }
+
+        .spec-value {
+            font-weight: 300;
+            color: #fff;
+            font-size: 1.05rem;
+            text-align: right;
+        }
+
+        .spec-icon {
+            width: 18px;
+            height: 18px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.5;
+            opacity: 0.7;
+        }
+
+        .actions {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .btn-back {
+            display: inline-block;
+            color: var(--gold);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif, serif;
+            font-size: 0.95rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            position: relative;
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+
+        .btn-back::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .btn-back:hover {
+            color: #fff;
+            letter-spacing: 6px;
+        }
+
+        .btn-back:hover::after {
+            width: 60%;
+        }
+
+        /* --- MOCKUP --- */
+        .mockup-container {
+            position: relative;
+            margin-top: 20px;
+            perspective: 1000px;
+            z-index: 5;
+        }
+
+        .book-mockup {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 162, 58, 0.1);
+            transition: var(--transition);
+            filter: grayscale(0.2) contrast(1.1);
+        }
+
+        .book-mockup:hover {
+            transform: scale(1.02) rotateY(-5deg);
+            filter: grayscale(0) contrast(1.2);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9), 0 0 50px rgba(212, 162, 58, 0.2);
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                padding: 0 15px 80px;
+            }
+
+            .spec-card {
+                padding: 30px 15px;
+            }
+
+            .spec-label {
+                gap: 10px;
+                font-size: 0.75rem;
+            }
+
+            .spec-value {
+                font-size: 1rem;
+            }
+
+            .grid-editions {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 20px;
+            }
+        }
+
+        /* ================= FOOTER PWA PREMIUM ================= */
+        .footer-pwa {
+            background: #111;
+            border-top: 1px solid rgba(216, 178, 90, 0.15);
+            padding: 60px 0;
+            margin-top: 0px;
+            position: relative;
+            z-index: 30;
+            display: block;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-left {
+            flex: 1;
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 30px;
+            flex: 1;
+        }
+
+        .pwa-badge-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .pwa-text-banner {
+            height: 100px;
+            width: auto;
+        }
+
+        .pwa-icons-box {
+            display: flex;
+            gap: 30px;
+        }
+
+        .pwa-icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pwa-icon-small {
+            height: 70px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.4));
+            transition: all 0.4s ease;
+        }
+
+
+        .pwa-text-banner {
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pwa-text-banner:hover {
+            filter: drop-shadow(0 0 25px rgba(216, 178, 90, 1)) !important;
+            transform: scale(1.02);
+        }
+
+        .pwa-install-hint {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.55rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: rgba(170, 170, 170, 0.8);
+            text-transform: uppercase;
+            margin-top: 17px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+        }
+
+        .pwa-install-hint:hover {
+            color: var(--gold, #d8b25a);
+        }
+
+
+        .pwa-icon-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .footer-nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .footer-nav-links a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: 'Inter', sans-serif, serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            position: relative;
+            padding-bottom: 6px;
+            transition: all 0.4s ease;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        /* 60% Underline Hover Effect */
+        .footer-nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        @media (hover: hover) {
+            .footer-nav-links a:hover {
+                color: var(--gold);
+                text-shadow: 0 0 15px rgba(216, 178, 90, 0.5);
+            }
+
+            .footer-nav-links a:hover::after {
+                width: 60%;
+            }
+        }
+
+        .footer-nav-links .sep {
+            color: var(--gold);
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
+
+        .social-grid {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+
+        .social-btn:hover {
+            background: rgba(214, 162, 58, 0.15);
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .social-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(1);
+            opacity: 0.7;
+        }
+
+        .social-btn:hover img {
+            filter: sepia(1) saturate(5) hue-rotate(10deg);
+            opacity: 1;
+        }
+
+        .footer-copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(216, 178, 90, 0.1);
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        /* Consolidated Footer System v43 */
+        @media (max-width: 900px) {
+
+            /* Reset global interactive styles */
+            a,
+            button,
+            .cta-btn,
+            .btn-back,
+            .lang-selector a {
+                text-decoration: none !important;
+            }
+
+            .lang-selector a {
+                color: rgba(216, 178, 90, 0.9);
+            }
+
+            .lang-selector a.active {
+                color: var(--gold);
+            }
+
+            .lang-selector .sep {
+                background: rgba(255, 255, 255, 0.3);
+            }
+
+            .cta-btn::after,
+            .cta-btn::before,
+            .btn-back::after,
+            .lang-selector a::after,
+            .lang-selector a::before {
+                display: none !important;
+            }
+
+            /* Footer Layout */
+            .footer-pwa {
+                padding: 40px 0 !important;
+            }
+
+            .footer-container {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 30px !important;
+            }
+
+            .footer-main {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 80px !important;
+            }
+
+            .footer-right {
+                order: 1 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                width: 100% !important;
+                gap: 30px !important;
+            }
+
+            .footer-nav-links {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 15px !important;
+                align-items: center !important;
+            }
+
+            .footer-nav-links .sep {
+                display: none !important;
+            }
+
+            .social-grid {
+                display: grid !important;
+                grid-template-columns: repeat(4, 44px) !important;
+                gap: 15px !important;
+                justify-content: center !important;
+                width: 100% !important;
+            }
+
+            .footer-left {
+                order: 2 !important;
+                width: 100% !important;
+                display: flex !important;
+                justify-content: center !important;
+            }
+
+            .pwa-badge-container {
+                flex-direction: column !important;
+                gap: 20px !important;
+                align-items: center !important;
+            }
+
+            .footer-copyright {
+                order: 3 !important;
+                margin-top: 30px !important;
+                text-align: center !important;
+                width: 100% !important;
+                padding-top: 20px !important;
+                border-top: 1px solid rgba(216, 178, 90, 0.1) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            a::after,
+            button::after,
+            [class*="btn"]::after,
+            [class*="link"]::after {
+                display: none !important;
+            }
+        }
+
+        /* PWA Highlights */
+        .pwa-text-banner,
+        .pwa-icon-small {
+            filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(212, 162, 58, 0.6)) !important;
+            opacity: 1 !important;
+            transition: all 0.4s ease;
+        }
+
+        .pwa-text-banner:hover,
+        .pwa-text-banner {
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pwa-text-banner:hover {
+            filter: drop-shadow(0 0 25px rgba(216, 178, 90, 1)) !important;
+            transform: scale(1.02);
+        }
+
+        .pwa-install-hint {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.55rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: rgba(170, 170, 170, 0.8);
+            text-transform: uppercase;
+            margin-top: 17px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+        }
+
+        .pwa-install-hint:hover {
+            color: var(--gold, #d8b25a);
+        }
+
+
+
+        /* Ensure PWA always shows it on Desktop if needed (redundancy) */
+        @media (display-mode: standalone) and (min-width: 901px) {
+            .back-hub-btn {
+                display: flex !important;
+            }
+        }
+
+        /* --- PWA-ONLY NAVIGATION --- */
+        .back-hub-btn {
+            display: none !important;
+        }
+
+        @media (display-mode: standalone) and (min-width: 901px) {
+            .back-hub-btn {
+                display: flex !important;
+            }
+        }
+
+        .is-pwa .back-hub-btn {
+            display: flex !important;
+        }
+
+        /* ================= NOUVEL ENTÊTE LUXE ================= */
+        .header-livre {
+            font-family: "Playfair Display", serif;
+            background-image: url("entete-texture.jpg");
+            background-size: cover;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            height: 380px;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: none;
+            margin-bottom: 0px;
+            overflow: hidden;
+        }
+
+
+        .header-livre::before {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 120px;
+            height: 80px;
+            background: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .header-livre::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 1) 100%);
+            pointer-events: none;
+        }
+
+        .titre-memoire {
+            font-family: "Playfair Display", serif;
+            color: #ffffff;
+            font-size: clamp(3rem, 10vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin: 0;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            padding: 5px 20px;
+            background: linear-gradient(to bottom, #f1d57e 0%, #d4a23a 50%, #a67c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.8));
+        }
+
+        @media (max-width: 768px) {
+            .header-livre {
+                height: 250px;
+                background-size: cover;
+            }
+
+            .titre-memoire {
+                font-size: 2.4rem !important;
+                letter-spacing: 0.05em;
+            }
+
+            .auteur-header {
+                font-size: 10px !important;
+                letter-spacing: 4px;
+                margin-bottom: 0px;
+                color: #ffffff !important;
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+            }
+
+            .livre-header {
+                font-size: 13px !important;
+                letter-spacing: 1px;
+                margin-top: 2px;
+                color: #ffffff !important;
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        .auteur-header {
+            font-family: "Inter", sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 2px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .livre-header {
+            font-family: "Cinzel", serif;
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 5px;
+            font-style: italic;
+            z-index: 10;
+            position: relative;
+        }
+
+        .overlay-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* PWA Uniform Sub-Icons */
+        .pwa-icon-item {
+            cursor: pointer;
+        }
+
+        .pwa-icon-item:hover .pwa-icon-small {
+            filter: drop-shadow(0 0 15px rgba(216, 178, 90, 0.8)) !important;
+            transform: scale(1.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pwa-icon-item:hover .pwa-icon-label {
+            color: var(--gold, #d8b25a);
+            transition: color 0.3s ease;
+        }
+    </style>
+
+
+
+    <style>
+        @media (max-width: 900px) {
+            .mobile-nav-bar {
+                background-color: #000 !important;
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+        }
+    </style>
+    <!-- PWA Installation Logic -->
+    <script>
+        // SYSTÈME DE GESTION PWA - FORCE UPDATE v42
+        (async function () {
+            const v = 'v43.pwa_fix';
+            if (localStorage.getItem('pwa_v') !== v) {
+                if ('serviceWorker' in navigator) {
+                    try {
+                        const regs = await navigator.serviceWorker.getRegistrations();
+                        for (const r of regs) await r.unregister();
+                    } catch (e) { }
+                }
+                if ('caches' in window) {
+                    try {
+                        const keys = await caches.keys();
+                        for (const k of keys) await caches.delete(k);
+                    } catch (e) { }
+                }
+                localStorage.clear();
+                sessionStorage.clear();
+                localStorage.setItem('pwa_v', v);
+                window.location.reload(true);
+            } else {
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('/sw-v41.js?v=42_' + Date.now(), {
+                        updateViaCache: 'none'
+                    }).catch(() => { });
+                }
+            }
+        })();
+
+        // LOGIQUE D'INSTALLATION
+        window.installPWA = function () {
+            if (window.deferredPrompt) {
+                window.deferredPrompt.prompt();
+                window.deferredPrompt.userChoice.then(() => {
+                    window.deferredPrompt = null;
+                });
+            } else {
+                console.log("Installation non disponible ou l'application est déjà installée.");
+            }
+        };
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            window.deferredPrompt = e;
+        });
+
+        // BIND BUTTONS AUTOMATICALLY
+        document.addEventListener('DOMContentLoaded', () => {
+            const btns = document.querySelectorAll('#installAppBtn, #install-btn');
+            btns.forEach(btn => {
+                btn.style.cursor = 'pointer';
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.installPWA();
+                });
+            });
+        });
+    </script>
+
+    <!-- PWA Install Logic -->
+    <script>
+        function installPWA() {
+            if (window.deferredPrompt) {
+                window.deferredPrompt.prompt();
+                window.deferredPrompt.userChoice.then(() => {
+                    window.deferredPrompt = null;
+                });
+            } else {
+                // If deferredPrompt is null, meaning prompt cannot be shown
+                // We could dispatch an event or log it.
+                console.log("Installation non disponible ou l'application est déjà installée.");
+                alert("L'application est déjà installée ou votre navigateur ne la supporte pas en mode PWA. Sur iOS, utilisez 'Partager > Sur l'écran d'accueil'.");
+            }
+        }
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            window.deferredPrompt = e;
+        });
+    </script>
+
+
+
+    <!-- STRICT BACK BUTTON HYGIENE V2 -->
+    <style>
+        /* ABSOLUTE KILL SWITCH FOR MOBILE: 
+           Never show on screens <= 900px, regardless of PWA */
+        @media (max-width: 900px) {
+
+            .back-hub-btn,
+            a.back-hub-btn,
+            a[class*="back-hub-btn"] {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
+                z-index: -9999 !important;
+            }
+        }
+
+        /* ONLY SHOW on DESKTOP (min-width: 901px) AND ONLY IF PWA */
+        @media (display-mode: standalone) and (min-width: 901px) {
+
+            .back-hub-btn,
+            a.back-hub-btn,
+            a[class*="back-hub-btn"] {
+                display: flex !important;
+            }
+        }
+
+        /* Default hide for non-PWA desktop just in case */
+        @media (min-width: 901px) {
+            .back-hub-btn:not(:window-inactive) {
+                /* We rely on the standalone query above to override this. But default to none. */
+                display: none;
+            }
+        }
+    </style>
+
+
+    <!-- GLOBAL HYPHENATION & TEXT WRAP FIX -->
+    <style>
+        /* Force hyphenation on ALL paragraphs, subtitles, and text blocks to prevent huge gaps in justified text */
+        p,
+        .hero-subtitle,
+        .hero-summary,
+        .hero-summary p,
+        .author-info-large p,
+        .testimonial-text,
+        .text-block,
+        [class*="subtitle"],
+        [class*="text"] {
+            -webkit-hyphens: auto !important;
+            -moz-hyphens: auto !important;
+            -ms-hyphens: auto !important;
+            hyphens: auto !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+
+        /* Specifically for mobile to avoid 2 words per line with giant spaces */
+        @media (max-width: 900px) {
+
+            h1,
+            h2,
+            h3,
+            h4,
+            .hero-title,
+            .hero-subtitle {
+                word-wrap: break-word !important;
+                overflow-wrap: break-word !important;
+                -webkit-hyphens: auto !important;
+                hyphens: auto !important;
+            }
+
+            p,
+            .hero-summary,
+            .hero-summary p,
+            .text-content {
+                text-align: justify !important;
+            }
+
+            /* Actually, if justify creates too big gaps even with hyphens, we force left alignment on mobile for very tricky blocks, but user specifically asked to "activer la coupure de mots" (hyphenation). */
+        }
+    </style>
+
+
+    <!-- STRICT MOBILE TEXT SPACING OVERRIDE -->
+    <style>
+        @media (max-width: 900px) {
+
+            /* Forcing normal letter spacing and automatic hyphens on subtitles to prevent 2-words-per-line justify gaps */
+            p,
+            .hero-subtitle,
+            .hero-summary,
+            .author-info-large p,
+            .testimonial-text,
+            .text-block {
+                letter-spacing: 0.02em !important;
+                text-align: justify !important;
+                -webkit-hyphens: auto !important;
+                -moz-hyphens: auto !important;
+                -ms-hyphens: auto !important;
+                hyphens: auto !important;
+                word-wrap: break-word !important;
+                overflow-wrap: break-word !important;
+            }
+        }
+    </style>
+
+
+
+
+
+
+
+
+    <!-- SIMPLE FOOTER COLOR -->
+    <style>
+        /* TARGETING ONLY THE 2 MAIN BUTTONS - DO NOT TOUCH FOOTER NAV LINKS */
+        .footer-nav a {
+            color: #FFEA9E !important;
+            /* Brighter gold, solid contrast */
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.9), 0 0 15px rgba(255, 234, 158, 0.4) !important;
+            opacity: 1 !important;
+        }
+
+        /* Reverting the 4 footer links explicitly to their default theme gold just in case */
+        .footer-nav-links a {
+            color: #c9a24d !important;
+            text-shadow: none !important;
+        }
+
+        /* FIX THE TESTIMONIAL TITLE BREAKING */
+        .testimonials-section h2 {
+            -webkit-hyphens: none !important;
+            -moz-hyphens: none !important;
+            -ms-hyphens: none !important;
+            hyphens: none !important;
+            word-wrap: normal !important;
+            overflow-wrap: normal !important;
+        }
+    </style>
+
+
+<!-- SMOOTH PAGE TRANSITIONS -->
+<style>
+  body {
+    animation: fadeInPage 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  @keyframes fadeInPage {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  body.fade-out {
+    opacity: 0 !important;
+    transition: opacity 0.4s ease-out !important;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Fallback de securite
+    setTimeout(() => { document.body.style.opacity = '1'; }, 700);
+
+    const links = document.querySelectorAll('a[href]');
+    
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        const target = this.getAttribute('target');
+        
+        // Ignorer les liens speciaux, ancres, externes, _blank
+        if (!href || 
+            href.startsWith('#') || 
+            href.startsWith('http') || 
+            href.startsWith('mailto:') || 
+            href.startsWith('tel:') || 
+            href.startsWith('javascript:') || 
+            target === '_blank' || 
+            link.hasAttribute('download')) {
+          return;
+        }
+        
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        
+        // Attendre que la transition se termine avant de changer de page
+        setTimeout(() => {
+          window.location.href = href;
+        }, 400); 
+      });
+    });
+  });
+
+  // Correction pour la navigation "Précédent/Suivant" du navigateur (BFCache)
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      document.body.classList.remove('fade-out');
+      document.body.style.opacity = '1';
+    }
+  });
+</script>
+
+</head>
+
+<body>
+
+    <!-- Bouton de retour PWA -->
+    <a href="#" onclick="history.back(); return false;" class="back-hub-btn" aria-label="Back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+    </a>
+
+    <div class="corner-glow glow-tl"></div>
+    <div class="corner-glow glow-br"></div>
+
+    <header class="header-livre">
+        <div class="overlay-content">
+            <div class="auteur-header">SIMON LERO</div>
+            <h1 class="titre-memoire">Book Details</h1>
+            <div class="livre-header">Rencontres au Clair de Lune</div>
+        </div>
+    </header>
+
+
+
+    <main class="container">
+        <div class="grid-editions">
+
+            <!-- AMAZON EDITION -->
+            <article class="spec-card">
+                <div class="card-header">
+                    <h2>Amazon</h2>
+                    <span class="edition-type">Paperback Edition</span>
+                </div>
+                <div class="spec-list">
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            Print Length
+                        </span>
+                        <span class="spec-value">146 pages</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            Language
+                        </span>
+                        <span class="spec-value">English</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path d="M21 16V4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16h14a2 2 0 0 0 2-2z"></path>
+                                <path d="M10 10l-2 2 2 2"></path>
+                                <path d="M14 14l2-2-2-2"></path>
+                            </svg>
+                            ISBN-13
+                        </span>
+                        <span class="spec-value">979-8245765754</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                            ASIN
+                        </span>
+                        <span class="spec-value">B0GK74T9LC</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
+                                </path>
+                                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                            </svg>
+                            Weight
+                        </span>
+                        <span class="spec-value">191 g</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                            Dimensions
+                        </span>
+                        <span class="spec-value">6 x 9 x 0.3 in</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
+                                </path>
+                                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                            </svg>
+                            Publisher
+                        </span>
+                        <span class="spec-value">Indep. Published</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Publication
+                        </span>
+                        <span class="spec-value">Feb 8, 2026</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- LULU EDITION -->
+            <article class="spec-card">
+                <div class="card-header">
+                    <h2>Lulu.com</h2>
+                    <span class="edition-type">Paperback Perfect Bound</span>
+                </div>
+                <div class="spec-list">
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            Print Length
+                        </span>
+                        <span class="spec-value">144 pages</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            Language
+                        </span>
+                        <span class="spec-value">English</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path d="M21 16V4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16h14a2 2 0 0 0 2-2z"></path>
+                                <path d="M10 10l-2 2 2 2"></path>
+                                <path d="M14 14l2-2-2-2"></path>
+                            </svg>
+                            ISBN-13
+                        </span>
+                        <span class="spec-value">9781105679308</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                            Dimensions
+                        </span>
+                        <span class="spec-value">US Trade (6x9 in / 152x229 mm)</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
+                                </path>
+                                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                            </svg>
+                            Publisher
+                        </span>
+                        <span class="spec-value">Lulu.com</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Publication
+                        </span>
+                        <span class="spec-value">Feb 8, 2026</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">
+                            <svg class="spec-icon" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                            Interior
+                        </span>
+                        <span class="spec-value">Black & White</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+
+    </main>
+
+    <footer class="footer-pwa">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-left" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="pwa-badge-container">
+                        <img src="pwa-text-banner-en.png" alt="PWA optimized" class="pwa-text-banner">
+                    </div>
+
+
+                </div>
+
+                <div class="footer-right">
+                    <div class="footer-nav-links">
+                        <a href="livre-accueil-en.html">Home</a>
+                        <span class="sep">&bull;</span>
+                        <a href="faq-en.html">FAQ</a>
+                        <span class="sep">&bull;</span>
+                        <a href="media-en.html">Media Kit</a>
+                        <span class="sep">&bull;</span>
+                        <a href="contact-en.html">Contact me</a>
+                    </div>
+                    <div class="social-grid">
+                        <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
+                        <div class="social-btn"><img src="whatsapp.png" alt="WhatsApp"></div>
+                        <div class="social-btn"><img src="facebook.png" alt="Facebook"></div>
+                        <div class="social-btn"><img src="instagram.png" alt="Instagram"></div>
+                        <div class="social-btn"><img src="linkedin.png" alt="LinkedIn"></div>
+                        <div class="social-btn"><img src="tictok.png" alt="TikTok"></div>
+                        <div class="social-btn"><img src="iconX480.png" alt="X"></div>
+                        <div class="social-btn"><img src="snapchat.png" alt="Snapchat"></div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; All rights
+                reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year-footer').textContent = new Date().getFullYear();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const isPWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+            if (isPWA) {
+                document.documentElement.classList.add('is-pwa');
+            }
+        });
+    </script>
+</body>
+
+</html>

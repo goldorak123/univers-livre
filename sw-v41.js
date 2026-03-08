@@ -1,4 +1,4 @@
-const CACHE_NAME = 'simon-lero-v41-final';
+const CACHE_NAME = 'simon-lero-v43-final';
 const urlsToCache = [
     '/livre-accueil.html',
     '/manifest.json',

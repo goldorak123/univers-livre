@@ -10,6 +10,8 @@
   <style>
     html {
       background: #000 !important;
+      overflow-x: hidden;
+      width: 100%;
     }
 
     /* PWA Uniform Sub-Icons */
@@ -116,6 +118,7 @@
       color: var(--text);
       min-height: 100vh;
       overflow-x: hidden;
+      width: 100%;
       display: flex;
       flex-direction: column;
       -webkit-font-smoothing: antialiased;
@@ -733,7 +736,8 @@
 
     @media (max-width: 1366px) {
       body {
-        overflow: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
         height: auto;
         min-height: 100dvh;
       }

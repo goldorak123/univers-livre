@@ -393,13 +393,13 @@
         .cta-main::after {
             content: '';
             position: absolute;
-            bottom: 10px;
+            bottom: 15px;
             left: 50%;
+            transform: translateX(-50%);
             width: 0;
             height: 1px;
             background: var(--gold);
             transition: all 0.5s ease;
-            transform: translateX(-50%);
         }
 
         @media (hover: hover) {
@@ -408,7 +408,6 @@
                 transform: translateY(-5px);
                 text-shadow: 0 0 15px rgba(201, 162, 77, 0.3);
             }
-
 
             .cta-main:hover::after {
                 width: 60%;

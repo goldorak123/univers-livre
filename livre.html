@@ -434,11 +434,11 @@
 
 
       .cta-main::after {
-        transform: translateX(-50%);
         content: '';
         position: absolute;
         bottom: 10px;
         left: 50%;
+        transform: translateX(-50%);
         width: 0;
         height: 1px;
         background: var(--gold);
@@ -447,6 +447,8 @@
 
       .cta-main:hover::after {
         width: 60%;
+        background: var(--gold);
+        /* Ensure it stays gold or turns white based on preference, button is gold, let's make line gold or white? User wants 60% underline. Standard is gold. */
       }
     }
 

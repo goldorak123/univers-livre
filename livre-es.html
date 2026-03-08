@@ -1702,7 +1702,7 @@
     <script>
         // SYSTÈME DE GESTION PWA - FORCE UPDATE v43
         (async function () {
-            const v = 'v46.pwa_fix';
+            const v = 'v48.pwa_fix';
             if (localStorage.getItem('pwa_v') !== v) {
                 if ('serviceWorker' in navigator) {
                     try {
@@ -1722,7 +1722,7 @@
                 window.location.reload(true);
             } else {
                 if ('serviceWorker' in navigator) {
-                    navigator.serviceWorker.register('/sw-v41.js?v=46_' + Date.now(), {
+                    navigator.serviceWorker.register('/sw-v41.js?v=48_' + Date.now(), {
                         updateViaCache: 'none'
                     }).catch(() => { });
                 }
@@ -2149,7 +2149,7 @@
 
 
     <div class="footer-nav" style="position: relative; z-index: 50;">
-        <a href="https://www.mon-univers.ca/index.html"
+        <a href="https://www.mon-univers.ca/index.html" target="_blank"
             style=" text-decoration: none !important; font-family: 'Cinzel', serif; color: #eec165 !important; text-shadow: 0 4px 12px rgba(0,0,0,1) !important; font-size: 0.95rem; margin: 0 40px; opacity: 1; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); display: inline-block; vertical-align: top; text-align: center;">
             Visita mi vitrina personal<br>
             <span style="font-size: 0.6em; opacity: 0.8; display: block; margin-top: 5px;">(ÚNICAMENTE EN

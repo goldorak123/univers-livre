@@ -758,6 +758,48 @@
             align-items: center;
         }
 
+        
+        /* Effet Filigrane Cuir en bas à gauche */
+        .leather-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            z-index: 5;
+        }
+
+        .leather-reveal-corner {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 100vw;
+            max-width: 1600px;
+            height: 450px;
+            /* Utilisation de l'image de cuir pur alignée à gauche */
+            background: url('cuir-page-fond.jpg') center left / cover no-repeat;
+            /* Le masque radial part du coin inférieur gauche */
+            -webkit-mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
+            mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
+            pointer-events: none;
+            mix-blend-mode: screen;
+            /* Contraste pour mieux s'intégrer */
+            filter: contrast(1.4) saturation(1.3) brightness(2.5);
+        }
+
+        .leather-reveal-corner-right {
+            position: absolute;
+            bottom: 0px;
+            right: 0;
+            width: 100vw;
+            max-width: 1600px;
+            height: 510px;
+            background: url('cuir-page-fond.jpg') center right / cover no-repeat;
+            -webkit-mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
+            mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
+            pointer-events: none;
+            mix-blend-mode: screen;
+            filter: contrast(1.4) saturation(1.3) brightness(2.5);
+        }
+
         /* PWA Uniform Sub-Icons */
         .pwa-icon-item {
             cursor: pointer;
@@ -1182,6 +1224,13 @@
 
         <a href="Media-Kit-Simon-Lero.zip" class="btn-media" download>TÉLÉCHARGER LE DOSSIER DE PRESSE (.ZIP)</a>
         <p class="media-note">Fichier ZIP - Env. 19.4 Mo</p>
+    </div>
+
+    
+    <!-- FILIGRANE CUIR : Apparition dans les coins inférieurs -->
+    <div class="leather-wrapper" aria-hidden="true">
+        <div class="leather-reveal-corner"></div>
+        <div class="leather-reveal-corner-right"></div>
     </div>
 
     <footer class="footer-pwa">

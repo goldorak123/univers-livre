@@ -1,30 +1,42 @@
 ﻿<!DOCTYPE html>
-<html lang="fr" class="notranslate" translate="no">
+<html lang="es" class="notranslate" translate="no">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="theme-color" content="#000000">
-    <meta name="color-scheme" content="dark">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
-    <meta name="googlebot" content="notranslate">
-    <meta name="robots" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ — Simon Lero</title>
-    <meta name="description" content="Foire aux questions sur le roman 'Rencontres au Clair de Lune' de Simon Lero.">
+    <meta name="theme-color" content="#000000">
+    <meta name="google" content="notranslate">
+    <title>Contacto — Simon Lero</title>
+    <link rel="canonical" href="https://www.simonlero.com/contact-es.html"> <!-- Fonts -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js?v=1009')
+                    .then(reg => {
+                        console.log('SW Registered');
+                        if (localStorage.getItem('sw_version') !== '72') {
+                            reg.update();
+                            localStorage.setItem('sw_version', '1009');
+                        }
+                    })
+                    .catch(err => console.log('SW Failed', err));
+            });
+        }
+    </script>
 
-    <!-- Fonts -->
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;600;800&display=swap"
         rel="stylesheet">
-
     <style>
         :root {
-            --gold: #d8b25a;
-            --gold-bright: #f4d393;
-            --bg-dark: #0a0a0a;
-            --text-light: #f0f0f0;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --gold: #d4a23a;
         }
 
         /* Premium Back Button */
@@ -79,22 +91,64 @@
 
         * {
             box-sizing: border-box;
+        }
+
+        html,
+        html,
+        body {
+            background: #000 !important;
             margin: 0;
             padding: 0;
-        }
-
-        body {
-            background-color: #000;
-            color: var(--text-light);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            color: #f0f0f0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+            min-height: 100vh;
+            max-width: 100%;
         }
 
-        /* --- HERO SECTION --- */
+
+        /* Focus Reset */
+        a:focus,
+        button:focus,
+        textarea:focus {
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        /* Cinematic Background */
+        .bg-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            filter: grayscale(10%) contrast(110%);
+        }
+
+        .bg-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        /* HERO SECTION (ULTRA-BOLD ASIMMETRICAL) */
         .hero {
             position: relative;
-            padding: 160px 40px 100px;
+            padding: 60px 40px 100px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -102,7 +156,7 @@
             margin: 0 auto;
             z-index: 10;
             text-align: left;
-            /* overflow: hidden; -- SUPPRIMÉ */
+            /* overflow: hidden; -- ELIMINADO */
         }
 
         .hero-background-title {
@@ -113,12 +167,13 @@
             -webkit-text-stroke: 1px rgba(216, 178, 90, 0.09);
             position: absolute;
             top: 40px;
-            left: -40px;
+            left: -100px;
             line-height: 0.9;
             text-transform: uppercase;
             z-index: -1;
             pointer-events: none;
             letter-spacing: -0.05em;
+            white-space: nowrap;
             animation: slideInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
@@ -138,19 +193,39 @@
         }
 
         .title-line-2 {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Cinzel', serif;
             font-size: clamp(3rem, 10vw, 8rem);
             font-weight: 800;
-            color: var(--gold);
-            margin-left: clamp(1rem, 5vw, 100px);
+            color: #d8b25a;
+            margin-left: clamp(2rem, 10vw, 150px);
             animation: slideInLeft 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
             opacity: 0;
+        }
+
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 200;
+            color: #ccc;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            line-height: 1.8;
+            max-width: 900px;
+            animation: fadeIn 2s ease-out 0.8s forwards;
+            opacity: 0;
+            align-self: center;
+            text-align: center;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
 
         @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateX(-100px);
+                transform: translateX(-150px);
             }
 
             to {
@@ -159,96 +234,205 @@
             }
         }
 
-        /* --- FAQ SECTION --- */
-        .faq-container {
-            max-width: 900px;
-            margin: 60px auto 100px;
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(150px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* FORM CARD (Offset Floating Card) */
+        .narrative-box {
             position: relative;
-            z-index: 20;
-            padding: 0 20px;
-        }
-
-        .faq-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(216, 178, 90, 0.1);
-            margin-bottom: 20px;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .faq-item:hover {
-            border-color: rgba(216, 178, 90, 0.09);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .faq-question {
-            padding: 24px 30px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--gold-bright);
-            letter-spacing: 0.05em;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: var(--transition);
-            background: rgba(0, 0, 0, 0.2);
+            align-self: center;
+            width: 100%;
+            max-width: 900px;
+            background: rgba(10, 10, 10, 0.75);
+            border: 1px solid rgba(216, 178, 90, 0.2);
+            backdrop-filter: blur(15px);
+            padding: 60px 40px;
+            margin: 70px 0 40px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+            animation: fadeIn 1.5s ease-out 0.5s forwards;
             opacity: 0;
+            z-index: 20;
+            text-align: left;
         }
 
-        .faq-answer-content {
-            padding: 0 30px 24px;
-            color: #ccc;
+        .narrative-box p {
+            margin-bottom: 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
             font-weight: 300;
+            line-height: 1.6;
+            color: #aaa;
+            text-align: justify;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
 
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            opacity: 1;
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+            height: 280px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(216, 178, 90, 0.2);
+            border-radius: 2px;
+            padding: 20px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            resize: none;
+            outline: none;
+            transition: all 0.4s ease;
+            margin-bottom: 30px;
+        }
+
+        textarea:focus {
+            border-color: var(--gold);
+            background: rgba(216, 178, 90, 0.05);
+            box-shadow: 0 0 30px rgba(216, 178, 90, 0.1);
+        }
+
+        .btn-submit {
+            display: inline-block;
+            padding: 18px 80px;
+            background: transparent;
+            border: 1px solid transparent;
+            /* No more sandwich lines */
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            text-indent: 0.4em;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            border-radius: 0;
+            position: relative;
+        }
+
+        .btn-submit::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (hover: hover) {
+            .btn-submit:hover {
+                color: var(--gold);
+                transform: translateY(-5px);
+                text-shadow: 0 0 15px rgba(216, 178, 90, 0.3);
+            }
+
+            .btn-submit:hover::after {
+                width: 42%;
+                background: var(--gold);
+            }
+        }
+
+        .btn-submit:visited {
+            color: var(--gold);
+        }
+
+        .btn-submit:visited::after {
+            width: 0;
+            background: var(--gold);
+        }
+
+        .btn-submit:active {
+            color: var(--gold);
+        }
+
+        .btn-submit:active::after {
+            width: 40%;
+            background: var(--gold);
+        }
+
+        .note {
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #666;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            font-style: italic;
+            text-align: left;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         /* ================= FOOTER PWA PREMIUM ================= */
         .footer-pwa {
             background: #111;
             border-top: 1px solid rgba(216, 178, 90, 0.15);
-            padding: 60px 0;
-            margin-top: 0px;
+            padding: 40px 0;
+            margin-top: 0;
             position: relative;
             z-index: 30;
-            display: block;
         }
 
         .footer-container {
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 40px;
+            width: 100%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            z-index: 10;
         }
 
         .footer-main {
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 60px;
-            margin-bottom: 50px;
+            gap: 40px;
         }
 
         .footer-left {
-            flex: 1;
-        }
-
-        .footer-right {
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
-            gap: 30px;
-            flex: 1;
+            gap: 25px;
         }
 
         .pwa-badge-container {
@@ -258,27 +442,37 @@
         }
 
         .pwa-text-banner {
-            height: 100px;
+            height: 120px;
             width: auto;
+            object-fit: contain;
         }
 
         .pwa-icons-box {
             display: flex;
-            gap: 30px;
+            gap: 35px;
         }
 
         .pwa-icon-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .pwa-icon-small {
-            height: 70px;
+            height: 85px;
             width: auto;
-            filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.4));
-            transition: all 0.4s ease;
+            filter: drop-shadow(0 0 10px rgba(212, 162, 58, 0.3));
+            transition: var(--transition);
+        }
+
+        .pwa-icon-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0.8;
         }
 
 
@@ -311,18 +505,10 @@
         }
 
 
-        .pwa-icon-label {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.65rem;
-            color: var(--gold);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-
         .footer-nav-links {
             display: flex;
             gap: 25px;
-            align-items: center;
+            margin-bottom: 5px;
         }
 
         .footer-nav-links a {
@@ -340,17 +526,23 @@
             white-space: nowrap;
         }
 
-        @media (hover: hover) {
-            .footer-nav-links a:hover {
-                color: var(--gold);
-                text-shadow: 0 0 15px rgba(216, 178, 90, 0.5);
-            }
+        .footer-nav-links a:hover {
+            color: var(--gold);
+            text-shadow: 0 0 12px rgba(216, 178, 90, 0.5);
         }
 
         .footer-nav-links .sep {
             color: var(--gold);
             opacity: 0.6;
             font-size: 0.8rem;
+            margin: 0 5px;
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 30px;
         }
 
         .social-grid {
@@ -363,18 +555,18 @@
         .social-btn {
             width: 44px;
             height: 44px;
-            padding: 10px;
+            padding: 8px;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.4s ease;
+            transition: var(--transition);
         }
 
         .social-btn:hover {
-            background: rgba(214, 162, 58, 0.15);
+            background: rgba(214, 162, 58, 0.1);
             border-color: var(--gold);
             transform: translateY(-5px);
         }
@@ -394,28 +586,78 @@
 
         .footer-copyright {
             width: 100%;
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(216, 178, 90, 0.1);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Cinzel', serif !important;
             font-size: 0.75rem;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: #666;
+            color: #555;
+            text-align: center;
         }
 
         /* Consolidated Footer System v43 */
         @media (max-width: 900px) {
 
-            /* Reset global interactive styles */
+            /* --- HERO & FORM MOBILE CORRECTION --- */
+            .hero {
+                padding: 20px 20px 40px;
+            }
+
+            .hero-background-title {
+                font-size: 8rem;
+                top: 20px;
+                left: -20px;
+                color: rgba(216, 178, 90, 0.09);
+                -webkit-text-stroke: 1px rgba(216, 178, 90, 0.09);
+            }
+
+            .title-line-1 {
+                font-size: 3rem;
+            }
+
+            .title-line-2 {
+                font-size: 3rem;
+            }
+
+            .narrative-box {
+                width: 98% !important;
+                max-width: 98% !important;
+                margin: 20px auto !important;
+                padding: 30px 10px !important;
+                align-self: center !important;
+                text-align: center !important;
+                background: rgba(5, 5, 5, 0.4) !important;
+                backdrop-filter: blur(5px) !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+            /* No decorative bars on mobile */
+            .btn-submit::after {
+                display: none !important;
+            }
+
+            .container {
+                padding: 0 10px 40px;
+            }
+
+            .note {
+                margin-top: 0px;
+            }
+
+            /* Supprimer le soulignement sur mobile pour tous les éléments interactifs */
             a,
             button,
-            .cta-btn {
+            .btn-submit {
                 text-decoration: none !important;
             }
 
-            /* Footer Layout */
+            a:hover,
+            a:focus,
+            a:active,
+            a:visited {
+                text-decoration: none !important;
+            }
+
             .footer-pwa {
                 padding: 40px 0 !important;
             }
@@ -483,16 +725,7 @@
             }
         }
 
-        @media (max-width: 768px) {
-
-            a::after,
-            button::after,
-            [class*="btn"]::after,
-            [class*="link"]::after {
-                display: none !important;
-            }
-        }
-
+        /* --- LUXURY UNDERLINE SYSTEM --- */
         .footer-nav a::after,
         .footer-nav-links a::after {
             content: '';
@@ -548,6 +781,7 @@
         .pwa-install-hint:hover {
             color: var(--gold, #d8b25a);
         }
+
 
 
 
@@ -620,7 +854,7 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             margin: 0;
-            text-align: center;
+            text-align: left;
             position: relative;
             z-index: 10;
             padding: 5px 20px;
@@ -659,12 +893,12 @@
         }
 
         .auteur-header {
-            font-family: "Inter", sans-serif;
+            font-family: "Playfair Display", serif;
             font-size: 1.1rem;
             letter-spacing: 8px;
             text-transform: uppercase;
             color: #ffffff;
-            text-align: center;
+            text-align: left;
             margin-bottom: 2px;
             z-index: 10;
             position: relative;
@@ -675,7 +909,7 @@
             font-size: 1.4rem;
             letter-spacing: 3px;
             color: #ffffff;
-            text-align: center;
+            text-align: left;
             margin-top: 5px;
             font-style: italic;
             z-index: 10;
@@ -690,26 +924,7 @@
             align-items: center;
         }
 
-        /* --- LUXURY UNDERLINE SYSTEM --- */
-        .footer-nav a::after,
-        .footer-nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 1px;
-            background: var(--gold);
-            transition: all 0.4s ease;
-            transform: translateX(-50%);
-        }
-
-        .footer-nav a:hover::after,
-        .footer-nav-links a:hover::after {
-            width: 60%;
-        }
-
-        /* Effet Filigrane Cuir en bas à droite */
+        /* Effet Filigrane Cuir en bas a gauche */
         .leather-wrapper {
             position: relative;
             width: 100%;
@@ -720,32 +935,28 @@
         .leather-reveal-corner {
             position: absolute;
             bottom: 0px;
-            right: 0;
-            width: 100vw;
-            max-width: 1600px;
-            height: 800px;
-            /* Utilisation de l'image de cuir pur (sans plume) fournie par l'utilisateur */
-            background: url('cuir-page-fond.jpg') center right / cover no-repeat;
-            /* Le masque radial crée le fondu vers le noir total sur les bords */
-            -webkit-mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
-            mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
-            pointer-events: none;
-            mix-blend-mode: screen;
-            /* Fait ressortir les écritures et le contraste sur le noir */
-            filter: contrast(1.4) saturation(1.3) brightness(2.5);
-            /* Améliorer la netteté perçue et la luminosité très claire */
-        }
-
-        .leather-reveal-corner-left {
-            position: absolute;
-            bottom: 0px;
             left: 0;
             width: 100vw;
             max-width: 1600px;
-            height: 1200px;
+            height: 450px;
             background: url('cuir-page-fond.jpg') center left / cover no-repeat;
             -webkit-mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
             mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
+            pointer-events: none;
+            mix-blend-mode: screen;
+            filter: contrast(1.4) saturation(1.3) brightness(2.5);
+        }
+
+        .leather-reveal-corner-right {
+            position: absolute;
+            bottom: 0px;
+            right: 0;
+            width: 100vw;
+            max-width: 1600px;
+            height: 510px;
+            background: url('cuir-page-fond.jpg') center right / cover no-repeat;
+            -webkit-mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
+            mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
             pointer-events: none;
             mix-blend-mode: screen;
             filter: contrast(1.4) saturation(1.3) brightness(2.5);
@@ -1093,218 +1304,41 @@
 
 
 
-    <a href="#" onclick="history.back(); return false;" class="back-hub-btn" aria-label="Retour à l'accueil">
+    <a href="#" onclick="history.back(); return false;" class="back-hub-btn" aria-label="Volver al inicio">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
         </svg>
     </a>
-
-
     <header class="header-livre">
         <div class="overlay-content">
             <div class="auteur-header">SIMON LERO</div>
-            <h1 class="titre-memoire">Foire aux Questions</h1>
-            <div class="livre-header">Rencontres au Clair de Lune</div>
+            <h1 class="titre-memoire">Contacto Daniel</h1>
+            <div class="livre-header">Encuentros a la luz de la luna</div>
         </div>
     </header>
 
-
-
-    <div class="faq-container">
-        <!-- Question 1 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Comment installer l'application (PWA) sur mon téléphone&nbsp;?
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    Pour activer gratuitement la Progressive Web App et vivre l'immersion totale plein écran sans barre
-                    de navigation, il suffit de cliquer sur le bouton associé dans le bas de page, dans la section PWA.
-                    Pour une
-                    expérience complète, nous vous recommandons d'installer nos deux sites en PWA : <a
-                        href="https://simonlero.com"
-                        style="color:var(--gold); text-decoration: underline;">simonlero.com</a>
-                    et <a href="https://mon-univers.ca"
-                        style="color:var(--gold); text-decoration: underline;">mon-univers.ca</a>.<br><br><strong>Note
-                        pour les utilisateurs Apple :</strong> La méthode est différente sur iOS. Il faut cliquer sur le
-                    bouton "Installer l'App" dès qu'il apparaît après avoir chargé le site sur Chrome ou Safari.
-                </div>
+    <header class="hero">
+        <div class="hero-subtitle">
+            Si desea escribirme o compartir un pensamiento, su mensaje me llegará directamente.
+        </div>
+        <div class="narrative-box">
+            <form action="https://formspree.io/daniel@mon-univers.ca" method="POST">
+                <textarea id="message" name="message" maxlength="500" placeholder="Su mensaje..." required></textarea>
+                <input type="hidden" name="_subject" value="Nuevo mensaje de simonlero.com">
+                <button class="btn-submit" type="submit">Enviar mensaje</button>
+            </form>
+            <div class="note">
+                El mensaje será transmitido a través del servicio Formspree.
             </div>
         </div>
+    </header>
 
-        <!-- Question 2 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Où puis-je acheter le livre&nbsp;?
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    "Rencontres au Clair de Lune" est disponible sur les plus grandes plateformes : Amazon (Kindle et
-                    Papier), Apple Books, Kobo, Shopify, Payhip (pour ePub et la version PDF exclusive) et Google Play.
-                    Vous pouvez également le commander via le réseau Ingram, directement sur simonlero.com ou consulter
-                    la liste complète de nos <a href="distribution.html"
-                        style="color:var(--gold); text-decoration: underline;">partenaires de distribution</a>.
-                </div>
-            </div>
-        </div>
-
-        <!-- Question 3 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Le livre est-il disponible en version papier&nbsp;?
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    Absolument. Vous pouvez commander l'édition brochée premium sur Amazon, Shopify
-                    ou via Lulu.com. L'impression à la demande garantit une qualité irréprochable et une livraison
-                    rapide.
-                </div>
-            </div>
-        </div>
-
-        <!-- Question 4 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Quelles sont les thématiques du roman&nbsp;?
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    Le roman est une immersion poétique au travers la musique, un roman d'amour psychologique et LGBT,
-                    explorant également la nostalgie, la redécouverte de soi à travers l'art, et la beauté mélancolique
-                    du temps qui passe.
-                </div>
-            </div>
-        </div>
-
-        <!-- Question 5 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Dans quelles langues le livre est-il traduit&nbsp;?
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    Le roman est actuellement disponible en Français, Anglais ("Encounters by Moonlight") et Espagnol
-                    ("Encuentros a la Luz de la Luna").
-                </div>
-            </div>
-        </div>
-
-        <!-- Question 6 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Pourquoi le titre "Rencontres au Clair de Lune"&nbsp;?
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    Le titre évoque l'instant suspendu où la vérité se dévoile, loin du tumulte du jour. C'est une
-                    métaphore de la clarté intérieure, intimement liée à l'atmosphère de la célèbre Sonate au Clair de
-                    Lune de Beethoven. Dans cet univers, tout est relié.
-                </div>
-            </div>
-        </div>
-
-        <!-- Question 7 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Est-ce une série ou un tome unique&nbsp;?
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    Ce roman est conçu comme une œuvre complète et indépendante.
-                </div>
-            </div>
-        </div>
-
-        <!-- Question 8 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Qui est Simon Lero&nbsp;?
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    Simon Lero est le nom de plume d'un auteur québécois qui cherche, à travers ses mots, à faire parler
-                    la musique,
-                    puisque chaque note qui se porte à ses oreilles lui dit ce que les mots ne peuvent exprimer. Il
-                    écrit
-                    pour capturer l'impalpable et offrir une évasion hors du temps, où chaque phrase résonne comme une
-                    note suspendue.
-                </div>
-            </div>
-        </div>
-
-        <!-- Question 9 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Y a-t-il des illustrations dans le livre&nbsp;?
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    L'édition ne contient aucune illustration afin de laisser toute la place à l'imaginaire du lecteur.
-                </div>
-            </div>
-        </div>
-
-        <!-- Question 10 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Puis-je obtenir une édition dédicacée&nbsp;?
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    Des exemplaires sont périodiquement mis en vente lors d'événements. L'auteur garde également
-                    toujours
-                    quelques exemplaires en réserve pour les offrir ou les vendre si vos chemins viennent à se croiser.
-                </div>
-            </div>
-        </div>
-
-        <!-- Question 11 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Le livre est-il adapté aux jeunes lecteurs&nbsp;?
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    Le roman est un récit d'amour psychologique gai (LGBT) et est recommandé aux lecteurs de 18 ans et
-                    plus en raison de la profondeur de ses thèmes et de sa maturité.
-                </div>
-            </div>
-        </div>
-
-        <!-- Question 12 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Comment soutenir le travail de l'auteur&nbsp;?
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    La meilleure façon de soutenir Simon Lero est de laisser un avis sur Amazon ou Kobo après votre
-                    lecture, et de partager vos passages préférés sur vos réseaux sociaux avec le hashtag #SimonLero.
-                </div>
-            </div>
-        </div>
-
-        <!-- Question 13 -->
-        <div class="faq-item">
-            <div class="faq-question">
-                Comment contacter l'auteur pour une interview&nbsp;?
-            </div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    Pour toute demande média, interview ou collaboration, veuillez utiliser le <a href="contact.html"
-                        style="color:var(--gold); text-decoration: underline;">formulaire de contact</a> ou visiter
-                    <a href="media.html" style="color:var(--gold); text-decoration: underline;">l'Espace Média</a>.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- FILIGRANE CUIR : Apparition dans les coins inférieurs -->
+    <!-- FILIGRANE CUIR : Apparition dans las esquinas inferiores -->
     <div class="leather-wrapper" aria-hidden="true">
         <div class="leather-reveal-corner"></div>
-        <div class="leather-reveal-corner-left"></div>
+        <div class="leather-reveal-corner-right"></div>
     </div>
 
     <footer class="footer-pwa">
@@ -1314,11 +1348,11 @@
                     <div class="pwa-badge-container">
                         <div class="pwa-banner-wrapper"
                             style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
-                            <img src="pwa-text-banner.png" alt="PWA Optimisé" class="pwa-text-banner"
+                            <img src="pwa-text-banner-es.png" alt="PWA Optimizado" class="pwa-text-banner"
                                 onclick="if(typeof installPWA === 'function') installPWA();"
-                                title="Cliquer pour installer l'app">
+                                title="Clic para instalar app">
                             <div class="pwa-install-hint" onclick="if(typeof installPWA === 'function') installPWA();">
-                                Cliquer pour installer l'app</div>
+                                Clic para instalar app</div>
                         </div>
                     </div>
 
@@ -1327,13 +1361,13 @@
 
                 <div class="footer-right">
                     <div class="footer-nav-links">
-                        <a href="livre-accueil.html">Accueil</a>
+                        <a href="livre-accueil-es.html">Inicio</a>
                         <span class="sep">&bull;</span>
-                        <a href="faq.html">FAQ</a>
+                        <a href="faq-es.html">FAQ</a>
                         <span class="sep">&bull;</span>
-                        <a href="media.html">Espace Media</a>
+                        <a href="media-es.html">Espacio de Medios</a>
                         <span class="sep">&bull;</span>
-                        <a href="contact.html">Me contacter</a>
+                        <a href="contact-es.html">Contacto</a>
                     </div>
                     <div class="social-grid">
                         <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
@@ -1348,28 +1382,21 @@
                 </div>
             </div>
 
-            <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; Tous droits
-                r&eacute;serv&eacute;s</p>
+            <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; Todos los
+                derechos reservados</p>
         </div>
     </footer>
-
     <script>
-        // Accordion Logic
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const faqItem = button.parentElement;
-
-                // Optional: Close other items
-                // document.querySelectorAll('.faq-item').forEach(item => {
-                //     if (item !== faqItem) item.classList.remove('active');
-                // });
-
-                faqItem.classList.toggle('active');
-            });
-        });
-
-        // Year update
         document.getElementById('current-year-footer').textContent = new Date().getFullYear();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const source = urlParams.get('source');
+
+        // Dynamic Branding Logic
+        // Update Copyright Brand
+        const brand = document.getElementById('copyright-brand');
+        if (brand) brand.textContent = "simonlero.com";
+        }
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {

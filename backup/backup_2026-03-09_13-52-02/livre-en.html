@@ -577,7 +577,7 @@
         }
 
         .video-box {
-            border: 1px solid var(--border);
+      border: 1px solid var(--border);
             border-radius: 2px;
             overflow: hidden;
             background: #000;
@@ -1620,7 +1620,7 @@
             position: absolute;
             bottom: 0px;
             right: 0;
-            width: 100%;
+            width: 100vw;
             max-width: 1600px;
             height: 800px;
             background: url('cuir-page-fond.jpg') center right / cover no-repeat;
@@ -1635,7 +1635,7 @@
             position: absolute;
             bottom: 0px;
             left: 0;
-            width: 100%;
+            width: 100vw;
             max-width: 1600px;
             height: 1200px;
             background: url('cuir-page-fond.jpg') center left / cover no-repeat;
@@ -1940,10 +1940,7 @@
     <style>
         /* Retirer le width: 100% qui allonge le bouton a 350px au lieu du texte */
         .hero-actions-container .cta-main {
-            width: fit-content !important;
-      max-width: 100% !important;
-      white-space: normal !important;
-      word-wrap: break-word !important;
+            width: max-content !important;
         }
 
         /* Cacher le trait par defaut */
@@ -2135,7 +2132,7 @@
                     <span class="label">Simon Lero</span>
                     <h2>The Author behind the silence</h2>
                     <p>“I am Simon Lero, the author of this book. This story was born from a long pause, a return to
-                        essentials and a desire to capture the evanescence of memories through words.”</p>
+                        essentials and a desire to capture memories through words.”</p>
                     <a href="contact-en.html?source=book" class="btn-author">Contact
                         the author</a>
                 </div>

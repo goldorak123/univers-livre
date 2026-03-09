@@ -578,7 +578,7 @@
         }
 
         .video-box {
-            border: 1px solid var(--border);
+      border: 1px solid var(--border);
             border-radius: 2px;
             overflow: hidden;
             background: #000;
@@ -1621,7 +1621,7 @@
             position: absolute;
             bottom: 0px;
             right: 0;
-            width: 100%;
+            width: 100vw;
             max-width: 1600px;
             height: 800px;
             background: url('cuir-page-fond.jpg') center right / cover no-repeat;
@@ -1636,7 +1636,7 @@
             position: absolute;
             bottom: 0px;
             left: 0;
-            width: 100%;
+            width: 100vw;
             max-width: 1600px;
             height: 1200px;
             background: url('cuir-page-fond.jpg') center left / cover no-repeat;
@@ -1941,10 +1941,7 @@
     <style>
         /* Retirer le width: 100% qui allonge le bouton a 350px au lieu du texte */
         .hero-actions-container .cta-main {
-            width: fit-content !important;
-      max-width: 100% !important;
-      white-space: normal !important;
-      word-wrap: break-word !important;
+            width: max-content !important;
         }
 
         /* Cacher le trait par defaut */
@@ -2135,7 +2132,7 @@
                     <span class="label">Simon Lero</span>
                     <h2>El Autor detrás del silencio</h2>
                     <p>“Soy Simon Lero, el autor de este libro. Este relato nació de una larga pausa, de un retorno a
-                        lo esencial y de la voluntad de capturar la evanescencia de los recuerdos a través de las
+                        lo esencial y de la voluntad de capturar los recuerdos a través de las
                         palabras.”</p>
                     <a href="contact-es.html?source=book" class="btn-author">Contactar
                         con el autor</a>

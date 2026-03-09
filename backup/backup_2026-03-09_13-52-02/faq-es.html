@@ -1,44 +1,31 @@
 ﻿<!DOCTYPE html>
-<html lang="fr" class="notranslate" translate="no">
+<html lang="es" class="notranslate" translate="no">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="google" content="notranslate">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
-    <meta name="google" content="notranslate">
-    <meta name="description"
-        content="Contactez Simon Lero, auteur de 'Rencontres au Clair de Lune'. Posez vos questions ou partagez vos réflexions sur l'œuvre.">
-    <title>Me contacter — Simon Lero</title>
-    <link rel="canonical" href="https://www.simonlero.com/contact.html">
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js?v=1009')
-                    .then(reg => {
-                        console.log('SW Registered');
-                        if (localStorage.getItem('sw_version') !== '72') {
-                            reg.update();
-                            localStorage.setItem('sw_version', '1009');
-                        }
-                    })
-                    .catch(err => console.log('SW Failed', err));
-            });
-        }
-    </script>
-
-    <!-- PWA -->
-    <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="color-scheme" content="dark">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="googlebot" content="notranslate">
+    <meta name="robots" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes — Simon Lero</title>
+    <meta name="description"
+        content="Preguntas frecuentes sobre la novela 'Encuentros a la Luz de la Luna' de Simon Lero.">
+
+    <!-- Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;600;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap"
         rel="stylesheet">
+
     <style>
         :root {
-            --gold: #d4a23a;
+            --gold: #d8b25a;
+            --gold-bright: #f4d393;
+            --bg-dark: #0a0a0a;
+            --text-light: #f0f0f0;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* Premium Back Button */
@@ -93,64 +80,22 @@
 
         * {
             box-sizing: border-box;
-        }
-
-        html,
-        html,
-        body {
-            background: #000 !important;
             margin: 0;
             padding: 0;
-            color: #f0f0f0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            position: relative;
-            min-height: 100vh;
-            max-width: 100%;
         }
 
-
-        /* Focus Reset */
-        a:focus,
-        button:focus,
-        textarea:focus {
-            outline: none !important;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-
-        /* Cinematic Background */
-        .bg-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            overflow: hidden;
-            background: #000;
-        }
-
-        .bg-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.9;
-            filter: grayscale(10%) contrast(110%);
-        }
-
-        .bg-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-        }
-
-        /* HERO SECTION (ULTRA-BOLD ASIMMETRICAL) */
+        /* --- HERO SECTION --- */
         .hero {
             position: relative;
-            padding: 60px 40px 100px;
+            padding: 160px 40px 100px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -158,7 +103,7 @@
             margin: 0 auto;
             z-index: 10;
             text-align: left;
-            /* overflow: hidden; -- SUPPRIMÉ */
+            /* overflow: hidden; -- ELIMINADO */
         }
 
         .hero-background-title {
@@ -169,13 +114,12 @@
             -webkit-text-stroke: 1px rgba(216, 178, 90, 0.09);
             position: absolute;
             top: 40px;
-            left: -100px;
+            left: -40px;
             line-height: 0.9;
             text-transform: uppercase;
             z-index: -1;
             pointer-events: none;
             letter-spacing: -0.05em;
-            white-space: nowrap;
             animation: slideInLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
@@ -195,39 +139,19 @@
         }
 
         .title-line-2 {
-            font-family: 'Cinzel', serif;
+            font-family: 'Inter', sans-serif;
             font-size: clamp(3rem, 10vw, 8rem);
             font-weight: 800;
-            color: #d8b25a;
-            margin-left: clamp(2rem, 10vw, 150px);
+            color: var(--gold);
+            margin-left: clamp(1rem, 5vw, 100px);
             animation: slideInLeft 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
             opacity: 0;
-        }
-
-        .hero-subtitle {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 200;
-            color: #ccc;
-            margin-top: 40px;
-            margin-bottom: 30px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            line-height: 1.8;
-            max-width: 900px;
-            animation: fadeIn 2s ease-out 0.8s forwards;
-            opacity: 0;
-            align-self: flex-start;
-            text-align: justify;
-            -webkit-hyphens: auto;
-            -ms-hyphens: auto;
-            hyphens: auto;
         }
 
         @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateX(-150px);
+                transform: translateX(-100px);
             }
 
             to {
@@ -236,170 +160,59 @@
             }
         }
 
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(150px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* FORM CARD (Offset Floating Card) */
-        .narrative-box {
-            position: relative;
-            align-self: flex-start;
-            width: 100%;
+        /* --- FAQ SECTION --- */
+        .faq-container {
             max-width: 900px;
-            background: rgba(10, 10, 10, 0.75);
-            border: 1px solid rgba(216, 178, 90, 0.2);
-            backdrop-filter: blur(15px);
-            padding: 60px 40px;
-            margin: 120px 0 40px;
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
-            animation: fadeIn 1.5s ease-out 0.5s forwards;
-            opacity: 0;
-            z-index: 20;
-            text-align: left;
-        }
-
-        .narrative-box p {
-            margin-bottom: 30px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 300;
-            line-height: 1.6;
-            color: #aaa;
-            text-align: justify;
-            -webkit-hyphens: auto;
-            -ms-hyphens: auto;
-            hyphens: auto;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-
-        textarea {
-            width: 100%;
-            height: 280px;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(216, 178, 90, 0.2);
-            border-radius: 2px;
-            padding: 20px;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            resize: none;
-            outline: none;
-            transition: all 0.4s ease;
-            margin-bottom: 30px;
-        }
-
-        textarea:focus {
-            border-color: var(--gold);
-            background: rgba(216, 178, 90, 0.05);
-            box-shadow: 0 0 30px rgba(216, 178, 90, 0.1);
-        }
-
-        .btn-submit {
-            display: inline-block;
-            padding: 18px 80px;
-            background: transparent;
-            border: 1px solid transparent;
-            /* No more sandwich lines */
-            color: var(--gold);
-            font-family: 'Inter', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.4em;
-            text-indent: 0.4em;
-            font-size: 0.9rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-            border-radius: 0;
+            margin: 120px auto 100px;
             position: relative;
+            z-index: 20;
+            padding: 0 20px;
         }
 
-        .btn-submit::after {
-            content: '';
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 1px;
-            background: var(--gold);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(216, 178, 90, 0.1);
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
         }
 
-        @media (hover: hover) {
-            .btn-submit:hover {
-                color: var(--gold);
-                transform: translateY(-5px);
-                text-shadow: 0 0 15px rgba(216, 178, 90, 0.3);
-            }
-
-            .btn-submit:hover::after {
-                width: 22%;
-                background: var(--gold);
-            }
+        .faq-item:hover {
+            border-color: rgba(216, 178, 90, 0.09);
+            background: rgba(255, 255, 255, 0.05);
         }
 
-        .btn-submit:visited {
-            color: var(--gold);
-        }
-
-        .btn-submit:visited::after {
-            width: 0;
-            background: var(--gold);
-        }
-
-        .btn-submit:active {
-            color: var(--gold);
-        }
-
-        .btn-submit:active::after {
-            width: 40%;
-            background: var(--gold);
-        }
-
-        .note {
-            margin-top: 40px;
-            font-size: 0.85rem;
-            color: #666;
+        .faq-question {
+            padding: 24px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            line-height: 1.6;
-            font-style: italic;
-            text-align: left;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--gold-bright);
+            letter-spacing: 0.05em;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+        }
 
-            to {
-                opacity: 1;
-            }
+        .faq-answer-content {
+            padding: 0 30px 24px;
+            color: #ccc;
+            font-weight: 300;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            opacity: 1;
         }
 
         /* ================= FOOTER PWA PREMIUM ================= */
@@ -469,17 +282,15 @@
             transition: all 0.4s ease;
         }
 
-
+        
         .pwa-text-banner {
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .pwa-text-banner:hover {
             filter: drop-shadow(0 0 25px rgba(216, 178, 90, 1)) !important;
             transform: scale(1.02);
         }
-
         .pwa-install-hint {
             font-family: 'Inter', sans-serif;
             font-size: 0.55rem;
@@ -493,14 +304,13 @@
             transition: color 0.3s ease;
             text-align: center;
         }
-
         .pwa-install-hint:hover {
             color: var(--gold, #d8b25a);
         }
 
 
         .pwa-icon-label {
-            font-family: 'Cinzel', serif;
+            font-family: 'Inter', sans-serif;
             font-size: 0.65rem;
             color: var(--gold);
             letter-spacing: 0.15em;
@@ -576,7 +386,7 @@
         }
 
         .social-btn:hover img {
-            filter: sepia(1) saturate(5) hue-rotate(10deg);
+            filter: sepia(1 snapshot) saturate(5) hue-rotate(10deg);
             opacity: 1;
         }
 
@@ -586,7 +396,7 @@
             margin-top: 40px;
             padding-top: 30px;
             border-top: 1px solid rgba(216, 178, 90, 0.1);
-            font-family: 'Cinzel', serif;
+            font-family: 'Inter', sans-serif;
             font-size: 0.75rem;
             letter-spacing: 4px;
             text-transform: uppercase;
@@ -599,89 +409,13 @@
             /* Reset global interactive styles */
             a,
             button,
-            .cta-btn,
-            .lang-selector a {
+            .cta-btn {
                 text-decoration: none !important;
-            }
-
-            .lang-selector a {
-                color: rgba(216, 178, 90, 0.9);
-            }
-
-            .lang-selector a.active {
-                color: var(--gold);
-            }
-
-            .lang-selector .sep {
-                background: rgba(255, 255, 255, 0.3);
             }
 
             .cta-btn::after,
-            .cta-btn::before,
-            .lang-selector a::after,
-            .lang-selector a::before {
+            .cta-btn::before {
                 display: none !important;
-            }
-
-            /* --- HERO & FORM MOBILE CORRECTION --- */
-            .hero {
-                padding: 20px 20px 40px;
-            }
-
-            .hero-background-title {
-                font-size: 8rem;
-                top: 20px;
-                left: -20px;
-                color: rgba(216, 178, 90, 0.09);
-                -webkit-text-stroke: 1px rgba(216, 178, 90, 0.09);
-            }
-
-            .title-line-1 {
-                font-size: 3rem;
-            }
-
-            .title-line-2 {
-                font-size: 3rem;
-            }
-
-            .narrative-box {
-                width: 98% !important;
-                max-width: 98% !important;
-                margin: 20px auto !important;
-                padding: 30px 10px !important;
-                align-self: center !important;
-                text-align: center !important;
-                background: rgba(5, 5, 5, 0.4) !important;
-                backdrop-filter: blur(5px) !important;
-                border: none !important;
-                box-shadow: none !important;
-            }
-
-            /* No decorative bars on mobile */
-            .btn-submit::after {
-                display: none !important;
-            }
-
-            .container {
-                padding: 0 10px 40px;
-            }
-
-            .note {
-                margin-top: 0px;
-            }
-
-            /* Supprimer le soulignement sur mobile pour tous les éléments interactifs */
-            a,
-            button,
-            .btn-submit {
-                text-decoration: none !important;
-            }
-
-            a:hover,
-            a:focus,
-            a:active,
-            a:visited {
-                text-decoration: none !important;
             }
 
             /* Footer Layout */
@@ -752,23 +486,14 @@
             }
         }
 
-        /* --- LUXURY UNDERLINE SYSTEM --- */
-        .footer-nav a::after,
-        .footer-nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 1px;
-            background: var(--gold);
-            transition: all 0.4s ease;
-            transform: translateX(-50%);
-        }
+        @media (max-width: 768px) {
 
-        .footer-nav a:hover::after,
-        .footer-nav-links a:hover::after {
-            width: 60%;
+            a::after,
+            button::after,
+            [class*="btn"]::after,
+            [class*="link"]::after {
+                display: none !important;
+            }
         }
 
         /* PWA Highlights */
@@ -780,17 +505,15 @@
         }
 
         .pwa-text-banner:hover,
-
+        
         .pwa-text-banner {
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .pwa-text-banner:hover {
             filter: drop-shadow(0 0 25px rgba(216, 178, 90, 1)) !important;
             transform: scale(1.02);
         }
-
         .pwa-install-hint {
             font-family: 'Inter', sans-serif;
             font-size: 0.55rem;
@@ -804,17 +527,15 @@
             transition: color 0.3s ease;
             text-align: center;
         }
-
         .pwa-install-hint:hover {
             color: var(--gold, #d8b25a);
         }
 
 
 
-
         /* Ensure PWA always shows it on Desktop if needed (redundancy) */
         @media (display-mode: standalone) and (min-width: 901px) {
-            .back-hub-btn {
+    .back-hub-btn {
                 display: flex !important;
             }
         }
@@ -825,7 +546,7 @@
         }
 
         @media (display-mode: standalone) and (min-width: 901px) {
-            .back-hub-btn {
+    .back-hub-btn {
                 display: flex !important;
             }
         }
@@ -881,7 +602,7 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             margin: 0;
-            text-align: left;
+            text-align: center;
             position: relative;
             z-index: 10;
             padding: 5px 20px;
@@ -920,12 +641,12 @@
         }
 
         .auteur-header {
-            font-family: "Playfair Display", serif;
+            font-family: "Inter", sans-serif;
             font-size: 1.1rem;
             letter-spacing: 8px;
             text-transform: uppercase;
             color: #ffffff;
-            text-align: left;
+            text-align: center;
             margin-bottom: 2px;
             z-index: 10;
             position: relative;
@@ -936,7 +657,7 @@
             font-size: 1.4rem;
             letter-spacing: 3px;
             color: #ffffff;
-            text-align: left;
+            text-align: center;
             margin-top: 5px;
             font-style: italic;
             z-index: 10;
@@ -951,7 +672,26 @@
             align-items: center;
         }
 
-        /* Effet Filigrane Cuir en bas à gauche */
+        /* --- LUXURY UNDERLINE SYSTEM --- */
+        .footer-nav a::after,
+        .footer-nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
+
+        .footer-nav a:hover::after,
+        .footer-nav-links a:hover::after {
+            width: 60%;
+        }
+
+        /* Effet Filigrane Cuir en bas à droite */
         .leather-wrapper {
             position: relative;
             width: 100%;
@@ -962,28 +702,10 @@
         .leather-reveal-corner {
             position: absolute;
             bottom: 0px;
-            left: 0;
-            width: 100vw;
-            max-width: 1600px;
-            height: 450px;
-            /* Utilisation de l'image de cuir pur alignée à gauche */
-            background: url('cuir-page-fond.jpg') center left / cover no-repeat;
-            /* Le masque radial part du coin inférieur gauche */
-            -webkit-mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
-            mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
-            pointer-events: none;
-            mix-blend-mode: screen;
-            /* Contraste pour mieux s'intégrer */
-            filter: contrast(1.4) saturation(1.3) brightness(2.5);
-        }
-
-        .leather-reveal-corner-right {
-            position: absolute;
-            bottom: 0px;
             right: 0;
             width: 100vw;
             max-width: 1600px;
-            height: 510px;
+            height: 800px;
             background: url('cuir-page-fond.jpg') center right / cover no-repeat;
             -webkit-mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
             mask-image: radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
@@ -992,74 +714,88 @@
             filter: contrast(1.4) saturation(1.3) brightness(2.5);
         }
 
+        .leather-reveal-corner-left {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 100vw;
+            max-width: 1600px;
+            height: 1200px;
+            background: url('cuir-page-fond.jpg') center left / cover no-repeat;
+            -webkit-mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
+            mask-image: radial-gradient(ellipse at bottom left, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 75%);
+            pointer-events: none;
+            mix-blend-mode: screen;
+            filter: contrast(1.4) saturation(1.3) brightness(2.5);
+        }
+    
         /* PWA Uniform Sub-Icons */
         .pwa-icon-item {
             cursor: pointer;
         }
-
         .pwa-icon-item:hover .pwa-icon-small {
             filter: drop-shadow(0 0 15px rgba(216, 178, 90, 0.8)) !important;
             transform: scale(1.05);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .pwa-icon-item:hover .pwa-icon-label {
             color: var(--gold, #d8b25a);
             transition: color 0.3s ease;
         }
 
+    
+    .pwa-banner-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        margin-right: 20px;
+    }
+    
+    .pwa-badge-container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
 
-        .pwa-banner-wrapper {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            gap: 5px !important;
-            margin-right: 20px;
+    
+    /* HIDE BACK HUB BTN ON MOBILE */
+    @media (max-width: 900px) {
+        .back-hub-btn {
+            display: none !important;
         }
+    }
 
-        .pwa-badge-container {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            flex-wrap: wrap !important;
-        }
-
-
-        /* HIDE BACK HUB BTN ON MOBILE */
-        @media (max-width: 900px) {
-            .back-hub-btn {
-                display: none !important;
-            }
-        }
     </style>
 
-    <style>
-        @media (max-width: 900px) {
-            .mobile-nav-bar {
-                background-color: #000 !important;
-                padding-bottom: 10px;
-                padding-top: 10px;
-            }
-        }
-    </style>
+  <style>
+    @media (max-width: 900px) {
+      .mobile-nav-bar {
+        background-color: #000 !important;
+        padding-bottom: 10px;
+        padding-top: 10px;
+      }
+    }
+  </style>
     <!-- PWA Installation Logic -->
     <script>
         // SYSTÈME DE GESTION PWA - FORCE UPDATE v42
-        (async function () {
+        (async function() {
             const v = 'v43.pwa_fix';
             if (localStorage.getItem('pwa_v') !== v) {
                 if ('serviceWorker' in navigator) {
                     try {
                         const regs = await navigator.serviceWorker.getRegistrations();
                         for (const r of regs) await r.unregister();
-                    } catch (e) { }
+                    } catch(e) {}
                 }
                 if ('caches' in window) {
                     try {
                         const keys = await caches.keys();
                         for (const k of keys) await caches.delete(k);
-                    } catch (e) { }
+                    } catch(e) {}
                 }
                 localStorage.clear();
                 sessionStorage.clear();
@@ -1069,13 +805,13 @@
                 if ('serviceWorker' in navigator) {
                     navigator.serviceWorker.register('/sw-v41.js?v=42_' + Date.now(), {
                         updateViaCache: 'none'
-                    }).catch(() => { });
+                    }).catch(() => {});
                 }
             }
         })();
 
         // LOGIQUE D'INSTALLATION
-        window.installPWA = function () {
+        window.installPWA = function() {
             if (window.deferredPrompt) {
                 window.deferredPrompt.prompt();
                 window.deferredPrompt.userChoice.then(() => {
@@ -1085,7 +821,7 @@
                 console.log("Installation non disponible ou l'application est déjà installée.");
             }
         };
-
+        
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             window.deferredPrompt = e;
@@ -1125,17 +861,14 @@
         });
     </script>
 
-
+    
 
     <!-- STRICT BACK BUTTON HYGIENE V2 -->
     <style>
         /* ABSOLUTE KILL SWITCH FOR MOBILE: 
            Never show on screens <= 900px, regardless of PWA */
         @media (max-width: 900px) {
-
-            .back-hub-btn,
-            a.back-hub-btn,
-            a[class*="back-hub-btn"] {
+            .back-hub-btn, a.back-hub-btn, a[class*="back-hub-btn"] {
                 display: none !important;
                 visibility: hidden !important;
                 opacity: 0 !important;
@@ -1146,14 +879,11 @@
 
         /* ONLY SHOW on DESKTOP (min-width: 901px) AND ONLY IF PWA */
         @media (display-mode: standalone) and (min-width: 901px) {
-
-            .back-hub-btn,
-            a.back-hub-btn,
-            a[class*="back-hub-btn"] {
+            .back-hub-btn, a.back-hub-btn, a[class*="back-hub-btn"] {
                 display: flex !important;
             }
         }
-
+        
         /* Default hide for non-PWA desktop just in case */
         @media (min-width: 901px) {
             .back-hub-btn:not(:window-inactive) {
@@ -1167,15 +897,7 @@
     <!-- GLOBAL HYPHENATION & TEXT WRAP FIX -->
     <style>
         /* Force hyphenation on ALL paragraphs, subtitles, and text blocks to prevent huge gaps in justified text */
-        p,
-        .hero-subtitle,
-        .hero-summary,
-        .hero-summary p,
-        .author-info-large p,
-        .testimonial-text,
-        .text-block,
-        [class*="subtitle"],
-        [class*="text"] {
+        p, .hero-subtitle, .hero-summary, .hero-summary p, .author-info-large p, .testimonial-text, .text-block, [class*="subtitle"], [class*="text"] {
             -webkit-hyphens: auto !important;
             -moz-hyphens: auto !important;
             -ms-hyphens: auto !important;
@@ -1186,26 +908,17 @@
 
         /* Specifically for mobile to avoid 2 words per line with giant spaces */
         @media (max-width: 900px) {
-
-            h1,
-            h2,
-            h3,
-            h4,
-            .hero-title,
-            .hero-subtitle {
+            h1, h2, h3, h4, .hero-title, .hero-subtitle {
                 word-wrap: break-word !important;
                 overflow-wrap: break-word !important;
                 -webkit-hyphens: auto !important;
                 hyphens: auto !important;
             }
-
-            p,
-            .hero-summary,
-            .hero-summary p,
-            .text-content {
+            
+            p, .hero-summary, .hero-summary p, .text-content {
                 text-align: justify !important;
             }
-
+            
             /* Actually, if justify creates too big gaps even with hyphens, we force left alignment on mobile for very tricky blocks, but user specifically asked to "activer la coupure de mots" (hyphenation). */
         }
     </style>
@@ -1214,14 +927,8 @@
     <!-- STRICT MOBILE TEXT SPACING OVERRIDE -->
     <style>
         @media (max-width: 900px) {
-
             /* Forcing normal letter spacing and automatic hyphens on subtitles to prevent 2-words-per-line justify gaps */
-            p,
-            .hero-subtitle,
-            .hero-summary,
-            .author-info-large p,
-            .testimonial-text,
-            .text-block {
+            p, .hero-subtitle, .hero-summary, .author-info-large p, .testimonial-text, .text-block {
                 letter-spacing: 0.02em !important;
                 text-align: justify !important;
                 -webkit-hyphens: auto !important;
@@ -1235,19 +942,18 @@
     </style>
 
 
+    
 
 
-
-
+    
 
 
     <!-- SIMPLE FOOTER COLOR -->
     <style>
         /* TARGETING ONLY THE 2 MAIN BUTTONS - DO NOT TOUCH FOOTER NAV LINKS */
         .footer-nav a {
-            color: #FFEA9E !important;
-            /* Brighter gold, solid contrast */
-            text-shadow: 0 4px 8px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.9), 0 0 15px rgba(255, 234, 158, 0.4) !important;
+            color: #FFEA9E !important; /* Brighter gold, solid contrast */
+            text-shadow: 0 4px 8px rgba(0,0,0,1), 0 0 10px rgba(0,0,0,0.9), 0 0 15px rgba(255, 234, 158, 0.4) !important;
             opacity: 1 !important;
         }
 
@@ -1334,42 +1040,214 @@
 
 
 
-    <a href="#" onclick="history.back(); return false;" class="back-hub-btn" aria-label="Retour à l'accueil">
+    <a href="#" onclick="history.back(); return false;" class="back-hub-btn" aria-label="Volver al inicio">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
         </svg>
     </a>
+
+
     <header class="header-livre">
         <div class="overlay-content">
             <div class="auteur-header">SIMON LERO</div>
-            <h1 class="titre-memoire">Me Contacter</h1>
-            <div class="livre-header">Rencontres au Clair de Lune</div>
+            <h1 class="titre-memoire">Preguntas Frecuentes</h1>
+            <div class="livre-header">Encuentros a la luz de la luna</div>
         </div>
     </header>
 
-    <header class="hero">
-        <div class="hero-subtitle">
-            Si vous souhaitez m'écrire ou partager une réflexion, votre message me parviendra directement.
-        </div>
 
-        <div class="narrative-box">
 
-            <form onsubmit="sendMail(event)">
-                <textarea id="message" maxlength="500" placeholder="Votre message..."></textarea>
-                <button class="btn-submit" type="submit">Envoyer</button>
-            </form>
-            <div class="note">
-                Le message sera transmis via votre service de messagerie. Aucune donnée n'est stockée sur ce serveur.
+    <div class="faq-container">
+        <!-- Question 1 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Cómo instalar la aplicación (PWA) en mi teléfono?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Para activar la Progressive Web App de forma gratuita y vivir una inmersión a pantalla completa sin
+                    barra de navegación, simplemente haga clic en el botón asociado en la parte inferior de la página,
+                    en la sección PWA. Para una
+                    experiencia completa, le recomendamos instalar nuestros dos sitios como PWA: <a
+                        href="https://simonlero.com"
+                        style="color:var(--gold); text-decoration: underline;">simonlero.com</a> y <a
+                        href="https://mon-univers.ca"
+                        style="color:var(--gold); text-decoration: underline;">mon-univers.ca</a>.<br><br><strong>Nota para los usuarios de Apple:</strong> El método es diferente en iOS. Debe hacer clic en el botón "Instalar App" tan pronto como aparezca después de cargar el sitio en Chrome o Safari.
+                </div>
             </div>
         </div>
-    </header>
 
-    <!-- FILIGRANE CUIR : Apparition dans les coins inférieurs -->
+        <!-- Question 2 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Dónde puedo comprar el libro?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    "Encuentros a la Luz de la Luna" está disponible en las principales plataformas: Amazon (Kindle y
+                    Papel), Apple Books, Kobo, Shopify, Payhip (para ePub y la versión PDF exclusiva) y Google Play.
+                    También puede pedirlo a través de la red Ingram, directamente en simonlero.com o consultar la lista
+                    completa de nuestros <a href="distribution-es.html"
+                        style="color:var(--gold); text-decoration: underline;">socios de distribución</a>.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Está el libro disponible en versión papel?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Absolutamente. Puede pedir la edición de tapa blanda premium en Amazon, Shopify
+                    o a través de Lulu.com. La impresión bajo demanda garantiza una calidad impecable y una
+                    entrega rápida.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Cuáles son las temáticas de la novela?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    La novela es una inmersión poética a través de la música, una novela de amor psicológico y LGBT, que
+                    explora también la nostalgia, el autodescubrimiento a través del arte y la belleza melancólica del
+                    paso del tiempo.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿En qué idiomas está disponible el libro?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Actualmente, la novela está disponible en francés ("Rencontres au Clair de Lune"), inglés
+                    ("Encounters by Moonlight") y español ("Encuentros a la Luz de la Luna").
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Por qué el título "Encuentros a la Luz de la Luna"?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    El título evoca el instante suspendido donde la verdad se revela, lejos del bullicio del día. Es una
+                    metáfora de la claridad interior, íntimamente ligada a la atmósfera de la famosa Sonata al Claro de
+                    Luna de Beethoven. En este universo, todo está conectado.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Es una serie o un libro único?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Esta novela está concebida como una obra completa e independiente.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Quién es Simon Lero?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Simon Lero es un autor quebequense que busca, a través de sus palabras, hacer hablar a la música, ya
+                    que cada nota que llega a su oídos le dice lo que las palabras no pueden expresar. Escribe para
+                    capturar lo impalpable y ofrecer una evasión fuera del tiempo, donde cada frase resuena como una
+                    nota suspendida.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Hay ilustraciones en el libro?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    La edición no contiene ilustraciones para dejar todo el espacio a la imaginación del lector.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Puedo obtener una edición dedicada?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Periódicamente se ponen a la venta ejemplares durante eventos. También siempre guardo algunos en
+                    reserva para regalarlos o venderlos si nuestros caminos se cruzan.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Es el libro apto para lectores jóvenes?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    La novela es un relato de amor psicológico gay (LGBT) y está recomendada para lectores de 18 años en
+                    adelante debido a la profundidad de sus temas y su madurez.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Cómo apoyar el trabajo del autor?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    La mejor manera de apoyar a Simon Lero es dejar una reseña en Amazon, Kobo o cualquier otro <a href="distribution-es.html" style="color:var(--gold); text-decoration: underline;">socio de distribución</a> después de su lectura, y
+                    compartir sus pasajes favoritos en sus redes sociales con el hashtag #SimonLero.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Cómo contactar al autor para una entrevista?
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    Para cualquier solicitud de medios, entrevistas o colaboraciones, utilice el <a
+                        href="contact-es.html" style="color:var(--gold); text-decoration: underline;">formulario de
+                        contacto</a> o visite el <a href="media-es.html"
+                        style="color:var(--gold); text-decoration: underline;">Espacio de Medios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILIGRANE CUIR : Apparition dans los rincones inferiores -->
     <div class="leather-wrapper" aria-hidden="true">
         <div class="leather-reveal-corner"></div>
-        <div class="leather-reveal-corner-right"></div>
+        <div class="leather-reveal-corner-left"></div>
     </div>
 
     <footer class="footer-pwa">
@@ -1377,28 +1255,24 @@
             <div class="footer-main">
                 <div class="footer-left" style="display: flex; flex-direction: column; align-items: center;">
                     <div class="pwa-badge-container">
-                        <div class="pwa-banner-wrapper"
-                            style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
-                            <img src="pwa-text-banner.png" alt="PWA Optimisé" class="pwa-text-banner"
-                                onclick="if(typeof installPWA === 'function') installPWA();"
-                                title="Cliquer pour installer l'app">
-                            <div class="pwa-install-hint" onclick="if(typeof installPWA === 'function') installPWA();">
-                                Cliquer pour installer l'app</div>
-                        </div>
+                        <div class="pwa-banner-wrapper" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+                    <img src="pwa-text-banner-es.png" alt="PWA Optimizado" class="pwa-text-banner" onclick="if(typeof installPWA === 'function') installPWA();" title="Clic para instalar app">
+                    <div class="pwa-install-hint" onclick="if(typeof installPWA === 'function') installPWA();">Clic para instalar app</div>
+                </div>
                     </div>
 
-
+                    
                 </div>
 
                 <div class="footer-right">
                     <div class="footer-nav-links">
-                        <a href="livre-accueil.html">Accueil</a>
+                        <a href="livre-accueil-es.html">Inicio</a>
                         <span class="sep">&bull;</span>
-                        <a href="faq.html">FAQ</a>
+                        <a href="faq-es.html">FAQ</a>
                         <span class="sep">&bull;</span>
-                        <a href="media.html">Espace Media</a>
+                        <a href="media-es.html">Espacio de Medios</a>
                         <span class="sep">&bull;</span>
-                        <a href="contact.html">Me contacter</a>
+                        <a href="contact-es.html">Contacto</a>
                     </div>
                     <div class="social-grid">
                         <div class="social-btn"><img src="youtube.png" alt="YouTube"></div>
@@ -1413,35 +1287,23 @@
                 </div>
             </div>
 
-            <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; Tous droits
-                r&eacute;serv&eacute;s</p>
+            <p class="footer-copyright">&copy; <span id="current-year-footer"></span> simonlero.com &mdash; Todos los
+                derechos
+                reservados</p>
         </div>
     </footer>
 
     <script>
+        // Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Year update
         document.getElementById('current-year-footer').textContent = new Date().getFullYear();
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const source = urlParams.get('source');
-
-        // Dynamic Branding Logic
-        // Update Copyright Brand
-        const brand = document.getElementById('copyright-brand');
-        if (brand) brand.textContent = "simonlero.com";
-        }
-
-        function sendMail(event) {
-            event.preventDefault();
-            const message = document.getElementById("message").value;
-
-            if (message.trim() === "") {
-                alert("Veuillez écrire un message avant d'envoyer.");
-                return;
-            }
-
-            let subject = "Message de simonlero.com";
-            window.location.href = "mailto:support@mon-univers.ca?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
-        }
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -1454,3 +1316,8 @@
 </body>
 
 </html>
+
+
+
+
+

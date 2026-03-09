@@ -1373,8 +1373,9 @@
             If you wish to write to me or share a thought, your message will reach me directly.
         </div>
         <div class="narrative-box">
-            <form onsubmit="sendMail(event)">
-                <textarea id="message" maxlength="500" placeholder="Your message..." required></textarea>
+            <form action="https://formspree.io/f/mpqyqgdn" method="POST">
+                <textarea id="message" name="message" maxlength="500" placeholder="Your message..." required></textarea>
+                <input type="hidden" name="_subject" value="New message from simonlero.com">
                 <button class="btn-submit" type="submit">Send Message</button>
             </form>
             <div class="note">
@@ -1445,18 +1446,7 @@
         const brand = document.getElementById('copyright-brand');
         if (brand) brand.textContent = "simonlero.com";
 
-        function sendMail(event) {
-            event.preventDefault();
-            const message = document.getElementById("message").value;
 
-            if (message.trim() === "") {
-                alert("Please write a message before sending.");
-                return;
-            }
-
-            let subject = "Message from simonlero.com";
-            window.location.href = "mailto:daniel@mon-univers.ca?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
-        }
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {

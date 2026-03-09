@@ -1380,8 +1380,10 @@
 
         <div class="narrative-box">
 
-            <form onsubmit="sendMail(event)">
-                <textarea id="message" maxlength="500" placeholder="Votre message..."></textarea>
+            <form action="https://formspree.io/f/mpqyqgdn" method="POST">
+                <textarea id="message" name="message" maxlength="500" placeholder="Votre message..."
+                    required></textarea>
+                <input type="hidden" name="_subject" value="Nouveau message de simonlero.com">
                 <button class="btn-submit" type="submit">Envoyer</button>
             </form>
             <div class="note">
@@ -1453,18 +1455,7 @@
         const brand = document.getElementById('copyright-brand');
         if (brand) brand.textContent = "simonlero.com";
 
-        function sendMail(event) {
-            event.preventDefault();
-            const message = document.getElementById("message").value;
 
-            if (message.trim() === "") {
-                alert("Veuillez écrire un message avant d'envoyer.");
-                return;
-            }
-
-            let subject = "Message de simonlero.com";
-            window.location.href = "mailto:daniel@mon-univers.ca?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
-        }
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {

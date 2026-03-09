@@ -1,3 +1,19 @@
 User-agent: *
 Disallow:
 Sitemap: https://www.simonlero.com/sitemap.xml
+
+User-agent: Googlebot-Image
+Disallow: /facebook.png
+Disallow: /instagram.png
+Disallow: /linkedin.png
+Disallow: /reddit.png
+Disallow: /snapchat.png
+Disallow: /telegram.png
+Disallow: /tictok.png
+Disallow: /whatsapp.png
+Disallow: /youtube.png
+Disallow: /amazon-icon.png
+Disallow: /amazon-icon.svg
+Disallow: /shopify-icon.svg
+Disallow: /payhip-icon.svg
+Disallow: /lulu-icon.svg

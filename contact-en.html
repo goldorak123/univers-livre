@@ -204,19 +204,24 @@
 
         .hero-subtitle {
             font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
+            font-size: 1rem;
             font-weight: 200;
             color: #ccc;
             margin-top: 40px;
             margin-bottom: 30px;
             letter-spacing: 3px;
             text-transform: uppercase;
-            line-height: 1.8;
-            max-width: 900px;
+            line-height: 2.2;
+            /* Ligne plus aérée */
+            max-width: 600px;
+            /* Force sur 2-3 lignes */
+            margin-left: auto;
+            margin-right: auto;
             animation: fadeIn 2s ease-out 0.8s forwards;
             opacity: 0;
             align-self: center;
             text-align: center;
+            /* Centré */
             -webkit-hyphens: auto;
             -ms-hyphens: auto;
             hyphens: auto;
@@ -385,9 +390,15 @@
             color: #666;
             font-family: 'Inter', sans-serif;
             font-weight: 300;
-            line-height: 1.6;
+            line-height: 2.0;
+            /* Interligne plus grand que standard */
             font-style: italic;
-            text-align: left;
+            text-align: center;
+            /* Centré */
+            max-width: 450px;
+            /* Force sur 2-3 lignes sur desktop */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @keyframes fadeIn {
@@ -1373,13 +1384,16 @@
             If you wish to write to me or share a thought, your message will reach me directly.
         </div>
         <div class="narrative-box">
-            <form action="https://formspree.io/f/mpqyqgdn" method="POST">
+            <form id="contact-form" action="https://formspree.io/f/mpqyqgdn" method="POST">
                 <textarea id="message" name="message" maxlength="500" placeholder="Your message..." required></textarea>
                 <input type="hidden" name="_subject" value="New message from simonlero.com">
                 <button class="btn-submit" type="submit">Send Message</button>
+                <p id="my-form-status"
+                    style="margin-top:20px; color:var(--gold); font-family:'Inter', sans-serif; font-size:1.1rem; text-align:center; display:none;">
+                </p>
             </form>
             <div class="note">
-                The message will be transmitted via your email application.
+                Your messages are routed to me confidentially. No data is retained on this server.
             </div>
         </div>
     </header>
@@ -1453,6 +1467,47 @@
             const isPWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
             if (isPWA) {
                 document.documentElement.classList.add('is-pwa');
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var form = document.getElementById("contact-form");
+            var statusMsg = document.getElementById("my-form-status");
+
+            if (form) {
+                form.addEventListener("submit", function (ev) {
+                    ev.preventDefault();
+                    var data = new FormData(form);
+                    fetch(form.action, {
+                        method: form.method,
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            statusMsg.style.color = "#4ade80"; // Vert lumineux premium
+                            statusMsg.innerHTML = "Your message is on its way!";
+                            statusMsg.style.display = "block";
+                            form.reset();
+                            setTimeout(() => { statusMsg.style.display = "none"; }, 5000);
+                        } else {
+                            response.json().then(data => {
+                                statusMsg.style.color = "var(--gold)";
+                                if (Object.hasOwn(data, 'errors')) {
+                                    statusMsg.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                                } else {
+                                    statusMsg.innerHTML = "Oops! There was a problem submitting your form";
+                                }
+                                statusMsg.style.display = "block";
+                            })
+                        }
+                    }).catch(error => {
+                        statusMsg.innerHTML = "Oops! There was a problem submitting your form";
+                        statusMsg.style.display = "block";
+                    });
+                });
             }
         });
     </script>

@@ -1498,7 +1498,7 @@
                     }).then(response => {
                         if (response.ok) {
                             statusMsg.style.color = "#4ade80"; // Vert lumineux premium
-                            statusMsg.innerHTML = "Your message is on its way!";
+                            statusMsg.innerHTML = "Success <svg width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' style='vertical-align: middle; margin: 0 8px; position: relative; top: -2px;'><circle cx='12' cy='12' r='10'></circle><path d='M9 12l2 2 4-4'></path></svg> Your message is on its way!";
                             statusMsg.style.display = "block";
                             form.reset();
                             setTimeout(() => { statusMsg.style.display = "none"; }, 5000);

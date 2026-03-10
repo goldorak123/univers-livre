@@ -1,5 +1,5 @@
-const CACHE_NAME = 'simon-lero-v72';
-console.log('SW Loading v72...');
+const CACHE_NAME = 'simon-lero-v73';
+console.log('SW Loading v73...');
 const urlsToCache = [
     '/',
     '/livre-accueil.html',
